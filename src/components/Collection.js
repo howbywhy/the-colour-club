@@ -132,7 +132,8 @@ export function createCollection({
         }
       });
       entering.forEach((t) => {
-        t.style.opacity = '0';
+        /* Avoid a blank-frame reload feel: Index shows instantly; Visual starts near-visible. */
+        if (!document.body.classList.contains('x')) t.style.opacity = '0.001';
       });
       survivors.forEach((t) => {
         t.style.opacity = '';
@@ -171,7 +172,13 @@ export function createCollection({
           );
         });
         entering.forEach((t) => {
-          const an = t.animate([{ opacity: 0 }, { opacity: 1 }], {
+          /* Index: instant restore — mass fade reads as page reload.
+             Visual: quiet opacity resolve only (no stagger). */
+          if (document.body.classList.contains('x')) {
+            t.style.opacity = '';
+            return;
+          }
+          const an = t.animate([{ opacity: 0.001 }, { opacity: 1 }], {
             duration: TIMING.filterEnter,
             easing: TIMING.filterEase,
             fill: 'forwards',

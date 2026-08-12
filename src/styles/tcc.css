@@ -27,13 +27,15 @@
   --page-edge:17px;
   --nav-thumb-w:40px;
   --nav-thumb-h:50px; /* 4:5 navigation crop — Index + sibling stack */
-  --sans:'Dia',Helvetica,Arial,sans-serif;
+  --sans:'Dia',sans-serif; /* Dia only — sans-serif is failure resilience, not intentional face */
   --w-voice:300;   /* Dia Light — expression */
   --w-func:400;    /* Dia Regular — interface / body */
   --t-large:clamp(44px,4.8vw,58px);
   --t-med:22px;
   --t-primary:15px;
   --t-secondary:12px;
+  --t-info-voice:22px;
+  --t-signup:20px;
   --ease:cubic-bezier(.32,.94,.35,1);
   /* Chrome rhythm — tight within groups, generous between */
   --chrome-inner-gap:12px;
@@ -48,7 +50,8 @@ img{display:block;width:100%;height:auto;background:#EFEFF1}
 /* navigation thumbnails are the only sanctioned crops */
 .sth img,.x .tile .ph img{height:100%;object-fit:cover}
 #heroImg{height:100%;object-fit:cover}
-button{font:inherit;background:none;border:none;cursor:pointer;color:inherit;padding:0}
+button,input,textarea,select{font-family:var(--sans);font-weight:var(--w-func);font-synthesis:none}
+button{font-size:inherit;line-height:inherit;background:none;border:none;cursor:pointer;color:inherit;padding:0}
 ::selection{background:var(--blue);color:#fff}
 
 /* ================= CHROME — left-biased groups, absolute utilities ================= */
@@ -155,7 +158,12 @@ body.filtered .g #colgrid .tile[data-id="microsoft"]{grid-column:1/7}
 .x #linecell .sig{display:none}
 .x .tile{display:grid;grid-template-columns:48px minmax(200px,1.05fr) 1.9fr .65fr 1.5fr;gap:28px;align-items:center;
   border-bottom:1px solid var(--line);padding:12px 0}
-.x .tile:first-of-type{border-top:1px solid var(--ink)}
+/* Index architecture line — owned by ixhead, not first visible row (filter-stable) */
+.x #ixhead{
+  display:grid;
+  border-bottom:1px solid var(--ink);
+  padding:0 0 12px;margin:0 0 0;
+}
 .x .tile .ph{width:var(--nav-thumb-w);height:var(--nav-thumb-h)}
 .x .tile .lbl{display:contents}
 .x .tile .nm{font-size:var(--t-primary)}
@@ -165,8 +173,7 @@ body.filtered .g #colgrid .tile[data-id="microsoft"]{grid-column:1/7}
 .x .tile:hover{background:#FAFAFB}
 #ixhead{display:none;font-size:var(--t-secondary);color:var(--sub);
   grid-template-columns:48px minmax(200px,1.05fr) 1.9fr .65fr 1.5fr;gap:28px;padding:0 0 12px}
-.x #ixhead{display:grid}
-#ixhead button{font:inherit;color:var(--sub);text-align:left;padding:0}
+#ixhead button{font-family:var(--sans);font-weight:var(--w-func);font-size:inherit;color:var(--sub);text-align:left;padding:0}
 #ixhead button:hover{color:var(--ink)}
 #ixhead button.sorted{color:var(--ink);font-weight:var(--w-func)}
 #ixnote{display:none;font-size:var(--t-secondary);color:var(--sub);padding-top:16px}
@@ -189,27 +196,33 @@ body.filtered .g #colgrid .tile[data-id="microsoft"]{grid-column:1/7}
 #insHero.a-deep{grid-column:1/5}
 #insHero img{transition:opacity .15s}
 
-/* idea — the project's typographic reading, composed across the canvas */
+/* idea — one editorial page; shared axes; wider hero measure */
 #story{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease);overflow:hidden}
 #story>div{min-height:0;overflow:hidden}
 #inspect.idea #story{grid-template-rows:1fr}
 #inspect.idea .ins-top{display:none}
 #inspect.idea .ins-gal{display:none}
 #ideaLede{display:none}
-#inspect.idea #ideaLede{display:block;grid-column:1/11;font-size:var(--t-large);font-weight:var(--w-voice);line-height:1.12;letter-spacing:-.015em;max-width:15ch;margin-bottom:30px}
-#inspect.idea .beat.s-a{grid-column:1/6}
-#inspect.idea .beat.s-b{grid-column:7/13;margin-top:64px}
-#inspect.idea .beat.s-c{grid-column:3/11;margin-top:40px}
-#inspect.idea .beat.s-c p{font-size:var(--t-med);font-weight:var(--w-voice);line-height:1.45;max-width:32ch}
-#inspect.idea .beat.s-d{grid-column:1/8;margin-top:48px}
-#inspect.idea .beat.s-e{grid-column:9/13;margin-top:48px}
+#inspect.idea #ideaLede{
+  display:block;grid-column:1/10;font-size:var(--t-large);font-weight:var(--w-voice);
+  line-height:1.12;letter-spacing:-.015em;max-width:26ch;margin-bottom:40px
+}
+/* Shared left axis (col 1) + mid axis (col 5) — Context / Challenge same band */
+#inspect.idea .beat.s-a{grid-column:1/5;margin-top:8px}
+#inspect.idea .beat.s-b{grid-column:5/9;margin-top:8px}
+/* Idea — strongest secondary, aligned to hero start */
+#inspect.idea .beat.s-c{grid-column:1/8;margin-top:56px}
+#inspect.idea .beat.s-c p{font-size:var(--t-med);font-weight:var(--w-voice);line-height:1.45;max-width:36ch}
+/* Craft / Recognition — closing band, quieter */
+#inspect.idea .beat.s-d{grid-column:1/6;margin-top:72px}
+#inspect.idea .beat.s-e{grid-column:7/12;margin-top:72px}
 #inspect.idea .beat.s-e p{color:var(--sub)}
 .pmeta{display:none}
 #inspect.idea .pmeta{display:block;grid-column:1/13;margin-top:80px;font-size:var(--t-secondary);color:var(--sub);line-height:1.8;max-width:76ch}
 .pmeta span{display:block}
 #story .beats{display:grid;grid-template-columns:repeat(12,1fr);gap:28px 20px;padding:20px 0 90px}
-.beat .bk{font-size:var(--t-secondary);color:var(--sub);margin-bottom:7px}
-.beat p{font-size:var(--t-primary);line-height:1.65;max-width:38ch}
+.beat .bk{font-size:var(--t-secondary);color:var(--sub);margin-bottom:7px;font-weight:var(--w-func)}
+.beat p{font-size:var(--t-primary);line-height:1.65;max-width:38ch;font-weight:var(--w-func)}
 .beat p a{color:var(--ink)}
 
 .ins-gal{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:10px}
@@ -257,12 +270,17 @@ body.info #info{transform:none}
 #info .pad{padding:60px var(--page-edge) 80px;max-width:640px}
 /* Info spacing system: --i-s inside a group, --i-m between related blocks, --i-l between sections */
 #info{--i-s:10px;--i-m:26px;--i-l:72px}
-#info .cl{font-size:var(--t-secondary);color:var(--sub);margin-bottom:var(--i-s)}
-#info h2{font-size:var(--t-primary);font-weight:var(--w-voice);letter-spacing:0;line-height:1.55;margin-bottom:var(--i-m);max-width:26ch}
-#info p{font-size:var(--t-primary);line-height:1.65;max-width:54ch;margin-bottom:12px}
-#info h3{font-size:var(--t-secondary);color:var(--sub);margin:var(--i-l) 0 18px;font-weight:400}
+/* Opening — one editorial voice (Dia Light, one size) */
+#info .info-opening{margin-bottom:var(--i-l);max-width:36ch}
+#info .info-voice{
+  font-size:var(--t-info-voice);font-weight:var(--w-voice);line-height:1.45;
+  letter-spacing:-.01em;color:var(--ink);margin:0 0 1.15em;max-width:36ch
+}
+#info .info-voice:last-child{margin-bottom:0}
+#info h3{font-size:var(--t-secondary);color:var(--sub);margin:var(--i-l) 0 18px;font-weight:var(--w-func)}
 #info h3.tight{margin-top:34px}
 #info h3.rule{border-top:1px solid var(--line);padding-top:26px}
+#info .pad > p{font-size:var(--t-primary);line-height:1.65;max-width:54ch;margin-bottom:12px;font-weight:var(--w-func)}
 .capgrp{padding:5px 0;display:grid;grid-template-columns:160px 1fr;gap:24px}
 .capgrp .cn{font-weight:var(--w-func);font-size:var(--t-primary)}
 .capgrp .proof{font-size:var(--t-primary);color:var(--sub);line-height:1.7}
@@ -280,33 +298,45 @@ body.info #info{transform:none}
 #infoClose:hover{opacity:1}
 #info .note{font-size:var(--t-secondary);color:var(--sub);margin-top:var(--i-m)}
 #info .info-hire{font-size:var(--t-secondary);color:var(--sub);margin-top:18px;max-width:42ch;line-height:1.55}
-#info .signup--info{margin-top:18px;max-width:420px}
+#info .signup--info{margin-top:18px;max-width:none}
 
-/* ================= FOOTER / EMAIL SIGNUP — closing gesture only ================= */
+/* ================= FOOTER / EMAIL SIGNUP — form only, full content width ================= */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.site-foot{margin-top:96px;padding:8px 0 32px;max-width:none;width:100%}
-.site-foot--project{margin-top:72px;padding-bottom:40px}
-.foot-label{font-size:var(--t-secondary);color:var(--sub);font-weight:var(--w-func);margin-bottom:10px;letter-spacing:.02em}
-.foot-invite{font-size:clamp(22px,2.4vw,28px);font-weight:var(--w-voice);line-height:1.25;letter-spacing:-.015em;
-  max-width:18ch;margin-bottom:36px;color:var(--ink)}
+.site-foot{margin-top:96px;padding:24px 0 40px;max-width:none;width:100%}
+.site-foot--project{margin-top:72px;padding-bottom:48px}
 .signup{max-width:none;width:100%}
-.signup-row{display:flex;align-items:baseline;gap:18px;border-bottom:1px solid var(--ink);padding:0 0 10px;width:100%}
+.signup-row{display:flex;align-items:baseline;gap:18px;border-bottom:1px solid var(--ink);padding:0 0 12px;width:100%}
 .signup input[type="email"]{
-  flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:var(--t-primary);
-  font-weight:var(--w-func);color:var(--ink);outline:none;padding:8px 0;border-radius:0;-webkit-appearance:none
+  flex:1;min-width:0;border:0;background:transparent!important;font-family:var(--sans);
+  font-size:var(--t-signup);font-weight:var(--w-func);line-height:1.3;color:var(--ink);
+  outline:none;padding:10px 0;border-radius:0;-webkit-appearance:none;appearance:none;
+  box-shadow:none;caret-color:var(--ink)
 }
-.signup input[type="email"]::placeholder{color:var(--sub);opacity:1}
-.signup input[type="email"]:focus{outline:none}
-.signup[data-state="focus"] .signup-row{border-bottom-color:var(--ink);opacity:1}
+.signup input[type="email"]::placeholder{color:var(--sub);opacity:1;font-family:var(--sans);font-size:var(--t-signup);font-weight:var(--w-func);line-height:1.3}
+.signup input[type="email"]:focus{outline:none;background:transparent!important;box-shadow:none}
+.signup[data-state="focus"] .signup-row{border-bottom-color:var(--ink)}
 .signup[data-state="invalid"] .signup-row,
 .signup[data-state="error"] .signup-row{border-bottom-color:var(--ink)}
+.signup input[type="email"]:-webkit-autofill,
+.signup input[type="email"]:-webkit-autofill:hover,
+.signup input[type="email"]:-webkit-autofill:focus,
+.signup input[type="email"]:-webkit-autofill:active{
+  -webkit-text-fill-color:var(--ink)!important;
+  caret-color:var(--ink);
+  transition:background-color 99999s ease-out 0s;
+  box-shadow:0 0 0 1000px var(--paper) inset!important;
+  font-family:var(--sans)!important;
+  font-size:var(--t-signup)!important;
+  font-weight:var(--w-func)!important
+}
 .signup button[type="submit"]{
-  flex:0 0 auto;font-size:var(--t-primary);font-weight:var(--w-func);opacity:.55;
-  padding:8px 0 8px 4px;min-height:44px;display:inline-flex;align-items:center
+  flex:0 0 auto;font-family:var(--sans);font-size:var(--t-signup);font-weight:var(--w-func);line-height:1.3;
+  opacity:.55;padding:10px 0 10px 4px;min-height:44px;display:inline-flex;align-items:center;background:transparent
 }
 .signup button[type="submit"]:hover{opacity:1}
 .signup button[type="submit"]:disabled{opacity:.35;cursor:default}
-.signup-status{font-size:var(--t-secondary);color:var(--sub);margin-top:10px;line-height:1.45;min-height:1.2em}
+.signup-status{font-family:var(--sans);font-size:var(--t-secondary);color:var(--sub);margin-top:10px;line-height:1.45;min-height:0}
+.signup-status:not([hidden]){min-height:1.2em}
 .signup[data-state="invalid"] .signup-status,
 .signup[data-state="error"] .signup-status{color:var(--ink)}
 .signup[data-state="success"] .signup-status{color:var(--ink)}
@@ -433,8 +463,8 @@ body.intro .tile,body.intro #linecell .sig,body.intro #ixnote{opacity:0;animatio
   .tile .st{opacity:1;transform:none;white-space:normal;max-width:100%}
   .tile .ph::after{display:none} /* colour outline is desktop hover enhancement */
 
-  /* Index — stacked analytical rows */
-  .x #colgrid{display:flex;flex-direction:column;gap:0}
+  /* Index — stacked analytical rows; structural top line (ixhead hidden on mobile) */
+  .x #colgrid{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--ink)}
   .x .tile{
     display:grid;
     grid-template-columns:48px 1fr;
@@ -466,7 +496,7 @@ body.intro .tile,body.intro #linecell .sig,body.intro #ixnote{opacity:0;animatio
   .ins-gal .gi.a-deep{max-width:62%}
 
   /* Idea — linear readable composition */
-  #inspect.idea #ideaLede{grid-column:1;max-width:18ch;font-size:clamp(28px,8vw,36px);margin-bottom:24px}
+  #inspect.idea #ideaLede{grid-column:1;max-width:22ch;font-size:clamp(28px,8vw,36px);margin-bottom:24px}
   #story .beats{display:flex;flex-direction:column;gap:28px;padding:12px 0 72px}
   #inspect.idea .beat.s-a,
   #inspect.idea .beat.s-b,
@@ -506,16 +536,18 @@ body.intro .tile,body.intro #linecell .sig,body.intro #ixnote{opacity:0;animatio
 
   .site-foot{margin-top:72px;max-width:none}
   .site-foot--project{margin-top:56px;padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
-  .foot-invite{font-size:clamp(22px,7vw,28px);max-width:16ch;margin-bottom:28px}
   .signup{max-width:none;width:100%}
   .signup-row{flex-direction:row;align-items:baseline;gap:12px;border-bottom:1px solid var(--ink);padding:0 0 10px;width:100%}
-  .signup input[type="email"]{
-    border-bottom:none;padding:12px 0;font-size:16px; /* iOS zoom guard */
-  }
+  .signup input[type="email"],
+  .signup input[type="email"]::placeholder,
   .signup button[type="submit"]{
-    align-self:auto;padding:12px 0;min-height:48px;opacity:.7
+    font-size:16px; /* iOS zoom guard — matches Join */
   }
+  .signup input[type="email"]{border-bottom:none;padding:12px 0}
+  .signup button[type="submit"]{align-self:auto;padding:12px 0;min-height:48px;opacity:.7}
   #info .signup--info{max-width:none}
+  #info .info-opening,#info .info-voice{max-width:34ch}
+  :root{ --t-info-voice:20px; --t-signup:16px; }
 }
 
 /* Touch / coarse pointer — no hover-dependent comprehension */
