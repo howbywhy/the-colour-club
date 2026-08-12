@@ -35,6 +35,9 @@
   --t-primary:15px;
   --t-secondary:12px;
   --ease:cubic-bezier(.32,.94,.35,1);
+  /* Chrome rhythm — tight within groups, generous between */
+  --chrome-inner-gap:12px;
+  --chrome-group-gap:56px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{background:var(--paper)}
@@ -48,14 +51,14 @@ img{display:block;width:100%;height:auto;background:#EFEFF1}
 button{font:inherit;background:none;border:none;cursor:pointer;color:inherit;padding:0}
 ::selection{background:var(--blue);color:#fff}
 
-/* ================= CHROME (R02 placement, plain type) ================= */
+/* ================= CHROME — left-biased groups, absolute utilities ================= */
 #chrome{position:fixed;top:0;left:0;right:0;height:52px;display:flex;align-items:center;
   padding:0 var(--page-edge);z-index:400;background:linear-gradient(#fff 62%,rgba(255,255,255,0));pointer-events:none}
 #chrome>*{pointer-events:auto}
-#chrome .brand{font-weight:var(--w-func);font-size:var(--t-primary);letter-spacing:-.01em;cursor:pointer}
-#chrome .ctr{margin-left:64px;display:flex;align-items:baseline;gap:0}
-#viewBtn{margin-right:64px}
-#filters{display:flex;gap:14px;margin-right:64px}
+#chrome .brand{font-weight:var(--w-func);font-size:var(--t-primary);letter-spacing:-.01em;cursor:pointer;flex:0 0 auto}
+#chrome .ctr{margin-left:var(--chrome-group-gap);display:flex;align-items:baseline;gap:0;flex:0 1 auto;min-width:0}
+#viewBtn{margin-right:var(--chrome-group-gap)}
+#filters{display:flex;gap:var(--chrome-inner-gap);margin-right:var(--chrome-group-gap)}
 #filters .fbtn{opacity:.4}
 #filters .fbtn:hover{opacity:1}
 #filters .fbtn.on{opacity:1}
@@ -63,17 +66,31 @@ body.proj #filters{display:none}
 .ctl{font-size:var(--t-primary);color:var(--ink);opacity:.55;transition:opacity .15s}
 .ctl:hover{opacity:1}
 .ctl.on{opacity:1}
-#pchrome{display:none;margin-left:64px;gap:10px;align-items:baseline;min-width:0}
+#pchrome{display:none;margin-left:var(--chrome-group-gap);gap:var(--chrome-inner-gap);align-items:baseline;min-width:0;flex:0 1 auto}
 body.proj #pchrome{display:flex}
 #pchrome .pnm{white-space:nowrap}
 #pchrome .pst{color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:34vw}
-#modeCtl{display:none;gap:12px;margin-right:64px}
+#modeCtl{display:none;gap:var(--chrome-inner-gap);margin-right:var(--chrome-group-gap)}
 body.proj #modeCtl{display:flex}
 body.proj #viewBtn{display:none}
-#chrome .right{margin-left:auto;display:flex;gap:22px;align-items:center;font-size:var(--t-primary)}
-#chrome .right a{color:var(--ink);text-decoration:none}
-#chrome .right a:hover{text-decoration:underline;text-underline-offset:3px}
+/* Utilities — out of left flex flow so hide/show never reflows nav groups */
+#chrome .chrome-utilities{
+  position:absolute;right:var(--page-edge);top:50%;transform:translateY(-50%);
+  display:flex;gap:22px;align-items:center;font-size:var(--t-primary);
+  transition:opacity .28s var(--ease),transform .28s var(--ease),visibility .28s
+}
+#chrome .chrome-utilities a{color:var(--ink);text-decoration:none}
+#chrome .chrome-utilities a:hover{text-decoration:underline;text-underline-offset:3px}
+#chrome .chrome-utilities.is-away,
+html.proj-boot #chrome .chrome-utilities{
+  opacity:0;visibility:hidden;pointer-events:none;
+  transform:translateY(calc(-50% + 3px))
+}
+#chrome .chrome-utilities.no-util-anim{transition:none!important}
 #clock{color:var(--sub);font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){
+  #chrome .chrome-utilities{transition:none}
+}
 
 /* ================= COLLECTION (R02 composition) ================= */
 #collection{padding:84px var(--page-edge) 110px;transition:opacity .3s}
@@ -265,22 +282,22 @@ body.info #info{transform:none}
 #info .info-hire{font-size:var(--t-secondary);color:var(--sub);margin-top:18px;max-width:42ch;line-height:1.55}
 #info .signup--info{margin-top:18px;max-width:420px}
 
-/* ================= FOOTER / EMAIL SIGNUP ================= */
+/* ================= FOOTER / EMAIL SIGNUP — closing gesture only ================= */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.site-foot{margin-top:96px;padding:8px 0 8px;max-width:560px}
-.site-foot--project{margin-top:72px;padding-bottom:24px}
+.site-foot{margin-top:96px;padding:8px 0 32px;max-width:none;width:100%}
+.site-foot--project{margin-top:72px;padding-bottom:40px}
 .foot-label{font-size:var(--t-secondary);color:var(--sub);font-weight:var(--w-func);margin-bottom:10px;letter-spacing:.02em}
 .foot-invite{font-size:clamp(22px,2.4vw,28px);font-weight:var(--w-voice);line-height:1.25;letter-spacing:-.015em;
-  max-width:18ch;margin-bottom:28px;color:var(--ink)}
-.signup{max-width:480px}
-.signup-row{display:flex;align-items:baseline;gap:18px;border-bottom:1px solid var(--ink);padding:0 0 10px}
+  max-width:18ch;margin-bottom:36px;color:var(--ink)}
+.signup{max-width:none;width:100%}
+.signup-row{display:flex;align-items:baseline;gap:18px;border-bottom:1px solid var(--ink);padding:0 0 10px;width:100%}
 .signup input[type="email"]{
   flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:var(--t-primary);
   font-weight:var(--w-func);color:var(--ink);outline:none;padding:8px 0;border-radius:0;-webkit-appearance:none
 }
 .signup input[type="email"]::placeholder{color:var(--sub);opacity:1}
 .signup input[type="email"]:focus{outline:none}
-.signup[data-state="focus"] .signup-row{border-bottom-color:var(--blue)}
+.signup[data-state="focus"] .signup-row{border-bottom-color:var(--ink);opacity:1}
 .signup[data-state="invalid"] .signup-row,
 .signup[data-state="error"] .signup-row{border-bottom-color:var(--ink)}
 .signup button[type="submit"]{
@@ -293,9 +310,6 @@ body.info #info{transform:none}
 .signup[data-state="invalid"] .signup-status,
 .signup[data-state="error"] .signup-status{color:var(--ink)}
 .signup[data-state="success"] .signup-status{color:var(--ink)}
-.foot-meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:48px;font-size:var(--t-secondary);color:var(--sub);font-weight:var(--w-func)}
-.foot-meta a{color:var(--sub);text-decoration:none}
-.foot-meta a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
 
 /* ================= GHOST / FLIP ================= */
 #ghost{position:fixed;inset:0;z-index:500;pointer-events:none}
@@ -320,14 +334,15 @@ body.intro .tile,body.intro #linecell .sig,body.intro #ixnote{opacity:0;animatio
 /* ================= RESPONSIVE — tablet ================= */
 @media (max-width:1179px){
   :root{ --page-edge:14px; --t-large:clamp(36px,6vw,48px); }
-  #chrome{height:auto;min-height:52px;padding:10px var(--page-edge);flex-wrap:wrap;row-gap:8px;align-items:flex-start}
-  #chrome .ctr{margin-left:28px;flex-wrap:wrap;row-gap:6px;max-width:calc(100% - 80px)}
-  #viewBtn{margin-right:28px}
-  #filters{margin-right:28px;gap:12px}
-  #modeCtl{margin-right:28px}
-  #pchrome{margin-left:20px;max-width:min(42vw,280px)}
+  #chrome{height:auto;min-height:52px;padding:10px var(--page-edge);flex-wrap:wrap;row-gap:8px;align-items:flex-start;
+    --chrome-group-gap:36px;--chrome-inner-gap:12px}
+  #chrome .ctr{margin-left:var(--chrome-group-gap);flex-wrap:wrap;row-gap:6px;max-width:calc(100% - 80px)}
+  #viewBtn{margin-right:var(--chrome-group-gap)}
+  #filters{margin-right:var(--chrome-group-gap);gap:var(--chrome-inner-gap)}
+  #modeCtl{margin-right:var(--chrome-group-gap)}
+  #pchrome{margin-left:var(--chrome-group-gap);max-width:min(42vw,280px)}
   #pchrome .pst{max-width:28vw}
-  #chrome .right{gap:14px;font-size:var(--t-secondary)}
+  #chrome .chrome-utilities{gap:14px;font-size:var(--t-secondary)}
   #collection{padding:72px var(--page-edge) 88px}
   .g #colgrid{grid-template-columns:repeat(6,1fr);gap:22px 10px}
   .g #colgrid .tile[data-id="sub3"]{grid-column:4/7}
@@ -390,7 +405,7 @@ body.intro .tile,body.intro #linecell .sig,body.intro #ixnote{opacity:0;animatio
   body.proj #chrome .ctr{order:3}
   #pchrome .pnm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
   #pchrome .pst{max-width:100%;white-space:nowrap}
-  #chrome .right{display:none} /* clock + email demoted — live in Info */
+  #chrome .chrome-utilities{display:none} /* clock + email demoted — live in Info */
   body.proj #filters{display:none}
   body.proj #viewBtn{display:none}
 
@@ -491,17 +506,15 @@ body.intro .tile,body.intro #linecell .sig,body.intro #ixnote{opacity:0;animatio
 
   .site-foot{margin-top:72px;max-width:none}
   .site-foot--project{margin-top:56px;padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
-  .foot-invite{font-size:clamp(22px,7vw,28px);max-width:16ch;margin-bottom:22px}
-  .signup{max-width:none}
-  .signup-row{flex-direction:column;align-items:stretch;gap:0;border-bottom:none;padding:0}
+  .foot-invite{font-size:clamp(22px,7vw,28px);max-width:16ch;margin-bottom:28px}
+  .signup{max-width:none;width:100%}
+  .signup-row{flex-direction:row;align-items:baseline;gap:12px;border-bottom:1px solid var(--ink);padding:0 0 10px;width:100%}
   .signup input[type="email"]{
-    border-bottom:1px solid var(--ink);padding:12px 0;font-size:16px; /* iOS zoom guard */
+    border-bottom:none;padding:12px 0;font-size:16px; /* iOS zoom guard */
   }
-  .signup[data-state="focus"] input[type="email"]{border-bottom-color:var(--blue)}
   .signup button[type="submit"]{
-    align-self:flex-start;padding:14px 0 6px;min-height:48px;opacity:.7
+    align-self:auto;padding:12px 0;min-height:48px;opacity:.7
   }
-  .foot-meta{margin-top:36px;gap:6px 18px}
   #info .signup--info{max-width:none}
 }
 

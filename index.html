@@ -4,25 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Colour Club</title>
+<script>
+/* Prevent collection-utility flash on project deep links — before first paint. */
+(function () {
+  if (/^#\/p\//.test(location.hash || '')) document.documentElement.classList.add('proj-boot');
+})();
+</script>
 <link rel="stylesheet" href="src/styles/tcc.css">
 </head>
 <body class="g">
 <!-- ================= CHROME ================= -->
 <header id="chrome">
-  <div class="brand" id="brandBtn" title="Return to the club arrangement">TCC</div>
-  <div id="pchrome"><span id="mClient" class="pnm"></span><span id="mStrap" class="pst"></span></div>
-  <div class="ctr">
-    <div id="modeCtl"><button class="ctl" id="mImages">Images</button><button class="ctl" id="mIdea">Idea</button></div>
-    <button class="ctl" id="viewBtn">Index</button>
-    <div id="filters">
+  <div class="chrome-brand brand" id="brandBtn" title="Return to the club arrangement">TCC</div>
+  <div class="chrome-identity" id="pchrome"><span id="mClient" class="pnm"></span><span id="mStrap" class="pst"></span></div>
+  <div class="chrome-ctr ctr">
+    <div class="chrome-mode" id="modeCtl"><button class="ctl" id="mImages">Images</button><button class="ctl" id="mIdea">Idea</button></div>
+    <button class="ctl chrome-view" id="viewBtn">Index</button>
+    <div class="chrome-filters" id="filters">
       <button class="ctl fbtn on" data-f="all">All</button>
       <button class="ctl fbtn" data-f="hospitality">Hospitality</button>
       <button class="ctl fbtn" data-f="fmcg">FMCG</button>
       <button class="ctl fbtn" data-f="spatial">Spatial</button>
     </div>
-    <button class="ctl" id="infoBtn">Info</button>
+    <button class="ctl chrome-info" id="infoBtn">Info</button>
   </div>
-  <div class="right">
+  <div class="chrome-utilities right">
     <span id="clock">--:--:--</span>
     <a href="mailto:hi@thecolourclub.com.au">hi@thecolourclub.com.au</a>
   </div>
@@ -60,11 +66,6 @@
       </div>
       <p class="signup-status" role="status" aria-live="polite" hidden></p>
     </form>
-    <div class="foot-meta">
-      <span>Sydney / Byron Bay</span>
-      <a href="https://www.instagram.com/thecolourclubstudio/" target="_blank" rel="noopener">Instagram</a>
-      <span>© 2026 The Colour Club</span>
-    </div>
   </footer>
 </main>
 <div id="ixpreview"><img id="ixpImg" alt=""></div>
@@ -89,11 +90,6 @@
         </div>
         <p class="signup-status" role="status" aria-live="polite" hidden></p>
       </form>
-      <div class="foot-meta">
-        <span>Sydney / Byron Bay</span>
-        <a href="https://www.instagram.com/thecolourclubstudio/" target="_blank" rel="noopener">Instagram</a>
-        <span>© 2026 The Colour Club</span>
-      </div>
     </footer>
   </div>
 </section>

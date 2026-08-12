@@ -1,6 +1,10 @@
 /**
  * Chrome — renders world state into collection/project chrome controls.
  * Not a second navigation state machine. Presentation adapts; state does not fork.
+ *
+ * Collection utilities (clock + email) hide while a project is active:
+ *   body.proj || world.selected
+ * Absolute positioning keeps left chrome geometry stable.
  */
 import { world, RM, D, $ } from '../state/worldState.js';
 import { TIMING } from '../motion/transitions.js';
@@ -13,7 +17,57 @@ export function createChrome({
   setDepth,
   onToggleDbg,
 }) {
+  const utils = () => $('#chrome .chrome-utilities') || $('#chrome .right');
+
+  /** Canonical: project active hides collection utilities. */
+  function utilitiesHidden() {
+    return !!world.selected || document.body.classList.contains('proj');
+  }
+
+  function syncUtilities({ immediate } = {}) {
+    const el = utils();
+    if (!el) return;
+    const hide = utilitiesHidden();
+    const boot = document.documentElement.classList.contains('proj-boot');
+
+    if (immediate || RM || boot) {
+      el.classList.add('no-util-anim');
+      el.classList.toggle('is-away', hide);
+      // force reflow so removing no-util-anim doesn't animate the boot state
+      void el.offsetWidth;
+      el.classList.remove('no-util-anim');
+    } else {
+      el.classList.toggle('is-away', hide);
+    }
+
+    if (!hide && boot) document.documentElement.classList.remove('proj-boot');
+    if (hide) document.documentElement.classList.remove('proj-boot');
+  }
+
+  function watchWorldSelected() {
+    let current = world.selected;
+    Object.defineProperty(world, 'selected', {
+      configurable: true,
+      enumerable: true,
+      get() {
+        return current;
+      },
+      set(v) {
+        current = v;
+        syncUtilities();
+      },
+    });
+  }
+
   function bindChrome() {
+    watchWorldSelected();
+
+    const mo = new MutationObserver(() => syncUtilities());
+    mo.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
+    /* Initial sync — deep-linked projects must not flash utilities. */
+    syncUtilities({ immediate: true });
+
     $('#brandBtn').addEventListener('click', () => {
       closeInfo(() => {
         if (world.selected) closeProject();
@@ -51,5 +105,5 @@ export function createChrome({
     }, 1000);
   }
 
-  return { bindChrome };
+  return { bindChrome, syncUtilities };
 }
