@@ -10,6 +10,7 @@ import {
   cancelElementAnims,
   endIntro,
 } from './motion/transitions.js';
+import { createProjectMedia } from './components/ProjectMedia.js';
 import { freezeForInfo, restoreAfterInfo, saveViewScroll, resetModeY } from './state/scrollLedger.js';
 
 /* Mutable flight hooks — window patches (QA) and lexical calls share one table. */
@@ -30,46 +31,12 @@ export async function boot() {
   CAPS = data.caps;
   P = data.projects;
 byId={};P.forEach(p=>byId[p.id]=p);
-const LOCAL='public/images/projects/';
-const ext=f=>f.slice(f.lastIndexOf('.'));
-const dimOf=(p,i)=> (p.dims && p.dims[i]) || null;
-const alocal=(p,i)=>{
-  const m=p.media && p.media.filter(x=>x.type==='image')[i];
-  return (m && m.local) || (LOCAL+p.id+'/'+p.id+'-'+String(i+1).padStart(2,'0')+ext(p.files[i]));
-};
-const aremote=(p,i)=>{
-  const m=p.media && p.media.filter(x=>x.type==='image')[i];
-  return (m && m.remote) || (CDN+p.files[i]);
-};
-function setImg(el,p,i){
-  const d=dimOf(p,i);
-  if(d){ el.width=d.width; el.height=d.height; }
-  el.dataset.remote=aremote(p,i);
-  el.onerror=function(){this.onerror=null;this.src=this.dataset.remote};
-  el.src=alocal(p,i);
-}
-function imgTag(p,i,extra){
-  const d=dimOf(p,i);
-  const wh=d?` width="${d.width}" height="${d.height}"`:'';
-  return `<img ${extra||''}${wh} src="${alocal(p,i)}" onerror="this.onerror=null;this.src='${aremote(p,i)}'">`;
-}
-const src0=el=>{const im=el.tagName==='IMG'?el:el.querySelector('img');return im.currentSrc||im.src}
-const aclass=(w,h)=>{const r=w/h;return r<0.62?'a-deep':r<0.85?'a-port':r<=1.15?'a-sq':'a-land'};
-const classFromDim=(p,i)=>{ const d=dimOf(p,i); return d?aclass(d.width,d.height):''; };
-function applyHeroGeometry(p){
-  const IH=$('#insHero');
-  IH.classList.remove('a-land','a-sq','a-port','a-deep');
-  const d=dimOf(p,0);
-  if(d){ IH.style.aspectRatio=(d.width/d.height).toFixed(4); IH.classList.add(aclass(d.width,d.height)); }
-  else IH.style.aspectRatio='1.68';
-}
-function classify(img){
-  if(!img.naturalWidth)return;
-  const host=img.closest('.gi')||img.closest('.tile');
-  if(host)host.classList.add(aclass(img.naturalWidth,img.naturalHeight));
-}
-document.addEventListener('load',e=>{if(e.target&&e.target.tagName==='IMG')classify(e.target)},true);
-const sweep=scope=>scope.querySelectorAll('img').forEach(i=>{if(i.complete)classify(i)});
+const media = createProjectMedia({ cdn: CDN });
+const {
+  dimOf, alocal, aremote, setImg, imgTag, src0, aclass, classFromDim,
+  applyHeroGeometry, bindClassify, sweep, galleryHtml,
+} = media;
+bindClassify();
 /* The Colour Club interaction deck — colour points at work, advancing per encounter */
 const HUES=['#4E5FFD','#E23A2E','#0F8A46','#F0740A','#C4258F','#7E30D8','#0F7E93'];
 let hueI=0;
@@ -401,14 +368,7 @@ function populateInspect(p){
   $('#mCred').textContent=p.cred||'';$('#mCred').style.display=p.cred?'block':'none';
   $('#beats').innerHTML=`<div id="ideaLede">${p.lede||''}</div>`+
     p.beats.map(([k,tx],i)=>`<div class="beat s-${'abcde'[i]||'e'}"><div class="bk">${k}</div><p>${tx}</p></div>`).join('');
-  const seq=[];const vv=(p.vids||[]);
-  for(let i=1;i<p.files.length;i++){vv.filter(v=>v.at===i).forEach(v=>seq.push(v));seq.push(i)}
-  vv.filter(v=>v.at>=p.files.length).forEach(v=>seq.push(v));
-  $('#gal').innerHTML=seq.map(it=> typeof it==='number'
-    ? `<div class="gi ${classFromDim(p,it)}">${imgTag(p,it,'loading="lazy" alt=""')}</div>`
-    : it.vf
-      ? `<div class="gv"><iframe loading="lazy" src="https://app.vidzflow.com/v/${it.vf}?dq=576&ap=true&muted=true&loop=true&ctp=false&bc=%234E5FFD&controls=" allow="autoplay" title="Project film"></iframe></div>`
-      : `<div class="gv"><video autoplay muted loop playsinline>${it.l?`<source src="${it.l}">`:''}${it.r?`<source src="${it.r}">`:''}</video></div>`).join('');
+  $('#gal').innerHTML=galleryHtml(p);
   $('#mImages').classList.add('on');$('#mIdea').classList.remove('on');
   $('#mIdea').style.display=p.beats.length?'block':'none';
   buildStack(p.id);
