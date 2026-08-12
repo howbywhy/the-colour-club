@@ -12,6 +12,7 @@ import {
 } from './motion/transitions.js';
 import { createProjectMedia } from './components/ProjectMedia.js';
 import { createIndex } from './components/Index.js';
+import { createProjectStack } from './components/ProjectStack.js';
 import { freezeForInfo, restoreAfterInfo, saveViewScroll, resetModeY } from './state/scrollLedger.js';
 
 /* Mutable flight hooks — window patches (QA) and lexical calls share one table. */
@@ -76,17 +77,14 @@ sweep(grid);
 
 /* stack (archive during inspect) — 4:5 nav thumbs via CSS */
 const stack=$('#stack');
-function buildStack(exceptId){
-  stack.innerHTML='';
-  const cap=document.createElement('div');cap.className='cap';cap.textContent='TCC';stack.appendChild(cap);
-  P.filter(p=>p.id!==exceptId).forEach(p=>{
-    const s=document.createElement('div');s.className='sth';s.dataset.id=p.id;
-    s.innerHTML=`${imgTag(p,0,'alt=""')}<span class="tip">${p.name}</span>`;
-    s.addEventListener('mouseenter',()=>s.style.setProperty('--hue',nextHue()));
-    s.addEventListener('click',()=>lateral(p.id));
-    stack.appendChild(s);
-  });
-}
+const projectStack = createProjectStack({
+  stackEl: stack,
+  getProjects: () => P,
+  media,
+  nextHue,
+  onLateral: (id) => lateral(id),
+});
+const { buildStack } = projectStack;
 
 /* info capabilities */
 const caps=$('#caps');
