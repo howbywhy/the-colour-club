@@ -262,6 +262,40 @@ body.info #info{transform:none}
 #infoClose{position:sticky;top:14px;float:right;margin:14px 16px 0 0;font-size:var(--t-primary);background:#fff;opacity:.55}
 #infoClose:hover{opacity:1}
 #info .note{font-size:var(--t-secondary);color:var(--sub);margin-top:var(--i-m)}
+#info .info-hire{font-size:var(--t-secondary);color:var(--sub);margin-top:18px;max-width:42ch;line-height:1.55}
+#info .signup--info{margin-top:18px;max-width:420px}
+
+/* ================= FOOTER / EMAIL SIGNUP ================= */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.site-foot{margin-top:96px;padding:8px 0 8px;max-width:560px}
+.site-foot--project{margin-top:72px;padding-bottom:24px}
+.foot-label{font-size:var(--t-secondary);color:var(--sub);font-weight:var(--w-func);margin-bottom:10px;letter-spacing:.02em}
+.foot-invite{font-size:clamp(22px,2.4vw,28px);font-weight:var(--w-voice);line-height:1.25;letter-spacing:-.015em;
+  max-width:18ch;margin-bottom:28px;color:var(--ink)}
+.signup{max-width:480px}
+.signup-row{display:flex;align-items:baseline;gap:18px;border-bottom:1px solid var(--ink);padding:0 0 10px}
+.signup input[type="email"]{
+  flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:var(--t-primary);
+  font-weight:var(--w-func);color:var(--ink);outline:none;padding:8px 0;border-radius:0;-webkit-appearance:none
+}
+.signup input[type="email"]::placeholder{color:var(--sub);opacity:1}
+.signup input[type="email"]:focus{outline:none}
+.signup[data-state="focus"] .signup-row{border-bottom-color:var(--blue)}
+.signup[data-state="invalid"] .signup-row,
+.signup[data-state="error"] .signup-row{border-bottom-color:var(--ink)}
+.signup button[type="submit"]{
+  flex:0 0 auto;font-size:var(--t-primary);font-weight:var(--w-func);opacity:.55;
+  padding:8px 0 8px 4px;min-height:44px;display:inline-flex;align-items:center
+}
+.signup button[type="submit"]:hover{opacity:1}
+.signup button[type="submit"]:disabled{opacity:.35;cursor:default}
+.signup-status{font-size:var(--t-secondary);color:var(--sub);margin-top:10px;line-height:1.45;min-height:1.2em}
+.signup[data-state="invalid"] .signup-status,
+.signup[data-state="error"] .signup-status{color:var(--ink)}
+.signup[data-state="success"] .signup-status{color:var(--ink)}
+.foot-meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:48px;font-size:var(--t-secondary);color:var(--sub);font-weight:var(--w-func)}
+.foot-meta a{color:var(--sub);text-decoration:none}
+.foot-meta a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
 
 /* ================= GHOST / FLIP ================= */
 #ghost{position:fixed;inset:0;z-index:500;pointer-events:none}
@@ -454,6 +488,21 @@ body.intro .tile,body.intro #linecell .sig,body.intro #ixnote{opacity:0;animatio
   #info{--i-l:48px;--i-m:20px}
   .capgrp{grid-template-columns:1fr;gap:4px;padding:10px 0}
   .steps{grid-template-columns:1fr 1fr;gap:18px 16px}
+
+  .site-foot{margin-top:72px;max-width:none}
+  .site-foot--project{margin-top:56px;padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+  .foot-invite{font-size:clamp(22px,7vw,28px);max-width:16ch;margin-bottom:22px}
+  .signup{max-width:none}
+  .signup-row{flex-direction:column;align-items:stretch;gap:0;border-bottom:none;padding:0}
+  .signup input[type="email"]{
+    border-bottom:1px solid var(--ink);padding:12px 0;font-size:16px; /* iOS zoom guard */
+  }
+  .signup[data-state="focus"] input[type="email"]{border-bottom-color:var(--blue)}
+  .signup button[type="submit"]{
+    align-self:flex-start;padding:14px 0 6px;min-height:48px;opacity:.7
+  }
+  .foot-meta{margin-top:36px;gap:6px 18px}
+  #info .signup--info{max-width:none}
 }
 
 /* Touch / coarse pointer — no hover-dependent comprehension */

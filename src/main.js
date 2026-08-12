@@ -15,6 +15,7 @@ import { createProjectStack } from './components/ProjectStack.js';
 import { createCollection } from './components/Collection.js';
 import { createInfo } from './components/Info.js';
 import { createChrome } from './components/Chrome.js';
+import { bindAllSignups } from './components/Signup.js';
 import { saveViewScroll, resetModeY } from './state/scrollLedger.js';
 
 /* Mutable flight hooks — window patches (QA) and lexical calls share one table. */
@@ -326,6 +327,7 @@ const chrome = createChrome({
 chrome.bindChrome();
 bindInfoChrome();
 bindSortHeaders();
+bindAllSignups();
 
 /* debug */
 let dbgOn=false;
