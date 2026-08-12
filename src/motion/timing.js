@@ -8,7 +8,8 @@ export const TIMING = {
   filterLeave: 110,
   filterFlip: 220,
   filterEnter: 160,
-  /* Skip FLIP below this; large closes snap (subtraction > choreography). */
+  /* Skip FLIP below this; large closes snap (subtraction > choreography).
+     filterMoveMax (>240px) is a perceptual decision to review later — not architectural. */
   filterMoveMin: 16,
   filterMoveMax: 240,
   open: 430,

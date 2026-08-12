@@ -1,14 +1,19 @@
 import { loadProjects } from './data/projects.js';
 import { world, RM, D, $, acquire, release, withLock } from './state/worldState.js';
 import { createRouter } from './state/routing.js';
-import { fly as flyRaw, flyCrop as flyCropRaw, flipTiles as flipTilesRaw } from './motion/flip.js';
-import { TIMING } from './motion/timing.js';
+import {
+  TIMING,
+  fly as flyRaw,
+  flyCrop as flyCropRaw,
+  flipTiles as flipTilesRaw,
+  createFlightTable,
+  cancelElementAnims,
+  endIntro,
+} from './motion/transitions.js';
 import { freezeForInfo, restoreAfterInfo, saveViewScroll, resetModeY } from './state/scrollLedger.js';
 
 /* Mutable flight hooks — window patches (QA) and lexical calls share one table. */
-const flights = { fly: flyRaw, flyCrop: flyCropRaw };
-const fly = (...a) => flights.fly(...a);
-const flyCrop = (...a) => flights.flyCrop(...a);
+const { flights, fly, flyCrop } = createFlightTable(flyRaw, flyCropRaw);
 
 let P, CAPS, CDN, byId;
 
@@ -69,16 +74,6 @@ const sweep=scope=>scope.querySelectorAll('img').forEach(i=>{if(i.complete)class
 const HUES=['#4E5FFD','#E23A2E','#0F8A46','#F0740A','#C4258F','#7E30D8','#0F7E93'];
 let hueI=0;
 const nextHue=()=>HUES[hueI++%HUES.length];
-
-/* First interaction cancels the first-entry intro so filters/open aren't fighting opacity:0 */
-function endIntro(){
-  if(!document.body.classList.contains('intro'))return;
-  document.body.classList.remove('intro');
-  document.querySelectorAll('.tile,#linecell h1,#chrome,#linecell .sig,#ixnote').forEach(el=>{
-    try{ el.getAnimations?.().forEach(a=>a.cancel()); }catch(_){}
-    if(el.style&&el.style.opacity==='0') el.style.opacity='';
-  });
-}
 
 /* ============================================================
    BUILD COLLECTION
@@ -217,11 +212,7 @@ function applyFilterLayout(sec){
   });
 }
 function cancelFilterMotion(){
-  [...grid.querySelectorAll('.tile')].forEach(t=>{
-    t.getAnimations().forEach(a=>{ try{ a.cancel(); }catch(_){} });
-    t.style.opacity='';
-    t.style.transform='';
-  });
+  cancelElementAnims(grid.querySelectorAll('.tile'));
   filterCtrl.animCount=0;
 }
 function beginFilterLock(){
