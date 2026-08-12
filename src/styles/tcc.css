@@ -156,9 +156,18 @@ body.filtered .g #colgrid .tile[data-id="microsoft"]{grid-column:1/7}
 .x #linecell{padding:0 0 16px}
 .x #linecell h1{font-size:var(--t-primary);font-weight:var(--w-func);max-width:none;letter-spacing:0;line-height:1.55}
 .x #linecell .sig{display:none}
+/* Index shell — hold field height so sparse filters leave whitespace in-field,
+   not a collapsing page that yanks the signup. Rows are not artificially spaced. */
+.x #galleryField{
+  min-height:calc(
+    44px /* ixhead */
+    + (10 * (var(--nav-thumb-h) + 25px)) /* full project row stack */
+    + 40px /* ixnote allowance */
+  );
+}
 .x .tile{display:grid;grid-template-columns:48px minmax(200px,1.05fr) 1.9fr .65fr 1.5fr;gap:28px;align-items:center;
   border-bottom:1px solid var(--line);padding:12px 0}
-/* Index architecture line — owned by ixhead, not first visible row (filter-stable) */
+/* Index architecture line — owned by ixhead shell, never by filtered rows */
 .x #ixhead{
   display:grid;
   border-bottom:1px solid var(--ink);
@@ -346,6 +355,9 @@ body.info #info{transform:none}
 #ghost img{position:fixed;object-fit:cover;will-change:transform}
 #ghost .gc{position:fixed;overflow:hidden;will-change:left,top,width,height}
 #ghost .gc img{position:static;width:100%;height:100%;object-fit:cover}
+/* Filter leave ghosts — hold leavers in place when the visible set has no survivors */
+#ghost .fg{position:fixed;overflow:hidden;pointer-events:none;z-index:500;margin:0;box-sizing:border-box}
+#ghost .fg img{position:static;width:100%;height:100%;object-fit:cover;display:block}
 
 /* ================= DEBUG ================= */
 #debug{position:fixed;left:14px;bottom:44px;z-index:600;width:290px;background:#101014;color:#fff;
@@ -464,6 +476,12 @@ body.intro .tile,body.intro #linecell .sig,body.intro #ixnote{opacity:0;animatio
   .tile .ph::after{display:none} /* colour outline is desktop hover enhancement */
 
   /* Index — stacked analytical rows; structural top line (ixhead hidden on mobile) */
+  .x #galleryField{
+    min-height:calc(
+      (10 * (var(--nav-thumb-h) + 36px))
+      + 36px
+    );
+  }
   .x #colgrid{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--ink)}
   .x .tile{
     display:grid;

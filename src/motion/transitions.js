@@ -10,8 +10,8 @@
  * - statement excluded
  * - survivors remain visible
  * - quieter filterEase
- * - <16px snap
- * - >240px snap (perceptual decision to review later — not architectural)
+ * - <16px snap; large survivor moves FLIP (distance-scaled duration)
+ * - zero-survivor pairs: leave ghosts + immediate set swap (no blank field)
  * - mobile fade-only
  * - first interaction cancels intro
  */
@@ -27,8 +27,8 @@ export const FILTER_BASELINE_NOTES = [
   'statement excluded',
   'survivors remain visible',
   'quieter filterEase',
-  '<16px snap',
-  '>240px snap (perceptual decision — not architectural)',
+  '<16px snap; large survivor moves FLIP',
+  'zero-survivor leave ghosts (no blank field)',
   'mobile fade-only',
   'first interaction cancels intro',
 ];

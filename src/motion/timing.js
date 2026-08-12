@@ -7,11 +7,14 @@ export const TIMING = {
   view: 420,
   filterLeave: 110,
   filterFlip: 220,
+  /* Large compositional closes keep FLIP — duration eases out with distance. */
+  filterFlipMax: 420,
   filterEnter: 90,
-  /* Skip FLIP below this; large closes snap (subtraction > choreography).
-     filterMoveMax (>240px) is a perceptual decision to review later — not architectural. */
+  /* Skip only imperceptible moves. No upper snap ceiling — mixed snap/FLIP
+     across filter pairs was breaking parity with All↔Hospitality. */
   filterMoveMin: 16,
-  filterMoveMax: 240,
+  /* Desktop: Infinity via nullish check in Collection; mobile forces 0 (fade-only). */
+  filterMoveMax: 1e6,
   open: 430,
   closeFade: 180,
   close: 400,

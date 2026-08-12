@@ -2,11 +2,10 @@
  * Collection + filters — positioning statement stays outside gallery FLIP.
  * POSITIONING ≠ GALLERY: only .tile nodes participate in filter geometry.
  *
- * Filter baseline (preserve exactly):
- * - latest intent wins; immediate active filter; promise completion
- * - no stagger; leave primary; survivors do not fade; enter quietly
- * - thresholded desktop FLIP (<16 snap, >240 snap — perceptual); mobile fade-only
- * - no statement motion; no scroll drift
+ * Shared: filter STATE (sector, fhide, latest intent, lock).
+ * Divergent MOTION:
+ * - Visual: authored-field remove/restore; FLIP; zero-survivor leave ghosts.
+ * - Index: fixed table shell; rows only opacity in/out; no ghosts; no FLIP.
  */
 import { world, RM, $, acquire, release } from '../state/worldState.js';
 import { TIMING, cancelElementAnims, endIntro } from '../motion/transitions.js';
@@ -47,8 +46,71 @@ export function createCollection({
     });
   }
 
+  /**
+   * Lock Index field min-height to the full (unfiltered) stack so sparse
+   * filters leave whitespace inside the shell instead of collapsing the page.
+   */
+  function syncIndexFieldMin() {
+    const field = document.querySelector('#galleryField');
+    if (!field) return;
+    if (!document.body.classList.contains('x')) {
+      field.style.minHeight = '';
+      return;
+    }
+    const tiles = [...grid.querySelectorAll('.tile')];
+    const hidden = tiles.map((t) => t.classList.contains('fhide'));
+    tiles.forEach((t) => t.classList.remove('fhide'));
+    void field.offsetHeight;
+    const h = Math.ceil(field.getBoundingClientRect().height);
+    tiles.forEach((t, i) => t.classList.toggle('fhide', hidden[i]));
+    if (h > 0) field.style.minHeight = h + 'px';
+  }
+
+  function clearFilterGhosts() {
+    document.querySelectorAll('#ghost > .fg').forEach((el) => el.remove());
+  }
+
+  /** Visual only — leave ghosts when the visible set has no survivors. */
+  function spawnLeaveGhosts(leavers) {
+    const layer = $('#ghost');
+    if (!layer || !leavers.length) return [];
+    return leavers
+      .map((t) => {
+        const r = t.getBoundingClientRect();
+        if (r.width < 2 || r.height < 2) return null;
+        const g = document.createElement('div');
+        g.className = 'fg';
+        g.dataset.filterGhost = t.dataset.id || '';
+        g.style.left = r.left + 'px';
+        g.style.top = r.top + 'px';
+        g.style.width = r.width + 'px';
+        g.style.height = r.height + 'px';
+        g.style.opacity = '1';
+        const img = t.querySelector('.ph img');
+        if (img && img.currentSrc) {
+          const clone = document.createElement('img');
+          clone.src = img.currentSrc;
+          clone.alt = '';
+          g.appendChild(clone);
+        } else {
+          g.style.background = '#EFEFF1';
+        }
+        layer.appendChild(g);
+        return g;
+      })
+      .filter(Boolean);
+  }
+
+  function flipDurationFor(dist) {
+    const base = TIMING.filterFlip || 220;
+    const max = TIMING.filterFlipMax || 420;
+    if (dist <= 240) return base;
+    return Math.min(max, Math.round(base + (dist - 240) * 0.08));
+  }
+
   function cancelFilterMotion() {
     cancelElementAnims(grid.querySelectorAll('.tile'));
+    clearFilterGhosts();
     filterCtrl.animCount = 0;
   }
 
@@ -70,21 +132,90 @@ export function createCollection({
     release();
   }
 
-  async function transitionFilter(sec, gen) {
-    beginFilterLock();
-    filterCtrl.target = sec;
+  function classify(sec) {
     const tiles = [...grid.querySelectorAll('.tile')];
     const leaving = tiles.filter((t) => !t.classList.contains('fhide') && !filterWillShow(sec, t));
     const survivors = tiles.filter((t) => !t.classList.contains('fhide') && filterWillShow(sec, t));
     const entering = tiles.filter((t) => t.classList.contains('fhide') && filterWillShow(sec, t));
+    return { tiles, leaving, survivors, entering };
+  }
+
+  function applyShowHide(sec, tiles, entering, survivors, enterOpacity) {
+    document.body.classList.toggle('filtered', sec !== 'all');
+    tiles.forEach((t) => {
+      const show = filterWillShow(sec, t);
+      t.classList.toggle('fhide', !show);
+      if (!show) {
+        t.style.opacity = '';
+        t.style.transform = '';
+      }
+    });
+    entering.forEach((t) => {
+      t.style.opacity = enterOpacity;
+    });
+    survivors.forEach((t) => {
+      t.style.opacity = '';
+      t.style.transform = '';
+    });
+    void grid.offsetHeight;
+  }
+
+  function finishFilter(gen, sy0, leaving, survivors, entering) {
+    if (gen !== filterCtrl.gen) return false;
+    clearFilterGhosts();
+    survivors.forEach((t) => {
+      t.getAnimations().forEach((a) => {
+        try {
+          a.cancel();
+        } catch (_) {}
+      });
+      t.style.transform = '';
+      t.style.opacity = '';
+    });
+    entering.forEach((t) => {
+      t.getAnimations().forEach((a) => {
+        try {
+          a.cancel();
+        } catch (_) {}
+      });
+      t.style.opacity = '';
+    });
+    leaving.forEach((t) => {
+      t.style.opacity = '';
+    });
+    if (Math.abs(scrollY - sy0) > 0) scrollTo(0, sy0);
+    filterCtrl.phase = 'idle';
+    filterCtrl.target = null;
+    filterCtrl.animCount = 0;
+    filterCtrl.leavers = 0;
+    filterCtrl.survivors = 0;
+    filterCtrl.enterers = 0;
+    endFilterLock();
+    onDbg && onDbg();
+    return true;
+  }
+
+  /** Index — table shell fixed; rows opacity only; no ghosts; no FLIP. */
+  async function transitionFilterIndex(sec, gen) {
+    beginFilterLock();
+    filterCtrl.target = sec;
+    const { tiles, leaving, survivors, entering } = classify(sec);
     filterCtrl.leavers = leaving.length;
     filterCtrl.survivors = survivors.length;
     filterCtrl.enterers = entering.length;
     const sy0 = scrollY;
     onDbg && onDbg();
     try {
-      const before = new Map();
-      survivors.forEach((t) => before.set(t, t.getBoundingClientRect()));
+      clearFilterGhosts();
+      /* Drop residual view-switch FLIP transforms — Index filter is opacity-only. */
+      tiles.forEach((t) => {
+        t.getAnimations().forEach((a) => {
+          try {
+            a.cancel();
+          } catch (_) {}
+        });
+        t.style.transform = '';
+      });
 
       filterCtrl.phase = 'leaving';
       onDbg && onDbg();
@@ -122,30 +253,142 @@ export function createCollection({
 
       filterCtrl.phase = 'flipping';
       onDbg && onDbg();
-      document.body.classList.toggle('filtered', sec !== 'all');
-      tiles.forEach((t) => {
-        const show = filterWillShow(sec, t);
-        t.classList.toggle('fhide', !show);
-        if (!show) {
+      /* Survivors settle instantly in-table — no FLIP rides. */
+      applyShowHide(sec, tiles, entering, survivors, RM ? '' : '0.001');
+
+      filterCtrl.phase = 'entering';
+      const enterWait = [];
+      if (!RM) {
+        entering.forEach((t) => {
+          const an = t.animate([{ opacity: 0.001 }, { opacity: 1 }], {
+            duration: TIMING.filterEnter,
+            easing: TIMING.filterEase,
+            fill: 'forwards',
+          });
+          enterWait.push(
+            an.finished.then(
+              () => {
+                t.style.opacity = '1';
+                try {
+                  an.cancel();
+                } catch (_) {}
+                t.style.opacity = '';
+              },
+              () => {}
+            )
+          );
+        });
+      } else {
+        entering.forEach((t) => {
           t.style.opacity = '';
-          t.style.transform = '';
+        });
+      }
+      filterCtrl.animCount = enterWait.length;
+      onDbg && onDbg();
+      if (enterWait.length) await Promise.allSettled(enterWait);
+      finishFilter(gen, sy0, leaving, survivors, entering);
+    } catch (err) {
+      console.error('[tcc] filter index', err);
+      if (gen !== filterCtrl.gen) return;
+      cancelFilterMotion();
+      applyFilterLayout(sec);
+      filterCtrl.phase = 'idle';
+      filterCtrl.target = null;
+      filterCtrl.animCount = 0;
+      endFilterLock();
+      onDbg && onDbg();
+    }
+  }
+
+  /** Visual — authored field; FLIP; zero-survivor leave ghosts. */
+  async function transitionFilterVisual(sec, gen) {
+    beginFilterLock();
+    filterCtrl.target = sec;
+    const { tiles, leaving, survivors, entering } = classify(sec);
+    filterCtrl.leavers = leaving.length;
+    filterCtrl.survivors = survivors.length;
+    filterCtrl.enterers = entering.length;
+    const sy0 = scrollY;
+    const bridgeLeave = !RM && survivors.length === 0 && leaving.length > 0;
+    onDbg && onDbg();
+    try {
+      const before = new Map();
+      survivors.forEach((t) => before.set(t, t.getBoundingClientRect()));
+
+      clearFilterGhosts();
+      let ghostWait = [];
+      if (bridgeLeave) {
+        const ghosts = spawnLeaveGhosts(leaving);
+        filterCtrl.phase = 'leaving';
+        onDbg && onDbg();
+        ghostWait = ghosts.map((g) => {
+          const an = g.animate([{ opacity: 1 }, { opacity: 0 }], {
+            duration: TIMING.filterLeave,
+            easing: TIMING.filterEase,
+            fill: 'forwards',
+          });
+          return an.finished.then(
+            () => {
+              try {
+                an.cancel();
+              } catch (_) {}
+              g.remove();
+            },
+            () => {
+              try {
+                g.remove();
+              } catch (_) {}
+            }
+          );
+        });
+        filterCtrl.animCount = ghosts.length;
+        onDbg && onDbg();
+      } else {
+        filterCtrl.phase = 'leaving';
+        onDbg && onDbg();
+        if (!RM && leaving.length) {
+          const leaveWait = leaving.map((t) => {
+            const an = t.animate([{ opacity: 1 }, { opacity: 0 }], {
+              duration: TIMING.filterLeave,
+              easing: TIMING.filterEase,
+              fill: 'forwards',
+            });
+            return an.finished.then(
+              () => {
+                t.style.opacity = '0';
+                try {
+                  an.cancel();
+                } catch (_) {}
+              },
+              () => {}
+            );
+          });
+          filterCtrl.animCount = leaving.length;
+          onDbg && onDbg();
+          await Promise.allSettled(leaveWait);
+          if (gen !== filterCtrl.gen) return;
+          leaving.forEach((t) => {
+            t.style.opacity = '0';
+          });
+        } else {
+          leaving.forEach((t) => {
+            t.style.opacity = '0';
+          });
         }
-      });
-      entering.forEach((t) => {
-        /* Avoid a blank-frame reload feel: Index shows instantly; Visual starts near-visible. */
-        if (!document.body.classList.contains('x')) t.style.opacity = '0.001';
-      });
-      survivors.forEach((t) => {
-        t.style.opacity = '';
-      });
-      void grid.offsetHeight;
+      }
+
+      if (gen !== filterCtrl.gen) return;
+
+      filterCtrl.phase = 'flipping';
+      onDbg && onDbg();
+      applyShowHide(sec, tiles, entering, survivors, bridgeLeave || RM ? '' : '0.001');
 
       filterCtrl.phase = 'entering';
       const flipWait = [];
       const enterWait = [];
       const moveMin = TIMING.filterMoveMin || 16;
       const narrow = matchMedia('(max-width:767px)').matches;
-      const moveMax = narrow ? 0 : TIMING.filterMoveMax || 240;
+      const moveMax = narrow ? 0 : TIMING.filterMoveMax || 1e6;
       if (!RM) {
         survivors.forEach((t) => {
           const b = before.get(t),
@@ -156,7 +399,7 @@ export function createCollection({
           const dist = Math.hypot(dx, dy);
           if (dist < moveMin || dist > moveMax) return;
           const an = t.animate([{ transform: `translate(${dx}px,${dy}px)` }, { transform: 'none' }], {
-            duration: TIMING.filterFlip,
+            duration: flipDurationFor(dist),
             easing: TIMING.filterEase,
           });
           flipWait.push(
@@ -172,9 +415,7 @@ export function createCollection({
           );
         });
         entering.forEach((t) => {
-          /* Index: instant restore — mass fade reads as page reload.
-             Visual: quiet opacity resolve only (no stagger). */
-          if (document.body.classList.contains('x')) {
+          if (bridgeLeave) {
             t.style.opacity = '';
             return;
           }
@@ -197,43 +438,11 @@ export function createCollection({
           );
         });
       }
-      const allWait = [...flipWait, ...enterWait];
+      const allWait = [...ghostWait, ...flipWait, ...enterWait];
       filterCtrl.animCount = allWait.length;
       onDbg && onDbg();
       if (allWait.length) await Promise.allSettled(allWait);
-      if (gen !== filterCtrl.gen) return;
-
-      survivors.forEach((t) => {
-        t.getAnimations().forEach((a) => {
-          try {
-            a.cancel();
-          } catch (_) {}
-        });
-        t.style.transform = '';
-        t.style.opacity = '';
-      });
-      entering.forEach((t) => {
-        t.getAnimations().forEach((a) => {
-          try {
-            a.cancel();
-          } catch (_) {}
-        });
-        t.style.opacity = '';
-      });
-      leaving.forEach((t) => {
-        t.style.opacity = '';
-      });
-
-      if (Math.abs(scrollY - sy0) > 0) scrollTo(0, sy0);
-
-      filterCtrl.phase = 'idle';
-      filterCtrl.target = null;
-      filterCtrl.animCount = 0;
-      filterCtrl.leavers = 0;
-      filterCtrl.survivors = 0;
-      filterCtrl.enterers = 0;
-      endFilterLock();
-      onDbg && onDbg();
+      finishFilter(gen, sy0, leaving, survivors, entering);
     } catch (err) {
       console.error('[tcc] filter', err);
       if (gen !== filterCtrl.gen) return;
@@ -245,6 +454,11 @@ export function createCollection({
       endFilterLock();
       onDbg && onDbg();
     }
+  }
+
+  async function transitionFilter(sec, gen) {
+    if (document.body.classList.contains('x')) return transitionFilterIndex(sec, gen);
+    return transitionFilterVisual(sec, gen);
   }
 
   function setFilter(sec, quiet) {
@@ -307,6 +521,9 @@ export function createCollection({
 
   function bindFilters() {
     document.querySelectorAll('#filters .fbtn').forEach((b) => b.addEventListener('click', () => setFilter(b.dataset.f)));
+    addEventListener('resize', () => {
+      if (document.body.classList.contains('x')) syncIndexFieldMin();
+    });
   }
 
   return {
@@ -316,5 +533,6 @@ export function createCollection({
     bindFilters,
     applyFilterLayout,
     filterWillShow,
+    syncIndexFieldMin,
   };
 }

@@ -112,7 +112,9 @@ function setView(v,quiet){
   if(quiet){
     saveViewScroll();
     document.body.classList.toggle('x',v==='index');document.body.classList.toggle('g',v==='field');
-    world.view=v;$('#viewBtn').textContent=v==='index'?'Visual':'Index';dbg();return;
+    world.view=v;$('#viewBtn').textContent=v==='index'?'Visual':'Index';
+    collection.syncIndexFieldMin();
+    dbg();return;
   }
   endIntro();
   if(!withLock('view:'+world.view+'→'+v,()=>{
@@ -120,6 +122,7 @@ function setView(v,quiet){
     flipTiles(()=>{document.body.classList.toggle('x',v==='index');document.body.classList.toggle('g',v==='field')});
     world.view=v;
     $('#viewBtn').textContent = v==='index'?'Visual':'Index';
+    collection.syncIndexFieldMin();
     setTimeout(release,D(TIMING.view));
     syncHash(); dbg();
   })) return;
