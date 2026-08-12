@@ -1,0 +1,917 @@
+{
+  "cdn": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/",
+  "source": "https://www.thecolourclub.com.au/",
+  "collected": "2026-08-11",
+  "projects": {
+    "dopa": {
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/dopa",
+      "images": [
+        {
+          "file": "dopa-01.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2516.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909f1c91b27e62421d16_TCCWEB-Portfolio-DOPA2516.jpg"
+        },
+        {
+          "file": "dopa-02.jpg",
+          "original": "TCCWEB-Portfolio-DOPA256.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909c9015e3306595a800_TCCWEB-Portfolio-DOPA256.jpg"
+        },
+        {
+          "file": "dopa-03.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2522.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/689990a1a29ca9526fbb717e_TCCWEB-Portfolio-DOPA2522.jpg"
+        },
+        {
+          "file": "dopa-04.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2523.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/689990a2c224377bdbb6e9f1_TCCWEB-Portfolio-DOPA2523.jpg"
+        },
+        {
+          "file": "dopa-05.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2521.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/689990a2994a3292bd473ff8_TCCWEB-Portfolio-DOPA2521.jpg"
+        },
+        {
+          "file": "dopa-06.jpg",
+          "original": "TCCWEB-Portfolio-DOPA254.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909c25b4bd30a65d9370_TCCWEB-Portfolio-DOPA254.jpg"
+        },
+        {
+          "file": "dopa-07.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2518.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/689990a07ccfd9626d9a0f3e_TCCWEB-Portfolio-DOPA2518.jpg"
+        },
+        {
+          "file": "dopa-08.jpg",
+          "original": "TCCWEB-Portfolio-DOPA253.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909b5c2cadc9021afa6b_TCCWEB-Portfolio-DOPA253.jpg"
+        },
+        {
+          "file": "dopa-09.jpg",
+          "original": "TCCWEB-Portfolio-DOPA252.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909be5c678660b587fa7_TCCWEB-Portfolio-DOPA252.jpg"
+        },
+        {
+          "file": "dopa-10.jpg",
+          "original": "TCCWEB-Portfolio-DOPA25.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909c47e2cd37f87e6b89_TCCWEB-Portfolio-DOPA25.jpg"
+        },
+        {
+          "file": "dopa-11.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2517.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909f5fda72cb89c86f5f_TCCWEB-Portfolio-DOPA2517.jpg"
+        },
+        {
+          "file": "dopa-12.jpg",
+          "original": "TCCWEB-Portfolio-DOPA257.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909d9569b1d97131ef76_TCCWEB-Portfolio-DOPA257.jpg"
+        },
+        {
+          "file": "dopa-13.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2511.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909e4e23815c06cfd082_TCCWEB-Portfolio-DOPA2511.jpg"
+        },
+        {
+          "file": "dopa-14.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2510.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909e7eaf57af4a8a6508_TCCWEB-Portfolio-DOPA2510.jpg"
+        },
+        {
+          "file": "dopa-15.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2514.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909fdd99b37c6c97f331_TCCWEB-Portfolio-DOPA2514.jpg"
+        },
+        {
+          "file": "dopa-16.jpg",
+          "original": "TCCWEB-Portfolio-DOPA255.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909c7a02f53481d2099b_TCCWEB-Portfolio-DOPA255.jpg"
+        },
+        {
+          "file": "dopa-17.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2513.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909e6cfaadffedcb3e56_TCCWEB-Portfolio-DOPA2513.jpg"
+        },
+        {
+          "file": "dopa-18.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2512.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909eb31ee09bfd2559c6_TCCWEB-Portfolio-DOPA2512.jpg"
+        },
+        {
+          "file": "dopa-19.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2520.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/689990a10de146c48307875c_TCCWEB-Portfolio-DOPA2520.jpg"
+        },
+        {
+          "file": "dopa-20.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2515.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909f2cd8d9103a1d901f_TCCWEB-Portfolio-DOPA2515.jpg"
+        }
+      ],
+      "videos": [
+        {
+          "type": "video",
+          "provider": "vidzflow",
+          "id": "xQb7BhNBtq",
+          "at": 5,
+          "embed": "https://app.vidzflow.com/v/xQb7BhNBtq",
+          "status": "source file required from TCC"
+        }
+      ]
+    },
+    "roy": {
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/our-boy-roy",
+      "images": [
+        {
+          "file": "roy-01.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2521.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e3d95d1792ba732a61b_TCCWEB-Portfolio-OurBoy%20Roy2521.jpg"
+        },
+        {
+          "file": "roy-02.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy25.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e360c36514c0cba573f_TCCWEB-Portfolio-OurBoy%20Roy25.jpg"
+        },
+        {
+          "file": "roy-03.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy253.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e359dfa156613544787_TCCWEB-Portfolio-OurBoy%20Roy253.jpg"
+        },
+        {
+          "file": "roy-04.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2513.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e3951dba89b83db76d8_TCCWEB-Portfolio-OurBoy%20Roy2513.jpg"
+        },
+        {
+          "file": "roy-05.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2512.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e39eaf288ace9b73d81_TCCWEB-Portfolio-OurBoy%20Roy2512.jpg"
+        },
+        {
+          "file": "roy-06.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy259.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e3b14645288bd9eaa17_TCCWEB-Portfolio-OurBoy%20Roy259.jpg"
+        },
+        {
+          "file": "roy-07.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2523.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e3da5ba67cb16600f8e_TCCWEB-Portfolio-OurBoy%20Roy2523.jpg"
+        },
+        {
+          "file": "roy-08.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2522.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e3bf72b3529e22e4876_TCCWEB-Portfolio-OurBoy%20Roy2522.jpg"
+        },
+        {
+          "file": "roy-09.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2517.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e3a84f7c1bd72eb5098_TCCWEB-Portfolio-OurBoy%20Roy2517.jpg"
+        },
+        {
+          "file": "roy-10.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2518.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e3a98b01bb1862b708d_TCCWEB-Portfolio-OurBoy%20Roy2518.jpg"
+        },
+        {
+          "file": "roy-11.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2514.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e3922483c14cf53ca66_TCCWEB-Portfolio-OurBoy%20Roy2514.jpg"
+        },
+        {
+          "file": "roy-12.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2511.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e395c7b9a0f2d299926_TCCWEB-Portfolio-OurBoy%20Roy2511.jpg"
+        },
+        {
+          "file": "roy-13.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy258.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e373ba9736d97a28b84_TCCWEB-Portfolio-OurBoy%20Roy258.jpg"
+        },
+        {
+          "file": "roy-14.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy256.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e377d9a7fe7285c7d89_TCCWEB-Portfolio-OurBoy%20Roy256.jpg"
+        },
+        {
+          "file": "roy-15.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy255.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e36072e4a0f10929ecc_TCCWEB-Portfolio-OurBoy%20Roy255.jpg"
+        },
+        {
+          "file": "roy-16.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2510.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e386167c64cd84a0a7a_TCCWEB-Portfolio-OurBoy%20Roy2510.jpg"
+        },
+        {
+          "file": "roy-17.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy254.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e368c5b413f275d83f6_TCCWEB-Portfolio-OurBoy%20Roy254.jpg"
+        }
+      ],
+      "videos": [
+        {
+          "type": "video",
+          "provider": "vidzflow",
+          "id": "nAo7fzfRJ2",
+          "at": 3,
+          "embed": "https://app.vidzflow.com/v/nAo7fzfRJ2",
+          "status": "source file required from TCC"
+        },
+        {
+          "type": "video",
+          "provider": "vidzflow",
+          "id": "8PoNqcgfZC",
+          "at": null,
+          "embed": "https://app.vidzflow.com/v/8PoNqcgfZC",
+          "status": "archive-tile film only — source file required from TCC"
+        }
+      ]
+    },
+    "gella": {
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/gellafrenda",
+      "images": [
+        {
+          "file": "gella-01.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2510.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba34518fd46840645ebc43_TCCWEB-Portfolio-GellaFrenda2510.jpg"
+        },
+        {
+          "file": "gella-02.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda256.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba344f8926327d80931104_TCCWEB-Portfolio-GellaFrenda256.jpg"
+        },
+        {
+          "file": "gella-03.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda252.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba344e10c0167e8ee3e8b7_TCCWEB-Portfolio-GellaFrenda252.jpg"
+        },
+        {
+          "file": "gella-04.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2514.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba3452347bdd9dadf43da5_TCCWEB-Portfolio-GellaFrenda2514.jpg"
+        },
+        {
+          "file": "gella-05.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda259.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba3450afb16ed5ab5262cd_TCCWEB-Portfolio-GellaFrenda259.jpg"
+        },
+        {
+          "file": "gella-06.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda253.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba344d5093c65a8e52a16e_TCCWEB-Portfolio-GellaFrenda253.jpg"
+        },
+        {
+          "file": "gella-07.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda257.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba344f563f193104030f8b_TCCWEB-Portfolio-GellaFrenda257.jpg"
+        },
+        {
+          "file": "gella-08.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2511.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba3451d6b690efb17dccaf_TCCWEB-Portfolio-GellaFrenda2511.jpg"
+        },
+        {
+          "file": "gella-09.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda255.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba344e274c06f2a8a67eda_TCCWEB-Portfolio-GellaFrenda255.jpg"
+        },
+        {
+          "file": "gella-10.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda258.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba344f5e6648a02f629a26_TCCWEB-Portfolio-GellaFrenda258.jpg"
+        },
+        {
+          "file": "gella-11.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2512.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba3451155019bf90532a82_TCCWEB-Portfolio-GellaFrenda2512.jpg"
+        },
+        {
+          "file": "gella-12.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda25.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba344db10235042ce381bb_TCCWEB-Portfolio-GellaFrenda25.jpg"
+        },
+        {
+          "file": "gella-13.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2515.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba34528cd7f24d20a35b47_TCCWEB-Portfolio-GellaFrenda2515.jpg"
+        },
+        {
+          "file": "gella-14.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2516.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba34529c8dcb8bdcbb7fd8_TCCWEB-Portfolio-GellaFrenda2516.jpg"
+        },
+        {
+          "file": "gella-15.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2522.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba3882c627052e3cdc6d26_TCCWEB-Portfolio-GellaFrenda2522.jpg"
+        },
+        {
+          "file": "gella-16.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2521.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba3882b5ac8f8b5f82c8c3_TCCWEB-Portfolio-GellaFrenda2521.jpg"
+        },
+        {
+          "file": "gella-17.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2517.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba388a6bbb562c32f07f6f_TCCWEB-Portfolio-GellaFrenda2517.jpg"
+        },
+        {
+          "file": "gella-18.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2518.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba34535db3e30451432309_TCCWEB-Portfolio-GellaFrenda2518.jpg"
+        }
+      ],
+      "videos": [
+        {
+          "type": "video",
+          "provider": "dropbox",
+          "file": "gella-food-animation.mp4",
+          "at": 9,
+          "src": "https://www.dropbox.com/scl/fi/m6l601vzcj5ehrzz2m12z/GellaFrenda-Food-Animation.mp4?rlkey=2tpjwkzo7480jtl79f91syhv3&st=jb9o4q5l&raw=1",
+          "status": "directly downloadable — collect-assets.sh fetches it"
+        }
+      ]
+    },
+    "willing": {
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/willing-distillery",
+      "images": [
+        {
+          "file": "willing-01.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2510.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea4e6ac1c4fd6697725_TCCWEB-Portfolio-Willing_2510.jpg"
+        },
+        {
+          "file": "willing-02.jpg",
+          "original": "TCCWEB-Portfolio-Willing_25.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea2907dc3b9a418b1d3_TCCWEB-Portfolio-Willing_25.jpg"
+        },
+        {
+          "file": "willing-03.jpg",
+          "original": "TCCWEB-Portfolio-Willing_255.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea2e6ac18409f74ba94_TCCWEB-Portfolio-Willing_255.jpg"
+        },
+        {
+          "file": "willing-04.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2517.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea5d181a09470811e81_TCCWEB-Portfolio-Willing_2517.jpg"
+        },
+        {
+          "file": "willing-05.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2520.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d3697cdc2e4a01635d3a08_TCCWEB-Portfolio-Willing_2520.jpg"
+        },
+        {
+          "file": "willing-06.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2516.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d3697b5eb8a35247ea9ce1_TCCWEB-Portfolio-Willing_2516.jpg"
+        },
+        {
+          "file": "willing-07.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2518.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea6bb012c89c73df937_TCCWEB-Portfolio-Willing_2518.jpg"
+        },
+        {
+          "file": "willing-08.jpg",
+          "original": "TCCWEB-Portfolio-Willing_256.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea3cd23ce9d4982421b_TCCWEB-Portfolio-Willing_256.jpg"
+        },
+        {
+          "file": "willing-09.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2514.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea5339fa2b333e28e9b_TCCWEB-Portfolio-Willing_2514.jpg"
+        },
+        {
+          "file": "willing-10.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2513.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d3697b5ae22f7abd09ae9e_TCCWEB-Portfolio-Willing_2513.jpg"
+        },
+        {
+          "file": "willing-11.jpg",
+          "original": "TCCWEB-Portfolio-Willing_254.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea2641ad6de5b960d76_TCCWEB-Portfolio-Willing_254.jpg"
+        },
+        {
+          "file": "willing-12.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2511.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea4be805d2a1b9592f4_TCCWEB-Portfolio-Willing_2511.jpg"
+        },
+        {
+          "file": "willing-13.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2512.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea4e4db883cb1d096a8_TCCWEB-Portfolio-Willing_2512.jpg"
+        },
+        {
+          "file": "willing-14.jpg",
+          "original": "TCCWEB-Portfolio-Willing_253.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea20145874386aa633c_TCCWEB-Portfolio-Willing_253.jpg"
+        },
+        {
+          "file": "willing-15.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2514.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d3697be6f05b133b0f6fcb_TCCWEB-Portfolio-Willing_2514.jpg"
+        },
+        {
+          "file": "willing-16.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2516.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea5f161249a505d22ab_TCCWEB-Portfolio-Willing_2516.jpg"
+        },
+        {
+          "file": "willing-17.jpg",
+          "original": "TCCWEB-Portfolio-Willing_259.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea2fdc38612485369b7_TCCWEB-Portfolio-Willing_259.jpg"
+        },
+        {
+          "file": "willing-18.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2520.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea6af6bb27bda5c80dd_TCCWEB-Portfolio-Willing_2520.jpg"
+        },
+        {
+          "file": "willing-19.jpg",
+          "original": "TCCWEB-Portfolio-Willing_258.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea20145874386aa638c_TCCWEB-Portfolio-Willing_258.jpg"
+        },
+        {
+          "file": "willing-20.jpg",
+          "original": "TCCWEB-Portfolio-Willing_257.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea29f5d2bbd3e6163fc_TCCWEB-Portfolio-Willing_257.jpg"
+        },
+        {
+          "file": "willing-21.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2521.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d3697cea8ae38a239d8308_TCCWEB-Portfolio-Willing_2521.jpg"
+        }
+      ],
+      "videos": []
+    },
+    "sub3": {
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/sub-3-running",
+      "images": [
+        {
+          "file": "sub3-01.jpg",
+          "original": "TCCWEB-SUB331.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08e0349c9a385cf40ee_TCCWEB-SUB331.jpg"
+        },
+        {
+          "file": "sub3-02.jpg",
+          "original": "TCCWEB-SUB3.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f0900db36cef526c7d28_TCCWEB-SUB3.jpg"
+        },
+        {
+          "file": "sub3-03.jpg",
+          "original": "TCCWEB-SUB322.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f090a30c0622e7382f63_TCCWEB-SUB322.jpg"
+        },
+        {
+          "file": "sub3-04.jpg",
+          "original": "TCCWEB-SUB330.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f090f2bef3c956266fe9_TCCWEB-SUB330.jpg"
+        },
+        {
+          "file": "sub3-05.gif",
+          "original": "TCCWEB-SUB3-SKUBARGIF.gif",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b53ec97528aa405355217e_TCCWEB-SUB3-SKUBARGIF.gif"
+        },
+        {
+          "file": "sub3-06.jpg",
+          "original": "TCCWEB-SUB35.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b53e1456d5157f3635f17d_TCCWEB-SUB35.jpg"
+        },
+        {
+          "file": "sub3-07.jpg",
+          "original": "TCCWEBR2-SUB33.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b7aabe2d0fddb4b8434d69_TCCWEBR2-SUB33.jpg"
+        },
+        {
+          "file": "sub3-08.gif",
+          "original": "TCCWEB-SUB3-PackGIF.gif",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b7908cf78295b3fea1821e_TCCWEB-SUB3-PackGIF.gif"
+        },
+        {
+          "file": "sub3-09.jpg",
+          "original": "Sub3_Berry_back_BG2_F.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b5305a2ab674a24f88a47b_Sub3_Berry_back_BG2_F.jpg"
+        },
+        {
+          "file": "sub3-10.jpg",
+          "original": "Sub3_Berry_front_BG2_F.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b5305a82c328140e0b5b76_Sub3_Berry_front_BG2_F.jpg"
+        },
+        {
+          "file": "sub3-11.jpg",
+          "original": "TCCWEB-SUB33.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08c723be6c506121592_TCCWEB-SUB33.jpg"
+        },
+        {
+          "file": "sub3-12.jpg",
+          "original": "TCCWEB-SUB315.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08bd4f227d564622fcc_TCCWEB-SUB315.jpg"
+        },
+        {
+          "file": "sub3-13.jpg",
+          "original": "TCCWEB-SUB327.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08ff83c98700c32a719_TCCWEB-SUB327.jpg"
+        },
+        {
+          "file": "sub3-14.jpg",
+          "original": "TCCWEB-SUB328.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08f2fbb2acaddd1e1a4_TCCWEB-SUB328.jpg"
+        },
+        {
+          "file": "sub3-15.jpg",
+          "original": "TCCWEBR2-SUB37b.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b7c706fe820b5e5e400aaf_TCCWEBR2-SUB37b.jpg"
+        },
+        {
+          "file": "sub3-16.jpg",
+          "original": "TCCWEBR2-SUB34.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b7b6f326cf62308c62c93a_TCCWEBR2-SUB34.jpg"
+        },
+        {
+          "file": "sub3-17.jpg",
+          "original": "TCCWEB-SUB34.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f090e4876ff3e9af879d_TCCWEB-SUB34.jpg"
+        },
+        {
+          "file": "sub3-18.jpg",
+          "original": "Sub3_Pine Lime_front_BG2_F.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b5305a0e4aed768976e8e4_Sub3_Pine%20Lime_front_BG2_F.jpg"
+        },
+        {
+          "file": "sub3-19.jpg",
+          "original": "Sub3_Pine Lime_back_BG2_F.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b5305ad10233930196e86a_Sub3_Pine%20Lime_back_BG2_F.jpg"
+        },
+        {
+          "file": "sub3-20.jpg",
+          "original": "TCCWEBR2-SUB3.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b7aabe71745df27e22153a_TCCWEBR2-SUB3.jpg"
+        },
+        {
+          "file": "sub3-21.jpg",
+          "original": "TCCWEB-SUB329.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08c65f96dd370be2638_TCCWEB-SUB329.jpg"
+        },
+        {
+          "file": "sub3-22.jpg",
+          "original": "TCCWEB-SUB314.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08fcbebc1cd8d6ea15e_TCCWEB-SUB314.jpg"
+        },
+        {
+          "file": "sub3-23.jpg",
+          "original": "TCCWEB-SUB316.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08c2b145230000d2fad_TCCWEB-SUB316.jpg"
+        },
+        {
+          "file": "sub3-24.jpg",
+          "original": "TCCWEBR2-SUB36.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b7aac008b605dd80d3f22b_TCCWEBR2-SUB36.jpg"
+        },
+        {
+          "file": "sub3-25.jpg",
+          "original": "TCCWEB-SUB326.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08dd0f80cfb0a99bcc4_TCCWEB-SUB326.jpg"
+        }
+      ],
+      "videos": [
+        {
+          "type": "video",
+          "provider": "vidzflow",
+          "id": "XrKxaeFOEC",
+          "at": 2,
+          "embed": "https://app.vidzflow.com/v/XrKxaeFOEC",
+          "status": "source file required from TCC — player is stream-only"
+        },
+        {
+          "type": "video",
+          "provider": "vidzflow",
+          "id": "AtrFBhQc0V",
+          "at": 11,
+          "embed": "https://app.vidzflow.com/v/AtrFBhQc0V",
+          "status": "source file required from TCC — also used as archive tile on live site"
+        }
+      ]
+    },
+    "fishfish": {
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/fish-fish",
+      "images": [
+        {
+          "file": "fishfish-01.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25214.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f36cb7ca6636c99348f_TCCWEB-Portfolio-FishFish25214.jpg"
+        },
+        {
+          "file": "fishfish-02.jpg",
+          "original": "TCCWEB-Portfolio-FishFish252.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f3762449984d556bf74_TCCWEB-Portfolio-FishFish252.jpg"
+        },
+        {
+          "file": "fishfish-03.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25212.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f351d18806adc6256bc_TCCWEB-Portfolio-FishFish25212.jpg"
+        },
+        {
+          "file": "fishfish-04.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25211.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f37cc8f11cd8641e47e_TCCWEB-Portfolio-FishFish25211.jpg"
+        },
+        {
+          "file": "fishfish-05.jpg",
+          "original": "TCCWEB-Portfolio-FishFish2523.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f35ecaf8f1e72a8e76b_TCCWEB-Portfolio-FishFish2523.jpg"
+        },
+        {
+          "file": "fishfish-06.jpg",
+          "original": "TCCWEB-Portfolio-FishFish2523.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba2bccea3369c891222fe1_TCCWEB-Portfolio-FishFish2523.jpg"
+        },
+        {
+          "file": "fishfish-07.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25211.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba2bcea6c147c39641dae0_TCCWEB-Portfolio-FishFish25211.jpg"
+        },
+        {
+          "file": "fishfish-08.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25210.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba2bce8534cfb960e3e59f_TCCWEB-Portfolio-FishFish25210.jpg"
+        },
+        {
+          "file": "fishfish-09.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25219.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba2bd09335b05e6d613e05_TCCWEB-Portfolio-FishFish25219.jpg"
+        },
+        {
+          "file": "fishfish-10.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25216.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba2bd0fdbedff955523f42_TCCWEB-Portfolio-FishFish25216.jpg"
+        },
+        {
+          "file": "fishfish-11.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25217.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f36c645fa38921f592b_TCCWEB-Portfolio-FishFish25217.jpg"
+        },
+        {
+          "file": "fishfish-12.jpg",
+          "original": "TCCWEB-Portfolio-FishFish2525.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f35beb2c99824b2f7e6_TCCWEB-Portfolio-FishFish2525.jpg"
+        },
+        {
+          "file": "fishfish-13.jpg",
+          "original": "TCCWEB-Portfolio-FishFish2528.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f37f0cec461544f7f2b_TCCWEB-Portfolio-FishFish2528.jpg"
+        },
+        {
+          "file": "fishfish-14.jpg",
+          "original": "TCCWEB-Portfolio-FishFish2529.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba2bce5f9745404a81db7e_TCCWEB-Portfolio-FishFish2529.jpg"
+        },
+        {
+          "file": "fishfish-15.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25221.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba2bd11f302fb0dec90b65_TCCWEB-Portfolio-FishFish25221.jpg"
+        },
+        {
+          "file": "fishfish-16.jpg",
+          "original": "TCCWEB-Portfolio-FishFish2526.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f376535ffea8bffca02_TCCWEB-Portfolio-FishFish2526.jpg"
+        }
+      ],
+      "videos": [
+        {
+          "type": "video",
+          "provider": "vidzflow",
+          "id": "azlhVm1ZZb",
+          "at": 2,
+          "embed": "https://app.vidzflow.com/v/azlhVm1ZZb",
+          "status": "source file required from TCC — also used as archive tile"
+        }
+      ]
+    },
+    "macabalm": {
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/macabalm",
+      "images": [
+        {
+          "file": "macabalm-01.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2521.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b402e968bee7cf107e_TCCWEB-Portfolio-Macabalm2521.jpg"
+        },
+        {
+          "file": "macabalm-02.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm252.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51afa9430d542b9aaaf4_TCCWEB-Portfolio-Macabalm252.jpg"
+        },
+        {
+          "file": "macabalm-03.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm253.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51af52371735c4d85c1a_TCCWEB-Portfolio-Macabalm253.jpg"
+        },
+        {
+          "file": "macabalm-04.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2523.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b442f3d9155e1a4674_TCCWEB-Portfolio-Macabalm2523.jpg"
+        },
+        {
+          "file": "macabalm-05.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2524.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b44945b14fc163fc3f_TCCWEB-Portfolio-Macabalm2524.jpg"
+        },
+        {
+          "file": "macabalm-06.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm254.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51af40f14fe253057efb_TCCWEB-Portfolio-Macabalm254.jpg"
+        },
+        {
+          "file": "macabalm-07.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm258.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b0a7b132f657db4820_TCCWEB-Portfolio-Macabalm258.jpg"
+        },
+        {
+          "file": "macabalm-08.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm25.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51afd363383be24c41c0_TCCWEB-Portfolio-Macabalm25.jpg"
+        },
+        {
+          "file": "macabalm-09.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2522.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b399b528e7dfa63762_TCCWEB-Portfolio-Macabalm2522.jpg"
+        },
+        {
+          "file": "macabalm-10.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm254a.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da364d54c963940c1e6590_TCCWEB-Portfolio-Macabalm254a.jpg"
+        },
+        {
+          "file": "macabalm-11.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm256.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51afb87136ffb5371f5f_TCCWEB-Portfolio-Macabalm256.jpg"
+        },
+        {
+          "file": "macabalm-12.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm25.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da364dd3a577157bd5a5ac_TCCWEB-Portfolio-Macabalm25.jpg"
+        },
+        {
+          "file": "macabalm-13.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2513.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b097f4802886850d90_TCCWEB-Portfolio-Macabalm2513.jpg"
+        },
+        {
+          "file": "macabalm-14.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2514.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b09e74c6b09be2da88_TCCWEB-Portfolio-Macabalm2514.jpg"
+        },
+        {
+          "file": "macabalm-15.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2515.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b10e2e19d4e579ac9d_TCCWEB-Portfolio-Macabalm2515.jpg"
+        },
+        {
+          "file": "macabalm-16.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2520.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b31bd2454de58b4ba0_TCCWEB-Portfolio-Macabalm2520.jpg"
+        },
+        {
+          "file": "macabalm-17.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm255a.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da364d6a0083b482c0cfbd_TCCWEB-Portfolio-Macabalm255a.jpg"
+        },
+        {
+          "file": "macabalm-18.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2511.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b08094c8a92ad55421_TCCWEB-Portfolio-Macabalm2511.jpg"
+        },
+        {
+          "file": "macabalm-19.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm252a.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da364cceeeef205e2fc1d3_TCCWEB-Portfolio-Macabalm252a.jpg"
+        }
+      ],
+      "videos": []
+    },
+    "lucky": {
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/lucky-boy",
+      "images": [
+        {
+          "file": "lucky-01.jpg",
+          "original": "TCCWEB-Portfolio-LuckyBoy_2514.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba468ad66d08ad06f620e5_TCCWEB-Portfolio-LuckyBoy_2514.jpg"
+        },
+        {
+          "file": "lucky-02.jpg",
+          "original": "TCCWEB-Portfolio-LuckyBoy_257.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba468824e010f8bc03a78d_TCCWEB-Portfolio-LuckyBoy_257.jpg"
+        },
+        {
+          "file": "lucky-03.jpg",
+          "original": "TCCWEB-Portfolio-LuckyBoy_255.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba4688950819ef6cbab23c_TCCWEB-Portfolio-LuckyBoy_255.jpg"
+        },
+        {
+          "file": "lucky-04.jpg",
+          "original": "TCCWEB-Portfolio-LuckyBoy_252.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba4687ef6e48c67fa5d8de_TCCWEB-Portfolio-LuckyBoy_252.jpg"
+        },
+        {
+          "file": "lucky-05.jpg",
+          "original": "TCCWEB-Portfolio-LuckyBoy_2516.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba468a3a8b738d235a6e44_TCCWEB-Portfolio-LuckyBoy_2516.jpg"
+        },
+        {
+          "file": "lucky-06.jpg",
+          "original": "TCCWEB-Portfolio-LuckyBoy_2513.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba468aaffccc2853d61c57_TCCWEB-Portfolio-LuckyBoy_2513.jpg"
+        },
+        {
+          "file": "lucky-07.jpg",
+          "original": "TCCWEB-Portfolio-LuckyBoy_254.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba4688a904e25fd2f80c9d_TCCWEB-Portfolio-LuckyBoy_254.jpg"
+        }
+      ],
+      "videos": []
+    },
+    "tsukiyo": {
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/tsukiyo",
+      "images": [
+        {
+          "file": "tsukiyo-01.jpg",
+          "original": "TCCWEB-Portfolio-Tsukiyo_253.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e8392edc49b3299e5e3_TCCWEB-Portfolio-Tsukiyo_253.jpg"
+        },
+        {
+          "file": "tsukiyo-02.jpg",
+          "original": "TCCWEB-Portfolio-Tsukiyo_2512.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e85dfc491abc21024e0_TCCWEB-Portfolio-Tsukiyo_2512.jpg"
+        },
+        {
+          "file": "tsukiyo-03.jpg",
+          "original": "TCCWEB-Portfolio-Tsukiyo_2514.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e87386db9e9e3f2c1a9_TCCWEB-Portfolio-Tsukiyo_2514.jpg"
+        },
+        {
+          "file": "tsukiyo-04.jpg",
+          "original": "TCCWEB-Portfolio-Tsukiyo_2513.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e836bc49232f954bd19_TCCWEB-Portfolio-Tsukiyo_2513.jpg"
+        },
+        {
+          "file": "tsukiyo-05.jpg",
+          "original": "TCCWEB-Portfolio-Tsukiyo_25.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e8554aefbf82f44058b_TCCWEB-Portfolio-Tsukiyo_25.jpg"
+        },
+        {
+          "file": "tsukiyo-06.jpg",
+          "original": "TCCWEB-Portfolio-Tsukiyo_257.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e81237840a1dc7bea5b_TCCWEB-Portfolio-Tsukiyo_257.jpg"
+        },
+        {
+          "file": "tsukiyo-07.jpg",
+          "original": "TCCWEB-Portfolio-Tsukiyo_256.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e85f22c9aa93fae22d3_TCCWEB-Portfolio-Tsukiyo_256.jpg"
+        }
+      ],
+      "videos": []
+    },
+    "microsoft": {
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/microsoft",
+      "images": [
+        {
+          "file": "microsoft-01.jpg",
+          "original": "TCCWEB-Portfolio-Microsoft12.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68db4b164c626bbe0db5d75d_TCCWEB-Portfolio-Microsoft12.jpg"
+        },
+        {
+          "file": "microsoft-02.jpg",
+          "original": "TCCWEB-Portfolio-Microsoft9.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68db4b15174ea9ad6675d058_TCCWEB-Portfolio-Microsoft9.jpg"
+        },
+        {
+          "file": "microsoft-03.jpg",
+          "original": "TCCWEB-Portfolio-Microsoft16.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68db4b17a1c385074daf6458_TCCWEB-Portfolio-Microsoft16.jpg"
+        },
+        {
+          "file": "microsoft-04.jpg",
+          "original": "TCCWEB-Portfolio-Microsoft7.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68db4b14942c9cc3d4ab56bd_TCCWEB-Portfolio-Microsoft7.jpg"
+        },
+        {
+          "file": "microsoft-05.jpg",
+          "original": "TCCWEB-Portfolio-Microsoft8.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68db4b15af247aea33a61e71_TCCWEB-Portfolio-Microsoft8.jpg"
+        },
+        {
+          "file": "microsoft-06.jpg",
+          "original": "TCCWEB-Portfolio-Microsoft4.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68db4b138e43763cd41a6818_TCCWEB-Portfolio-Microsoft4.jpg"
+        },
+        {
+          "file": "microsoft-07.jpg",
+          "original": "TCCWEB-Portfolio-Microsoft3.jpg",
+          "src": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68db4b1370606f40973730f9_TCCWEB-Portfolio-Microsoft3.jpg"
+        }
+      ],
+      "videos": []
+    }
+  },
+  "notes": {
+    "vidzflow": "app.vidzflow.com is unreachable from the build sandbox (fetch tool refuses host; egress proxy blocks it). Player config/HLS could not be inspected. collect-assets.sh includes a best-effort yt-dlp block for local extraction; otherwise request source MP4s from Nick for the six IDs above.",
+    "assets_typed": "Gallery consumers must branch on type: image | video. Editorial position is `at` = number of images preceding the item on the live page (hero inclusive)."
+  }
+}

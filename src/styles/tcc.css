@@ -1,0 +1,266 @@
+/* ============================================================
+   R02 DESIGN BASELINE, RETYPED.
+   One family (stand-in pending TCC font verification), three
+   weights, four levels: identity / interface / body / metadata.
+   Blue has one job: pointing at work (object focus).
+   ============================================================ */
+:root{
+  --ink:#101014;
+  --sub:#8A8A8A;
+  --line:#E4E5E9;
+  --blue:#4E5FFD;
+  --paper:#FFFFFF;
+  --page-edge:17px;
+  --sans:'Familjen Grotesk',Helvetica,Arial,sans-serif;   /* stand-in — swap for confirmed TCC family */
+  --t-large:clamp(44px,4.8vw,58px);
+  --t-med:22px;
+  --t-primary:15px;
+  --t-secondary:12px;
+  --ease:cubic-bezier(.32,.94,.35,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:var(--paper)}
+body{font-family:var(--sans);color:var(--ink);font-size:var(--t-primary);line-height:1.55;-webkit-font-smoothing:antialiased}
+body.locked{overflow:hidden}
+img{display:block;width:100%;height:auto;background:#EFEFF1}
+/* navigation thumbnails are the only sanctioned crops */
+.sth img,.x .tile .ph img{height:100%;object-fit:cover}
+#heroImg{height:100%;object-fit:cover}
+button{font:inherit;background:none;border:none;cursor:pointer;color:inherit;padding:0}
+::selection{background:var(--blue);color:#fff}
+
+/* ================= CHROME (R02 placement, plain type) ================= */
+#chrome{position:fixed;top:0;left:0;right:0;height:52px;display:flex;align-items:center;
+  padding:0 var(--page-edge);z-index:400;background:linear-gradient(#fff 62%,rgba(255,255,255,0));pointer-events:none}
+#chrome>*{pointer-events:auto}
+#chrome .brand{font-weight:500;font-size:var(--t-primary);letter-spacing:-.01em;cursor:pointer}
+#chrome .ctr{margin-left:64px;display:flex;align-items:baseline;gap:0}
+#viewBtn{margin-right:64px}
+#filters{display:flex;gap:14px;margin-right:64px}
+#filters .fbtn{opacity:.4}
+#filters .fbtn:hover{opacity:1}
+#filters .fbtn.on{opacity:1}
+body.proj #filters{display:none}
+.ctl{font-size:var(--t-primary);color:var(--ink);opacity:.55;transition:opacity .15s}
+.ctl:hover{opacity:1}
+.ctl.on{opacity:1}
+#pchrome{display:none;margin-left:64px;gap:10px;align-items:baseline;min-width:0}
+body.proj #pchrome{display:flex}
+#pchrome .pnm{white-space:nowrap}
+#pchrome .pst{color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:34vw}
+#modeCtl{display:none;gap:12px;margin-right:64px}
+body.proj #modeCtl{display:flex}
+body.proj #viewBtn{display:none}
+#chrome .right{margin-left:auto;display:flex;gap:22px;align-items:center;font-size:var(--t-primary)}
+#chrome .right a{color:var(--ink);text-decoration:none}
+#chrome .right a:hover{text-decoration:underline;text-underline-offset:3px}
+#clock{color:var(--sub);font-variant-numeric:tabular-nums}
+
+/* ================= COLLECTION (R02 composition) ================= */
+#collection{padding:84px var(--page-edge) 110px;transition:opacity .3s}
+#colgrid{display:grid;grid-template-columns:repeat(12,1fr);gap:28px 10px;align-items:start}
+
+/* Level 01 — identity / positioning */
+#collectionIntro{display:grid;grid-template-columns:repeat(12,1fr);gap:0 10px;margin-bottom:28px}
+#linecell{grid-column:1/9;padding:6px 0 0}
+#linecell h1{font-size:var(--t-large);font-weight:500;letter-spacing:-.025em;line-height:1.06}
+#linecell h1 span{display:block}
+#linecell .sig{font-size:var(--t-secondary);color:var(--sub);margin-top:12px}
+
+.tile{position:relative;cursor:pointer}
+.tile .ph{position:relative;overflow:hidden}
+.tile .ph::after{content:'';position:absolute;inset:0;outline:2px solid var(--hue,var(--blue));outline-offset:-2px;opacity:0;transition:opacity .12s}
+.tile:hover .ph::after{opacity:1}
+.tile:focus-visible .ph::after{opacity:1}
+.tile .lbl{display:flex;gap:10px;align-items:baseline;padding-top:3px}
+.tile .nm{font-weight:500;font-size:var(--t-primary);white-space:nowrap}
+.tile .st{font-size:var(--t-primary);color:var(--sub);opacity:0;transform:translateY(2px);transition:opacity .18s .03s,transform .18s .03s;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile:hover .st{opacity:1;transform:none}
+.tile .ix{display:none}
+
+/* exact composition — spans + gaps land on the page edges */
+.g #colgrid .tile[data-id="sub3"]{grid-column:9/13}
+.g #colgrid .tile[data-id="dopa"]{grid-column:1/5}
+.g #colgrid .tile[data-id="fishfish"]{grid-column:5/10}
+.g #colgrid .tile[data-id="roy"]{grid-column:10/13}
+.g #colgrid .tile[data-id="gella"]{grid-column:1/4}
+.g #colgrid .tile[data-id="lucky"]{grid-column:4/8}
+.g #colgrid .tile[data-id="macabalm"]{grid-column:8/13}
+.g #colgrid .tile[data-id="willing"]{grid-column:1/6}
+.g #colgrid .tile[data-id="tsukiyo"]{grid-column:6/13}
+.g #colgrid .tile[data-id="microsoft"]{grid-column:1/13}
+/* intrinsic ceilings — portrait work never inflates, whatever the layout offers.
+   3:5 sources classify as deep portrait and take the tightest cap. */
+.g .tile.a-sq{max-width:640px}
+.g .tile.a-port{max-width:560px}
+.g .tile.a-deep{max-width:440px}
+.ins-gal .gi.a-sq{max-width:640px}
+.ins-gal .gi.a-port{max-width:560px}
+.ins-gal .gi.a-deep{max-width:440px}
+#insHero.a-sq{max-width:680px}
+#insHero.a-port{max-width:560px}
+#insHero.a-deep{max-width:460px}
+
+/* filtered recomposition — compositional memory:
+   survivors KEEP their authored column positions; hidden work leaves the flow;
+   grid row auto-placement closes gaps vertically. No horizontal migration,
+   no promotion into the opening seat, sparsity allowed to remain sparse. */
+.fhide{display:none!important}
+/* single authored exception: Microsoft's 12-column span is the full wall's
+   closing gesture, not the project's inherent presence — as a filtered
+   survivor it holds a left-aligned six-column landscape instead. */
+body.filtered .g #colgrid .tile[data-id="microsoft"]{grid-column:1/7}
+
+/* ================= INDEX (R02 structure, editorial type) ================= */
+.x #colgrid{display:block;max-width:none}
+.x #linecell{padding:0 0 16px}
+.x #linecell h1{font-size:var(--t-primary);font-weight:500;max-width:none}
+.x #linecell .sig{display:none}
+.x .tile{display:grid;grid-template-columns:44px minmax(200px,1.05fr) 1.9fr .65fr 1.5fr;gap:28px;align-items:center;
+  border-bottom:1px solid var(--line);padding:12px 0}
+.x .tile:first-of-type{border-top:1px solid var(--ink)}
+.x .tile .ph{width:36px;height:60px}
+.x .tile .lbl{display:contents}
+.x .tile .nm{font-size:var(--t-primary)}
+.x .tile .st{opacity:1;transform:none;white-space:normal;font-size:var(--t-primary)}
+.x .tile .ix{display:block;font-size:var(--t-primary);color:var(--sub)}
+.x .tile .ph::after{display:none}
+.x .tile:hover{background:#FAFAFB}
+#ixhead{display:none;font-size:var(--t-secondary);color:var(--sub);
+  grid-template-columns:44px minmax(200px,1.05fr) 1.9fr .65fr 1.5fr;gap:28px;padding:0 0 12px}
+.x #ixhead{display:grid}
+#ixhead button{font:inherit;color:var(--sub);text-align:left;padding:0}
+#ixhead button:hover{color:var(--ink)}
+#ixhead button.sorted{color:var(--ink);font-weight:500}
+#ixnote{display:none;font-size:var(--t-secondary);color:var(--sub);padding-top:16px}
+.x #ixnote{display:block}
+#ixpreview{position:fixed;right:var(--page-edge);top:120px;z-index:80;pointer-events:none;
+  opacity:0;transition:opacity .15s}
+#ixpreview.show{opacity:1;outline:2px solid var(--hue,var(--blue));outline-offset:-2px}
+#ixpImg{display:block;width:100%;height:100%}
+
+/* ================= INSPECT (R02 composition) ================= */
+#inspect{position:fixed;inset:0;z-index:200;background:var(--paper);overflow-y:auto;
+  visibility:hidden;opacity:0}
+#inspect.open{visibility:visible;opacity:1}
+#inspect .wrap{padding:84px var(--page-edge) 100px;opacity:0;transition:opacity .28s ease-out}
+#inspect.ready .wrap{opacity:1}
+.ins-top{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;margin-bottom:20px}
+#insHero{grid-column:1/13;position:relative;overflow:hidden} /* aspect set per-project from source dimensions */
+#insHero.a-sq{grid-column:1/8}
+#insHero.a-port{grid-column:1/6}
+#insHero.a-deep{grid-column:1/5}
+#insHero img{transition:opacity .15s}
+
+/* idea — the project's typographic reading, composed across the canvas */
+#story{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease);overflow:hidden}
+#story>div{min-height:0;overflow:hidden}
+#inspect.idea #story{grid-template-rows:1fr}
+#inspect.idea .ins-top{display:none}
+#inspect.idea .ins-gal{display:none}
+#ideaLede{display:none}
+#inspect.idea #ideaLede{display:block;grid-column:1/11;font-size:var(--t-large);line-height:1.08;letter-spacing:-.02em;max-width:15ch;margin-bottom:30px}
+#inspect.idea .beat.s-a{grid-column:1/6}
+#inspect.idea .beat.s-b{grid-column:7/13;margin-top:64px}
+#inspect.idea .beat.s-c{grid-column:3/11;margin-top:40px}
+#inspect.idea .beat.s-c p{font-size:var(--t-med);line-height:1.42;max-width:32ch}
+#inspect.idea .beat.s-d{grid-column:1/8;margin-top:48px}
+#inspect.idea .beat.s-e{grid-column:9/13;margin-top:48px}
+#inspect.idea .beat.s-e p{color:var(--sub)}
+.pmeta{display:none}
+#inspect.idea .pmeta{display:block;grid-column:1/13;margin-top:80px;font-size:var(--t-secondary);color:var(--sub);line-height:1.8;max-width:76ch}
+.pmeta span{display:block}
+#story .beats{display:grid;grid-template-columns:repeat(12,1fr);gap:28px 20px;padding:20px 0 90px}
+.beat .bk{font-size:var(--t-secondary);color:var(--sub);margin-bottom:7px}
+.beat p{font-size:var(--t-primary);line-height:1.65;max-width:38ch}
+.beat p a{color:var(--ink)}
+
+.ins-gal{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:10px}
+.ins-gal .gi{overflow:hidden}
+.ins-gal{align-items:start}
+.ins-gal .gi:nth-child(6n+1){grid-column:span 4}
+.ins-gal .gi:nth-child(6n+2){grid-column:span 2}
+.ins-gal .gi:nth-child(6n+3){grid-column:span 2}
+.ins-gal .gi:nth-child(6n+4){grid-column:span 2}
+.ins-gal .gi:nth-child(6n+5){grid-column:span 2}
+.ins-gal .gi:nth-child(6n+6){grid-column:span 6}
+/* aspect ceilings — full width is reserved for landscape media */
+.ins-gal .gi.a-sq{grid-column:span 5}
+.ins-gal .gi.a-port{grid-column:span 4}
+.ins-gal .gi.a-deep{grid-column:span 3}
+.ins-gal .gv{grid-column:span 6;aspect-ratio:16/9;overflow:hidden;background:#EFEFF1}
+.ins-gal .gv iframe,.ins-gal .gv video{width:100%;height:100%;border:0;display:block;object-fit:cover;
+  pointer-events:none} /* passive presentation media must never capture page scroll */
+
+/* archive stack (R02 presence, simplified labels) */
+#stack{position:fixed;right:14px;top:84px;width:36px;z-index:230;display:flex;flex-direction:column;gap:6px;
+  opacity:0;transform:translateX(8px);transition:opacity .28s,transform .28s var(--ease)}
+#stack.show{opacity:1;transform:none}
+#stack .sth{position:relative;height:60px;cursor:pointer} /* 3:5 — same ratio language as Index */
+#stack .sth::after{content:'';position:absolute;inset:0;outline:2px solid var(--hue,var(--blue));outline-offset:-2px;opacity:0;transition:opacity .12s}
+#stack .sth:hover::after{opacity:1}
+#stack .sth .tip{position:absolute;right:48px;top:50%;transform:translateY(-50%);color:var(--ink);
+  background:var(--paper);font-size:var(--t-secondary);font-weight:500;padding:1px 7px;white-space:nowrap;
+  opacity:0;pointer-events:none;transition:opacity .12s}
+#stack .sth:hover .tip{opacity:1}
+#stack .cap{display:none}
+#inspect.idea ~ #stack{opacity:.16}
+#inspect.idea ~ #stack:hover{opacity:1}
+#insClose{position:fixed;top:16px;right:var(--page-edge);z-index:410;font-size:var(--t-primary);background:#fff;
+  visibility:hidden;opacity:0;transition:opacity .2s}
+#insClose.show{visibility:visible;opacity:.55}
+#insClose.show:hover{opacity:1}
+
+/* ================= INFO (R02 presentation, retyped) ================= */
+#infoScrim{position:fixed;inset:0;background:rgba(16,16,20,.28);z-index:300;opacity:0;visibility:hidden;transition:opacity .3s}
+#info{position:fixed;top:0;right:0;bottom:0;width:min(680px,62vw);background:var(--paper);z-index:310;
+  transform:translateX(102%);transition:transform .42s var(--ease);overflow-y:auto;border-left:1px solid var(--ink)}
+body.info #infoScrim{opacity:1;visibility:visible}
+body.info #info{transform:none}
+#info .pad{padding:60px var(--page-edge) 80px;max-width:640px}
+/* Info spacing system: --i-s inside a group, --i-m between related blocks, --i-l between sections */
+#info{--i-s:10px;--i-m:26px;--i-l:72px}
+#info .cl{font-size:var(--t-secondary);color:var(--sub);margin-bottom:var(--i-s)}
+#info h2{font-size:var(--t-primary);font-weight:500;letter-spacing:0;line-height:1.55;margin-bottom:var(--i-m);max-width:26ch}
+#info p{font-size:var(--t-primary);line-height:1.65;max-width:54ch;margin-bottom:12px}
+#info h3{font-size:var(--t-secondary);color:var(--sub);margin:var(--i-l) 0 18px;font-weight:400}
+#info h3.tight{margin-top:34px}
+#info h3.rule{border-top:1px solid var(--line);padding-top:26px}
+.capgrp{padding:5px 0;display:grid;grid-template-columns:160px 1fr;gap:24px}
+.capgrp .cn{font-weight:500;font-size:var(--t-primary)}
+.capgrp .proof{font-size:var(--t-primary);color:var(--sub);line-height:1.7}
+.capgrp .proof button{color:var(--sub);margin-right:14px;transition:color .12s;font-size:var(--t-primary)}
+.capgrp:hover .proof button{color:var(--ink)}
+.capgrp .proof button:hover{color:var(--hue,var(--blue))}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin:0}
+.steps div{padding-top:0}
+.steps b{display:block;font-size:var(--t-primary);font-weight:500;margin-bottom:5px}
+.steps span{font-size:var(--t-secondary);color:var(--sub);line-height:1.5;display:block}
+#info .contact{font-size:var(--t-primary);line-height:2}
+#info .contact a{color:var(--ink);text-decoration:none}
+#info .contact a:hover{text-decoration:underline;text-underline-offset:3px}
+#infoClose{position:sticky;top:14px;float:right;margin:14px 16px 0 0;font-size:var(--t-primary);background:#fff;opacity:.55}
+#infoClose:hover{opacity:1}
+#info .note{font-size:var(--t-secondary);color:var(--sub);margin-top:var(--i-m)}
+
+/* ================= GHOST / FLIP ================= */
+#ghost{position:fixed;inset:0;z-index:500;pointer-events:none}
+#ghost img{position:fixed;object-fit:cover;will-change:transform}
+#ghost .gc{position:fixed;overflow:hidden;will-change:left,top,width,height}
+#ghost .gc img{position:static;width:100%;height:100%;object-fit:cover}
+
+/* ================= DEBUG ================= */
+#debug{position:fixed;left:14px;bottom:44px;z-index:600;width:290px;background:#101014;color:#fff;
+  font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;line-height:1.7;padding:12px 14px;border-radius:6px;display:none;white-space:pre}
+#debug.on{display:block}
+#debug .h{opacity:.5}
+/* first-entry intro — voice first, work second; skipped for deep links,
+   returns, reduced motion, and repeat entries within the session */
+body.intro #linecell h1{opacity:0;animation:tccIn .45s ease-out .15s forwards}
+body.intro #chrome{opacity:0;animation:tccFade .4s ease-out .6s forwards}
+body.intro .tile,body.intro #linecell .sig,body.intro #ixnote{opacity:0;animation:tccFade .5s ease-out .78s forwards}
+@keyframes tccIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tccFade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<title>The Colour Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/styles/tcc.css">
+</head>
+<body class="g">
+<!-- ================= CHROME ================= -->
+<header id="chrome">
+  <div class="brand" id="brandBtn" title="Return to the club arrangement">TCC</div>
+  <div id="pchrome"><span id="mClient" class="pnm"></span><span id="mStrap" class="pst"></span></div>
+  <div class="ctr">
+    <div id="modeCtl"><button class="ctl" id="mImages">Images</button><button class="ctl" id="mIdea">Idea</button></div>
+    <button class="ctl" id="viewBtn">Index</button>
+    <div id="filters">
+      <button class="ctl fbtn on" data-f="all">All</button>
+      <button class="ctl fbtn" data-f="hospitality">Hospitality</button>
+      <button class="ctl fbtn" data-f="fmcg">FMCG</button>
+      <button class="ctl fbtn" data-f="spatial">Spatial</button>
+    </div>
+    <button class="ctl" id="infoBtn">Info</button>
+  </div>
+  <div class="right">
+    <span id="clock">--:--:--</span>
+    <a href="mailto:hi@thecolourclub.com.au">hi@thecolourclub.com.au</a>
+  </div>
+</header>
+
+<!-- ================= COLLECTION ================= -->
+<main id="collection">
+  <section id="collectionIntro">
+    <div id="linecell">
+      <h1><span>A creative club for ideas</span><span>that shape culture</span></h1>
+      <div class="sig">The Colour Club — Sydney &amp; Byron Bay</div>
+    </div>
+  </section>
+  <section id="galleryField">
+  <div id="ixhead">
+    <button data-sort="name" style="grid-column:1/3">Project</button>
+    <span>Description</span>
+    <button data-sort="sector">Sector</button>
+    <span>Scope</span>
+  </div>
+  <div id="colgrid">
+    <!-- tiles injected -->
+  </div>
+  <div id="ixnote">Sector values are inferred — placeholders pending real project data.</div>
+  </section>
+</main>
+<div id="ixpreview"><img id="ixpImg" alt=""></div>
+
+<!-- ================= INSPECT ================= -->
+<section id="inspect" aria-label="Project inspection">
+  <div class="wrap">
+    <div class="ins-top">
+      <div id="insHero"><img id="heroImg" alt=""></div>
+    </div>
+    <div id="story"><div><div class="beats" id="beats"></div>
+      <div class="pmeta"><span id="mDeliv"></span><span id="mCred"></span></div></div></div>
+    <div class="ins-gal" id="gal"></div>
+  </div>
+</section>
+<div id="stack" aria-label="Collection"></div>
+<button id="insClose">Close</button>
+
+<!-- ================= INFO ================= -->
+<div id="infoScrim"></div>
+<aside id="info" aria-label="Studio information">
+  <button id="infoClose">Close</button>
+  <div class="pad">
+    <div class="cl">The studio</div>
+    <h2>A creative club for ideas that shape culture</h2>
+    <p>We bring brands and fans together through immersive brand experiences and impactful products — collaborators, problem-solvers and storytellers, shaping brands with sustainability, innovation and culture in mind.</p>
+    <p>From strategy to production, we work with businesses of all sizes — independent brands, startups and global corporations — making sure every brand touchpoint leaves a lasting impression.</p>
+
+    <h3 class="rule">Capabilities — proven in the collection</h3>
+    <div id="caps"></div>
+
+    <h3>Approach</h3>
+    <div class="steps">
+      <div><b>Discover</b><span>Getting to know you, your business and what makes you tick.</span></div>
+      <div><b>Define</b><span>Distilling that into your brand and your purpose.</span></div>
+      <div><b>Design</b><span>Ideas and direction built on the brand DNA work.</span></div>
+      <div><b>Develop</b><span>Refined concepts fleshed out into tangible assets.</span></div>
+    </div>
+
+    <h3 class="rule">Project enquiries</h3>
+    <p>From new brands to large-scale environments, our work spans identity, packaging, spatial and digital design. We welcome partnerships and collaborations that challenge convention.</p>
+
+    <h3 class="tight">Join the club</h3>
+    <p>Not actively hiring, but always open to hearing from talented people. Send your portfolio and CV to the address below.</p>
+
+    <h3 class="tight">Contact</h3>
+    <div class="contact">
+      <a href="mailto:hi@thecolourclub.com.au">hi@thecolourclub.com.au</a><br>
+      <a href="tel:+61413947355">+61 413 947 355</a><br>
+      <a href="https://www.instagram.com/thecolourclubstudio/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <div class="note">CAPABILITY GROUPING IS A PROTOTYPE CONSOLIDATION OF THE EXISTING 19 — FINAL COPY PENDING. CLICK A PROOF PROJECT TO OPEN IT DIRECTLY.</div>
+  </div>
+</aside>
+
+<div id="ghost"></div>
+<div id="debug"></div>
+<script type="module">
+  import { boot } from './src/main.js';
+  boot().catch(err => {
+    console.error(err);
+    document.body.insertAdjacentHTML('afterbegin',
+      '<pre style="padding:24px;font:14px/1.4 ui-monospace,monospace">Failed to boot: '+err.message+'</pre>');
+  });
+</script>
+</body>
+</html>

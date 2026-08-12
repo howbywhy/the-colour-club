@@ -1,0 +1,8 @@
+# Local tooling
+.qa-tools/node_modules/
+.DS_Store
+*.log
+
+# Ephemeral QA dumps (reports live in QA-*.md)
+.qa-tools/*-results.json
+/tmp/

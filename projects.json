@@ -1,0 +1,3275 @@
+{
+  "cdn": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/",
+  "source": "https://www.thecolourclub.com.au/",
+  "collected": "2026-08-11",
+  "updated": "2026-08-12",
+  "caps": [
+    [
+      "Strategy & Naming",
+      [
+        "tsukiyo",
+        "lucky",
+        "roy",
+        "willing"
+      ]
+    ],
+    [
+      "Identity",
+      [
+        "dopa",
+        "fishfish",
+        "gella",
+        "sub3"
+      ]
+    ],
+    [
+      "Packaging & Product",
+      [
+        "macabalm",
+        "lucky",
+        "willing",
+        "fishfish"
+      ]
+    ],
+    [
+      "Spatial & Signage",
+      [
+        "microsoft",
+        "dopa",
+        "tsukiyo"
+      ]
+    ],
+    [
+      "Digital",
+      [
+        "sub3",
+        "dopa",
+        "macabalm"
+      ]
+    ],
+    [
+      "Campaigns & Print",
+      [
+        "sub3",
+        "willing",
+        "macabalm"
+      ]
+    ]
+  ],
+  "projects": [
+    {
+      "id": "sub3",
+      "name": "SUB:3 Running",
+      "strap": "Bending Space & Time",
+      "lede": "02:59:99 becomes an icon of possibility.",
+      "cat": "fmcg",
+      "sector": "Performance / FMCG",
+      "emp": "f1",
+      "deliv": [
+        "Brand identity",
+        "Digital design",
+        "Packaging",
+        "Motion design",
+        "Print"
+      ],
+      "cred": "",
+      "beats": [
+        [
+          "Context",
+          "SUB:3 takes its name from the ultimate marathon milestone — breaking the three-hour barrier. A number that represents obsession, discipline, and belief in what the body can endure."
+        ],
+        [
+          "Idea",
+          "The brand was built around this fixation with time. Seconds are stretched, distorted, repeated — a visual language drawn from race clocks and digital readouts. 02:59:99 becomes an icon of possibility."
+        ],
+        [
+          "Craft",
+          "Typography bends under pressure; mantras loop across surfaces. Packaging, apparel and campaign material look more like race posters than nutrition branding — designed to live on the street, in clubs and at the track."
+        ],
+        [
+          "Position",
+          "More than fuel: a culture. A rallying point for those who run against the clock — and win."
+        ]
+      ],
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/sub-3-running",
+      "media": [
+        {
+          "type": "image",
+          "file": "sub3-01.jpg",
+          "original": "TCCWEB-SUB331.jpg",
+          "local": "public/images/projects/sub3/sub3-01.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08e0349c9a385cf40ee_TCCWEB-SUB331.jpg",
+          "cdnFile": "68b4f08e0349c9a385cf40ee_TCCWEB-SUB331.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-02.jpg",
+          "original": "TCCWEB-SUB3.jpg",
+          "local": "public/images/projects/sub3/sub3-02.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f0900db36cef526c7d28_TCCWEB-SUB3.jpg",
+          "cdnFile": "68b4f0900db36cef526c7d28_TCCWEB-SUB3.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-03.jpg",
+          "original": "TCCWEB-SUB322.jpg",
+          "local": "public/images/projects/sub3/sub3-03.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f090a30c0622e7382f63_TCCWEB-SUB322.jpg",
+          "cdnFile": "68b4f090a30c0622e7382f63_TCCWEB-SUB322.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-04.jpg",
+          "original": "TCCWEB-SUB330.jpg",
+          "local": "public/images/projects/sub3/sub3-04.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f090f2bef3c956266fe9_TCCWEB-SUB330.jpg",
+          "cdnFile": "68b4f090f2bef3c956266fe9_TCCWEB-SUB330.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-05.gif",
+          "original": "TCCWEB-SUB3-SKUBARGIF.gif",
+          "local": "public/images/projects/sub3/sub3-05.gif",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b53ec97528aa405355217e_TCCWEB-SUB3-SKUBARGIF.gif",
+          "cdnFile": "68b53ec97528aa405355217e_TCCWEB-SUB3-SKUBARGIF.gif",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-06.jpg",
+          "original": "TCCWEB-SUB35.jpg",
+          "local": "public/images/projects/sub3/sub3-06.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b53e1456d5157f3635f17d_TCCWEB-SUB35.jpg",
+          "cdnFile": "68b53e1456d5157f3635f17d_TCCWEB-SUB35.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-07.jpg",
+          "original": "TCCWEBR2-SUB33.jpg",
+          "local": "public/images/projects/sub3/sub3-07.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b7aabe2d0fddb4b8434d69_TCCWEBR2-SUB33.jpg",
+          "cdnFile": "68b7aabe2d0fddb4b8434d69_TCCWEBR2-SUB33.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-08.gif",
+          "original": "TCCWEB-SUB3-PackGIF.gif",
+          "local": "public/images/projects/sub3/sub3-08.gif",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b7908cf78295b3fea1821e_TCCWEB-SUB3-PackGIF.gif",
+          "cdnFile": "68b7908cf78295b3fea1821e_TCCWEB-SUB3-PackGIF.gif",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-09.jpg",
+          "original": "Sub3_Berry_back_BG2_F.jpg",
+          "local": "public/images/projects/sub3/sub3-09.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b5305a2ab674a24f88a47b_Sub3_Berry_back_BG2_F.jpg",
+          "cdnFile": "68b5305a2ab674a24f88a47b_Sub3_Berry_back_BG2_F.jpg",
+          "width": 4500,
+          "height": 5500,
+          "ratio": 0.818182,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-10.jpg",
+          "original": "Sub3_Berry_front_BG2_F.jpg",
+          "local": "public/images/projects/sub3/sub3-10.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b5305a82c328140e0b5b76_Sub3_Berry_front_BG2_F.jpg",
+          "cdnFile": "68b5305a82c328140e0b5b76_Sub3_Berry_front_BG2_F.jpg",
+          "width": 4500,
+          "height": 5500,
+          "ratio": 0.818182,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-11.jpg",
+          "original": "TCCWEB-SUB33.jpg",
+          "local": "public/images/projects/sub3/sub3-11.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08c723be6c506121592_TCCWEB-SUB33.jpg",
+          "cdnFile": "68b4f08c723be6c506121592_TCCWEB-SUB33.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-12.jpg",
+          "original": "TCCWEB-SUB315.jpg",
+          "local": "public/images/projects/sub3/sub3-12.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08bd4f227d564622fcc_TCCWEB-SUB315.jpg",
+          "cdnFile": "68b4f08bd4f227d564622fcc_TCCWEB-SUB315.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-13.jpg",
+          "original": "TCCWEB-SUB327.jpg",
+          "local": "public/images/projects/sub3/sub3-13.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08ff83c98700c32a719_TCCWEB-SUB327.jpg",
+          "cdnFile": "68b4f08ff83c98700c32a719_TCCWEB-SUB327.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-14.jpg",
+          "original": "TCCWEB-SUB328.jpg",
+          "local": "public/images/projects/sub3/sub3-14.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08f2fbb2acaddd1e1a4_TCCWEB-SUB328.jpg",
+          "cdnFile": "68b4f08f2fbb2acaddd1e1a4_TCCWEB-SUB328.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-15.jpg",
+          "original": "TCCWEBR2-SUB37b.jpg",
+          "local": "public/images/projects/sub3/sub3-15.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b7c706fe820b5e5e400aaf_TCCWEBR2-SUB37b.jpg",
+          "cdnFile": "68b7c706fe820b5e5e400aaf_TCCWEBR2-SUB37b.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-16.jpg",
+          "original": "TCCWEBR2-SUB34.jpg",
+          "local": "public/images/projects/sub3/sub3-16.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b7b6f326cf62308c62c93a_TCCWEBR2-SUB34.jpg",
+          "cdnFile": "68b7b6f326cf62308c62c93a_TCCWEBR2-SUB34.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-17.jpg",
+          "original": "TCCWEB-SUB34.jpg",
+          "local": "public/images/projects/sub3/sub3-17.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f090e4876ff3e9af879d_TCCWEB-SUB34.jpg",
+          "cdnFile": "68b4f090e4876ff3e9af879d_TCCWEB-SUB34.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-18.jpg",
+          "original": "Sub3_Pine Lime_front_BG2_F.jpg",
+          "local": "public/images/projects/sub3/sub3-18.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b5305a0e4aed768976e8e4_Sub3_Pine%20Lime_front_BG2_F.jpg",
+          "cdnFile": "68b5305a0e4aed768976e8e4_Sub3_Pine%20Lime_front_BG2_F.jpg",
+          "width": 4500,
+          "height": 5500,
+          "ratio": 0.818182,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-19.jpg",
+          "original": "Sub3_Pine Lime_back_BG2_F.jpg",
+          "local": "public/images/projects/sub3/sub3-19.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b5305ad10233930196e86a_Sub3_Pine%20Lime_back_BG2_F.jpg",
+          "cdnFile": "68b5305ad10233930196e86a_Sub3_Pine%20Lime_back_BG2_F.jpg",
+          "width": 4500,
+          "height": 5500,
+          "ratio": 0.818182,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-20.jpg",
+          "original": "TCCWEBR2-SUB3.jpg",
+          "local": "public/images/projects/sub3/sub3-20.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b7aabe71745df27e22153a_TCCWEBR2-SUB3.jpg",
+          "cdnFile": "68b7aabe71745df27e22153a_TCCWEBR2-SUB3.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-21.jpg",
+          "original": "TCCWEB-SUB329.jpg",
+          "local": "public/images/projects/sub3/sub3-21.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08c65f96dd370be2638_TCCWEB-SUB329.jpg",
+          "cdnFile": "68b4f08c65f96dd370be2638_TCCWEB-SUB329.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-22.jpg",
+          "original": "TCCWEB-SUB314.jpg",
+          "local": "public/images/projects/sub3/sub3-22.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08fcbebc1cd8d6ea15e_TCCWEB-SUB314.jpg",
+          "cdnFile": "68b4f08fcbebc1cd8d6ea15e_TCCWEB-SUB314.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-23.jpg",
+          "original": "TCCWEB-SUB316.jpg",
+          "local": "public/images/projects/sub3/sub3-23.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08c2b145230000d2fad_TCCWEB-SUB316.jpg",
+          "cdnFile": "68b4f08c2b145230000d2fad_TCCWEB-SUB316.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-24.jpg",
+          "original": "TCCWEBR2-SUB36.jpg",
+          "local": "public/images/projects/sub3/sub3-24.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b7aac008b605dd80d3f22b_TCCWEBR2-SUB36.jpg",
+          "cdnFile": "68b7aac008b605dd80d3f22b_TCCWEBR2-SUB36.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "sub3-25.jpg",
+          "original": "TCCWEB-SUB326.jpg",
+          "local": "public/images/projects/sub3/sub3-25.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68b4f08dd0f80cfb0a99bcc4_TCCWEB-SUB326.jpg",
+          "cdnFile": "68b4f08dd0f80cfb0a99bcc4_TCCWEB-SUB326.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "video",
+          "provider": "vidzflow",
+          "id": "XrKxaeFOEC",
+          "at": 2,
+          "embed": "https://app.vidzflow.com/v/XrKxaeFOEC",
+          "local": null,
+          "remote": null,
+          "status": "unresolved-embed"
+        },
+        {
+          "type": "video",
+          "provider": "vidzflow",
+          "id": "AtrFBhQc0V",
+          "at": 11,
+          "embed": "https://app.vidzflow.com/v/AtrFBhQc0V",
+          "local": null,
+          "remote": null,
+          "status": "unresolved-embed"
+        }
+      ],
+      "files": [
+        "68b4f08e0349c9a385cf40ee_TCCWEB-SUB331.jpg",
+        "68b4f0900db36cef526c7d28_TCCWEB-SUB3.jpg",
+        "68b4f090a30c0622e7382f63_TCCWEB-SUB322.jpg",
+        "68b4f090f2bef3c956266fe9_TCCWEB-SUB330.jpg",
+        "68b53ec97528aa405355217e_TCCWEB-SUB3-SKUBARGIF.gif",
+        "68b53e1456d5157f3635f17d_TCCWEB-SUB35.jpg",
+        "68b7aabe2d0fddb4b8434d69_TCCWEBR2-SUB33.jpg",
+        "68b7908cf78295b3fea1821e_TCCWEB-SUB3-PackGIF.gif",
+        "68b5305a2ab674a24f88a47b_Sub3_Berry_back_BG2_F.jpg",
+        "68b5305a82c328140e0b5b76_Sub3_Berry_front_BG2_F.jpg",
+        "68b4f08c723be6c506121592_TCCWEB-SUB33.jpg",
+        "68b4f08bd4f227d564622fcc_TCCWEB-SUB315.jpg",
+        "68b4f08ff83c98700c32a719_TCCWEB-SUB327.jpg",
+        "68b4f08f2fbb2acaddd1e1a4_TCCWEB-SUB328.jpg",
+        "68b7c706fe820b5e5e400aaf_TCCWEBR2-SUB37b.jpg",
+        "68b7b6f326cf62308c62c93a_TCCWEBR2-SUB34.jpg",
+        "68b4f090e4876ff3e9af879d_TCCWEB-SUB34.jpg",
+        "68b5305a0e4aed768976e8e4_Sub3_Pine%20Lime_front_BG2_F.jpg",
+        "68b5305ad10233930196e86a_Sub3_Pine%20Lime_back_BG2_F.jpg",
+        "68b7aabe71745df27e22153a_TCCWEBR2-SUB3.jpg",
+        "68b4f08c65f96dd370be2638_TCCWEB-SUB329.jpg",
+        "68b4f08fcbebc1cd8d6ea15e_TCCWEB-SUB314.jpg",
+        "68b4f08c2b145230000d2fad_TCCWEB-SUB316.jpg",
+        "68b7aac008b605dd80d3f22b_TCCWEBR2-SUB36.jpg",
+        "68b4f08dd0f80cfb0a99bcc4_TCCWEB-SUB326.jpg"
+      ],
+      "dims": [
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 4500,
+          "height": 5500
+        },
+        {
+          "width": 4500,
+          "height": 5500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 4500,
+          "height": 5500
+        },
+        {
+          "width": 4500,
+          "height": 5500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        }
+      ],
+      "vids": [
+        {
+          "at": 2,
+          "vf": "XrKxaeFOEC",
+          "local": null,
+          "status": "unresolved-embed"
+        },
+        {
+          "at": 11,
+          "vf": "AtrFBhQc0V",
+          "local": null,
+          "status": "unresolved-embed"
+        }
+      ]
+    },
+    {
+      "id": "dopa",
+      "name": "Dopa Donburi",
+      "strap": "High-voltage Japanese Dining",
+      "lede": "Wake from death, return to life.",
+      "cat": "hospitality",
+      "sector": "Hospitality",
+      "emp": "f2",
+      "deliv": [
+        "Brand identity",
+        "Packaging design",
+        "Creative direction",
+        "Signage",
+        "Website design",
+        "Digital design",
+        "Illustration"
+      ],
+      "cred": "Illustration by Andrew Yee · Featured: It’s Nice That, The Brand Identity, Eat Drink Design Awards",
+      "beats": [
+        [
+          "Context",
+          "Approached by the team behind Devon — an international café chain with a cult following — to develop an identity for a Japanese-inspired restaurant in Sydney’s newest dining district, Darling Square."
+        ],
+        [
+          "Challenge",
+          "Something fresh, unexpected and distinctly Japanese — while building a practical, recognisable identity system that could extend easily across locations."
+        ],
+        [
+          "Idea",
+          "The Japanese motif of transformation, and DOPA — a shortened form of ‘dopamine’ — as an allegory for the chemically transformative experience of eating good food. The idiom 起死回生 (kishi kaisei, ‘wake from death, return to life’) informed a distinct typographic style."
+        ],
+        [
+          "Craft",
+          "Manga-inspired illustration and patterns commissioned from Andrew Yee. Photography and menu art direction kept clean and minimal to give the brand elements space to breathe; a palette informed by the interior; a suite of striking contemporary signage."
+        ],
+        [
+          "Recognition",
+          "It’s Nice That · The Brand Identity · Eat Drink Design Awards."
+        ]
+      ],
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/dopa",
+      "media": [
+        {
+          "type": "image",
+          "file": "dopa-01.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2516.jpg",
+          "local": "public/images/projects/dopa/dopa-01.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909f1c91b27e62421d16_TCCWEB-Portfolio-DOPA2516.jpg",
+          "cdnFile": "6899909f1c91b27e62421d16_TCCWEB-Portfolio-DOPA2516.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-02.jpg",
+          "original": "TCCWEB-Portfolio-DOPA256.jpg",
+          "local": "public/images/projects/dopa/dopa-02.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909c9015e3306595a800_TCCWEB-Portfolio-DOPA256.jpg",
+          "cdnFile": "6899909c9015e3306595a800_TCCWEB-Portfolio-DOPA256.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-03.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2522.jpg",
+          "local": "public/images/projects/dopa/dopa-03.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/689990a1a29ca9526fbb717e_TCCWEB-Portfolio-DOPA2522.jpg",
+          "cdnFile": "689990a1a29ca9526fbb717e_TCCWEB-Portfolio-DOPA2522.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-04.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2523.jpg",
+          "local": "public/images/projects/dopa/dopa-04.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/689990a2c224377bdbb6e9f1_TCCWEB-Portfolio-DOPA2523.jpg",
+          "cdnFile": "689990a2c224377bdbb6e9f1_TCCWEB-Portfolio-DOPA2523.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-05.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2521.jpg",
+          "local": "public/images/projects/dopa/dopa-05.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/689990a2994a3292bd473ff8_TCCWEB-Portfolio-DOPA2521.jpg",
+          "cdnFile": "689990a2994a3292bd473ff8_TCCWEB-Portfolio-DOPA2521.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-06.jpg",
+          "original": "TCCWEB-Portfolio-DOPA254.jpg",
+          "local": "public/images/projects/dopa/dopa-06.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909c25b4bd30a65d9370_TCCWEB-Portfolio-DOPA254.jpg",
+          "cdnFile": "6899909c25b4bd30a65d9370_TCCWEB-Portfolio-DOPA254.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-07.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2518.jpg",
+          "local": "public/images/projects/dopa/dopa-07.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/689990a07ccfd9626d9a0f3e_TCCWEB-Portfolio-DOPA2518.jpg",
+          "cdnFile": "689990a07ccfd9626d9a0f3e_TCCWEB-Portfolio-DOPA2518.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-08.jpg",
+          "original": "TCCWEB-Portfolio-DOPA253.jpg",
+          "local": "public/images/projects/dopa/dopa-08.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909b5c2cadc9021afa6b_TCCWEB-Portfolio-DOPA253.jpg",
+          "cdnFile": "6899909b5c2cadc9021afa6b_TCCWEB-Portfolio-DOPA253.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-09.jpg",
+          "original": "TCCWEB-Portfolio-DOPA252.jpg",
+          "local": "public/images/projects/dopa/dopa-09.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909be5c678660b587fa7_TCCWEB-Portfolio-DOPA252.jpg",
+          "cdnFile": "6899909be5c678660b587fa7_TCCWEB-Portfolio-DOPA252.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-10.jpg",
+          "original": "TCCWEB-Portfolio-DOPA25.jpg",
+          "local": "public/images/projects/dopa/dopa-10.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909c47e2cd37f87e6b89_TCCWEB-Portfolio-DOPA25.jpg",
+          "cdnFile": "6899909c47e2cd37f87e6b89_TCCWEB-Portfolio-DOPA25.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-11.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2517.jpg",
+          "local": "public/images/projects/dopa/dopa-11.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909f5fda72cb89c86f5f_TCCWEB-Portfolio-DOPA2517.jpg",
+          "cdnFile": "6899909f5fda72cb89c86f5f_TCCWEB-Portfolio-DOPA2517.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-12.jpg",
+          "original": "TCCWEB-Portfolio-DOPA257.jpg",
+          "local": "public/images/projects/dopa/dopa-12.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909d9569b1d97131ef76_TCCWEB-Portfolio-DOPA257.jpg",
+          "cdnFile": "6899909d9569b1d97131ef76_TCCWEB-Portfolio-DOPA257.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-13.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2511.jpg",
+          "local": "public/images/projects/dopa/dopa-13.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909e4e23815c06cfd082_TCCWEB-Portfolio-DOPA2511.jpg",
+          "cdnFile": "6899909e4e23815c06cfd082_TCCWEB-Portfolio-DOPA2511.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-14.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2510.jpg",
+          "local": "public/images/projects/dopa/dopa-14.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909e7eaf57af4a8a6508_TCCWEB-Portfolio-DOPA2510.jpg",
+          "cdnFile": "6899909e7eaf57af4a8a6508_TCCWEB-Portfolio-DOPA2510.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-15.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2514.jpg",
+          "local": "public/images/projects/dopa/dopa-15.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909fdd99b37c6c97f331_TCCWEB-Portfolio-DOPA2514.jpg",
+          "cdnFile": "6899909fdd99b37c6c97f331_TCCWEB-Portfolio-DOPA2514.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-16.jpg",
+          "original": "TCCWEB-Portfolio-DOPA255.jpg",
+          "local": "public/images/projects/dopa/dopa-16.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909c7a02f53481d2099b_TCCWEB-Portfolio-DOPA255.jpg",
+          "cdnFile": "6899909c7a02f53481d2099b_TCCWEB-Portfolio-DOPA255.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-17.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2513.jpg",
+          "local": "public/images/projects/dopa/dopa-17.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909e6cfaadffedcb3e56_TCCWEB-Portfolio-DOPA2513.jpg",
+          "cdnFile": "6899909e6cfaadffedcb3e56_TCCWEB-Portfolio-DOPA2513.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-18.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2512.jpg",
+          "local": "public/images/projects/dopa/dopa-18.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909eb31ee09bfd2559c6_TCCWEB-Portfolio-DOPA2512.jpg",
+          "cdnFile": "6899909eb31ee09bfd2559c6_TCCWEB-Portfolio-DOPA2512.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-19.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2520.jpg",
+          "local": "public/images/projects/dopa/dopa-19.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/689990a10de146c48307875c_TCCWEB-Portfolio-DOPA2520.jpg",
+          "cdnFile": "689990a10de146c48307875c_TCCWEB-Portfolio-DOPA2520.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "dopa-20.jpg",
+          "original": "TCCWEB-Portfolio-DOPA2515.jpg",
+          "local": "public/images/projects/dopa/dopa-20.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/6899909f2cd8d9103a1d901f_TCCWEB-Portfolio-DOPA2515.jpg",
+          "cdnFile": "6899909f2cd8d9103a1d901f_TCCWEB-Portfolio-DOPA2515.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "video",
+          "provider": "vidzflow",
+          "id": "xQb7BhNBtq",
+          "at": 5,
+          "embed": "https://app.vidzflow.com/v/xQb7BhNBtq",
+          "local": null,
+          "remote": null,
+          "status": "unresolved-embed"
+        }
+      ],
+      "files": [
+        "6899909f1c91b27e62421d16_TCCWEB-Portfolio-DOPA2516.jpg",
+        "6899909c9015e3306595a800_TCCWEB-Portfolio-DOPA256.jpg",
+        "689990a1a29ca9526fbb717e_TCCWEB-Portfolio-DOPA2522.jpg",
+        "689990a2c224377bdbb6e9f1_TCCWEB-Portfolio-DOPA2523.jpg",
+        "689990a2994a3292bd473ff8_TCCWEB-Portfolio-DOPA2521.jpg",
+        "6899909c25b4bd30a65d9370_TCCWEB-Portfolio-DOPA254.jpg",
+        "689990a07ccfd9626d9a0f3e_TCCWEB-Portfolio-DOPA2518.jpg",
+        "6899909b5c2cadc9021afa6b_TCCWEB-Portfolio-DOPA253.jpg",
+        "6899909be5c678660b587fa7_TCCWEB-Portfolio-DOPA252.jpg",
+        "6899909c47e2cd37f87e6b89_TCCWEB-Portfolio-DOPA25.jpg",
+        "6899909f5fda72cb89c86f5f_TCCWEB-Portfolio-DOPA2517.jpg",
+        "6899909d9569b1d97131ef76_TCCWEB-Portfolio-DOPA257.jpg",
+        "6899909e4e23815c06cfd082_TCCWEB-Portfolio-DOPA2511.jpg",
+        "6899909e7eaf57af4a8a6508_TCCWEB-Portfolio-DOPA2510.jpg",
+        "6899909fdd99b37c6c97f331_TCCWEB-Portfolio-DOPA2514.jpg",
+        "6899909c7a02f53481d2099b_TCCWEB-Portfolio-DOPA255.jpg",
+        "6899909e6cfaadffedcb3e56_TCCWEB-Portfolio-DOPA2513.jpg",
+        "6899909eb31ee09bfd2559c6_TCCWEB-Portfolio-DOPA2512.jpg",
+        "689990a10de146c48307875c_TCCWEB-Portfolio-DOPA2520.jpg",
+        "6899909f2cd8d9103a1d901f_TCCWEB-Portfolio-DOPA2515.jpg"
+      ],
+      "dims": [
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        }
+      ],
+      "vids": [
+        {
+          "at": 5,
+          "vf": "xQb7BhNBtq",
+          "local": null,
+          "status": "unresolved-embed"
+        }
+      ]
+    },
+    {
+      "id": "fishfish",
+      "name": "Fish Fish",
+      "strap": "Aussie fish & chips, with a wink",
+      "lede": "Sandy toes, twilight fishing and chicken-salt sprinkled chips.",
+      "cat": "hospitality",
+      "sector": "Hospitality / QSR",
+      "emp": "f2",
+      "deliv": [
+        "Brand identity",
+        "Packaging design",
+        "Creative direction",
+        "Signage",
+        "Illustration"
+      ],
+      "cred": "",
+      "beats": [
+        [
+          "Context",
+          "A playful project with nostalgic appeal: a memorable identity to hook local customers and potential franchisees, whilst celebrating the shop’s 20-year heritage."
+        ],
+        [
+          "Idea",
+          "A vibrant green-gold palette emulating the energy of Australian summer — sandy toes, twilight fishing and chicken-salt sprinkled chips."
+        ],
+        [
+          "Craft",
+          "A watermark inspired by an aquatic fin — sharp, pointed, intriguing — reflecting on itself as a dinghy’s reflection bounces over water; two wave-like patterns across takeaway packaging, signage, menus and merch; a spirited fisherman in singlet, boardies, thongs and award-worthy ’stache."
+        ],
+        [
+          "Extension",
+          "After observing the cult-like status of the housemade seasoning, we conceptualised Chook Salt — destined for hot chips nationwide."
+        ]
+      ],
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/fish-fish",
+      "media": [
+        {
+          "type": "image",
+          "file": "fishfish-01.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25214.jpg",
+          "local": "public/images/projects/fishfish/fishfish-01.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f36cb7ca6636c99348f_TCCWEB-Portfolio-FishFish25214.jpg",
+          "cdnFile": "68ba1f36cb7ca6636c99348f_TCCWEB-Portfolio-FishFish25214.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "fishfish-02.jpg",
+          "original": "TCCWEB-Portfolio-FishFish252.jpg",
+          "local": "public/images/projects/fishfish/fishfish-02.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f3762449984d556bf74_TCCWEB-Portfolio-FishFish252.jpg",
+          "cdnFile": "68ba1f3762449984d556bf74_TCCWEB-Portfolio-FishFish252.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "fishfish-03.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25212.jpg",
+          "local": "public/images/projects/fishfish/fishfish-03.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f351d18806adc6256bc_TCCWEB-Portfolio-FishFish25212.jpg",
+          "cdnFile": "68ba1f351d18806adc6256bc_TCCWEB-Portfolio-FishFish25212.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "fishfish-04.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25211.jpg",
+          "local": "public/images/projects/fishfish/fishfish-04.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f37cc8f11cd8641e47e_TCCWEB-Portfolio-FishFish25211.jpg",
+          "cdnFile": "68ba1f37cc8f11cd8641e47e_TCCWEB-Portfolio-FishFish25211.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "fishfish-05.jpg",
+          "original": "TCCWEB-Portfolio-FishFish2523.jpg",
+          "local": "public/images/projects/fishfish/fishfish-05.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f35ecaf8f1e72a8e76b_TCCWEB-Portfolio-FishFish2523.jpg",
+          "cdnFile": "68ba1f35ecaf8f1e72a8e76b_TCCWEB-Portfolio-FishFish2523.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "fishfish-06.jpg",
+          "original": "TCCWEB-Portfolio-FishFish2523.jpg",
+          "local": "public/images/projects/fishfish/fishfish-06.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba2bccea3369c891222fe1_TCCWEB-Portfolio-FishFish2523.jpg",
+          "cdnFile": "68ba2bccea3369c891222fe1_TCCWEB-Portfolio-FishFish2523.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "fishfish-07.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25211.jpg",
+          "local": "public/images/projects/fishfish/fishfish-07.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba2bcea6c147c39641dae0_TCCWEB-Portfolio-FishFish25211.jpg",
+          "cdnFile": "68ba2bcea6c147c39641dae0_TCCWEB-Portfolio-FishFish25211.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "fishfish-08.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25210.jpg",
+          "local": "public/images/projects/fishfish/fishfish-08.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba2bce8534cfb960e3e59f_TCCWEB-Portfolio-FishFish25210.jpg",
+          "cdnFile": "68ba2bce8534cfb960e3e59f_TCCWEB-Portfolio-FishFish25210.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "fishfish-09.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25219.jpg",
+          "local": "public/images/projects/fishfish/fishfish-09.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba2bd09335b05e6d613e05_TCCWEB-Portfolio-FishFish25219.jpg",
+          "cdnFile": "68ba2bd09335b05e6d613e05_TCCWEB-Portfolio-FishFish25219.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "fishfish-10.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25216.jpg",
+          "local": "public/images/projects/fishfish/fishfish-10.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba2bd0fdbedff955523f42_TCCWEB-Portfolio-FishFish25216.jpg",
+          "cdnFile": "68ba2bd0fdbedff955523f42_TCCWEB-Portfolio-FishFish25216.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "fishfish-11.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25217.jpg",
+          "local": "public/images/projects/fishfish/fishfish-11.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f36c645fa38921f592b_TCCWEB-Portfolio-FishFish25217.jpg",
+          "cdnFile": "68ba1f36c645fa38921f592b_TCCWEB-Portfolio-FishFish25217.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "fishfish-12.jpg",
+          "original": "TCCWEB-Portfolio-FishFish2525.jpg",
+          "local": "public/images/projects/fishfish/fishfish-12.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f35beb2c99824b2f7e6_TCCWEB-Portfolio-FishFish2525.jpg",
+          "cdnFile": "68ba1f35beb2c99824b2f7e6_TCCWEB-Portfolio-FishFish2525.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "fishfish-13.jpg",
+          "original": "TCCWEB-Portfolio-FishFish2528.jpg",
+          "local": "public/images/projects/fishfish/fishfish-13.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f37f0cec461544f7f2b_TCCWEB-Portfolio-FishFish2528.jpg",
+          "cdnFile": "68ba1f37f0cec461544f7f2b_TCCWEB-Portfolio-FishFish2528.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "fishfish-14.jpg",
+          "original": "TCCWEB-Portfolio-FishFish2529.jpg",
+          "local": "public/images/projects/fishfish/fishfish-14.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba2bce5f9745404a81db7e_TCCWEB-Portfolio-FishFish2529.jpg",
+          "cdnFile": "68ba2bce5f9745404a81db7e_TCCWEB-Portfolio-FishFish2529.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "fishfish-15.jpg",
+          "original": "TCCWEB-Portfolio-FishFish25221.jpg",
+          "local": "public/images/projects/fishfish/fishfish-15.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba2bd11f302fb0dec90b65_TCCWEB-Portfolio-FishFish25221.jpg",
+          "cdnFile": "68ba2bd11f302fb0dec90b65_TCCWEB-Portfolio-FishFish25221.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "fishfish-16.jpg",
+          "original": "TCCWEB-Portfolio-FishFish2526.jpg",
+          "local": "public/images/projects/fishfish/fishfish-16.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba1f376535ffea8bffca02_TCCWEB-Portfolio-FishFish2526.jpg",
+          "cdnFile": "68ba1f376535ffea8bffca02_TCCWEB-Portfolio-FishFish2526.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "video",
+          "provider": "vidzflow",
+          "id": "azlhVm1ZZb",
+          "at": 2,
+          "embed": "https://app.vidzflow.com/v/azlhVm1ZZb",
+          "local": null,
+          "remote": null,
+          "status": "unresolved-embed"
+        }
+      ],
+      "files": [
+        "68ba1f36cb7ca6636c99348f_TCCWEB-Portfolio-FishFish25214.jpg",
+        "68ba1f3762449984d556bf74_TCCWEB-Portfolio-FishFish252.jpg",
+        "68ba1f351d18806adc6256bc_TCCWEB-Portfolio-FishFish25212.jpg",
+        "68ba1f37cc8f11cd8641e47e_TCCWEB-Portfolio-FishFish25211.jpg",
+        "68ba1f35ecaf8f1e72a8e76b_TCCWEB-Portfolio-FishFish2523.jpg",
+        "68ba2bccea3369c891222fe1_TCCWEB-Portfolio-FishFish2523.jpg",
+        "68ba2bcea6c147c39641dae0_TCCWEB-Portfolio-FishFish25211.jpg",
+        "68ba2bce8534cfb960e3e59f_TCCWEB-Portfolio-FishFish25210.jpg",
+        "68ba2bd09335b05e6d613e05_TCCWEB-Portfolio-FishFish25219.jpg",
+        "68ba2bd0fdbedff955523f42_TCCWEB-Portfolio-FishFish25216.jpg",
+        "68ba1f36c645fa38921f592b_TCCWEB-Portfolio-FishFish25217.jpg",
+        "68ba1f35beb2c99824b2f7e6_TCCWEB-Portfolio-FishFish2525.jpg",
+        "68ba1f37f0cec461544f7f2b_TCCWEB-Portfolio-FishFish2528.jpg",
+        "68ba2bce5f9745404a81db7e_TCCWEB-Portfolio-FishFish2529.jpg",
+        "68ba2bd11f302fb0dec90b65_TCCWEB-Portfolio-FishFish25221.jpg",
+        "68ba1f376535ffea8bffca02_TCCWEB-Portfolio-FishFish2526.jpg"
+      ],
+      "dims": [
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        }
+      ],
+      "vids": [
+        {
+          "at": 2,
+          "vf": "azlhVm1ZZb",
+          "local": null,
+          "status": "unresolved-embed"
+        }
+      ]
+    },
+    {
+      "id": "roy",
+      "name": "Our Boy Roy",
+      "strap": "A neighbourhood deli, big on cheer",
+      "lede": "Roy wears many hats.",
+      "cat": "hospitality",
+      "sector": "Hospitality",
+      "emp": "f3",
+      "deliv": [
+        "Naming",
+        "Brand identity",
+        "Packaging design",
+        "Creative direction",
+        "Digital design",
+        "Signage",
+        "Print collateral",
+        "Illustration"
+      ],
+      "cred": "",
+      "beats": [
+        [
+          "Context",
+          "Never short of neighbourhood cheer: a deli and café in Adelaide serving generous sambos, batch brew and tasty small goods in the ’burbs."
+        ],
+        [
+          "Idea",
+          "A community-driven space paying homage to Aussie deli culture — the name Our Boy Roy symbolic of cheerful, dependable energy, personified by the larger-than-life character of Roy, inspired by old-school newspaper illustrations."
+        ],
+        [
+          "Craft",
+          "Roy wears many hats, honouring the deli’s diverse offering; interchangeable pants and hairstyles repeat across menus, coffee cups, sandwich wrap and salami packaging — paired with bold signage, mix-and-match textures, a bright palette and a streetside mural."
+        ]
+      ],
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/our-boy-roy",
+      "media": [
+        {
+          "type": "image",
+          "file": "roy-01.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2521.jpg",
+          "local": "public/images/projects/roy/roy-01.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e3d95d1792ba732a61b_TCCWEB-Portfolio-OurBoy%20Roy2521.jpg",
+          "cdnFile": "68c20e3d95d1792ba732a61b_TCCWEB-Portfolio-OurBoy%20Roy2521.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "roy-02.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy25.jpg",
+          "local": "public/images/projects/roy/roy-02.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e360c36514c0cba573f_TCCWEB-Portfolio-OurBoy%20Roy25.jpg",
+          "cdnFile": "68c20e360c36514c0cba573f_TCCWEB-Portfolio-OurBoy%20Roy25.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "roy-03.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy253.jpg",
+          "local": "public/images/projects/roy/roy-03.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e359dfa156613544787_TCCWEB-Portfolio-OurBoy%20Roy253.jpg",
+          "cdnFile": "68c20e359dfa156613544787_TCCWEB-Portfolio-OurBoy%20Roy253.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "roy-04.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2513.jpg",
+          "local": "public/images/projects/roy/roy-04.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e3951dba89b83db76d8_TCCWEB-Portfolio-OurBoy%20Roy2513.jpg",
+          "cdnFile": "68c20e3951dba89b83db76d8_TCCWEB-Portfolio-OurBoy%20Roy2513.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "roy-05.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2512.jpg",
+          "local": "public/images/projects/roy/roy-05.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e39eaf288ace9b73d81_TCCWEB-Portfolio-OurBoy%20Roy2512.jpg",
+          "cdnFile": "68c20e39eaf288ace9b73d81_TCCWEB-Portfolio-OurBoy%20Roy2512.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "roy-06.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy259.jpg",
+          "local": "public/images/projects/roy/roy-06.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e3b14645288bd9eaa17_TCCWEB-Portfolio-OurBoy%20Roy259.jpg",
+          "cdnFile": "68c20e3b14645288bd9eaa17_TCCWEB-Portfolio-OurBoy%20Roy259.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "roy-07.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2523.jpg",
+          "local": "public/images/projects/roy/roy-07.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e3da5ba67cb16600f8e_TCCWEB-Portfolio-OurBoy%20Roy2523.jpg",
+          "cdnFile": "68c20e3da5ba67cb16600f8e_TCCWEB-Portfolio-OurBoy%20Roy2523.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "roy-08.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2522.jpg",
+          "local": "public/images/projects/roy/roy-08.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e3bf72b3529e22e4876_TCCWEB-Portfolio-OurBoy%20Roy2522.jpg",
+          "cdnFile": "68c20e3bf72b3529e22e4876_TCCWEB-Portfolio-OurBoy%20Roy2522.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "roy-09.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2517.jpg",
+          "local": "public/images/projects/roy/roy-09.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e3a84f7c1bd72eb5098_TCCWEB-Portfolio-OurBoy%20Roy2517.jpg",
+          "cdnFile": "68c20e3a84f7c1bd72eb5098_TCCWEB-Portfolio-OurBoy%20Roy2517.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "roy-10.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2518.jpg",
+          "local": "public/images/projects/roy/roy-10.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e3a98b01bb1862b708d_TCCWEB-Portfolio-OurBoy%20Roy2518.jpg",
+          "cdnFile": "68c20e3a98b01bb1862b708d_TCCWEB-Portfolio-OurBoy%20Roy2518.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "roy-11.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2514.jpg",
+          "local": "public/images/projects/roy/roy-11.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e3922483c14cf53ca66_TCCWEB-Portfolio-OurBoy%20Roy2514.jpg",
+          "cdnFile": "68c20e3922483c14cf53ca66_TCCWEB-Portfolio-OurBoy%20Roy2514.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "roy-12.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2511.jpg",
+          "local": "public/images/projects/roy/roy-12.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e395c7b9a0f2d299926_TCCWEB-Portfolio-OurBoy%20Roy2511.jpg",
+          "cdnFile": "68c20e395c7b9a0f2d299926_TCCWEB-Portfolio-OurBoy%20Roy2511.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "roy-13.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy258.jpg",
+          "local": "public/images/projects/roy/roy-13.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e373ba9736d97a28b84_TCCWEB-Portfolio-OurBoy%20Roy258.jpg",
+          "cdnFile": "68c20e373ba9736d97a28b84_TCCWEB-Portfolio-OurBoy%20Roy258.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "roy-14.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy256.jpg",
+          "local": "public/images/projects/roy/roy-14.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e377d9a7fe7285c7d89_TCCWEB-Portfolio-OurBoy%20Roy256.jpg",
+          "cdnFile": "68c20e377d9a7fe7285c7d89_TCCWEB-Portfolio-OurBoy%20Roy256.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "roy-15.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy255.jpg",
+          "local": "public/images/projects/roy/roy-15.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e36072e4a0f10929ecc_TCCWEB-Portfolio-OurBoy%20Roy255.jpg",
+          "cdnFile": "68c20e36072e4a0f10929ecc_TCCWEB-Portfolio-OurBoy%20Roy255.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "roy-16.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy2510.jpg",
+          "local": "public/images/projects/roy/roy-16.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e386167c64cd84a0a7a_TCCWEB-Portfolio-OurBoy%20Roy2510.jpg",
+          "cdnFile": "68c20e386167c64cd84a0a7a_TCCWEB-Portfolio-OurBoy%20Roy2510.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "roy-17.jpg",
+          "original": "TCCWEB-Portfolio-OurBoy Roy254.jpg",
+          "local": "public/images/projects/roy/roy-17.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e368c5b413f275d83f6_TCCWEB-Portfolio-OurBoy%20Roy254.jpg",
+          "cdnFile": "68c20e368c5b413f275d83f6_TCCWEB-Portfolio-OurBoy%20Roy254.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "video",
+          "provider": "vidzflow",
+          "id": "nAo7fzfRJ2",
+          "at": 3,
+          "embed": "https://app.vidzflow.com/v/nAo7fzfRJ2",
+          "local": null,
+          "remote": null,
+          "status": "unresolved-embed"
+        }
+      ],
+      "files": [
+        "68c20e3d95d1792ba732a61b_TCCWEB-Portfolio-OurBoy%20Roy2521.jpg",
+        "68c20e360c36514c0cba573f_TCCWEB-Portfolio-OurBoy%20Roy25.jpg",
+        "68c20e359dfa156613544787_TCCWEB-Portfolio-OurBoy%20Roy253.jpg",
+        "68c20e3951dba89b83db76d8_TCCWEB-Portfolio-OurBoy%20Roy2513.jpg",
+        "68c20e39eaf288ace9b73d81_TCCWEB-Portfolio-OurBoy%20Roy2512.jpg",
+        "68c20e3b14645288bd9eaa17_TCCWEB-Portfolio-OurBoy%20Roy259.jpg",
+        "68c20e3da5ba67cb16600f8e_TCCWEB-Portfolio-OurBoy%20Roy2523.jpg",
+        "68c20e3bf72b3529e22e4876_TCCWEB-Portfolio-OurBoy%20Roy2522.jpg",
+        "68c20e3a84f7c1bd72eb5098_TCCWEB-Portfolio-OurBoy%20Roy2517.jpg",
+        "68c20e3a98b01bb1862b708d_TCCWEB-Portfolio-OurBoy%20Roy2518.jpg",
+        "68c20e3922483c14cf53ca66_TCCWEB-Portfolio-OurBoy%20Roy2514.jpg",
+        "68c20e395c7b9a0f2d299926_TCCWEB-Portfolio-OurBoy%20Roy2511.jpg",
+        "68c20e373ba9736d97a28b84_TCCWEB-Portfolio-OurBoy%20Roy258.jpg",
+        "68c20e377d9a7fe7285c7d89_TCCWEB-Portfolio-OurBoy%20Roy256.jpg",
+        "68c20e36072e4a0f10929ecc_TCCWEB-Portfolio-OurBoy%20Roy255.jpg",
+        "68c20e386167c64cd84a0a7a_TCCWEB-Portfolio-OurBoy%20Roy2510.jpg",
+        "68c20e368c5b413f275d83f6_TCCWEB-Portfolio-OurBoy%20Roy254.jpg"
+      ],
+      "dims": [
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        }
+      ],
+      "vids": [
+        {
+          "at": 3,
+          "vf": "nAo7fzfRJ2",
+          "local": null,
+          "status": "unresolved-embed"
+        }
+      ]
+    },
+    {
+      "id": "gella",
+      "name": "GellaFrenda",
+      "strap": "Heritage Italian, everyday Australian",
+      "lede": "A brand new lexicon.",
+      "cat": "hospitality",
+      "sector": "Hospitality",
+      "emp": "f3",
+      "deliv": [
+        "Brand identity",
+        "Packaging design",
+        "Creative direction",
+        "Illustration",
+        "Signage"
+      ],
+      "cred": "Interior design by Matt Woods",
+      "beats": [
+        [
+          "Context",
+          "A modern cucina combining a refined Italian menu with Australian hospitality. Cultural harmony sits at the heart of the identity, in keeping with Matt Woods’ striking interior design."
+        ],
+        [
+          "Idea",
+          "The name ‘GellaFrenda’ originates from Italo-Australian dialect, where modern Italian words are influenced by English to create a brand new lexicon."
+        ],
+        [
+          "Craft",
+          "Typical Italian elements — terrazzo, a brick-lined archway — combined with symbols of Australiana: gum-tree textures, native flowers. A green, red and purple palette across menus, uniforms and merch, extended into graphics for GellaFrenda Nextdoor."
+        ],
+        [
+          "Type",
+          "Lineto’s Valentine — a considered reconstruction of the original Valentine typewriter — doing justice to Italy’s inherent romance and its history of design."
+        ]
+      ],
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/gellafrenda",
+      "media": [
+        {
+          "type": "image",
+          "file": "gella-01.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2510.jpg",
+          "local": "public/images/projects/gella/gella-01.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba34518fd46840645ebc43_TCCWEB-Portfolio-GellaFrenda2510.jpg",
+          "cdnFile": "68ba34518fd46840645ebc43_TCCWEB-Portfolio-GellaFrenda2510.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "gella-02.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda256.jpg",
+          "local": "public/images/projects/gella/gella-02.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba344f8926327d80931104_TCCWEB-Portfolio-GellaFrenda256.jpg",
+          "cdnFile": "68ba344f8926327d80931104_TCCWEB-Portfolio-GellaFrenda256.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "gella-03.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda252.jpg",
+          "local": "public/images/projects/gella/gella-03.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba344e10c0167e8ee3e8b7_TCCWEB-Portfolio-GellaFrenda252.jpg",
+          "cdnFile": "68ba344e10c0167e8ee3e8b7_TCCWEB-Portfolio-GellaFrenda252.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "gella-04.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2514.jpg",
+          "local": "public/images/projects/gella/gella-04.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba3452347bdd9dadf43da5_TCCWEB-Portfolio-GellaFrenda2514.jpg",
+          "cdnFile": "68ba3452347bdd9dadf43da5_TCCWEB-Portfolio-GellaFrenda2514.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "gella-05.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda259.jpg",
+          "local": "public/images/projects/gella/gella-05.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba3450afb16ed5ab5262cd_TCCWEB-Portfolio-GellaFrenda259.jpg",
+          "cdnFile": "68ba3450afb16ed5ab5262cd_TCCWEB-Portfolio-GellaFrenda259.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "gella-06.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda253.jpg",
+          "local": "public/images/projects/gella/gella-06.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba344d5093c65a8e52a16e_TCCWEB-Portfolio-GellaFrenda253.jpg",
+          "cdnFile": "68ba344d5093c65a8e52a16e_TCCWEB-Portfolio-GellaFrenda253.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "gella-07.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda257.jpg",
+          "local": "public/images/projects/gella/gella-07.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba344f563f193104030f8b_TCCWEB-Portfolio-GellaFrenda257.jpg",
+          "cdnFile": "68ba344f563f193104030f8b_TCCWEB-Portfolio-GellaFrenda257.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "gella-08.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2511.jpg",
+          "local": "public/images/projects/gella/gella-08.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba3451d6b690efb17dccaf_TCCWEB-Portfolio-GellaFrenda2511.jpg",
+          "cdnFile": "68ba3451d6b690efb17dccaf_TCCWEB-Portfolio-GellaFrenda2511.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "gella-09.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda255.jpg",
+          "local": "public/images/projects/gella/gella-09.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba344e274c06f2a8a67eda_TCCWEB-Portfolio-GellaFrenda255.jpg",
+          "cdnFile": "68ba344e274c06f2a8a67eda_TCCWEB-Portfolio-GellaFrenda255.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "gella-10.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda258.jpg",
+          "local": "public/images/projects/gella/gella-10.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba344f5e6648a02f629a26_TCCWEB-Portfolio-GellaFrenda258.jpg",
+          "cdnFile": "68ba344f5e6648a02f629a26_TCCWEB-Portfolio-GellaFrenda258.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "gella-11.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2512.jpg",
+          "local": "public/images/projects/gella/gella-11.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba3451155019bf90532a82_TCCWEB-Portfolio-GellaFrenda2512.jpg",
+          "cdnFile": "68ba3451155019bf90532a82_TCCWEB-Portfolio-GellaFrenda2512.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "gella-12.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda25.jpg",
+          "local": "public/images/projects/gella/gella-12.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba344db10235042ce381bb_TCCWEB-Portfolio-GellaFrenda25.jpg",
+          "cdnFile": "68ba344db10235042ce381bb_TCCWEB-Portfolio-GellaFrenda25.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "gella-13.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2515.jpg",
+          "local": "public/images/projects/gella/gella-13.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba34528cd7f24d20a35b47_TCCWEB-Portfolio-GellaFrenda2515.jpg",
+          "cdnFile": "68ba34528cd7f24d20a35b47_TCCWEB-Portfolio-GellaFrenda2515.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "gella-14.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2516.jpg",
+          "local": "public/images/projects/gella/gella-14.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba34529c8dcb8bdcbb7fd8_TCCWEB-Portfolio-GellaFrenda2516.jpg",
+          "cdnFile": "68ba34529c8dcb8bdcbb7fd8_TCCWEB-Portfolio-GellaFrenda2516.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "gella-15.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2522.jpg",
+          "local": "public/images/projects/gella/gella-15.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba3882c627052e3cdc6d26_TCCWEB-Portfolio-GellaFrenda2522.jpg",
+          "cdnFile": "68ba3882c627052e3cdc6d26_TCCWEB-Portfolio-GellaFrenda2522.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "gella-16.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2521.jpg",
+          "local": "public/images/projects/gella/gella-16.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba3882b5ac8f8b5f82c8c3_TCCWEB-Portfolio-GellaFrenda2521.jpg",
+          "cdnFile": "68ba3882b5ac8f8b5f82c8c3_TCCWEB-Portfolio-GellaFrenda2521.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "gella-17.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2517.jpg",
+          "local": "public/images/projects/gella/gella-17.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba388a6bbb562c32f07f6f_TCCWEB-Portfolio-GellaFrenda2517.jpg",
+          "cdnFile": "68ba388a6bbb562c32f07f6f_TCCWEB-Portfolio-GellaFrenda2517.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "gella-18.jpg",
+          "original": "TCCWEB-Portfolio-GellaFrenda2518.jpg",
+          "local": "public/images/projects/gella/gella-18.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba34535db3e30451432309_TCCWEB-Portfolio-GellaFrenda2518.jpg",
+          "cdnFile": "68ba34535db3e30451432309_TCCWEB-Portfolio-GellaFrenda2518.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "video",
+          "provider": "file",
+          "at": 9,
+          "local": "public/media/projects/gella/gella-food-animation.mp4",
+          "remote": "https://www.dropbox.com/scl/fi/m6l601vzcj5ehrzz2m12z/GellaFrenda-Food-Animation.mp4?rlkey=2tpjwkzo7480jtl79f91syhv3&st=jb9o4q5l&raw=1",
+          "status": "local"
+        }
+      ],
+      "files": [
+        "68ba34518fd46840645ebc43_TCCWEB-Portfolio-GellaFrenda2510.jpg",
+        "68ba344f8926327d80931104_TCCWEB-Portfolio-GellaFrenda256.jpg",
+        "68ba344e10c0167e8ee3e8b7_TCCWEB-Portfolio-GellaFrenda252.jpg",
+        "68ba3452347bdd9dadf43da5_TCCWEB-Portfolio-GellaFrenda2514.jpg",
+        "68ba3450afb16ed5ab5262cd_TCCWEB-Portfolio-GellaFrenda259.jpg",
+        "68ba344d5093c65a8e52a16e_TCCWEB-Portfolio-GellaFrenda253.jpg",
+        "68ba344f563f193104030f8b_TCCWEB-Portfolio-GellaFrenda257.jpg",
+        "68ba3451d6b690efb17dccaf_TCCWEB-Portfolio-GellaFrenda2511.jpg",
+        "68ba344e274c06f2a8a67eda_TCCWEB-Portfolio-GellaFrenda255.jpg",
+        "68ba344f5e6648a02f629a26_TCCWEB-Portfolio-GellaFrenda258.jpg",
+        "68ba3451155019bf90532a82_TCCWEB-Portfolio-GellaFrenda2512.jpg",
+        "68ba344db10235042ce381bb_TCCWEB-Portfolio-GellaFrenda25.jpg",
+        "68ba34528cd7f24d20a35b47_TCCWEB-Portfolio-GellaFrenda2515.jpg",
+        "68ba34529c8dcb8bdcbb7fd8_TCCWEB-Portfolio-GellaFrenda2516.jpg",
+        "68ba3882c627052e3cdc6d26_TCCWEB-Portfolio-GellaFrenda2522.jpg",
+        "68ba3882b5ac8f8b5f82c8c3_TCCWEB-Portfolio-GellaFrenda2521.jpg",
+        "68ba388a6bbb562c32f07f6f_TCCWEB-Portfolio-GellaFrenda2517.jpg",
+        "68ba34535db3e30451432309_TCCWEB-Portfolio-GellaFrenda2518.jpg"
+      ],
+      "dims": [
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        }
+      ],
+      "vids": [
+        {
+          "at": 9,
+          "l": "public/media/projects/gella/gella-food-animation.mp4",
+          "r": "https://www.dropbox.com/scl/fi/m6l601vzcj5ehrzz2m12z/GellaFrenda-Food-Animation.mp4?rlkey=2tpjwkzo7480jtl79f91syhv3&st=jb9o4q5l&raw=1",
+          "status": "local"
+        }
+      ]
+    },
+    {
+      "id": "lucky",
+      "name": "Lucky Boy",
+      "strap": "Good fortune, to go",
+      "lede": "Classic Chinese food memories.",
+      "cat": "hospitality",
+      "sector": "Hospitality / QSR",
+      "emp": "r",
+      "deliv": [
+        "Naming",
+        "Brand identity",
+        "Packaging design",
+        "Creative direction",
+        "Illustration"
+      ],
+      "cred": "",
+      "beats": [
+        [
+          "Context",
+          "A takeaway Chinese spot bringing a nostalgic touch to modern Sydney — reimagining the Chinese takeaway joint with mass appeal for potential franchisees and locals alike."
+        ],
+        [
+          "Idea",
+          "A playful mascot — Lucky Boy — with a noodle bowl perched on his head, reminiscent of classic Chinese food memories."
+        ],
+        [
+          "Craft",
+          "Bold English and Chinese characters paired with a vibrant palette inspired by traditional Chinese lanterns; good fortune and luck highlighted throughout, inviting customers to dine joyfully in a modern setting."
+        ]
+      ],
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/lucky-boy",
+      "media": [
+        {
+          "type": "image",
+          "file": "lucky-01.jpg",
+          "original": "TCCWEB-Portfolio-LuckyBoy_2514.jpg",
+          "local": "public/images/projects/lucky/lucky-01.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba468ad66d08ad06f620e5_TCCWEB-Portfolio-LuckyBoy_2514.jpg",
+          "cdnFile": "68ba468ad66d08ad06f620e5_TCCWEB-Portfolio-LuckyBoy_2514.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "lucky-02.jpg",
+          "original": "TCCWEB-Portfolio-LuckyBoy_257.jpg",
+          "local": "public/images/projects/lucky/lucky-02.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba468824e010f8bc03a78d_TCCWEB-Portfolio-LuckyBoy_257.jpg",
+          "cdnFile": "68ba468824e010f8bc03a78d_TCCWEB-Portfolio-LuckyBoy_257.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "lucky-03.jpg",
+          "original": "TCCWEB-Portfolio-LuckyBoy_255.jpg",
+          "local": "public/images/projects/lucky/lucky-03.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba4688950819ef6cbab23c_TCCWEB-Portfolio-LuckyBoy_255.jpg",
+          "cdnFile": "68ba4688950819ef6cbab23c_TCCWEB-Portfolio-LuckyBoy_255.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "lucky-04.jpg",
+          "original": "TCCWEB-Portfolio-LuckyBoy_252.jpg",
+          "local": "public/images/projects/lucky/lucky-04.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba4687ef6e48c67fa5d8de_TCCWEB-Portfolio-LuckyBoy_252.jpg",
+          "cdnFile": "68ba4687ef6e48c67fa5d8de_TCCWEB-Portfolio-LuckyBoy_252.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "lucky-05.jpg",
+          "original": "TCCWEB-Portfolio-LuckyBoy_2516.jpg",
+          "local": "public/images/projects/lucky/lucky-05.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba468a3a8b738d235a6e44_TCCWEB-Portfolio-LuckyBoy_2516.jpg",
+          "cdnFile": "68ba468a3a8b738d235a6e44_TCCWEB-Portfolio-LuckyBoy_2516.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "lucky-06.jpg",
+          "original": "TCCWEB-Portfolio-LuckyBoy_2513.jpg",
+          "local": "public/images/projects/lucky/lucky-06.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba468aaffccc2853d61c57_TCCWEB-Portfolio-LuckyBoy_2513.jpg",
+          "cdnFile": "68ba468aaffccc2853d61c57_TCCWEB-Portfolio-LuckyBoy_2513.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "lucky-07.jpg",
+          "original": "TCCWEB-Portfolio-LuckyBoy_254.jpg",
+          "local": "public/images/projects/lucky/lucky-07.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba4688a904e25fd2f80c9d_TCCWEB-Portfolio-LuckyBoy_254.jpg",
+          "cdnFile": "68ba4688a904e25fd2f80c9d_TCCWEB-Portfolio-LuckyBoy_254.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        }
+      ],
+      "files": [
+        "68ba468ad66d08ad06f620e5_TCCWEB-Portfolio-LuckyBoy_2514.jpg",
+        "68ba468824e010f8bc03a78d_TCCWEB-Portfolio-LuckyBoy_257.jpg",
+        "68ba4688950819ef6cbab23c_TCCWEB-Portfolio-LuckyBoy_255.jpg",
+        "68ba4687ef6e48c67fa5d8de_TCCWEB-Portfolio-LuckyBoy_252.jpg",
+        "68ba468a3a8b738d235a6e44_TCCWEB-Portfolio-LuckyBoy_2516.jpg",
+        "68ba468aaffccc2853d61c57_TCCWEB-Portfolio-LuckyBoy_2513.jpg",
+        "68ba4688a904e25fd2f80c9d_TCCWEB-Portfolio-LuckyBoy_254.jpg"
+      ],
+      "dims": [
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        }
+      ],
+      "vids": []
+    },
+    {
+      "id": "macabalm",
+      "name": "Macabalm",
+      "strap": "Natural, Minimal, Essential",
+      "lede": "Natural, minimal, conscious.",
+      "cat": "fmcg",
+      "sector": "Skincare / FMCG",
+      "emp": "r",
+      "deliv": [
+        "Brand identity",
+        "Packaging design",
+        "Website design",
+        "Creative direction",
+        "Art direction",
+        "Digital design",
+        "Campaign",
+        "Print collateral"
+      ],
+      "cred": "",
+      "beats": [
+        [
+          "Context",
+          "Approached by Australian actress and model Pia Miller to bring to life her vision for a transparent, natural, macadamia-based skincare product."
+        ],
+        [
+          "Idea",
+          "A name and a solid identity framework championing organic ingredients, ethical sourcing and sustainability — imbued with Pia’s own personality and values."
+        ],
+        [
+          "Craft",
+          "A visual language and tone of voice expressing the brand’s core values — natural, minimal, conscious — with a simple, clean contemporary edge, delivering the message to its market at a higher-than-average price point."
+        ]
+      ],
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/macabalm",
+      "media": [
+        {
+          "type": "image",
+          "file": "macabalm-01.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2521.jpg",
+          "local": "public/images/projects/macabalm/macabalm-01.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b402e968bee7cf107e_TCCWEB-Portfolio-Macabalm2521.jpg",
+          "cdnFile": "68ba51b402e968bee7cf107e_TCCWEB-Portfolio-Macabalm2521.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-02.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm252.jpg",
+          "local": "public/images/projects/macabalm/macabalm-02.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51afa9430d542b9aaaf4_TCCWEB-Portfolio-Macabalm252.jpg",
+          "cdnFile": "68ba51afa9430d542b9aaaf4_TCCWEB-Portfolio-Macabalm252.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-03.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm253.jpg",
+          "local": "public/images/projects/macabalm/macabalm-03.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51af52371735c4d85c1a_TCCWEB-Portfolio-Macabalm253.jpg",
+          "cdnFile": "68ba51af52371735c4d85c1a_TCCWEB-Portfolio-Macabalm253.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-04.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2523.jpg",
+          "local": "public/images/projects/macabalm/macabalm-04.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b442f3d9155e1a4674_TCCWEB-Portfolio-Macabalm2523.jpg",
+          "cdnFile": "68ba51b442f3d9155e1a4674_TCCWEB-Portfolio-Macabalm2523.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-05.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2524.jpg",
+          "local": "public/images/projects/macabalm/macabalm-05.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b44945b14fc163fc3f_TCCWEB-Portfolio-Macabalm2524.jpg",
+          "cdnFile": "68ba51b44945b14fc163fc3f_TCCWEB-Portfolio-Macabalm2524.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-06.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm254.jpg",
+          "local": "public/images/projects/macabalm/macabalm-06.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51af40f14fe253057efb_TCCWEB-Portfolio-Macabalm254.jpg",
+          "cdnFile": "68ba51af40f14fe253057efb_TCCWEB-Portfolio-Macabalm254.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-07.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm258.jpg",
+          "local": "public/images/projects/macabalm/macabalm-07.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b0a7b132f657db4820_TCCWEB-Portfolio-Macabalm258.jpg",
+          "cdnFile": "68ba51b0a7b132f657db4820_TCCWEB-Portfolio-Macabalm258.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-08.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm25.jpg",
+          "local": "public/images/projects/macabalm/macabalm-08.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51afd363383be24c41c0_TCCWEB-Portfolio-Macabalm25.jpg",
+          "cdnFile": "68ba51afd363383be24c41c0_TCCWEB-Portfolio-Macabalm25.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-09.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2522.jpg",
+          "local": "public/images/projects/macabalm/macabalm-09.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b399b528e7dfa63762_TCCWEB-Portfolio-Macabalm2522.jpg",
+          "cdnFile": "68ba51b399b528e7dfa63762_TCCWEB-Portfolio-Macabalm2522.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-10.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm254a.jpg",
+          "local": "public/images/projects/macabalm/macabalm-10.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da364d54c963940c1e6590_TCCWEB-Portfolio-Macabalm254a.jpg",
+          "cdnFile": "68da364d54c963940c1e6590_TCCWEB-Portfolio-Macabalm254a.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-11.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm256.jpg",
+          "local": "public/images/projects/macabalm/macabalm-11.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51afb87136ffb5371f5f_TCCWEB-Portfolio-Macabalm256.jpg",
+          "cdnFile": "68ba51afb87136ffb5371f5f_TCCWEB-Portfolio-Macabalm256.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-12.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm25.jpg",
+          "local": "public/images/projects/macabalm/macabalm-12.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da364dd3a577157bd5a5ac_TCCWEB-Portfolio-Macabalm25.jpg",
+          "cdnFile": "68da364dd3a577157bd5a5ac_TCCWEB-Portfolio-Macabalm25.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-13.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2513.jpg",
+          "local": "public/images/projects/macabalm/macabalm-13.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b097f4802886850d90_TCCWEB-Portfolio-Macabalm2513.jpg",
+          "cdnFile": "68ba51b097f4802886850d90_TCCWEB-Portfolio-Macabalm2513.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-14.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2514.jpg",
+          "local": "public/images/projects/macabalm/macabalm-14.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b09e74c6b09be2da88_TCCWEB-Portfolio-Macabalm2514.jpg",
+          "cdnFile": "68ba51b09e74c6b09be2da88_TCCWEB-Portfolio-Macabalm2514.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-15.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2515.jpg",
+          "local": "public/images/projects/macabalm/macabalm-15.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b10e2e19d4e579ac9d_TCCWEB-Portfolio-Macabalm2515.jpg",
+          "cdnFile": "68ba51b10e2e19d4e579ac9d_TCCWEB-Portfolio-Macabalm2515.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-16.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2520.jpg",
+          "local": "public/images/projects/macabalm/macabalm-16.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b31bd2454de58b4ba0_TCCWEB-Portfolio-Macabalm2520.jpg",
+          "cdnFile": "68ba51b31bd2454de58b4ba0_TCCWEB-Portfolio-Macabalm2520.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-17.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm255a.jpg",
+          "local": "public/images/projects/macabalm/macabalm-17.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da364d6a0083b482c0cfbd_TCCWEB-Portfolio-Macabalm255a.jpg",
+          "cdnFile": "68da364d6a0083b482c0cfbd_TCCWEB-Portfolio-Macabalm255a.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-18.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm2511.jpg",
+          "local": "public/images/projects/macabalm/macabalm-18.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68ba51b08094c8a92ad55421_TCCWEB-Portfolio-Macabalm2511.jpg",
+          "cdnFile": "68ba51b08094c8a92ad55421_TCCWEB-Portfolio-Macabalm2511.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "macabalm-19.jpg",
+          "original": "TCCWEB-Portfolio-Macabalm252a.jpg",
+          "local": "public/images/projects/macabalm/macabalm-19.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da364cceeeef205e2fc1d3_TCCWEB-Portfolio-Macabalm252a.jpg",
+          "cdnFile": "68da364cceeeef205e2fc1d3_TCCWEB-Portfolio-Macabalm252a.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        }
+      ],
+      "files": [
+        "68ba51b402e968bee7cf107e_TCCWEB-Portfolio-Macabalm2521.jpg",
+        "68ba51afa9430d542b9aaaf4_TCCWEB-Portfolio-Macabalm252.jpg",
+        "68ba51af52371735c4d85c1a_TCCWEB-Portfolio-Macabalm253.jpg",
+        "68ba51b442f3d9155e1a4674_TCCWEB-Portfolio-Macabalm2523.jpg",
+        "68ba51b44945b14fc163fc3f_TCCWEB-Portfolio-Macabalm2524.jpg",
+        "68ba51af40f14fe253057efb_TCCWEB-Portfolio-Macabalm254.jpg",
+        "68ba51b0a7b132f657db4820_TCCWEB-Portfolio-Macabalm258.jpg",
+        "68ba51afd363383be24c41c0_TCCWEB-Portfolio-Macabalm25.jpg",
+        "68ba51b399b528e7dfa63762_TCCWEB-Portfolio-Macabalm2522.jpg",
+        "68da364d54c963940c1e6590_TCCWEB-Portfolio-Macabalm254a.jpg",
+        "68ba51afb87136ffb5371f5f_TCCWEB-Portfolio-Macabalm256.jpg",
+        "68da364dd3a577157bd5a5ac_TCCWEB-Portfolio-Macabalm25.jpg",
+        "68ba51b097f4802886850d90_TCCWEB-Portfolio-Macabalm2513.jpg",
+        "68ba51b09e74c6b09be2da88_TCCWEB-Portfolio-Macabalm2514.jpg",
+        "68ba51b10e2e19d4e579ac9d_TCCWEB-Portfolio-Macabalm2515.jpg",
+        "68ba51b31bd2454de58b4ba0_TCCWEB-Portfolio-Macabalm2520.jpg",
+        "68da364d6a0083b482c0cfbd_TCCWEB-Portfolio-Macabalm255a.jpg",
+        "68ba51b08094c8a92ad55421_TCCWEB-Portfolio-Macabalm2511.jpg",
+        "68da364cceeeef205e2fc1d3_TCCWEB-Portfolio-Macabalm252a.jpg"
+      ],
+      "dims": [
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        }
+      ],
+      "vids": []
+    },
+    {
+      "id": "willing",
+      "name": "Willing Distillery",
+      "strap": "Handcrafted spirits, made in Darwin",
+      "lede": "Historical Evolution.",
+      "cat": "fmcg",
+      "sector": "Spirits / FMCG",
+      "emp": "r",
+      "deliv": [
+        "Brand strategy",
+        "Brand identity",
+        "Packaging design",
+        "Copywriting",
+        "Digital design",
+        "Signage",
+        "Illustration",
+        "Campaign"
+      ],
+      "cred": "",
+      "beats": [
+        [
+          "Context",
+          "The first family-owned distillery and bar in the perfect place for a G&T — Darwin. Classic copper pots, locally sourced native botanicals, a traditional one-shot distillation process."
+        ],
+        [
+          "Idea",
+          "A brand that resonates with the Territorian people: ‘Historical Evolution’, starting from a reimagining of the Willing family crest."
+        ],
+        [
+          "Craft",
+          "Or Lemmen — a modern take on early 20th-century Antiqua — paired with Quadrant Mono by Australian designer Vincent Chan: a balance of contemporary and heritage with an Australian flair."
+        ],
+        [
+          "Position",
+          "‘Made in Darwin’ shown proudly, with archival images evoking nostalgia — a brand reflecting the community’s pride in the Territory."
+        ]
+      ],
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/willing-distillery",
+      "media": [
+        {
+          "type": "image",
+          "file": "willing-01.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2510.jpg",
+          "local": "public/images/projects/willing/willing-01.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea4e6ac1c4fd6697725_TCCWEB-Portfolio-Willing_2510.jpg",
+          "cdnFile": "68c20ea4e6ac1c4fd6697725_TCCWEB-Portfolio-Willing_2510.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-02.jpg",
+          "original": "TCCWEB-Portfolio-Willing_25.jpg",
+          "local": "public/images/projects/willing/willing-02.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea2907dc3b9a418b1d3_TCCWEB-Portfolio-Willing_25.jpg",
+          "cdnFile": "68c20ea2907dc3b9a418b1d3_TCCWEB-Portfolio-Willing_25.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-03.jpg",
+          "original": "TCCWEB-Portfolio-Willing_255.jpg",
+          "local": "public/images/projects/willing/willing-03.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea2e6ac18409f74ba94_TCCWEB-Portfolio-Willing_255.jpg",
+          "cdnFile": "68c20ea2e6ac18409f74ba94_TCCWEB-Portfolio-Willing_255.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-04.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2517.jpg",
+          "local": "public/images/projects/willing/willing-04.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea5d181a09470811e81_TCCWEB-Portfolio-Willing_2517.jpg",
+          "cdnFile": "68c20ea5d181a09470811e81_TCCWEB-Portfolio-Willing_2517.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-05.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2520.jpg",
+          "local": "public/images/projects/willing/willing-05.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d3697cdc2e4a01635d3a08_TCCWEB-Portfolio-Willing_2520.jpg",
+          "cdnFile": "68d3697cdc2e4a01635d3a08_TCCWEB-Portfolio-Willing_2520.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-06.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2516.jpg",
+          "local": "public/images/projects/willing/willing-06.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d3697b5eb8a35247ea9ce1_TCCWEB-Portfolio-Willing_2516.jpg",
+          "cdnFile": "68d3697b5eb8a35247ea9ce1_TCCWEB-Portfolio-Willing_2516.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-07.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2518.jpg",
+          "local": "public/images/projects/willing/willing-07.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea6bb012c89c73df937_TCCWEB-Portfolio-Willing_2518.jpg",
+          "cdnFile": "68c20ea6bb012c89c73df937_TCCWEB-Portfolio-Willing_2518.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-08.jpg",
+          "original": "TCCWEB-Portfolio-Willing_256.jpg",
+          "local": "public/images/projects/willing/willing-08.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea3cd23ce9d4982421b_TCCWEB-Portfolio-Willing_256.jpg",
+          "cdnFile": "68c20ea3cd23ce9d4982421b_TCCWEB-Portfolio-Willing_256.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-09.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2514.jpg",
+          "local": "public/images/projects/willing/willing-09.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea5339fa2b333e28e9b_TCCWEB-Portfolio-Willing_2514.jpg",
+          "cdnFile": "68c20ea5339fa2b333e28e9b_TCCWEB-Portfolio-Willing_2514.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-10.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2513.jpg",
+          "local": "public/images/projects/willing/willing-10.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d3697b5ae22f7abd09ae9e_TCCWEB-Portfolio-Willing_2513.jpg",
+          "cdnFile": "68d3697b5ae22f7abd09ae9e_TCCWEB-Portfolio-Willing_2513.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-11.jpg",
+          "original": "TCCWEB-Portfolio-Willing_254.jpg",
+          "local": "public/images/projects/willing/willing-11.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea2641ad6de5b960d76_TCCWEB-Portfolio-Willing_254.jpg",
+          "cdnFile": "68c20ea2641ad6de5b960d76_TCCWEB-Portfolio-Willing_254.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-12.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2511.jpg",
+          "local": "public/images/projects/willing/willing-12.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea4be805d2a1b9592f4_TCCWEB-Portfolio-Willing_2511.jpg",
+          "cdnFile": "68c20ea4be805d2a1b9592f4_TCCWEB-Portfolio-Willing_2511.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-13.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2512.jpg",
+          "local": "public/images/projects/willing/willing-13.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea4e4db883cb1d096a8_TCCWEB-Portfolio-Willing_2512.jpg",
+          "cdnFile": "68c20ea4e4db883cb1d096a8_TCCWEB-Portfolio-Willing_2512.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-14.jpg",
+          "original": "TCCWEB-Portfolio-Willing_253.jpg",
+          "local": "public/images/projects/willing/willing-14.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea20145874386aa633c_TCCWEB-Portfolio-Willing_253.jpg",
+          "cdnFile": "68c20ea20145874386aa633c_TCCWEB-Portfolio-Willing_253.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-15.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2514.jpg",
+          "local": "public/images/projects/willing/willing-15.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d3697be6f05b133b0f6fcb_TCCWEB-Portfolio-Willing_2514.jpg",
+          "cdnFile": "68d3697be6f05b133b0f6fcb_TCCWEB-Portfolio-Willing_2514.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-16.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2516.jpg",
+          "local": "public/images/projects/willing/willing-16.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea5f161249a505d22ab_TCCWEB-Portfolio-Willing_2516.jpg",
+          "cdnFile": "68c20ea5f161249a505d22ab_TCCWEB-Portfolio-Willing_2516.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-17.jpg",
+          "original": "TCCWEB-Portfolio-Willing_259.jpg",
+          "local": "public/images/projects/willing/willing-17.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea2fdc38612485369b7_TCCWEB-Portfolio-Willing_259.jpg",
+          "cdnFile": "68c20ea2fdc38612485369b7_TCCWEB-Portfolio-Willing_259.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-18.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2520.jpg",
+          "local": "public/images/projects/willing/willing-18.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea6af6bb27bda5c80dd_TCCWEB-Portfolio-Willing_2520.jpg",
+          "cdnFile": "68c20ea6af6bb27bda5c80dd_TCCWEB-Portfolio-Willing_2520.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-19.jpg",
+          "original": "TCCWEB-Portfolio-Willing_258.jpg",
+          "local": "public/images/projects/willing/willing-19.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea20145874386aa638c_TCCWEB-Portfolio-Willing_258.jpg",
+          "cdnFile": "68c20ea20145874386aa638c_TCCWEB-Portfolio-Willing_258.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-20.jpg",
+          "original": "TCCWEB-Portfolio-Willing_257.jpg",
+          "local": "public/images/projects/willing/willing-20.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20ea29f5d2bbd3e6163fc_TCCWEB-Portfolio-Willing_257.jpg",
+          "cdnFile": "68c20ea29f5d2bbd3e6163fc_TCCWEB-Portfolio-Willing_257.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "willing-21.jpg",
+          "original": "TCCWEB-Portfolio-Willing_2521.jpg",
+          "local": "public/images/projects/willing/willing-21.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d3697cea8ae38a239d8308_TCCWEB-Portfolio-Willing_2521.jpg",
+          "cdnFile": "68d3697cea8ae38a239d8308_TCCWEB-Portfolio-Willing_2521.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        }
+      ],
+      "files": [
+        "68c20ea4e6ac1c4fd6697725_TCCWEB-Portfolio-Willing_2510.jpg",
+        "68c20ea2907dc3b9a418b1d3_TCCWEB-Portfolio-Willing_25.jpg",
+        "68c20ea2e6ac18409f74ba94_TCCWEB-Portfolio-Willing_255.jpg",
+        "68c20ea5d181a09470811e81_TCCWEB-Portfolio-Willing_2517.jpg",
+        "68d3697cdc2e4a01635d3a08_TCCWEB-Portfolio-Willing_2520.jpg",
+        "68d3697b5eb8a35247ea9ce1_TCCWEB-Portfolio-Willing_2516.jpg",
+        "68c20ea6bb012c89c73df937_TCCWEB-Portfolio-Willing_2518.jpg",
+        "68c20ea3cd23ce9d4982421b_TCCWEB-Portfolio-Willing_256.jpg",
+        "68c20ea5339fa2b333e28e9b_TCCWEB-Portfolio-Willing_2514.jpg",
+        "68d3697b5ae22f7abd09ae9e_TCCWEB-Portfolio-Willing_2513.jpg",
+        "68c20ea2641ad6de5b960d76_TCCWEB-Portfolio-Willing_254.jpg",
+        "68c20ea4be805d2a1b9592f4_TCCWEB-Portfolio-Willing_2511.jpg",
+        "68c20ea4e4db883cb1d096a8_TCCWEB-Portfolio-Willing_2512.jpg",
+        "68c20ea20145874386aa633c_TCCWEB-Portfolio-Willing_253.jpg",
+        "68d3697be6f05b133b0f6fcb_TCCWEB-Portfolio-Willing_2514.jpg",
+        "68c20ea5f161249a505d22ab_TCCWEB-Portfolio-Willing_2516.jpg",
+        "68c20ea2fdc38612485369b7_TCCWEB-Portfolio-Willing_259.jpg",
+        "68c20ea6af6bb27bda5c80dd_TCCWEB-Portfolio-Willing_2520.jpg",
+        "68c20ea20145874386aa638c_TCCWEB-Portfolio-Willing_258.jpg",
+        "68c20ea29f5d2bbd3e6163fc_TCCWEB-Portfolio-Willing_257.jpg",
+        "68d3697cea8ae38a239d8308_TCCWEB-Portfolio-Willing_2521.jpg"
+      ],
+      "dims": [
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        }
+      ],
+      "vids": []
+    },
+    {
+      "id": "tsukiyo",
+      "name": "Tsukiyo",
+      "strap": "Under the neon moon",
+      "lede": "The moon’s movement across the sky.",
+      "cat": "hospitality",
+      "sector": "Hospitality",
+      "emp": "r",
+      "deliv": [
+        "Naming",
+        "Brand identity",
+        "Packaging design",
+        "Creative direction",
+        "Signage"
+      ],
+      "cred": "",
+      "beats": [
+        [
+          "Context",
+          "A modern Japanese street food concept bringing the electric atmosphere of Osaka’s Dotonbori district to Sydney — the vibrant nights, authentic flavours and scents of its bustling streets."
+        ],
+        [
+          "Challenge",
+          "Combining Japanese street culture and tradition with a modern twist, to give Tsukiyo a unique identity in Sydney’s competitive food scene."
+        ],
+        [
+          "Idea",
+          "A moon icon in the logo, with rotating typography representing the moon’s movement across the sky."
+        ],
+        [
+          "Craft",
+          "Neon signage paying tribute to the iconic streetlights of Osaka; custom takoyaki boxes with graphics and colours echoing dining under the glow of neon."
+        ]
+      ],
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/tsukiyo",
+      "media": [
+        {
+          "type": "image",
+          "file": "tsukiyo-01.jpg",
+          "original": "TCCWEB-Portfolio-Tsukiyo_253.jpg",
+          "local": "public/images/projects/tsukiyo/tsukiyo-01.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e8392edc49b3299e5e3_TCCWEB-Portfolio-Tsukiyo_253.jpg",
+          "cdnFile": "68c20e8392edc49b3299e5e3_TCCWEB-Portfolio-Tsukiyo_253.jpg",
+          "width": 2500,
+          "height": 3125,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "tsukiyo-02.jpg",
+          "original": "TCCWEB-Portfolio-Tsukiyo_2512.jpg",
+          "local": "public/images/projects/tsukiyo/tsukiyo-02.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e85dfc491abc21024e0_TCCWEB-Portfolio-Tsukiyo_2512.jpg",
+          "cdnFile": "68c20e85dfc491abc21024e0_TCCWEB-Portfolio-Tsukiyo_2512.jpg",
+          "width": 2500,
+          "height": 3125,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "tsukiyo-03.jpg",
+          "original": "TCCWEB-Portfolio-Tsukiyo_2514.jpg",
+          "local": "public/images/projects/tsukiyo/tsukiyo-03.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e87386db9e9e3f2c1a9_TCCWEB-Portfolio-Tsukiyo_2514.jpg",
+          "cdnFile": "68c20e87386db9e9e3f2c1a9_TCCWEB-Portfolio-Tsukiyo_2514.jpg",
+          "width": 5150,
+          "height": 3125,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "tsukiyo-04.jpg",
+          "original": "TCCWEB-Portfolio-Tsukiyo_2513.jpg",
+          "local": "public/images/projects/tsukiyo/tsukiyo-04.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e836bc49232f954bd19_TCCWEB-Portfolio-Tsukiyo_2513.jpg",
+          "cdnFile": "68c20e836bc49232f954bd19_TCCWEB-Portfolio-Tsukiyo_2513.jpg",
+          "width": 2500,
+          "height": 3125,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "tsukiyo-05.jpg",
+          "original": "TCCWEB-Portfolio-Tsukiyo_25.jpg",
+          "local": "public/images/projects/tsukiyo/tsukiyo-05.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e8554aefbf82f44058b_TCCWEB-Portfolio-Tsukiyo_25.jpg",
+          "cdnFile": "68c20e8554aefbf82f44058b_TCCWEB-Portfolio-Tsukiyo_25.jpg",
+          "width": 5150,
+          "height": 3125,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "tsukiyo-06.jpg",
+          "original": "TCCWEB-Portfolio-Tsukiyo_257.jpg",
+          "local": "public/images/projects/tsukiyo/tsukiyo-06.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e81237840a1dc7bea5b_TCCWEB-Portfolio-Tsukiyo_257.jpg",
+          "cdnFile": "68c20e81237840a1dc7bea5b_TCCWEB-Portfolio-Tsukiyo_257.jpg",
+          "width": 2500,
+          "height": 3125,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "tsukiyo-07.jpg",
+          "original": "TCCWEB-Portfolio-Tsukiyo_256.jpg",
+          "local": "public/images/projects/tsukiyo/tsukiyo-07.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20e85f22c9aa93fae22d3_TCCWEB-Portfolio-Tsukiyo_256.jpg",
+          "cdnFile": "68c20e85f22c9aa93fae22d3_TCCWEB-Portfolio-Tsukiyo_256.jpg",
+          "width": 2500,
+          "height": 3125,
+          "ratio": 0.8,
+          "status": "local"
+        }
+      ],
+      "files": [
+        "68c20e8392edc49b3299e5e3_TCCWEB-Portfolio-Tsukiyo_253.jpg",
+        "68c20e85dfc491abc21024e0_TCCWEB-Portfolio-Tsukiyo_2512.jpg",
+        "68c20e87386db9e9e3f2c1a9_TCCWEB-Portfolio-Tsukiyo_2514.jpg",
+        "68c20e836bc49232f954bd19_TCCWEB-Portfolio-Tsukiyo_2513.jpg",
+        "68c20e8554aefbf82f44058b_TCCWEB-Portfolio-Tsukiyo_25.jpg",
+        "68c20e81237840a1dc7bea5b_TCCWEB-Portfolio-Tsukiyo_257.jpg",
+        "68c20e85f22c9aa93fae22d3_TCCWEB-Portfolio-Tsukiyo_256.jpg"
+      ],
+      "dims": [
+        {
+          "width": 2500,
+          "height": 3125
+        },
+        {
+          "width": 2500,
+          "height": 3125
+        },
+        {
+          "width": 5150,
+          "height": 3125
+        },
+        {
+          "width": 2500,
+          "height": 3125
+        },
+        {
+          "width": 5150,
+          "height": 3125
+        },
+        {
+          "width": 2500,
+          "height": 3125
+        },
+        {
+          "width": 2500,
+          "height": 3125
+        }
+      ],
+      "vids": []
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft Technology Centre",
+      "strap": "Quiet wayfinding, unexpected moments",
+      "lede": "Unexpected experiences reframing everyday routine.",
+      "cat": "spatial",
+      "sector": "Spatial / Workplace",
+      "emp": "r",
+      "deliv": [
+        "Creative direction",
+        "Wayfinding signage"
+      ],
+      "cred": "With interior architects Tom Mark Henry",
+      "beats": [
+        [
+          "Context",
+          "Working closely with interior architects Tom Mark Henry on a signage and wayfinding system for the newly developed Microsoft Technology Centre in Martin Place — front-of-house entry, a customer technology centre and a series of temporary touch-down spaces."
+        ],
+        [
+          "Challenge",
+          "A suite of unique signage touchpoints reflecting the use of each individual space."
+        ],
+        [
+          "Idea",
+          "Allowing unexpected experiences to reframe everyday routine and promote creative thought."
+        ],
+        [
+          "Craft",
+          "A deep respect for the material finishes and natural palette throughout the centre — each new experience still part of a cohesive whole."
+        ]
+      ],
+      "sourceUrl": "https://www.thecolourclub.com.au/projects/microsoft",
+      "media": [
+        {
+          "type": "image",
+          "file": "microsoft-01.jpg",
+          "original": "TCCWEB-Portfolio-Microsoft12.jpg",
+          "local": "public/images/projects/microsoft/microsoft-01.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68db4b164c626bbe0db5d75d_TCCWEB-Portfolio-Microsoft12.jpg",
+          "cdnFile": "68db4b164c626bbe0db5d75d_TCCWEB-Portfolio-Microsoft12.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "microsoft-02.jpg",
+          "original": "TCCWEB-Portfolio-Microsoft9.jpg",
+          "local": "public/images/projects/microsoft/microsoft-02.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68db4b15174ea9ad6675d058_TCCWEB-Portfolio-Microsoft9.jpg",
+          "cdnFile": "68db4b15174ea9ad6675d058_TCCWEB-Portfolio-Microsoft9.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "microsoft-03.jpg",
+          "original": "TCCWEB-Portfolio-Microsoft16.jpg",
+          "local": "public/images/projects/microsoft/microsoft-03.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68db4b17a1c385074daf6458_TCCWEB-Portfolio-Microsoft16.jpg",
+          "cdnFile": "68db4b17a1c385074daf6458_TCCWEB-Portfolio-Microsoft16.jpg",
+          "width": 1200,
+          "height": 1500,
+          "ratio": 0.8,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "microsoft-04.jpg",
+          "original": "TCCWEB-Portfolio-Microsoft7.jpg",
+          "local": "public/images/projects/microsoft/microsoft-04.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68db4b14942c9cc3d4ab56bd_TCCWEB-Portfolio-Microsoft7.jpg",
+          "cdnFile": "68db4b14942c9cc3d4ab56bd_TCCWEB-Portfolio-Microsoft7.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "microsoft-05.jpg",
+          "original": "TCCWEB-Portfolio-Microsoft8.jpg",
+          "local": "public/images/projects/microsoft/microsoft-05.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68db4b15af247aea33a61e71_TCCWEB-Portfolio-Microsoft8.jpg",
+          "cdnFile": "68db4b15af247aea33a61e71_TCCWEB-Portfolio-Microsoft8.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "microsoft-06.jpg",
+          "original": "TCCWEB-Portfolio-Microsoft4.jpg",
+          "local": "public/images/projects/microsoft/microsoft-06.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68db4b138e43763cd41a6818_TCCWEB-Portfolio-Microsoft4.jpg",
+          "cdnFile": "68db4b138e43763cd41a6818_TCCWEB-Portfolio-Microsoft4.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        },
+        {
+          "type": "image",
+          "file": "microsoft-07.jpg",
+          "original": "TCCWEB-Portfolio-Microsoft3.jpg",
+          "local": "public/images/projects/microsoft/microsoft-07.jpg",
+          "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68db4b1370606f40973730f9_TCCWEB-Portfolio-Microsoft3.jpg",
+          "cdnFile": "68db4b1370606f40973730f9_TCCWEB-Portfolio-Microsoft3.jpg",
+          "width": 2472,
+          "height": 1500,
+          "ratio": 1.648,
+          "status": "local"
+        }
+      ],
+      "files": [
+        "68db4b164c626bbe0db5d75d_TCCWEB-Portfolio-Microsoft12.jpg",
+        "68db4b15174ea9ad6675d058_TCCWEB-Portfolio-Microsoft9.jpg",
+        "68db4b17a1c385074daf6458_TCCWEB-Portfolio-Microsoft16.jpg",
+        "68db4b14942c9cc3d4ab56bd_TCCWEB-Portfolio-Microsoft7.jpg",
+        "68db4b15af247aea33a61e71_TCCWEB-Portfolio-Microsoft8.jpg",
+        "68db4b138e43763cd41a6818_TCCWEB-Portfolio-Microsoft4.jpg",
+        "68db4b1370606f40973730f9_TCCWEB-Portfolio-Microsoft3.jpg"
+      ],
+      "dims": [
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        },
+        {
+          "width": 2472,
+          "height": 1500
+        }
+      ],
+      "vids": []
+    }
+  ],
+  "assetStatus": {
+    "images": {
+      "local": 157,
+      "remoteFallback": 0,
+      "missing": 0
+    },
+    "videos": {
+      "local": 1,
+      "embedded": 5,
+      "unresolved": 5
+    }
+  },
+  "notes": {
+    "canonical": "src/data/projects.json is the single source of truth. Root projects.json is a synced copy.",
+    "vidzflow": "Five Vidzflow films unresolved without yt-dlp — runtime uses embed iframes. Gella MP4 is local."
+  }
+}
