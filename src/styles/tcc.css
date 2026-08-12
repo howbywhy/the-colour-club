@@ -355,9 +355,6 @@ body.info #info{transform:none}
 #ghost img{position:fixed;object-fit:cover;will-change:transform}
 #ghost .gc{position:fixed;overflow:hidden;will-change:left,top,width,height}
 #ghost .gc img{position:static;width:100%;height:100%;object-fit:cover}
-/* Filter leave ghosts — hold leavers in place when the visible set has no survivors */
-#ghost .fg{position:fixed;overflow:hidden;pointer-events:none;z-index:500;margin:0;box-sizing:border-box}
-#ghost .fg img{position:static;width:100%;height:100%;object-fit:cover;display:block}
 
 /* ================= DEBUG ================= */
 #debug{position:fixed;left:14px;bottom:44px;z-index:600;width:290px;background:#101014;color:#fff;

@@ -6,15 +6,12 @@ export const TIMING = {
   flip: 380,
   view: 420,
   filterLeave: 110,
-  filterFlip: 220,
-  /* Large compositional closes keep FLIP — duration eases out with distance. */
-  filterFlipMax: 420,
-  filterEnter: 90,
-  /* Skip only imperceptible moves. No upper snap ceiling — mixed snap/FLIP
-     across filter pairs was breaking parity with All↔Hospitality. */
+  filterFlip: 180,
+  filterEnter: 100,
+  /* Visual: only small survivor settlements FLIP. Large grid packing snaps —
+     calmer than animating 600–3000px rides that expose the layout engine. */
   filterMoveMin: 16,
-  /* Desktop: Infinity via nullish check in Collection; mobile forces 0 (fade-only). */
-  filterMoveMax: 1e6,
+  filterMoveMax: 120,
   open: 430,
   closeFade: 180,
   close: 400,

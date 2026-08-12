@@ -10,9 +10,10 @@
  * - statement excluded
  * - survivors remain visible
  * - quieter filterEase
- * - <16px snap; large survivor moves FLIP (distance-scaled duration)
- * - zero-survivor pairs: leave ghosts + immediate set swap (no blank field)
- * - mobile fade-only
+ * - Visual: subtraction / restoration / substitution
+ * - survivors never fade; only small settlements FLIP
+ * - Index: rows opacity only; fixed shell; no FLIP
+ * - mobile Visual: fade-only (no FLIP)
  * - first interaction cancels intro
  */
 export { TIMING } from './timing.js';
@@ -25,11 +26,11 @@ export const FILTER_BASELINE_NOTES = [
   'promise completion (watchdog backstop only)',
   'no stagger',
   'statement excluded',
-  'survivors remain visible',
+  'survivors remain visible (opacity 1)',
   'quieter filterEase',
-  '<16px snap; large survivor moves FLIP',
-  'zero-survivor leave ghosts (no blank field)',
-  'mobile fade-only',
+  'Visual: small FLIP only (≤120px); larger snaps',
+  'Index: shell fixed; rows opacity only',
+  'mobile Visual fade-only',
   'first interaction cancels intro',
 ];
 
