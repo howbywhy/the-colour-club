@@ -14,6 +14,7 @@ import { createIndex } from './components/Index.js';
 import { createProjectStack } from './components/ProjectStack.js';
 import { createCollection } from './components/Collection.js';
 import { createInfo } from './components/Info.js';
+import { createChrome } from './components/Chrome.js';
 import { saveViewScroll, resetModeY } from './state/scrollLedger.js';
 
 /* Mutable flight hooks — window patches (QA) and lexical calls share one table. */
@@ -314,26 +315,17 @@ addEventListener('hashchange', applyHash);
 /* ============================================================
    CHROME + KEYS + CLOCK + DEBUG
    ============================================================ */
-$('#brandBtn').addEventListener('click',()=>{ // return to club arrangement
-  closeInfo(()=>{ if(world.selected)closeProject(); 
-    setTimeout(()=>{setView('field');scrollTo({top:0,behavior:RM?'auto':'smooth'})},D(TIMING.brandDelay)); });
+const chrome = createChrome({
+  closeInfo,
+  closeProject,
+  setView,
+  openInfo,
+  setDepth,
+  onToggleDbg: () => toggleDbg(),
 });
-$('#viewBtn').addEventListener('click',()=>{
-  const act=()=>{ if(world.selected){closeProject();setTimeout(()=>setView(world.view==='field'?'index':'field'),D(TIMING.viewAfterClose))}
-    else setView(world.view==='field'?'index':'field'); };
-  if(world.infoOpen)closeInfo(act); else act();
-});
+chrome.bindChrome();
 bindInfoChrome();
-$('#insClose').addEventListener('click',()=>closeProject());
-$('#mImages').addEventListener('click',()=>setDepth('images'));
-$('#mIdea').addEventListener('click',()=>setDepth('idea'));
 bindSortHeaders();
-addEventListener('keydown',e=>{
-  if(e.key==='Escape'){ if(world.infoOpen)closeInfo(); else if(world.selected&&world.depth==='idea')setDepth('images'); else if(world.selected)closeProject(); }
-  if(e.key.toLowerCase()==='d'&&!e.metaKey&&!e.ctrlKey)toggleDbg();
-});
-setInterval(()=>{const n=new Date();
-  $('#clock').textContent=n.toLocaleDateString('en-AU',{day:'2-digit',month:'short'})+' '+n.toTimeString().slice(0,8);},1000);
 
 /* debug */
 let dbgOn=false;
