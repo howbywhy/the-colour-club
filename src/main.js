@@ -11,6 +11,7 @@ import {
   endIntro,
 } from './motion/transitions.js';
 import { createProjectMedia } from './components/ProjectMedia.js';
+import { createIndex } from './components/Index.js';
 import { freezeForInfo, restoreAfterInfo, saveViewScroll, resetModeY } from './state/scrollLedger.js';
 
 /* Mutable flight hooks — window patches (QA) and lexical calls share one table. */
@@ -46,6 +47,17 @@ const nextHue=()=>HUES[hueI++%HUES.length];
    BUILD COLLECTION
    ============================================================ */
 const grid=$('#colgrid');
+function flipTiles(mutate,opts){ return flipTilesRaw(grid, mutate, opts); }
+const index = createIndex({
+  grid,
+  getById: () => byId,
+  media,
+  nextHue,
+  flipTiles,
+  onDbg: () => dbg(),
+});
+const { attachPreview, sortIndex, bindSortHeaders } = index;
+
 P.forEach(p=>{
   const t=document.createElement('article');
   const coverClass=classFromDim(p,0);
@@ -56,43 +68,13 @@ P.forEach(p=>{
     <span class="ix sec">${p.sector}</span><span class="ix sco">${p.deliv.slice(0,3).join(' · ')}${p.deliv.length>3?' +'+(p.deliv.length-3):''}</span></div>`;
   t.addEventListener('click',()=>openProject(p.id));
   t.addEventListener('keydown',e=>{if(e.key==='Enter')openProject(p.id)});
-  t.addEventListener('mouseenter',()=>{
-    const c=nextHue(); t.style.setProperty('--hue',c);
-    /* Index preview is a desktop hover affordance — no touch equivalent */
-    if(world.view!=='index')return;
-    if(!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
-    const pv=$('#ixpreview'),pi=$('#ixpImg');
-    if(!pv||!pi)return;
-    pv.style.setProperty('--hue',c);
-    pv.dataset.for=p.id;
-    const d=dimOf(p,0);
-    const sizePreview=(w,h)=>{
-      const sc=Math.min(380/w,(innerHeight*0.62)/h);
-      const W=Math.round(w*sc),H=Math.round(h*sc);
-      pv.style.width=W+'px';pv.style.height=H+'px';
-      const want=parseFloat(pv.dataset.top||'120');
-      pv.style.top=Math.min(want,innerHeight-H-24)+'px';
-    };
-    if(d) sizePreview(d.width,d.height);
-    const reveal=()=>{
-      if(pv.dataset.for!==p.id)return;
-      if(!d && pi.naturalWidth) sizePreview(pi.naturalWidth,pi.naturalHeight);
-      if(d || pi.naturalWidth) pv.classList.add('show');
-    };
-    pi.onload=reveal;
-    setImg(pi,p,0);
-    if(pi.complete&&(d||pi.naturalWidth))reveal();
-  });
-  t.addEventListener('mouseleave',()=>{
-    const pv=$('#ixpreview');
-    if(pv&&pv.dataset.for===p.id){ pv.classList.remove('show'); delete pv.dataset.for; }
-  });
+  attachPreview(t, p);
   grid.appendChild(t);
 });
 sweep(grid);
 /* index column order inside label when .x is active is handled by display:contents */
 
-/* stack (archive during inspect) */
+/* stack (archive during inspect) — 4:5 nav thumbs via CSS */
 const stack=$('#stack');
 function buildStack(exceptId){
   stack.innerHTML='';
@@ -120,9 +102,8 @@ caps.addEventListener('click',e=>{
 });
 
 /* ============================================================
-   FLIP HELPERS
+   FLIP HELPERS — flipTiles bound above with Index
    ============================================================ */
-function flipTiles(mutate,opts){ return flipTilesRaw(grid, mutate, opts); }
 
 /* ============================================================
    STATE TRANSITIONS
@@ -143,18 +124,6 @@ function setView(v,quiet){
     setTimeout(release,D(TIMING.view));
     syncHash(); dbg();
   })) return;
-}
-function sortIndex(key){
-  if(world.view!=='index')return;
-  world.sort=key;world.last='sort:'+key;
-  flipTiles(()=>{
-    [...grid.querySelectorAll('.tile')]
-      .sort((a,b)=> (key==='name'?byId[a.dataset.id].name.localeCompare(byId[b.dataset.id].name)
-                                 :byId[a.dataset.id].sector.localeCompare(byId[b.dataset.id].sector)))
-      .forEach(t=>grid.appendChild(t));
-  });
-  document.querySelectorAll('#ixhead [data-sort]').forEach(b=>b.classList.toggle('sorted',b.dataset.sort===key));
-  dbg();
 }
 
 const SECTORS=['hospitality','fmcg','spatial'];
@@ -578,7 +547,7 @@ $('#infoScrim').addEventListener('click',()=>closeInfo());
 $('#insClose').addEventListener('click',()=>closeProject());
 $('#mImages').addEventListener('click',()=>setDepth('images'));
 $('#mIdea').addEventListener('click',()=>setDepth('idea'));
-document.querySelectorAll('#ixhead [data-sort]').forEach(b=>b.addEventListener('click',()=>sortIndex(b.dataset.sort)));
+bindSortHeaders();
 addEventListener('keydown',e=>{
   if(e.key==='Escape'){ if(world.infoOpen)closeInfo(); else if(world.selected&&world.depth==='idea')setDepth('images'); else if(world.selected)closeProject(); }
   if(e.key.toLowerCase()==='d'&&!e.metaKey&&!e.ctrlKey)toggleDbg();
