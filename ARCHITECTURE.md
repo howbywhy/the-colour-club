@@ -60,11 +60,11 @@ Every `scrollTop = 0` / `scrollTo(0,…)` must be intentional:
 
 | Location | Reason |
 |---|---|
-| Project open | Start Images at top |
-| Lateral | New project starts at top of current mode |
-| Brand → field | Explicit return-to-club |
-| Filter scroll restore | Undo accidental drift during transition |
-| Info restore | Resume frozen underlying scroll |
+| Project open (`main.js`) | Start Images at top |
+| Lateral (`main.js`) | New project starts at top of current mode |
+| Brand → field (`Chrome.js`) | Explicit return-to-club |
+| Filter scroll restore (`Collection.js`) | Undo accidental drift during transition |
+| Info restore (`scrollLedger.js`) | Resume frozen underlying scroll |
 
 ## QA hooks
 
