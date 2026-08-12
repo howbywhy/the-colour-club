@@ -5,4 +5,5 @@
 
 # Ephemeral QA dumps (reports live in QA-*.md)
 .qa-tools/*-results.json
+.qa-tools/filter-diag.json
 /tmp/

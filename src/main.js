@@ -69,6 +69,16 @@ const HUES=['#4E5FFD','#E23A2E','#0F8A46','#F0740A','#C4258F','#7E30D8','#0F7E93
 let hueI=0;
 const nextHue=()=>HUES[hueI++%HUES.length];
 
+/* First interaction cancels the first-entry intro so filters/open aren't fighting opacity:0 */
+function endIntro(){
+  if(!document.body.classList.contains('intro'))return;
+  document.body.classList.remove('intro');
+  document.querySelectorAll('.tile,#linecell h1,#chrome,#linecell .sig,#ixnote').forEach(el=>{
+    try{ el.getAnimations?.().forEach(a=>a.cancel()); }catch(_){}
+    if(el.style&&el.style.opacity==='0') el.style.opacity='';
+  });
+}
+
 /* ============================================================
    BUILD COLLECTION
    ============================================================ */
@@ -85,32 +95,34 @@ P.forEach(p=>{
   t.addEventListener('keydown',e=>{if(e.key==='Enter')openProject(p.id)});
   t.addEventListener('mouseenter',()=>{
     const c=nextHue(); t.style.setProperty('--hue',c);
-    if(world.view==='index'){
-      const pv=$('#ixpreview'),pi=$('#ixpImg');
-      pv.style.setProperty('--hue',c);
-      pv.dataset.for=p.id;
-      /* size from recorded intrinsics immediately — no decode wait, no 4:3 flash */
-      const d=dimOf(p,0);
-      const sizePreview=(w,h)=>{
-        const sc=Math.min(380/w,(innerHeight*0.62)/h);
-        const W=Math.round(w*sc),H=Math.round(h*sc);
-        pv.style.width=W+'px';pv.style.height=H+'px';
-        const want=parseFloat(pv.dataset.top||'120');
-        pv.style.top=Math.min(want,innerHeight-H-24)+'px';
-      };
-      if(d) sizePreview(d.width,d.height);
-      const reveal=()=>{
-        if(pv.dataset.for!==p.id)return;
-        if(!d && pi.naturalWidth) sizePreview(pi.naturalWidth,pi.naturalHeight);
-        if(d || pi.naturalWidth) pv.classList.add('show');
-      };
-      pi.onload=reveal;
-      setImg(pi,p,0);
-      if(pi.complete&&(d||pi.naturalWidth))reveal();
-    }});
+    /* Index preview is a desktop hover affordance — no touch equivalent */
+    if(world.view!=='index')return;
+    if(!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
+    const pv=$('#ixpreview'),pi=$('#ixpImg');
+    if(!pv||!pi)return;
+    pv.style.setProperty('--hue',c);
+    pv.dataset.for=p.id;
+    const d=dimOf(p,0);
+    const sizePreview=(w,h)=>{
+      const sc=Math.min(380/w,(innerHeight*0.62)/h);
+      const W=Math.round(w*sc),H=Math.round(h*sc);
+      pv.style.width=W+'px';pv.style.height=H+'px';
+      const want=parseFloat(pv.dataset.top||'120');
+      pv.style.top=Math.min(want,innerHeight-H-24)+'px';
+    };
+    if(d) sizePreview(d.width,d.height);
+    const reveal=()=>{
+      if(pv.dataset.for!==p.id)return;
+      if(!d && pi.naturalWidth) sizePreview(pi.naturalWidth,pi.naturalHeight);
+      if(d || pi.naturalWidth) pv.classList.add('show');
+    };
+    pi.onload=reveal;
+    setImg(pi,p,0);
+    if(pi.complete&&(d||pi.naturalWidth))reveal();
+  });
   t.addEventListener('mouseleave',()=>{
     const pv=$('#ixpreview');
-    if(pv.dataset.for===p.id){ pv.classList.remove('show'); delete pv.dataset.for; }
+    if(pv&&pv.dataset.for===p.id){ pv.classList.remove('show'); delete pv.dataset.for; }
   });
   grid.appendChild(t);
 });
@@ -159,6 +171,7 @@ function setView(v,quiet){
     document.body.classList.toggle('x',v==='index');document.body.classList.toggle('g',v==='field');
     world.view=v;$('#viewBtn').textContent=v==='index'?'Visual':'Index';dbg();return;
   }
+  endIntro();
   if(!withLock('view:'+world.view+'→'+v,()=>{
     saveViewScroll();
     flipTiles(()=>{document.body.classList.toggle('x',v==='index');document.body.classList.toggle('g',v==='field')});
@@ -182,42 +195,210 @@ function sortIndex(key){
 }
 
 const SECTORS=['hospitality','fmcg','spatial'];
-function setFilter(sec,quiet){
-  if(world.sector===sec)return;
-  if(!quiet&&world.lock)return;
-  world.sector=sec;world.last='filter:'+sec;
-  document.querySelectorAll('#filters .fbtn').forEach(b=>b.classList.toggle('on',b.dataset.f===sec));
+/* Filter transition coordinator — latest intent wins; completion via animation promises. */
+const filterCtrl={
+  phase:'idle', /* idle | leaving | flipping | entering */
+  target:null,
+  gen:0,
+  leavers:0,
+  survivors:0,
+  enterers:0,
+  animCount:0,
+  ownedLock:false,
+};
+function filterWillShow(sec,t){ return sec==='all' || byId[t.dataset.id].cat===sec; }
+function applyFilterLayout(sec){
+  document.body.classList.toggle('filtered',sec!=='all');
+  [...grid.querySelectorAll('.tile')].forEach(t=>{
+    t.classList.toggle('fhide',!filterWillShow(sec,t));
+    t.style.opacity='';
+    t.style.transform='';
+  });
+}
+function cancelFilterMotion(){
+  [...grid.querySelectorAll('.tile')].forEach(t=>{
+    t.getAnimations().forEach(a=>{ try{ a.cancel(); }catch(_){} });
+    t.style.opacity='';
+    t.style.transform='';
+  });
+  filterCtrl.animCount=0;
+}
+function beginFilterLock(){
+  if(!world.lock) acquire();
+  else{
+    clearTimeout(world._wd);
+    world._wd=setTimeout(()=>{ world.lock=false; filterCtrl.ownedLock=false; }, TIMING.watchdog);
+  }
+  filterCtrl.ownedLock=true;
+}
+function endFilterLock(){
+  if(!filterCtrl.ownedLock)return;
+  filterCtrl.ownedLock=false;
+  release();
+}
+async function transitionFilter(sec,gen){
+  beginFilterLock();
+  filterCtrl.target=sec;
   const tiles=[...grid.querySelectorAll('.tile')];
-  const apply=()=>{
+  const leaving=tiles.filter(t=>!t.classList.contains('fhide')&&!filterWillShow(sec,t));
+  const survivors=tiles.filter(t=>!t.classList.contains('fhide')&&filterWillShow(sec,t));
+  const entering=tiles.filter(t=>t.classList.contains('fhide')&&filterWillShow(sec,t));
+  filterCtrl.leavers=leaving.length;
+  filterCtrl.survivors=survivors.length;
+  filterCtrl.enterers=entering.length;
+  const sy0=scrollY;
+  dbg();
+  try{
+    /* BEFORE — survivors only */
+    const before=new Map();
+    survivors.forEach(t=>before.set(t,t.getBoundingClientRect()));
+
+    /* LEAVE — primary beat: non-matching work resolves out */
+    filterCtrl.phase='leaving'; dbg();
+    if(!RM && leaving.length){
+      const leaveWait=leaving.map(t=>{
+        const an=t.animate(
+          [{opacity:1},{opacity:0}],
+          {duration:TIMING.filterLeave,easing:TIMING.filterEase,fill:'forwards'}
+        );
+        return an.finished.then(()=>{
+          t.style.opacity='0';
+          try{ an.cancel(); }catch(_){}
+        },()=>{ /* cancelled by newer filter */ });
+      });
+      filterCtrl.animCount=leaving.length; dbg();
+      await Promise.allSettled(leaveWait);
+      if(gen!==filterCtrl.gen)return;
+      leaving.forEach(t=>{ t.style.opacity='0'; });
+    }else{
+      leaving.forEach(t=>{ t.style.opacity='0'; });
+    }
+
+    if(gen!==filterCtrl.gen)return;
+
+    /* MUTATE — leavers out of flow; enterers in at opacity 0 */
+    filterCtrl.phase='flipping'; dbg();
     document.body.classList.toggle('filtered',sec!=='all');
     tiles.forEach(t=>{
-      const show = sec==='all' || byId[t.dataset.id].cat===sec;
+      const show=filterWillShow(sec,t);
       t.classList.toggle('fhide',!show);
+      if(!show){ t.style.opacity=''; t.style.transform=''; }
+    });
+    entering.forEach(t=>{ t.style.opacity='0'; });
+    survivors.forEach(t=>{ t.style.opacity=''; });
+    void grid.offsetHeight;
+
+    /* PLAY — survivors settle only meaningful gaps; enterers fade at destination */
+    filterCtrl.phase='entering';
+    const flipWait=[];
+    const enterWait=[];
+    const moveMin=TIMING.filterMoveMin||16;
+    /* Mobile: leave + enter fade only — vertical collapse snaps (no layout choreography) */
+    const narrow=matchMedia('(max-width:767px)').matches;
+    const moveMax=narrow?0:(TIMING.filterMoveMax||240);
+    if(!RM){
+      survivors.forEach(t=>{
+        const b=before.get(t), a=t.getBoundingClientRect();
+        if(!b||a.width===0||b.width===0)return;
+        const dx=b.left-a.left, dy=b.top-a.top;
+        const dist=Math.hypot(dx,dy);
+        /* Tiny corrections snap; large row-collapses snap — both cheaper than choreography */
+        if(dist<moveMin||dist>moveMax)return;
+        const an=t.animate(
+          [{transform:`translate(${dx}px,${dy}px)`},{transform:'none'}],
+          {duration:TIMING.filterFlip,easing:TIMING.filterEase}
+        );
+        flipWait.push(an.finished.then(()=>{
+          try{ an.cancel(); }catch(_){}
+          t.style.transform='';
+        },()=>{ /* cancelled */ }));
+      });
+      entering.forEach(t=>{
+        const an=t.animate(
+          [{opacity:0},{opacity:1}],
+          {duration:TIMING.filterEnter,easing:TIMING.filterEase,fill:'forwards'}
+        );
+        enterWait.push(an.finished.then(()=>{
+          t.style.opacity='1';
+          try{ an.cancel(); }catch(_){}
+          t.style.opacity='';
+        },()=>{ /* cancelled by newer filter */ }));
+      });
+    }
+    const allWait=[...flipWait,...enterWait];
+    filterCtrl.animCount=allWait.length; dbg();
+    if(allWait.length) await Promise.allSettled(allWait);
+    if(gen!==filterCtrl.gen)return;
+
+    /* COMMIT — DOM/CSS alone represent the result */
+    survivors.forEach(t=>{
+      t.getAnimations().forEach(a=>{ try{ a.cancel(); }catch(_){} });
+      t.style.transform='';
       t.style.opacity='';
     });
-  };
-  /* router-driven reconciliation is instant — it never animates, so it never races */
-  if(quiet||RM){apply();dbg();return}
-  acquire();
-  try{
-    const leaving=tiles.filter(t=>sec!=='all'&&byId[t.dataset.id].cat!==sec&&!t.classList.contains('fhide'));
-    const entering=tiles.filter(t=>t.classList.contains('fhide')&&(sec==='all'||byId[t.dataset.id].cat===sec));
-    leaving.forEach(t=>{
-      const an=t.animate([{opacity:1},{opacity:0}],{duration:TIMING.filterLeave,easing:'ease-out',fill:'forwards'});
-      if(an&&an.finished) an.finished.catch(()=>{});
+    entering.forEach(t=>{
+      t.getAnimations().forEach(a=>{ try{ a.cancel(); }catch(_){} });
+      t.style.opacity='';
     });
-    setTimeout(()=>{
-      flipTiles(()=>{apply();entering.forEach(t=>{t.style.opacity=0})},{dur:TIMING.filterFlip,cap:60});
-      entering.forEach(t=>{
-        const an=t.animate([{opacity:0},{opacity:1}],{duration:TIMING.filterEnter,easing:'ease-out',delay:TIMING.filterEnterDelay});
-        const clear=()=>{t.style.opacity=''};
-        if(an&&an.finished) an.finished.then(clear,clear);
-        else an.onfinish=clear;
-      });
-      setTimeout(release,D(TIMING.filterRelease));
-    },D(TIMING.filterLeave));
-  }catch(err){ release(); console.error('[tcc] filter',err); }
+    leaving.forEach(t=>{ t.style.opacity=''; });
+
+    if(Math.abs(scrollY-sy0)>0) scrollTo(0,sy0);
+
+    filterCtrl.phase='idle';
+    filterCtrl.target=null;
+    filterCtrl.animCount=0;
+    filterCtrl.leavers=0;
+    filterCtrl.survivors=0;
+    filterCtrl.enterers=0;
+    endFilterLock();
+    dbg();
+  }catch(err){
+    console.error('[tcc] filter',err);
+    if(gen!==filterCtrl.gen)return;
+    cancelFilterMotion();
+    applyFilterLayout(sec);
+    filterCtrl.phase='idle';
+    filterCtrl.target=null;
+    filterCtrl.animCount=0;
+    endFilterLock();
+    dbg();
+  }
+}
+function setFilter(sec,quiet){
+  /* Router path — instant reconcile; cancel any in-flight filter motion */
+  if(quiet){
+    filterCtrl.gen++;
+    cancelFilterMotion();
+    world.sector=sec; world.last='filter:'+sec;
+    document.querySelectorAll('#filters .fbtn').forEach(b=>b.classList.toggle('on',b.dataset.f===sec));
+    applyFilterLayout(sec);
+    filterCtrl.phase='idle';
+    filterCtrl.target=null;
+    filterCtrl.animCount=0;
+    endFilterLock();
+    dbg();
+    return;
+  }
+  endIntro();
+  /* Active label responds immediately; gallery follows */
+  const alreadyThere=world.sector===sec && (filterCtrl.phase==='idle' || filterCtrl.target===sec);
+  if(alreadyThere)return;
+  /* Another non-filter transition owns the lock */
+  if(world.lock && filterCtrl.phase==='idle')return;
+
+  world.sector=sec; world.last='filter:'+sec;
+  document.querySelectorAll('#filters .fbtn').forEach(b=>b.classList.toggle('on',b.dataset.f===sec));
   syncHash(); dbg();
+
+  if(RM){
+    applyFilterLayout(sec);
+    return;
+  }
+
+  /* Latest intent wins — cancel in-flight filter, restart from current visual state */
+  if(filterCtrl.phase!=='idle') cancelFilterMotion();
+  const gen=++filterCtrl.gen;
+  transitionFilter(sec,gen);
 }
 document.querySelectorAll('#filters .fbtn').forEach(b=>b.addEventListener('click',()=>setFilter(b.dataset.f)));
 function populateInspect(p){
@@ -261,6 +442,7 @@ function openProject(id,quiet){
     stack.classList.add('show');$('#insClose').classList.add('show');
     world.selected=id;world.depth='images';dbg();return;
   }
+  endIntro();
   if(world.lock)return;
   if(!withLock('open:'+id,()=>{
     const tile=grid.querySelector(`.tile[data-id="${id}"]`);
@@ -396,6 +578,7 @@ function setDepth(d,quiet){
 }
 function openInfo(quiet){
   if(world.infoOpen)return;
+  if(!quiet) endIntro();
   world.infoOpen=true;world.last='info:open';
   freezeForInfo();
   document.body.classList.add('info');
@@ -485,6 +668,7 @@ function toggleDbg(){dbgOn=!dbgOn;$('#debug').classList.toggle('on',dbgOn);dbg()
 function dbg(){
   if(!dbgOn)return;
   const modeY=world.ledger.modeY||{};
+  const animLive=[...grid.querySelectorAll('.tile')].reduce((n,t)=>n+(t.getAnimations?t.getAnimations().length:0),0);
   $('#debug').innerHTML=
 `<span class="h">WORLD STATE</span>
 view        ${world.view}${world.sort?' (sort:'+world.sort+')':''}
@@ -494,6 +678,14 @@ depth       ${world.selected?world.depth:'—'}
 infoOpen    ${world.infoOpen}
 lock        ${world.lock}
 last        ${world.last}
+<span class="h">FILTER</span>
+phase       ${filterCtrl.phase}
+target      ${filterCtrl.target||'—'}
+pending     — (latest-wins)
+leavers     ${filterCtrl.leavers}
+survivors   ${filterCtrl.survivors}
+enterers    ${filterCtrl.enterers}
+anims       ${filterCtrl.animCount} (live ${animLive})
 <span class="h">LEDGER</span>
 fieldY      ${Math.round(world.ledger.fieldY||0)}
 indexY      ${Math.round(world.ledger.indexY||0)}
@@ -520,6 +712,7 @@ if(location.hash&&location.hash!=='#/')applyHash(); dbg();
   window.closeProject = closeProject;
   window.setDepth = setDepth;
   window.setFilter = setFilter;
+  window.filterCtrl = filterCtrl;
   window.setView = setView;
   window.openInfo = openInfo;
   window.closeInfo = closeInfo;

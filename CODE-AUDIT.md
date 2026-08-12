@@ -45,7 +45,12 @@ Date: 2026-08-12 · Subject: modular `index.html` + `src/`
 - CDN `onerror` fallback retained intentionally.
 - Inventory backup JSON retained.
 
-## Density (Phase 03)
+## Filter stabilisation (post Phase 03)
+
+Root cause of jump: filter FLIP used per-tile stagger delay with default `fill:none`, so survivors painted at destination before invert; leave used `fill:forwards` across mutate; release was wall-clock; rapid clicks were dropped while locked.
+
+Fixed via `transitionFilter` coordinator: leave → mutate → survivor FLIP (0 stagger) + enter fade; completion via `Promise.allSettled`; latest-intent-wins cancellation; opacity committed in CSS before animation cancel.
+
 
 | Token | Before | After |
 |---|---|---|
