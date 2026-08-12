@@ -1,5 +1,6 @@
 import { loadProjects } from './data/projects.js';
 import { world, RM, D, $, acquire, release, withLock } from './state/worldState.js';
+import { createRouter } from './state/routing.js';
 import { fly as flyRaw, flyCrop as flyCropRaw, flipTiles as flipTilesRaw } from './motion/flip.js';
 import { TIMING } from './motion/timing.js';
 import { freezeForInfo, restoreAfterInfo, saveViewScroll, resetModeY } from './state/scrollLedger.js';
@@ -597,44 +598,16 @@ function closeInfo(then,quiet){
 }
 
 /* ============================================================
-   URL — hash routing (prototype stand-in for real paths)
+   URL — hash routing (URL ↔ world; no animation ownership)
    ============================================================ */
-let expectHash=null;
-function syncHash(){
-  let h='#/';
-  if(world.selected){h='#/p/'+world.selected; if(world.depth==='idea')h+='/idea';}
-  else{
-    const seg=[];
-    if(world.view==='index')seg.push('index');
-    if(world.sector!=='all')seg.push(world.sector);
-    h='#/'+seg.join('/');
-  }
-  if(world.infoOpen)h+= (h==='#/'?'info':'/info');
-  if(location.hash!==h){expectHash=h;location.hash=h}
-}
-function applyHash(){
-  if(location.hash===expectHash){expectHash=null;return}
-  let h=location.hash.replace(/^#\/?/,'');
-  const info=/(^|\/)info$/.test(h); h=h.replace(/\/?info$/,'');
-  const m=h.match(/^p\/([a-z0-9]+)(\/idea)?$/);
-  // reconcile info
-  if(info&&!world.infoOpen)openInfo(true);
-  if(!info&&world.infoOpen)closeInfo(null,true);
-  if(m&&byId[m[1]]){
-    if(world.selected&&world.selected!==m[1])lateral(m[1],true);
-    else if(!world.selected)openProject(m[1],true);
-    setDepth(m[2]?'idea':'images',true);
-  }else{
-    if(world.selected)closeProject(true);
-    const parts=h.split('/').filter(Boolean);
-    const wantsIndex=parts[0]==='index';
-    const sec=wantsIndex?parts[1]:parts[0];
-    setView(wantsIndex?'index':'field',true);
-    setFilter(SECTORS.includes(sec)?sec:'all',true);
-  }
-  dbg();
-}
-addEventListener('hashchange',applyHash);
+const { syncHash, applyHash } = createRouter({
+  getById: () => byId,
+  sectors: SECTORS,
+  getActions: () => ({
+    openProject, closeProject, setView, setFilter, setDepth, lateral, openInfo, closeInfo, dbg,
+  }),
+});
+addEventListener('hashchange', applyHash);
 
 /* ============================================================
    CHROME + KEYS + CLOCK + DEBUG
