@@ -13,7 +13,8 @@ import { createProjectMedia } from './components/ProjectMedia.js';
 import { createIndex } from './components/Index.js';
 import { createProjectStack } from './components/ProjectStack.js';
 import { createCollection } from './components/Collection.js';
-import { freezeForInfo, restoreAfterInfo, saveViewScroll, resetModeY } from './state/scrollLedger.js';
+import { createInfo } from './components/Info.js';
+import { saveViewScroll, resetModeY } from './state/scrollLedger.js';
 
 /* Mutable flight hooks — window patches (QA) and lexical calls share one table. */
 const { flights, fly, flyCrop } = createFlightTable(flyRaw, flyCropRaw);
@@ -88,17 +89,13 @@ const projectStack = createProjectStack({
 });
 const { buildStack } = projectStack;
 
-/* info capabilities */
-const caps=$('#caps');
-CAPS.forEach(([n,ids])=>{
-  const d=document.createElement('div');d.className='capgrp';
-  d.innerHTML=`<div class="cn">${n}</div><div class="proof">${ids.filter(i=>byId[i]).map(i=>`<button data-open="${i}">${byId[i].name}</button>`).join('')}</div>`;
-  caps.appendChild(d);
-  d.querySelectorAll('button').forEach(b=>b.addEventListener('mouseenter',()=>b.style.setProperty('--hue',nextHue())));
+const info = createInfo({
+  syncHash: () => syncHash(),
+  onDbg: () => dbg(),
 });
-caps.addEventListener('click',e=>{
-  const b=e.target.closest('[data-open]');if(!b)return;
-  closeInfo(()=>{ world.selected? lateral(b.dataset.open) : openProject(b.dataset.open); });
+const { openInfo, closeInfo, bindInfoChrome, buildCaps } = info;
+buildCaps(CAPS, () => byId, nextHue, (id) => {
+  world.selected ? lateral(id) : openProject(id);
 });
 
 /* ============================================================
@@ -299,25 +296,6 @@ function setDepth(d,quiet){
   },D(TIMING.depth));
   if(!quiet)syncHash(); dbg();
 }
-function openInfo(quiet){
-  if(world.infoOpen)return;
-  if(!quiet) endIntro();
-  world.infoOpen=true;world.last='info:open';
-  freezeForInfo();
-  document.body.classList.add('info');
-  $('#infoBtn').textContent='Close';
-  if(!quiet)syncHash(); dbg();
-}
-function closeInfo(then,quiet){
-  if(!world.infoOpen){then&&then();return}
-  world.infoOpen=false;world.last='info:close';
-  document.body.classList.remove('info');
-  $('#infoBtn').textContent='Info';
-  /* the world beneath must resume exactly where it froze */
-  restoreAfterInfo();
-  if(!quiet)syncHash(); dbg();
-  then&&setTimeout(then,D(TIMING.infoThen));
-}
 
 /* ============================================================
    URL — hash routing (URL ↔ world; no animation ownership)
@@ -345,9 +323,7 @@ $('#viewBtn').addEventListener('click',()=>{
     else setView(world.view==='field'?'index':'field'); };
   if(world.infoOpen)closeInfo(act); else act();
 });
-$('#infoBtn').addEventListener('click',()=>world.infoOpen?closeInfo():openInfo());
-$('#infoClose').addEventListener('click',()=>closeInfo());
-$('#infoScrim').addEventListener('click',()=>closeInfo());
+bindInfoChrome();
 $('#insClose').addEventListener('click',()=>closeProject());
 $('#mImages').addEventListener('click',()=>setDepth('images'));
 $('#mIdea').addEventListener('click',()=>setDepth('idea'));
