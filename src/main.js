@@ -7,12 +7,12 @@ import {
   flyCrop as flyCropRaw,
   flipTiles as flipTilesRaw,
   createFlightTable,
-  cancelElementAnims,
   endIntro,
 } from './motion/transitions.js';
 import { createProjectMedia } from './components/ProjectMedia.js';
 import { createIndex } from './components/Index.js';
 import { createProjectStack } from './components/ProjectStack.js';
+import { createCollection } from './components/Collection.js';
 import { freezeForInfo, restoreAfterInfo, saveViewScroll, resetModeY } from './state/scrollLedger.js';
 
 /* Mutable flight hooks — window patches (QA) and lexical calls share one table. */
@@ -59,20 +59,22 @@ const index = createIndex({
 });
 const { attachPreview, sortIndex, bindSortHeaders } = index;
 
-P.forEach(p=>{
-  const t=document.createElement('article');
-  const coverClass=classFromDim(p,0);
-  t.className='tile '+p.emp+(coverClass?' '+coverClass:''); t.dataset.id=p.id; t.tabIndex=0;
-  t.setAttribute('role','button'); t.setAttribute('aria-label','Open '+p.name);
-  t.innerHTML=`<div class="ph">${imgTag(p,0,'loading="lazy" alt="'+p.name+'"')}</div>
-    <div class="lbl"><span class="nm">${p.name}</span><span class="st">${p.strap}</span>
-    <span class="ix sec">${p.sector}</span><span class="ix sco">${p.deliv.slice(0,3).join(' · ')}${p.deliv.length>3?' +'+(p.deliv.length-3):''}</span></div>`;
-  t.addEventListener('click',()=>openProject(p.id));
-  t.addEventListener('keydown',e=>{if(e.key==='Enter')openProject(p.id)});
-  attachPreview(t, p);
-  grid.appendChild(t);
+/* Routing bindings filled after action functions exist */
+let syncHash = () => {};
+let applyHash = () => {};
+
+const collection = createCollection({
+  grid,
+  getById: () => byId,
+  getProjects: () => P,
+  media,
+  attachPreview,
+  openProject: (id) => openProject(id),
+  syncHash: () => syncHash(),
+  onDbg: () => dbg(),
 });
-sweep(grid);
+const { filterCtrl, setFilter, buildTiles, bindFilters } = collection;
+buildTiles();
 /* index column order inside label when .x is active is handled by display:contents */
 
 /* stack (archive during inspect) — 4:5 nav thumbs via CSS */
@@ -125,209 +127,11 @@ function setView(v,quiet){
 }
 
 const SECTORS=['hospitality','fmcg','spatial'];
-/* Filter transition coordinator — latest intent wins; completion via animation promises. */
-const filterCtrl={
-  phase:'idle', /* idle | leaving | flipping | entering */
-  target:null,
-  gen:0,
-  leavers:0,
-  survivors:0,
-  enterers:0,
-  animCount:0,
-  ownedLock:false,
-};
-function filterWillShow(sec,t){ return sec==='all' || byId[t.dataset.id].cat===sec; }
-function applyFilterLayout(sec){
-  document.body.classList.toggle('filtered',sec!=='all');
-  [...grid.querySelectorAll('.tile')].forEach(t=>{
-    t.classList.toggle('fhide',!filterWillShow(sec,t));
-    t.style.opacity='';
-    t.style.transform='';
-  });
-}
-function cancelFilterMotion(){
-  cancelElementAnims(grid.querySelectorAll('.tile'));
-  filterCtrl.animCount=0;
-}
-function beginFilterLock(){
-  if(!world.lock) acquire();
-  else{
-    clearTimeout(world._wd);
-    world._wd=setTimeout(()=>{ world.lock=false; filterCtrl.ownedLock=false; }, TIMING.watchdog);
-  }
-  filterCtrl.ownedLock=true;
-}
-function endFilterLock(){
-  if(!filterCtrl.ownedLock)return;
-  filterCtrl.ownedLock=false;
-  release();
-}
-async function transitionFilter(sec,gen){
-  beginFilterLock();
-  filterCtrl.target=sec;
-  const tiles=[...grid.querySelectorAll('.tile')];
-  const leaving=tiles.filter(t=>!t.classList.contains('fhide')&&!filterWillShow(sec,t));
-  const survivors=tiles.filter(t=>!t.classList.contains('fhide')&&filterWillShow(sec,t));
-  const entering=tiles.filter(t=>t.classList.contains('fhide')&&filterWillShow(sec,t));
-  filterCtrl.leavers=leaving.length;
-  filterCtrl.survivors=survivors.length;
-  filterCtrl.enterers=entering.length;
-  const sy0=scrollY;
-  dbg();
-  try{
-    /* BEFORE — survivors only */
-    const before=new Map();
-    survivors.forEach(t=>before.set(t,t.getBoundingClientRect()));
+/* Filters + gallery tiles owned by Collection (POSITIONING ≠ GALLERY). */
+bindFilters();
 
-    /* LEAVE — primary beat: non-matching work resolves out */
-    filterCtrl.phase='leaving'; dbg();
-    if(!RM && leaving.length){
-      const leaveWait=leaving.map(t=>{
-        const an=t.animate(
-          [{opacity:1},{opacity:0}],
-          {duration:TIMING.filterLeave,easing:TIMING.filterEase,fill:'forwards'}
-        );
-        return an.finished.then(()=>{
-          t.style.opacity='0';
-          try{ an.cancel(); }catch(_){}
-        },()=>{ /* cancelled by newer filter */ });
-      });
-      filterCtrl.animCount=leaving.length; dbg();
-      await Promise.allSettled(leaveWait);
-      if(gen!==filterCtrl.gen)return;
-      leaving.forEach(t=>{ t.style.opacity='0'; });
-    }else{
-      leaving.forEach(t=>{ t.style.opacity='0'; });
-    }
-
-    if(gen!==filterCtrl.gen)return;
-
-    /* MUTATE — leavers out of flow; enterers in at opacity 0 */
-    filterCtrl.phase='flipping'; dbg();
-    document.body.classList.toggle('filtered',sec!=='all');
-    tiles.forEach(t=>{
-      const show=filterWillShow(sec,t);
-      t.classList.toggle('fhide',!show);
-      if(!show){ t.style.opacity=''; t.style.transform=''; }
-    });
-    entering.forEach(t=>{ t.style.opacity='0'; });
-    survivors.forEach(t=>{ t.style.opacity=''; });
-    void grid.offsetHeight;
-
-    /* PLAY — survivors settle only meaningful gaps; enterers fade at destination */
-    filterCtrl.phase='entering';
-    const flipWait=[];
-    const enterWait=[];
-    const moveMin=TIMING.filterMoveMin||16;
-    /* Mobile: leave + enter fade only — vertical collapse snaps (no layout choreography) */
-    const narrow=matchMedia('(max-width:767px)').matches;
-    const moveMax=narrow?0:(TIMING.filterMoveMax||240);
-    if(!RM){
-      survivors.forEach(t=>{
-        const b=before.get(t), a=t.getBoundingClientRect();
-        if(!b||a.width===0||b.width===0)return;
-        const dx=b.left-a.left, dy=b.top-a.top;
-        const dist=Math.hypot(dx,dy);
-        /* Tiny corrections snap; large row-collapses snap — both cheaper than choreography */
-        if(dist<moveMin||dist>moveMax)return;
-        const an=t.animate(
-          [{transform:`translate(${dx}px,${dy}px)`},{transform:'none'}],
-          {duration:TIMING.filterFlip,easing:TIMING.filterEase}
-        );
-        flipWait.push(an.finished.then(()=>{
-          try{ an.cancel(); }catch(_){}
-          t.style.transform='';
-        },()=>{ /* cancelled */ }));
-      });
-      entering.forEach(t=>{
-        const an=t.animate(
-          [{opacity:0},{opacity:1}],
-          {duration:TIMING.filterEnter,easing:TIMING.filterEase,fill:'forwards'}
-        );
-        enterWait.push(an.finished.then(()=>{
-          t.style.opacity='1';
-          try{ an.cancel(); }catch(_){}
-          t.style.opacity='';
-        },()=>{ /* cancelled by newer filter */ }));
-      });
-    }
-    const allWait=[...flipWait,...enterWait];
-    filterCtrl.animCount=allWait.length; dbg();
-    if(allWait.length) await Promise.allSettled(allWait);
-    if(gen!==filterCtrl.gen)return;
-
-    /* COMMIT — DOM/CSS alone represent the result */
-    survivors.forEach(t=>{
-      t.getAnimations().forEach(a=>{ try{ a.cancel(); }catch(_){} });
-      t.style.transform='';
-      t.style.opacity='';
-    });
-    entering.forEach(t=>{
-      t.getAnimations().forEach(a=>{ try{ a.cancel(); }catch(_){} });
-      t.style.opacity='';
-    });
-    leaving.forEach(t=>{ t.style.opacity=''; });
-
-    if(Math.abs(scrollY-sy0)>0) scrollTo(0,sy0);
-
-    filterCtrl.phase='idle';
-    filterCtrl.target=null;
-    filterCtrl.animCount=0;
-    filterCtrl.leavers=0;
-    filterCtrl.survivors=0;
-    filterCtrl.enterers=0;
-    endFilterLock();
-    dbg();
-  }catch(err){
-    console.error('[tcc] filter',err);
-    if(gen!==filterCtrl.gen)return;
-    cancelFilterMotion();
-    applyFilterLayout(sec);
-    filterCtrl.phase='idle';
-    filterCtrl.target=null;
-    filterCtrl.animCount=0;
-    endFilterLock();
-    dbg();
-  }
-}
-function setFilter(sec,quiet){
-  /* Router path — instant reconcile; cancel any in-flight filter motion */
-  if(quiet){
-    filterCtrl.gen++;
-    cancelFilterMotion();
-    world.sector=sec; world.last='filter:'+sec;
-    document.querySelectorAll('#filters .fbtn').forEach(b=>b.classList.toggle('on',b.dataset.f===sec));
-    applyFilterLayout(sec);
-    filterCtrl.phase='idle';
-    filterCtrl.target=null;
-    filterCtrl.animCount=0;
-    endFilterLock();
-    dbg();
-    return;
-  }
-  endIntro();
-  /* Active label responds immediately; gallery follows */
-  const alreadyThere=world.sector===sec && (filterCtrl.phase==='idle' || filterCtrl.target===sec);
-  if(alreadyThere)return;
-  /* Another non-filter transition owns the lock */
-  if(world.lock && filterCtrl.phase==='idle')return;
-
-  world.sector=sec; world.last='filter:'+sec;
-  document.querySelectorAll('#filters .fbtn').forEach(b=>b.classList.toggle('on',b.dataset.f===sec));
-  syncHash(); dbg();
-
-  if(RM){
-    applyFilterLayout(sec);
-    return;
-  }
-
-  /* Latest intent wins — cancel in-flight filter, restart from current visual state */
-  if(filterCtrl.phase!=='idle') cancelFilterMotion();
-  const gen=++filterCtrl.gen;
-  transitionFilter(sec,gen);
-}
-document.querySelectorAll('#filters .fbtn').forEach(b=>b.addEventListener('click',()=>setFilter(b.dataset.f)));
 function populateInspect(p){
+
   setImg($('#heroImg'),p,0);
   $('#mClient').textContent=p.name;
   $('#mStrap').textContent=p.strap;
@@ -518,13 +322,15 @@ function closeInfo(then,quiet){
 /* ============================================================
    URL — hash routing (URL ↔ world; no animation ownership)
    ============================================================ */
-const { syncHash, applyHash } = createRouter({
+const router = createRouter({
   getById: () => byId,
   sectors: SECTORS,
   getActions: () => ({
     openProject, closeProject, setView, setFilter, setDepth, lateral, openInfo, closeInfo, dbg,
   }),
 });
+syncHash = router.syncHash;
+applyHash = router.applyHash;
 addEventListener('hashchange', applyHash);
 
 /* ============================================================
