@@ -334,7 +334,7 @@ try {
       const r = s.getBoundingClientRect();
       return { id: s.dataset.id, w: r.width, h: r.height };
     }));
-    rec('G', 'sibling thumbs 3:5', thumbs.every(t => Math.abs(t.w - 36) < 1 && Math.abs(t.h - 60) < 1) ? 'PASS' : 'FAIL', thumbs.slice(0, 2).map(t => `${t.id}:${Math.round(t.w)}x${Math.round(t.h)}`).join(' '));
+    rec('G', 'sibling thumbs 4:5', thumbs.every(t => Math.abs(t.w - 40) < 1 && Math.abs(t.h - 50) < 1) ? 'PASS' : 'FAIL', thumbs.slice(0, 2).map(t => `${t.id}:${Math.round(t.w)}x${Math.round(t.h)}`).join(' '));
 
     const order = thumbs.map(t => t.id);
     let ok = true; const path = [];

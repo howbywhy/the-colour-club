@@ -11,6 +11,8 @@
   --blue:#4E5FFD;
   --paper:#FFFFFF;
   --page-edge:17px;
+  --nav-thumb-w:40px;
+  --nav-thumb-h:50px; /* 4:5 navigation crop — Index + sibling stack */
   --sans:'Familjen Grotesk',Helvetica,Arial,sans-serif;   /* stand-in — swap for confirmed TCC family */
   --t-large:clamp(44px,4.8vw,58px);
   --t-med:22px;
@@ -117,10 +119,10 @@ body.filtered .g #colgrid .tile[data-id="microsoft"]{grid-column:1/7}
 .x #linecell{padding:0 0 16px}
 .x #linecell h1{font-size:var(--t-primary);font-weight:500;max-width:none}
 .x #linecell .sig{display:none}
-.x .tile{display:grid;grid-template-columns:44px minmax(200px,1.05fr) 1.9fr .65fr 1.5fr;gap:28px;align-items:center;
+.x .tile{display:grid;grid-template-columns:48px minmax(200px,1.05fr) 1.9fr .65fr 1.5fr;gap:28px;align-items:center;
   border-bottom:1px solid var(--line);padding:12px 0}
 .x .tile:first-of-type{border-top:1px solid var(--ink)}
-.x .tile .ph{width:36px;height:60px}
+.x .tile .ph{width:var(--nav-thumb-w);height:var(--nav-thumb-h)}
 .x .tile .lbl{display:contents}
 .x .tile .nm{font-size:var(--t-primary)}
 .x .tile .st{opacity:1;transform:none;white-space:normal;font-size:var(--t-primary)}
@@ -128,7 +130,7 @@ body.filtered .g #colgrid .tile[data-id="microsoft"]{grid-column:1/7}
 .x .tile .ph::after{display:none}
 .x .tile:hover{background:#FAFAFB}
 #ixhead{display:none;font-size:var(--t-secondary);color:var(--sub);
-  grid-template-columns:44px minmax(200px,1.05fr) 1.9fr .65fr 1.5fr;gap:28px;padding:0 0 12px}
+  grid-template-columns:48px minmax(200px,1.05fr) 1.9fr .65fr 1.5fr;gap:28px;padding:0 0 12px}
 .x #ixhead{display:grid}
 #ixhead button{font:inherit;color:var(--sub);text-align:left;padding:0}
 #ixhead button:hover{color:var(--ink)}
@@ -193,14 +195,14 @@ body.filtered .g #colgrid .tile[data-id="microsoft"]{grid-column:1/7}
 .ins-gal .gv iframe,.ins-gal .gv video{width:100%;height:100%;border:0;display:block;object-fit:cover;
   pointer-events:none} /* passive presentation media must never capture page scroll */
 
-/* archive stack (R02 presence, simplified labels) */
-#stack{position:fixed;right:14px;top:84px;width:36px;z-index:230;display:flex;flex-direction:column;gap:6px;
+/* archive stack — 4:5 navigation crop (shared with Index) */
+#stack{position:fixed;right:14px;top:84px;width:var(--nav-thumb-w);z-index:230;display:flex;flex-direction:column;gap:6px;
   opacity:0;transform:translateX(8px);transition:opacity .28s,transform .28s var(--ease)}
 #stack.show{opacity:1;transform:none}
-#stack .sth{position:relative;height:60px;cursor:pointer} /* 3:5 — same ratio language as Index */
+#stack .sth{position:relative;width:var(--nav-thumb-w);height:var(--nav-thumb-h);cursor:pointer;overflow:hidden}
 #stack .sth::after{content:'';position:absolute;inset:0;outline:2px solid var(--hue,var(--blue));outline-offset:-2px;opacity:0;transition:opacity .12s}
 #stack .sth:hover::after{opacity:1}
-#stack .sth .tip{position:absolute;right:48px;top:50%;transform:translateY(-50%);color:var(--ink);
+#stack .sth .tip{position:absolute;right:calc(var(--nav-thumb-w) + 12px);top:50%;transform:translateY(-50%);color:var(--ink);
   background:var(--paper);font-size:var(--t-secondary);font-weight:500;padding:1px 7px;white-space:nowrap;
   opacity:0;pointer-events:none;transition:opacity .12s}
 #stack .sth:hover .tip{opacity:1}
@@ -290,8 +292,8 @@ body.intro .tile,body.intro #linecell .sig,body.intro #ixnote{opacity:0;animatio
   body.filtered .g #colgrid .tile[data-id="microsoft"]{grid-column:1/5}
   #collectionIntro{grid-template-columns:repeat(6,1fr)}
   #linecell{grid-column:1/7}
-  .x .tile{grid-template-columns:40px minmax(140px,.9fr) 1.4fr .7fr 1.1fr;gap:16px}
-  #ixhead{grid-template-columns:40px minmax(140px,.9fr) 1.4fr .7fr 1.1fr;gap:16px}
+  .x .tile{grid-template-columns:48px minmax(140px,.9fr) 1.4fr .7fr 1.1fr;gap:16px}
+  #ixhead{grid-template-columns:48px minmax(140px,.9fr) 1.4fr .7fr 1.1fr;gap:16px}
   #insHero.a-sq{grid-column:1/10}
   #insHero.a-port{grid-column:1/7}
   #insHero.a-deep{grid-column:1/6}
@@ -369,13 +371,13 @@ body.intro .tile,body.intro #linecell .sig,body.intro #ixnote{opacity:0;animatio
   .x #colgrid{display:flex;flex-direction:column;gap:0}
   .x .tile{
     display:grid;
-    grid-template-columns:44px 1fr;
+    grid-template-columns:48px 1fr;
     grid-template-rows:auto auto;
     gap:4px 14px;
     padding:14px 0;
     align-items:start;
   }
-  .x .tile .ph{grid-row:1/3;width:40px;height:66px}
+  .x .tile .ph{grid-row:1/3;width:var(--nav-thumb-w);height:var(--nav-thumb-h)}
   .x .tile .nm{grid-column:2;font-weight:500}
   .x .tile .st{grid-column:2;opacity:1;font-size:var(--t-primary);color:var(--sub)}
   .x .tile .ix{grid-column:2;display:inline;font-size:var(--t-secondary)}
@@ -420,7 +422,7 @@ body.intro .tile,body.intro #linecell .sig,body.intro #ixnote{opacity:0;animatio
   #stack::-webkit-scrollbar{display:none}
   #stack.show{transform:none}
   #stack .cap{display:none}
-  #stack .sth{flex:0 0 auto;width:36px;height:60px}
+  #stack .sth{flex:0 0 auto;width:var(--nav-thumb-w);height:var(--nav-thumb-h)}
   #stack .sth .tip{
     right:auto;left:50%;top:auto;bottom:calc(100% + 6px);
     transform:translateX(-50%);opacity:0;
@@ -445,6 +447,12 @@ body.intro .tile,body.intro #linecell .sig,body.intro #ixnote{opacity:0;animatio
   #filters .fbtn,#modeCtl .ctl,#infoBtn,#viewBtn,#insClose,#infoClose{
     min-height:44px;display:inline-flex;align-items:center;
   }
-  #stack .sth{min-width:44px;min-height:60px;padding:0 4px;box-sizing:content-box}
+  /* Expand tap target without widening the 4:5 crop box */
+  #stack .sth{position:relative}
+  #stack .sth::before{
+    content:'';position:absolute;inset:-6px -8px;z-index:0;
+  }
+  #stack .sth img,#stack .sth::after,#stack .sth .tip{position:relative;z-index:1}
+  #stack .sth::after{z-index:2}
 }
 
