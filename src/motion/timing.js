@@ -41,7 +41,7 @@ export const TIMING = {
   introVideoFade: 420,
   introFlight: 560,
   introSwipe: 620,
-  introChrome: 280,
+  introChrome: 220, /* after breath — ~300ms from click */
   introWorld: 0,
   introBreath: 80,
   brandDelay: 250,

@@ -13,7 +13,6 @@ export function createChrome({
   closeInfo,
   closeProject,
   setView,
-  openInfo,
   setDepth,
   onToggleDbg,
 }) {
@@ -80,27 +79,33 @@ export function createChrome({
     syncUtilities({ immediate: true });
 
     $('#brandBtn').addEventListener('click', () => {
-      closeInfo(() => {
-        if (world.selected) closeProject();
-        setTimeout(() => {
-          setView('field');
-          scrollTo({ top: 0, behavior: RM ? 'auto' : 'smooth' });
-        }, D(TIMING.brandDelay));
-      });
+      /* While Info owns the layer, underlying chrome must not act. */
+      if (world.infoOpen) return;
+      if (world.selected) closeProject();
+      setTimeout(() => {
+        setView('field');
+        scrollTo({ top: 0, behavior: RM ? 'auto' : 'smooth' });
+      }, D(TIMING.brandDelay));
     });
     $('#viewBtn').addEventListener('click', () => {
-      const act = () => {
-        if (world.selected) {
-          closeProject();
-          setTimeout(() => setView(world.view === 'field' ? 'index' : 'field'), D(TIMING.viewAfterClose));
-        } else setView(world.view === 'field' ? 'index' : 'field');
-      };
-      if (world.infoOpen) closeInfo(act);
-      else act();
+      if (world.infoOpen) return;
+      if (world.selected) {
+        closeProject();
+        setTimeout(() => setView(world.view === 'field' ? 'index' : 'field'), D(TIMING.viewAfterClose));
+      } else setView(world.view === 'field' ? 'index' : 'field');
     });
-    $('#insClose').addEventListener('click', () => closeProject());
-    $('#mImages').addEventListener('click', () => setDepth('images'));
-    $('#mIdea').addEventListener('click', () => setDepth('idea'));
+    $('#insClose').addEventListener('click', () => {
+      if (world.infoOpen) return;
+      closeProject();
+    });
+    $('#mImages').addEventListener('click', () => {
+      if (world.infoOpen) return;
+      setDepth('images');
+    });
+    $('#mIdea').addEventListener('click', () => {
+      if (world.infoOpen) return;
+      setDepth('idea');
+    });
     addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         if (world.infoOpen) closeInfo();

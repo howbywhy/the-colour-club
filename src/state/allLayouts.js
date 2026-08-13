@@ -128,7 +128,17 @@ export function compactCell([a, b, r]) {
   let s = map(a);
   let e = map(b);
   if (e <= s) e = Math.min(7, s + 1);
-  if (b - a >= 11) {
+  /* Keep Visual tiles above thumbnail scale on 6-col — right-edge S3 was collapsing to 1 col. */
+  const srcSpan = b - a;
+  if (srcSpan >= 3 && e - s < 2) {
+    e = Math.min(7, s + 2);
+    if (e - s < 2) s = Math.max(1, e - 2);
+  }
+  if (srcSpan >= 5 && e - s < 3) {
+    e = Math.min(7, s + 3);
+    if (e - s < 3) s = Math.max(1, e - 3);
+  }
+  if (srcSpan >= 11) {
     s = 1;
     e = 7;
   }
@@ -150,17 +160,20 @@ export function applyAllLayout(grid, variant = 1) {
     if (filtered || index || mobile) {
       t.style.gridColumn = '';
       t.style.gridRow = '';
+      t.classList.remove('is-wall');
       return;
     }
     const cell = layout[t.dataset.id];
     if (!cell) {
       t.style.gridColumn = '';
       t.style.gridRow = '';
+      t.classList.remove('is-wall');
       return;
     }
     const [a, b, r] = narrow ? compactCell(cell) : cell;
     t.style.gridColumn = `${a} / ${b}`;
     t.style.gridRow = String(r);
+    t.classList.toggle('is-wall', b - a >= 10);
   });
 }
 
@@ -168,5 +181,6 @@ export function clearAllLayout(grid) {
   grid.querySelectorAll('.tile').forEach((t) => {
     t.style.gridColumn = '';
     t.style.gridRow = '';
+    t.classList.remove('is-wall');
   });
 }

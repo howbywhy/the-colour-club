@@ -1,9 +1,12 @@
 /**
  * First-entry: WHITE + BLACK TCC → showreel fades under → enter
- * → showreel swipes down while TCC flies to #brandBtn.
+ * → showreel surface swipes down (uncovering the already-painted site)
+ * while TCC flies to #brandBtn.
  *
  * First paint is static (html.intro-boot + critical CSS). JS only enhances.
  * Desktop Vidzflow: pr2tCO4nrU. Mobile: XnXvALPAMB.
+ *
+ * Model: WORLD ready underneath · INTRO STAGE covers · ENTER moves sheet + TCC.
  */
 import { RM, $ } from '../state/worldState.js';
 import { TIMING } from './timing.js';
@@ -52,7 +55,7 @@ function clearBootClass() {
  */
 export function ensureIntroInactive() {
   const body = document.body;
-  body.classList.remove('intro', 'intro-tcc', 'intro-showreel');
+  body.classList.remove('intro', 'intro-tcc', 'intro-showreel', 'intro-chrome-on');
   clearBootClass();
   const stage = $('#introStage');
   const mark = $('#introMark');
@@ -85,6 +88,11 @@ export function ensureIntroInactive() {
   if (chrome) {
     chrome.style.opacity = '';
     chrome.style.transition = '';
+    chrome.querySelectorAll('.ctr, .chrome-utilities').forEach((el) => {
+      el.style.opacity = '';
+      el.style.transform = '';
+      el.style.transition = '';
+    });
   }
   if (collection) {
     collection.style.opacity = '';
@@ -202,10 +210,43 @@ function waitForEnter(stage, enter, reel) {
   });
 }
 
+/** Eager-decode first-viewport covers so the swipe never exposes grey placeholders. */
+function prepareFirstViewportMedia() {
+  const tiles = [...document.querySelectorAll('#colgrid > .tile')].slice(0, 10);
+  tiles.forEach((t) => {
+    const img = t.querySelector('.ph img');
+    if (!img) return;
+    if (img.loading === 'lazy') img.loading = 'eager';
+    img.setAttribute('fetchpriority', 'high');
+    try {
+      img.decode?.().catch(() => {});
+    } catch (_) {}
+  });
+}
+
+function worldReadyForEnter() {
+  const brand = $('#brandBtn');
+  const line = $('#linecell h1');
+  const tiles = [...document.querySelectorAll('#colgrid > .tile')];
+  const first = tiles.slice(0, 4);
+  const brandOk = !!brand && brand.getBoundingClientRect().width > 0;
+  const lineOk = !!line && line.getBoundingClientRect().height > 0;
+  const tilesOk =
+    tiles.length > 0 &&
+    first.every((t) => {
+      const r = t.getBoundingClientRect();
+      return r.width > 1 && r.height > 1;
+    });
+  return brandOk && lineOk && tilesOk;
+}
+
 /** Shared-object TCC → #brandBtn, concurrent with surface swipe-down (unless RM). */
 async function runExit({ stage, surface, mark, brand, reduced }) {
   markIntroSeen();
+  const body = document.body;
   stage.classList.add('is-leaving');
+  /* Stage must not paint a white sheet — only #introSurface covers the world */
+  stage.style.background = 'transparent';
 
   /* Neutralise optical offset so FLIP maths use layout boxes */
   mark.style.transform = 'none';
@@ -224,6 +265,7 @@ async function runExit({ stage, surface, mark, brand, reduced }) {
   if (reduced) {
     mark.style.opacity = '0';
     brand.style.visibility = '';
+    body.classList.add('intro-chrome-on');
     stage.hidden = true;
     clearBootClass();
     return;
@@ -231,6 +273,7 @@ async function runExit({ stage, surface, mark, brand, reduced }) {
 
   const swipeMs = TIMING.introSwipe || 620;
   const flightMs = TIMING.introFlight || 560;
+  const chromeAt = TIMING.introChrome || 300;
 
   const swipe = surface
     ? surface.animate(
@@ -249,7 +292,14 @@ async function runExit({ stage, surface, mark, brand, reduced }) {
     { duration: flightMs, easing: ease, fill: 'forwards' }
   );
 
+  /* Secondary chrome resolves while TCC approaches — one group, not staggered items */
+  const chromeTimer = setTimeout(() => {
+    body.classList.add('intro-chrome-on');
+  }, chromeAt);
+
   await Promise.all([flight.finished.catch(() => {}), swipe?.finished.catch(() => {})]);
+  clearTimeout(chromeTimer);
+  body.classList.add('intro-chrome-on');
 
   mark.style.opacity = '0';
   brand.style.visibility = '';
@@ -286,10 +336,19 @@ export async function playTccIntro() {
 
   try {
     body.classList.add('intro-tcc', 'intro-showreel');
+    body.classList.remove('intro-chrome-on');
     document.documentElement.classList.add('intro-boot');
     stage.hidden = false;
     stage.setAttribute('aria-hidden', 'false');
     brand.style.visibility = 'hidden';
+
+    /* World must already be final underneath before the visitor clicks */
+    prepareFirstViewportMedia();
+    if (!worldReadyForEnter()) {
+      await sleep(0);
+      await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+      prepareFirstViewportMedia();
+    }
 
     /* Reduced motion: white + TCC; enter → immediate handoff (no swipe / video) */
     if (RM) {

@@ -44,7 +44,7 @@ byId={};P.forEach(p=>byId[p.id]=p);
 const media = createProjectMedia({ cdn: CDN });
 const {
   dimOf, alocal, aremote, setImg, imgTag, src0, aclass, classFromDim,
-  applyHeroGeometry, bindClassify, sweep, galleryHtml,
+  applyHeroGeometry, clearHeroGeometry, bindClassify, sweep, galleryHtml,
 } = media;
 bindClassify();
 /* Shared club palette cursor — outline / caps / stack */
@@ -131,6 +131,7 @@ function restoreViewScroll(v){
 }
 
 function setView(v,quiet){
+  if(world.infoOpen && !quiet) return;
   if(world.view===v||world.selected)return;
   if(quiet){
     saveViewScroll();
@@ -183,6 +184,7 @@ function populateInspect(p){
 }
 
 function openProject(id,quiet){
+  if(world.infoOpen && !quiet) return;
   if(world.selected)return;
   const p=byId[id];
   if(!p){ console.warn('[tcc] unknown project', id); return; }
@@ -196,6 +198,7 @@ function openProject(id,quiet){
     if(tile)tile.style.visibility='hidden';
     $('#heroImg').style.opacity=1;ins.classList.add('open','ready');
     projectStack.showStack();$('#insClose').classList.add('show');
+    applyHeroGeometry(p); /* re-fit after stack rail occupies width */
     world.selected=id;world.depth='images';dbg();return;
   }
   endIntro();
@@ -219,12 +222,14 @@ function openProject(id,quiet){
       $('#heroImg').style.opacity=1;
       ins.classList.add('ready');
       projectStack.showStack(); $('#insClose').classList.add('show');
+      applyHeroGeometry(p); /* re-fit after stack rail occupies width */
       world.selected=id;world.depth='images';release();
       syncHash(); dbg();
     });
   })) return;
 }
 function closeProject(quiet){
+  if(world.infoOpen && !quiet) return;
   if(!world.selected)return;
   if(quiet){
     const tile=grid.querySelector(`.tile[data-id="${world.selected}"]`);
@@ -233,6 +238,7 @@ function closeProject(quiet){
     const ins=$('#inspect');ins.classList.remove('open','ready','idea');
     /* Project inactive → stack must be non-present */
     projectStack.clearStack();$('#insClose').classList.remove('show');
+    clearHeroGeometry();
     world.selected=null;world.depth='images';dbg();return;
   }
   if(world.lock)return;
@@ -256,12 +262,14 @@ function closeProject(quiet){
     fly(flysrc,from,fromImages?to:null,D(TIMING.close),()=>{
       if(tile)tile.style.visibility='';
       projectStack.clearStack();
+      clearHeroGeometry();
       world.selected=null;world.depth='images';release();
       syncHash(); dbg();
     });
   },D(TIMING.closeFade));
 }
 function lateral(id,quiet){
+  if(world.infoOpen && !quiet) return;
   if(!world.selected||world.selected===id)return;
   const p=byId[id];
   if(!p){ console.warn('[tcc] unknown project', id); return; }
@@ -274,6 +282,7 @@ function lateral(id,quiet){
     $('#mIdea').classList.toggle('on',keep==='idea');$('#mImages').classList.toggle('on',keep!=='idea');
     ins.scrollTop=0;$('#heroImg').style.opacity=1;ins.classList.add('ready');
     const nt=grid.querySelector(`.tile[data-id="${id}"]`);if(nt)nt.style.visibility='hidden';
+    applyHeroGeometry(p);
     world.selected=id;world.depth=keep;dbg();return;
   }
   if(world.lock)return;
@@ -299,6 +308,7 @@ function lateral(id,quiet){
       world.ledger.slot=id;
       flyCrop(flysrc,keep==='idea'?null:from,keep==='idea'?null:to,D(TIMING.lateral),()=>{
         $('#heroImg').style.opacity=1; ins.classList.add('ready');
+        applyHeroGeometry(p);
         world.selected=id;world.depth=keep;release();
         syncHash(); dbg();
       });
@@ -306,6 +316,7 @@ function lateral(id,quiet){
   })) return;
 }
 function setDepth(d,quiet){
+  if(world.infoOpen && !quiet) return;
   if(!world.selected||world.depth===d)return;
   const ins=$('#inspect');
   if(world.ledger.modeY)world.ledger.modeY[world.depth]=ins.scrollTop;
@@ -359,7 +370,6 @@ const chrome = createChrome({
   closeInfo,
   closeProject,
   setView,
-  openInfo,
   setDepth,
   onToggleDbg: () => toggleDbg(),
 });
@@ -367,6 +377,13 @@ chrome.bindChrome();
 bindInfoChrome();
 bindSortHeaders();
 bindAllSignups();
+
+/* Project hero must re-fit when viewport height/width changes (short desktop, rotate). */
+addEventListener('resize', () => {
+  if (!world.selected) return;
+  const p = byId[world.selected];
+  if (p) applyHeroGeometry(p);
+});
 
 /* debug */
 let dbgOn=false;

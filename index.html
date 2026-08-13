@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Colour Club</title>
+<!-- Static /favicon.ico fallback; FaviconColour keeps dynamic behaviour via data-tcc link -->
+<link rel="icon" href="favicon.ico" type="image/png" sizes="32x32">
 <script>
 /* Before first paint: project deep-link boot + genuine first-entry intro arm. */
 (function () {
@@ -24,6 +26,9 @@ html.intro-boot #introStage{
   position:fixed;inset:0;z-index:500;display:flex!important;align-items:center;justify-content:center;
   background:#fff;visibility:visible!important;pointer-events:auto!important;
 }
+/* During exit the STAGE must go transparent — surface carries the showreel sheet.
+   Opaque stage background was the blank white flash after the video left. */
+html.intro-boot #introStage.is-leaving{background:transparent!important}
 html.intro-boot #introStage[hidden]{display:flex!important;visibility:visible!important}
 html.intro-boot #introSurface{position:absolute;inset:0;background:#fff}
 html.intro-boot #introReel{opacity:0}
@@ -158,7 +163,7 @@ html.intro-boot #brandBtn{visibility:hidden}
 
 <!-- ================= INFO ================= -->
 <div id="infoScrim"></div>
-<aside id="info" aria-label="Studio information">
+<aside id="info" aria-label="Studio information" aria-hidden="true">
   <button id="infoClose">Close</button>
   <div class="pad">
     <div class="info-opening">

@@ -809,6 +809,7 @@ export function createCollection({
   }
 
   function setFilter(sec, quiet) {
+    if (world.infoOpen && !quiet) return;
     if (quiet) {
       const sy0 = scrollY;
       filterCtrl.gen++;

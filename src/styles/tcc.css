@@ -37,24 +37,28 @@
   --t-secondary:12px;
   /* Info opening — one size, full pad width; clearly above functional type */
   --t-info-voice:clamp(26px,2.35vw,30px);
-  /* Signup field matches project heading / identity scale (--t-primary) */
-  --t-signup:var(--t-primary);
+  /* Signup = project heading / identity scale (#linecell h1, #ideaLede → --t-large) */
+  --t-signup:var(--t-large);
   --ease:cubic-bezier(.32,.94,.35,1);
-  /* Chrome rhythm — tight within groups, generous between */
+  /* Chrome rhythm — tight within groups, generous between major groups
+     Optical: TCC ··· Index ··· All·Hospitality·FMCG·Place·Culture ··· Info */
   --chrome-inner-gap:12px;
-  --chrome-group-gap:56px;
-  /* All (collection reset) separated from sector group — rhythm only */
-  --filter-all-gap:32px;
+  --chrome-group-gap:104px;
+  /* All stays with sector filters (parent), tighter than major group breaks */
+  --filter-all-gap:26px;
+  /* Filters → Info: slightly more than a standard group break (optical end-weight) */
+  --chrome-info-gap:calc(var(--chrome-group-gap) + 40px);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{background:var(--paper)}
 body{font-family:var(--sans);font-weight:var(--w-func);color:var(--ink);font-size:var(--t-primary);line-height:1.55;
   -webkit-font-smoothing:antialiased;font-synthesis:none}
-body.locked{overflow:hidden}
+body.locked,body.info{overflow:hidden}
 img{display:block;width:100%;height:auto;background:#EFEFF1}
 /* navigation thumbnails are the only sanctioned crops */
 .sth img,.x .tile .ph img{height:100%;object-fit:cover}
-#heroImg{height:100%;object-fit:cover}
+/* Hero fills its fitted frame; frame owns width+height fit (never viewport crop via cover) */
+#heroImg{width:100%;height:100%;object-fit:contain;display:block}
 button,input,textarea,select{font-family:var(--sans);font-weight:var(--w-func);font-synthesis:none}
 button{font-size:inherit;line-height:inherit;background:none;border:none;cursor:pointer;color:inherit;padding:0}
 ::selection{background:var(--blue);color:#fff}
@@ -66,7 +70,7 @@ button{font-size:inherit;line-height:inherit;background:none;border:none;cursor:
 #chrome .brand{font-weight:var(--w-func);font-size:var(--t-primary);letter-spacing:-.01em;cursor:pointer;flex:0 0 auto}
 #chrome .ctr{margin-left:var(--chrome-group-gap);display:flex;align-items:baseline;gap:0;flex:0 1 auto;min-width:0}
 #viewBtn{margin-right:var(--chrome-group-gap)}
-#filters{display:flex;align-items:baseline;gap:0;margin-right:var(--chrome-group-gap)}
+#filters{display:flex;align-items:baseline;gap:0;margin-right:var(--chrome-info-gap)}
 #filters .fbtn[data-f="all"]{margin-right:var(--filter-all-gap)}
 #filters .filter-sectors{display:flex;gap:var(--chrome-inner-gap)}
 #filters .fbtn{opacity:.4}
@@ -132,20 +136,29 @@ html.proj-boot #chrome .chrome-utilities{
 .tile .ix{display:none}
 
 /*
-  ALL authored layouts — applied by src/state/allLayouts.js (15-project library).
+  ALL authored layouts — applied by src/state/allLayouts.js (23-project library).
   Scale identity S3 M4 L5 XL6–7 WALL12; four session variants via body[data-all-v].
 */
-/* intrinsic ceilings — portrait work never inflates, whatever the layout offers.
-   3:5 sources classify as deep portrait and take the tightest cap. */
-.g .tile.a-sq{max-width:640px}
-.g .tile.a-port{max-width:560px}
-.g .tile.a-deep{max-width:440px}
-.ins-gal .gi.a-sq{max-width:640px}
-.ins-gal .gi.a-port{max-width:560px}
-.ins-gal .gi.a-deep{max-width:440px}
-#insHero.a-sq{max-width:680px}
-#insHero.a-port{max-width:560px}
-#insHero.a-deep{max-width:460px}
+/* Visual media floor — raises the bottom of the scale without flattening S/M/L/XL/WALL.
+   Index (.x) and stack thumbs are excluded. */
+:root{ --visual-media-min:260px; }
+body.g #colgrid > .tile,
+body.g #colgrid > .sector-slot > .tile{
+  min-width:var(--visual-media-min);
+}
+body.x #colgrid .tile{min-width:0} /* Index thumbs stay compact */
+/* Intrinsic ceilings by source class — raised floor; WALL may exceed via .is-wall */
+.g .tile.a-sq{max-width:min(100%,720px)}
+.g .tile.a-port{max-width:min(100%,640px)}
+.g .tile.a-deep{max-width:min(100%,520px)}
+.g .tile.is-wall{max-width:min(100%,920px)}
+.g .tile.is-wall.a-port,.g .tile.is-wall.a-deep{max-width:min(100%,780px)}
+.ins-gal .gi.a-sq{max-width:720px}
+.ins-gal .gi.a-port{max-width:640px}
+.ins-gal .gi.a-deep{max-width:520px}
+#insHero.a-sq{max-width:720px}
+#insHero.a-port{max-width:640px}
+#insHero.a-deep{max-width:520px}
 
 /* Filter hide — leave the flow (Index + parked Visual tiles). */
 .fhide{display:none!important}
@@ -188,9 +201,9 @@ body.filtered.g #colgrid > .sector-slot[data-slot="17"]{grid-column:span 6}
 body.filtered.g #colgrid > .sector-slot > .tile{
   display:block;width:100%;max-width:100%;grid-column:unset;grid-row:unset;
 }
-body.filtered.g #colgrid > .sector-slot > .tile.a-port{max-width:560px}
-body.filtered.g #colgrid > .sector-slot > .tile.a-sq{max-width:640px}
-body.filtered.g #colgrid > .sector-slot > .tile.a-deep{max-width:440px}
+body.filtered.g #colgrid > .sector-slot > .tile.a-port{max-width:min(100%,640px)}
+body.filtered.g #colgrid > .sector-slot > .tile.a-sq{max-width:min(100%,720px)}
+body.filtered.g #colgrid > .sector-slot > .tile.a-deep{max-width:min(100%,520px)}
 /* Parked (non-occupying) tiles must not participate in the sector canvas */
 body.filtered.g #colgrid > .tile{display:none!important}
 
@@ -230,13 +243,21 @@ body.filtered.g #colgrid > .tile{display:none!important}
 #ixpImg{display:block;width:100%;height:100%}
 
 /* ================= INSPECT (R02 composition) ================= */
-#inspect{position:fixed;inset:0;z-index:200;background:var(--paper);overflow-y:auto;
-  visibility:hidden;opacity:0;pointer-events:none}
+#inspect{position:fixed;inset:0;z-index:200;background:var(--paper);
+  overflow-x:hidden;overflow-y:auto;
+  visibility:hidden;opacity:0;pointer-events:none;
+  --inspect-pad-top:84px;
+  --inspect-media-floor:48px;
+  --inspect-media-max-h:calc(100dvh - var(--inspect-pad-top) - var(--inspect-media-floor));
+  --inspect-stack-gutter:56px;
+}
 #inspect.open{visibility:visible;opacity:1;pointer-events:auto}
-#inspect .wrap{padding:84px var(--page-edge) 100px;opacity:0;transition:opacity .28s ease-out}
+#inspect .wrap{padding:var(--inspect-pad-top) var(--page-edge) 100px;opacity:0;transition:opacity .28s ease-out;
+  max-width:100%;min-width:0;box-sizing:border-box}
 #inspect.ready .wrap{opacity:1}
 .ins-top{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;margin-bottom:20px}
-#insHero{grid-column:1/13;position:relative;overflow:hidden} /* aspect set per-project from source dimensions */
+/* Hero frame size is set by applyHeroGeometry (width + height fit). */
+#insHero{grid-column:1/13;position:relative;overflow:hidden;max-width:100%;box-sizing:border-box}
 #insHero.a-sq{grid-column:1/8}
 #insHero.a-port{grid-column:1/6}
 #insHero.a-deep{grid-column:1/5}
@@ -272,7 +293,16 @@ body.filtered.g #colgrid > .tile{display:none!important}
 .beat p a{color:var(--ink)}
 
 .ins-gal{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:10px}
-.ins-gal .gi{overflow:hidden}
+/* Gallery stills — fill grid track; never expand to intrinsic px width (was causing #inspect x-scroll) */
+.ins-gal .gi{
+  overflow:hidden;min-width:0;max-width:100%;width:auto;
+  max-height:var(--inspect-media-max-h);
+}
+.ins-gal .gi img{
+  display:block;width:100%;height:auto;
+  max-width:100%;max-height:var(--inspect-media-max-h);
+  object-fit:contain;
+}
 .ins-gal{align-items:start}
 .ins-gal .gi:nth-child(6n+1){grid-column:span 4}
 .ins-gal .gi:nth-child(6n+2){grid-column:span 2}
@@ -284,9 +314,23 @@ body.filtered.g #colgrid > .tile{display:none!important}
 .ins-gal .gi.a-sq{grid-column:span 5}
 .ins-gal .gi.a-port{grid-column:span 4}
 .ins-gal .gi.a-deep{grid-column:span 3}
-.ins-gal .gv{grid-column:span 6;aspect-ratio:16/9;overflow:hidden;background:#EFEFF1}
-.ins-gal .gv iframe,.ins-gal .gv video{width:100%;height:100%;border:0;display:block;object-fit:cover;
-  pointer-events:none} /* passive presentation media must never capture page scroll */
+/* Media frame — ratio from source metadata; capped by track width + viewer height */
+.ins-gal .gv{
+  grid-column:span 6;overflow:hidden;background:#EFEFF1;
+  aspect-ratio:16/9; /* last-resort only when metadata absent */
+  min-width:0;max-width:100%;width:100%;
+  max-height:var(--inspect-media-max-h);
+  height:auto;box-sizing:border-box;
+}
+.ins-gal .gv.a-sq{grid-column:span 5;aspect-ratio:1}
+.ins-gal .gv.a-port{grid-column:span 4;aspect-ratio:4/5}
+.ins-gal .gv.a-deep{grid-column:span 3;aspect-ratio:3/5}
+.ins-gal .gv.a-land{grid-column:span 6;aspect-ratio:16/9}
+.ins-gal .gv iframe,.ins-gal .gv video{
+  width:100%;height:100%;border:0;display:block;object-fit:contain;
+  background:#EFEFF1;
+  pointer-events:none; /* passive presentation media must never capture page scroll */
+}
 
 /* archive stack — 4:5 navigation crop (shared with Index).
    Inactive invariant: not visible, not interactive — opacity alone is not enough. */
@@ -319,6 +363,10 @@ body.filtered.g #colgrid > .tile{display:none!important}
   transform:translateX(102%);transition:transform .42s var(--ease);overflow-y:auto;border-left:1px solid var(--ink)}
 body.info #infoScrim{opacity:1;visibility:visible;pointer-events:auto}
 body.info #info{transform:none}
+/* Info owns interaction — project Close must not compete visually or hit-test (also inert in JS) */
+body.info #insClose{visibility:hidden!important;opacity:0!important;pointer-events:none!important}
+/* infoBtn remains the sole chrome Close while Info is open */
+body.info #infoBtn{pointer-events:auto}
 #info .pad{padding:60px var(--page-edge) 80px;max-width:640px}
 /* Info spacing system: --i-s inside a group, --i-m between related blocks, --i-l between sections */
 #info{--i-s:10px;--i-m:26px;--i-l:72px}
@@ -360,11 +408,11 @@ body.info #info{transform:none}
 .signup-row{display:flex;align-items:baseline;gap:18px;border-bottom:1px solid var(--ink);padding:0 0 12px;width:100%}
 .signup input[type="email"]{
   flex:1;min-width:0;border:0;background:transparent!important;font-family:var(--sans);
-  font-size:var(--t-signup);font-weight:var(--w-func);line-height:1.55;color:var(--ink);
+  font-size:var(--t-signup);font-weight:var(--w-func);line-height:1.12;letter-spacing:-.015em;color:var(--ink);
   outline:none;padding:10px 0;border-radius:0;-webkit-appearance:none;appearance:none;
   box-shadow:none;caret-color:var(--ink)
 }
-.signup input[type="email"]::placeholder{color:var(--sub);opacity:1;font-family:var(--sans);font-size:var(--t-signup);font-weight:var(--w-func);line-height:1.55}
+.signup input[type="email"]::placeholder{color:var(--sub);opacity:1;font-family:var(--sans);font-size:var(--t-signup);font-weight:var(--w-func);line-height:1.12;letter-spacing:-.015em}
 .signup input[type="email"]:focus{outline:none;background:transparent!important;box-shadow:none}
 .signup[data-state="focus"] .signup-row{border-bottom-color:var(--ink)}
 .signup[data-state="invalid"] .signup-row,
@@ -382,7 +430,7 @@ body.info #info{transform:none}
   font-weight:var(--w-func)!important
 }
 .signup button[type="submit"]{
-  flex:0 0 auto;font-family:var(--sans);font-size:var(--t-signup);font-weight:var(--w-func);line-height:1.55;
+  flex:0 0 auto;font-family:var(--sans);font-size:var(--t-signup);font-weight:var(--w-func);line-height:1.12;letter-spacing:-.015em;
   opacity:.55;padding:10px 0 10px 4px;min-height:44px;display:inline-flex;align-items:center;background:transparent
 }
 .signup button[type="submit"]:hover{opacity:1}
@@ -412,6 +460,12 @@ body.info #info{transform:none}
 #introStage:not([hidden]){visibility:visible;pointer-events:auto}
 #introStage[hidden]{display:none!important;pointer-events:none!important;visibility:hidden!important}
 html.intro-boot #introStage[hidden]{display:flex!important;visibility:visible!important;pointer-events:auto!important}
+/* Leave: stage becomes a transparent hole; #introSurface is the only covering sheet */
+#introStage.is-leaving{
+  background:transparent!important;
+  pointer-events:none;
+}
+#introStage.is-leaving #introEnter{pointer-events:none}
 #introSurface{
   position:absolute;inset:0;background:var(--paper);will-change:transform;
   pointer-events:none;overflow:hidden;
@@ -444,20 +498,38 @@ html.intro-boot #introStage[hidden]{display:flex!important;visibility:visible!im
 }
 #introStage.is-leaving #introReel{pointer-events:none}
 body.intro-tcc,body.intro-showreel,html.intro-boot{overflow:hidden}
-/* Site stays fully painted underneath — stage covers it; no collection fade flash */
+/* World fully painted underneath (opacity 1). Stage/surface conceal; brand reserved for FLIP land. */
 body.intro-tcc #brandBtn,html.intro-boot #brandBtn{visibility:hidden}
-body.intro-tcc #collection,html.intro-boot #collection{pointer-events:none}
+body.intro-tcc #collection,html.intro-boot #collection{pointer-events:none;opacity:1}
+/* Secondary chrome resolves as one quiet group during TCC flight */
+body.intro-tcc #chrome .ctr,
+body.intro-tcc #chrome .chrome-utilities,
+html.intro-boot body #chrome .ctr,
+html.intro-boot body #chrome .chrome-utilities{
+  opacity:0;transform:translateY(3px);
+}
+body.intro-tcc.intro-chrome-on #chrome .ctr,
+body.intro-tcc.intro-chrome-on #chrome .chrome-utilities,
+html.intro-boot body.intro-chrome-on #chrome .ctr,
+html.intro-boot body.intro-chrome-on #chrome .chrome-utilities{
+  opacity:1;transform:none;
+  transition:opacity .32s var(--ease),transform .32s var(--ease);
+}
 @media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation-duration:.01ms!important}}
 
 /* ================= RESPONSIVE — tablet ================= */
 @media (max-width:1179px){
-  :root{ --page-edge:14px; --t-large:clamp(36px,6vw,48px); }
+  /* Reduce inter-group spacing first; keep sector family tight */
+  :root{ --page-edge:14px; --t-large:clamp(36px,6vw,48px); --visual-media-min:200px;
+    --chrome-group-gap:56px; --chrome-inner-gap:12px; --filter-all-gap:22px;
+    --chrome-info-gap:calc(var(--chrome-group-gap) + var(--chrome-inner-gap) * 2); }
   #chrome{height:auto;min-height:52px;padding:10px var(--page-edge);flex-wrap:wrap;row-gap:8px;align-items:flex-start;
-    --chrome-group-gap:36px;--chrome-inner-gap:12px}
-  #chrome .ctr{margin-left:var(--chrome-group-gap);flex-wrap:wrap;row-gap:6px;max-width:calc(100% - 80px)}
+    /* Reserve absolute utilities (clock + email) so wrapped groups never collide */
+    padding-right:calc(var(--page-edge) + 250px)}
+  #chrome .ctr{margin-left:var(--chrome-group-gap);flex-wrap:wrap;row-gap:6px;max-width:none;flex:1 1 auto;min-width:0}
   #viewBtn{margin-right:var(--chrome-group-gap)}
-  #filters{margin-right:var(--chrome-group-gap)}
-  #filters .fbtn[data-f="all"]{margin-right:28px}
+  #filters{margin-right:var(--chrome-info-gap)}
+  #filters .fbtn[data-f="all"]{margin-right:var(--filter-all-gap)}
   #modeCtl{margin-right:var(--chrome-group-gap)}
   #pchrome{margin-left:var(--chrome-group-gap);max-width:min(42vw,280px)}
   #pchrome .pst{max-width:28vw}
@@ -496,6 +568,25 @@ body.intro-tcc #collection,html.intro-boot #collection{pointer-events:none}
   #insHero.a-deep{grid-column:1/6}
 }
 
+/* Narrow desktop / large tablet — compress groups further before sector spacing */
+@media (max-width:1024px){
+  :root{
+    --chrome-group-gap:40px;
+    --filter-all-gap:18px;
+    --chrome-info-gap:calc(var(--chrome-group-gap) + var(--chrome-inner-gap));
+  }
+}
+
+/* Short tablet widths — keep Info clear of absolute utilities */
+@media (max-width:900px) and (min-width:768px){
+  :root{
+    --chrome-group-gap:28px;
+    --filter-all-gap:14px;
+    --chrome-info-gap:28px;
+  }
+  #chrome{padding-right:calc(var(--page-edge) + 280px)}
+}
+
 /* ================= RESPONSIVE — mobile ================= */
 @media (max-width:767px){
   :root{
@@ -504,6 +595,11 @@ body.intro-tcc #collection,html.intro-boot #collection{pointer-events:none}
     --t-med:18px;
     --t-primary:15px;
     --t-secondary:12px;
+    --visual-media-min:0px; /* column width is the floor on mobile */
+    /* Conceptual hierarchy only — do not force desktop group rhythm into the width */
+    --chrome-group-gap:14px;
+    --filter-all-gap:20px;
+    --chrome-info-gap:0px;
   }
   /* Chrome — priority: TCC · view · filters · Info. Utilities demoted. */
   #chrome{
@@ -645,17 +741,12 @@ body.intro-tcc #collection,html.intro-boot #collection{pointer-events:none}
   .site-foot--project{margin-top:56px;padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
   .signup{max-width:none;width:100%}
   .signup-row{flex-direction:row;align-items:baseline;gap:12px;border-bottom:1px solid var(--ink);padding:0 0 10px;width:100%}
-  .signup input[type="email"],
-  .signup input[type="email"]::placeholder,
-  .signup button[type="submit"]{
-    font-size:16px; /* iOS zoom guard — matches Join */
-  }
   .signup input[type="email"]{border-bottom:none;padding:12px 0}
   .signup button[type="submit"]{align-self:auto;padding:12px 0;min-height:48px;opacity:.7}
   #info .signup--info{max-width:none}
   #info .info-opening,#info .info-voice{max-width:none}
-  /* 16px floor prevents iOS input zoom; desktop signup tracks --t-primary */
-  :root{ --t-info-voice:clamp(22px,5.6vw,26px); --t-signup:16px; }
+  /* Signup stays on --t-large (heading scale). Mobile --t-large already ≥16px (iOS zoom floor). */
+  :root{ --t-info-voice:clamp(22px,5.6vw,26px); }
 }
 
 /* Touch / coarse pointer — no hover-dependent comprehension */
