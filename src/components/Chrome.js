@@ -60,6 +60,17 @@ export function createChrome({
   }
 
   function bindChrome() {
+    /* Clock first — boot canary. Must not depend on later wiring. */
+    const clockEl = $('#clock');
+    const updateClock = () => {
+      if (!clockEl) return;
+      const n = new Date();
+      clockEl.textContent =
+        n.toLocaleDateString('en-AU', { day: '2-digit', month: 'short' }) + ' ' + n.toTimeString().slice(0, 8);
+    };
+    updateClock();
+    setInterval(updateClock, 1000);
+
     watchWorldSelected();
 
     const mo = new MutationObserver(() => syncUtilities());
@@ -98,11 +109,6 @@ export function createChrome({
       }
       if (e.key.toLowerCase() === 'd' && !e.metaKey && !e.ctrlKey) onToggleDbg();
     });
-    setInterval(() => {
-      const n = new Date();
-      $('#clock').textContent =
-        n.toLocaleDateString('en-AU', { day: '2-digit', month: 'short' }) + ' ' + n.toTimeString().slice(0, 8);
-    }, 1000);
   }
 
   return { bindChrome, syncUtilities };

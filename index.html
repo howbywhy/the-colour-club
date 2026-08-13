@@ -13,6 +13,27 @@
 <link rel="stylesheet" href="src/styles/tcc.css">
 </head>
 <body class="g">
+<script>
+/* Session All variant + early deep-link class — before first paint of collection. */
+(function () {
+  try {
+    var q = new URLSearchParams(location.search).get('allv');
+    var v = q && /^[1-4]$/.test(q) ? q : sessionStorage.getItem('tccAllV');
+    if (!v || !/^[1-4]$/.test(v)) v = String(1 + ((Math.random() * 4) | 0));
+    sessionStorage.setItem('tccAllV', v);
+    document.body.dataset.allV = v;
+  } catch (e) {
+    document.body.dataset.allV = '1';
+  }
+})();
+</script>
+<!-- First-entry showreel stage — click/tap/keyboard enters; TCC flies into #brandBtn -->
+<div id="introStage" hidden aria-hidden="true">
+  <div id="introReel" aria-hidden="true"></div>
+  <button type="button" id="introEnter" class="intro-enter" aria-label="Enter The Colour Club">
+    <span id="introMark">TCC</span>
+  </button>
+</div>
 <!-- ================= CHROME ================= -->
 <header id="chrome">
   <div class="chrome-brand brand" id="brandBtn" title="Return to the club arrangement">TCC</div>
@@ -22,9 +43,12 @@
     <button class="ctl chrome-view" id="viewBtn">Index</button>
     <div class="chrome-filters" id="filters">
       <button class="ctl fbtn on" data-f="all">All</button>
-      <button class="ctl fbtn" data-f="hospitality">Hospitality</button>
-      <button class="ctl fbtn" data-f="fmcg">FMCG</button>
-      <button class="ctl fbtn" data-f="spatial">Spatial</button>
+      <div class="filter-sectors" role="group">
+        <button class="ctl fbtn" data-f="hospitality">Hospitality</button>
+        <button class="ctl fbtn" data-f="fmcg">FMCG</button>
+        <button class="ctl fbtn" data-f="place">Place</button>
+        <button class="ctl fbtn" data-f="culture">Culture</button>
+      </div>
     </div>
     <button class="ctl chrome-info" id="infoBtn">Info</button>
   </div>
@@ -143,10 +167,9 @@
 <div id="debug"></div>
 <script type="module">
   import { boot } from './src/main.js';
-  boot().catch(err => {
-    console.error(err);
-    document.body.insertAdjacentHTML('afterbegin',
-      '<pre style="padding:24px;font:14px/1.4 ui-monospace,monospace">Failed to boot: '+err.message+'</pre>');
+  boot().catch((err) => {
+    /* Keep console signal for local debug; never paint raw JS errors into the UI. */
+    console.error('[tcc] boot failed', err);
   });
 </script>
 </body>

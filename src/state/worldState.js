@@ -8,6 +8,7 @@ export const world = {
   depth: 'images',
   infoOpen: false,
   sort: null,
+  allVariant: 1,
   ledger: { fieldY: 0, indexY: 0, slot: null },
   lock: false,
   last: 'boot',

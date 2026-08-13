@@ -1,5 +1,6 @@
 import { loadProjects } from './data/projects.js';
 import { world, RM, D, $, acquire, release, withLock } from './state/worldState.js';
+import { initAllVariant, setAllVariant as setAllVariantRaw } from './state/allVariant.js';
 import { createRouter } from './state/routing.js';
 import {
   TIMING,
@@ -9,6 +10,7 @@ import {
   createFlightTable,
   endIntro,
 } from './motion/transitions.js';
+import { playTccIntro } from './motion/intro.js';
 import { createProjectMedia } from './components/ProjectMedia.js';
 import { createIndex } from './components/Index.js';
 import { createProjectStack } from './components/ProjectStack.js';
@@ -16,6 +18,8 @@ import { createCollection } from './components/Collection.js';
 import { createInfo } from './components/Info.js';
 import { createChrome } from './components/Chrome.js';
 import { bindAllSignups } from './components/Signup.js';
+import { bindFaviconColour } from './components/FaviconColour.js';
+import { createHueCursor } from './theme/palette.js';
 import { saveViewScroll, resetModeY } from './state/scrollLedger.js';
 
 /* Mutable flight hooks — window patches (QA) and lexical calls share one table. */
@@ -31,6 +35,7 @@ let P, CAPS, CDN, byId;
    ============================================================ */
 
 export async function boot() {
+  initAllVariant();
   const data = await loadProjects();
   CDN = data.cdn;
   CAPS = data.caps;
@@ -42,10 +47,9 @@ const {
   applyHeroGeometry, bindClassify, sweep, galleryHtml,
 } = media;
 bindClassify();
-/* The Colour Club interaction deck — colour points at work, advancing per encounter */
-const HUES=['#4E5FFD','#E23A2E','#0F8A46','#F0740A','#C4258F','#7E30D8','#0F7E93'];
-let hueI=0;
-const nextHue=()=>HUES[hueI++%HUES.length];
+/* Shared club palette cursor — outline / caps / stack */
+const nextHue = createHueCursor();
+bindFaviconColour();
 
 /* ============================================================
    BUILD COLLECTION
@@ -89,7 +93,16 @@ const projectStack = createProjectStack({
   nextHue,
   onLateral: (id) => lateral(id),
 });
-const { buildStack } = projectStack;
+if (
+  typeof projectStack.clearStack !== 'function' ||
+  typeof projectStack.buildStack !== 'function' ||
+  typeof projectStack.showStack !== 'function' ||
+  typeof projectStack.hideStack !== 'function'
+) {
+  throw new Error('[tcc] ProjectStack API incomplete — expected buildStack/clearStack/showStack/hideStack');
+}
+/* Keep calls on the factory object — single owner, no stale destructure bindings. */
+projectStack.clearStack();
 
 const info = createInfo({
   syncHash: () => syncHash(),
@@ -113,13 +126,19 @@ function setView(v,quiet){
     saveViewScroll();
     document.body.classList.toggle('x',v==='index');document.body.classList.toggle('g',v==='field');
     world.view=v;$('#viewBtn').textContent=v==='index'?'Visual':'Index';
+    /* Index uses direct tile children; Visual Sector uses slot canvas */
+    collection.syncSectorCanvas();
     collection.syncIndexFieldMin();
     dbg();return;
   }
   endIntro();
   if(!withLock('view:'+world.view+'→'+v,()=>{
     saveViewScroll();
-    flipTiles(()=>{document.body.classList.toggle('x',v==='index');document.body.classList.toggle('g',v==='field')});
+    flipTiles(()=>{
+      document.body.classList.toggle('x',v==='index');
+      document.body.classList.toggle('g',v==='field');
+      collection.syncSectorCanvas();
+    });
     world.view=v;
     $('#viewBtn').textContent = v==='index'?'Visual':'Index';
     collection.syncIndexFieldMin();
@@ -128,7 +147,7 @@ function setView(v,quiet){
   })) return;
 }
 
-const SECTORS=['hospitality','fmcg','spatial'];
+const SECTORS=['hospitality','fmcg','place','culture'];
 /* Filters + gallery tiles owned by Collection (POSITIONING ≠ GALLERY). */
 bindFilters();
 
@@ -144,7 +163,7 @@ function populateInspect(p){
   $('#gal').innerHTML=galleryHtml(p);
   $('#mImages').classList.add('on');$('#mIdea').classList.remove('on');
   $('#mIdea').style.display=p.beats.length?'block':'none';
-  buildStack(p.id);
+  projectStack.buildStack(p.id);
   applyHeroGeometry(p);
   const hero=$('#heroImg'); const hd=dimOf(p,0);
   if(hd){ hero.width=hd.width; hero.height=hd.height; }
@@ -164,7 +183,7 @@ function openProject(id,quiet){
     applyHeroGeometry(p);
     if(tile)tile.style.visibility='hidden';
     $('#heroImg').style.opacity=1;ins.classList.add('open','ready');
-    stack.classList.add('show');$('#insClose').classList.add('show');
+    projectStack.showStack();$('#insClose').classList.add('show');
     world.selected=id;world.depth='images';dbg();return;
   }
   endIntro();
@@ -187,7 +206,7 @@ function openProject(id,quiet){
     fly(flysrc,from,to,D(TIMING.open),()=>{
       $('#heroImg').style.opacity=1;
       ins.classList.add('ready');
-      stack.classList.add('show'); $('#insClose').classList.add('show');
+      projectStack.showStack(); $('#insClose').classList.add('show');
       world.selected=id;world.depth='images';release();
       syncHash(); dbg();
     });
@@ -200,7 +219,8 @@ function closeProject(quiet){
     if(tile)tile.style.visibility='';
     document.body.classList.remove('locked','proj');
     const ins=$('#inspect');ins.classList.remove('open','ready','idea');
-    stack.classList.remove('show');$('#insClose').classList.remove('show');
+    /* Project inactive → stack must be non-present */
+    projectStack.clearStack();$('#insClose').classList.remove('show');
     world.selected=null;world.depth='images';dbg();return;
   }
   if(world.lock)return;
@@ -208,18 +228,22 @@ function closeProject(quiet){
   const id=world.selected,p=byId[id];
   const ins=$('#inspect');
   const tile=grid.querySelector(`.tile[data-id="${id}"]`);
-  ins.classList.remove('ready');            // fade subordinate content
+  /* Close owns the visual event: suppress stack immediately. Do not strip
+     .idea yet — that would flash Images layout inside the still-open inspect. */
+  ins.classList.remove('ready');
   document.body.classList.remove('proj');
-  stack.classList.remove('show');$('#insClose').classList.remove('show');
+  projectStack.hideStack();$('#insClose').classList.remove('show');
   const fromImages=world.depth!=='idea';
   const from=fromImages?$('#insHero').getBoundingClientRect():null;
   const flysrc=src0($('#insHero'));
   setTimeout(()=>{
     document.body.classList.remove('locked');       // scroll position was never destroyed
     const to=tile?tile.querySelector('.ph').getBoundingClientRect():null;
-    ins.classList.remove('open');
+    /* Drop open + idea together so we never rest with stale .idea after close */
+    ins.classList.remove('open','idea');
     fly(flysrc,from,fromImages?to:null,D(TIMING.close),()=>{
       if(tile)tile.style.visibility='';
+      projectStack.clearStack();
       world.selected=null;world.depth='images';release();
       syncHash(); dbg();
     });
@@ -341,6 +365,7 @@ function dbg(){
   const animLive=[...grid.querySelectorAll('.tile')].reduce((n,t)=>n+(t.getAnimations?t.getAnimations().length:0),0);
   $('#debug').innerHTML=
 `<span class="h">WORLD STATE</span>
+allVariant  ${world.allVariant}
 view        ${world.view}${world.sort?' (sort:'+world.sort+')':''}
 sector      ${world.sector}
 selected    ${world.selected||'null'}
@@ -365,17 +390,6 @@ slot        ${world.ledger.slot||'null'}
 route       ${location.hash||'#/'}</span>`;
 }
 
-/* boot — intro plays only on a genuine first entry to the front of the site */
-(function(){
-  const deep=location.hash&&location.hash!=='#/';
-  const seen=sessionStorage.getItem('tccIntro');
-  if(!deep&&!seen&&!RM){
-    document.body.classList.add('intro');
-    setTimeout(()=>document.body.classList.remove('intro'),TIMING.intro);
-  }
-  try{sessionStorage.setItem('tccIntro','1')}catch(e){}
-})();
-if(location.hash&&location.hash!=='#/')applyHash(); dbg();
   /* debug / QA surface — same object as the module world, not a second state */
   window.world = world;
   window.openProject = openProject;
@@ -387,6 +401,11 @@ if(location.hash&&location.hash!=='#/')applyHash(); dbg();
   window.openInfo = openInfo;
   window.closeInfo = closeInfo;
   window.lateral = lateral;
+  window.endIntro = endIntro;
+  window.setAllVariant = (n) => {
+    setAllVariantRaw(n);
+    collection.applyAllLayout();
+  };
   Object.defineProperty(window, 'fly', {
     get() { return flights.fly; },
     set(fn) { flights.fly = fn; },
@@ -397,4 +416,17 @@ if(location.hash&&location.hash!=='#/')applyHash(); dbg();
     set(fn) { flights.flyCrop = fn; },
     configurable: true,
   });
+
+  if (location.hash && location.hash !== '#/') applyHash();
+  dbg();
+
+  /*
+   * Interaction + clock are already wired above.
+   * Intro is cosmetic only — must never leave the site non-interactive.
+   */
+  try {
+    await playTccIntro();
+  } catch (err) {
+    console.error('[tcc] intro', err);
+  }
 }

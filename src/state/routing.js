@@ -72,7 +72,9 @@ export function createRouter({ getById, sectors, getActions }) {
       if (world.selected) actions.closeProject(true);
       const parts = h.split('/').filter(Boolean);
       const wantsIndex = parts[0] === 'index';
-      const sec = wantsIndex ? parts[1] : parts[0];
+      let sec = wantsIndex ? parts[1] : parts[0];
+      /* Legacy Spatial → Place */
+      if (sec === 'spatial') sec = 'place';
       actions.setView(wantsIndex ? 'index' : 'field', true);
       actions.setFilter(sectors.includes(sec) ? sec : 'all', true);
     }
