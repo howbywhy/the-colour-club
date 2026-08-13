@@ -175,24 +175,21 @@ export function createCollection({
   }
 
   /**
-   * Lock Index field min-height to the full (unfiltered) stack so sparse
-   * filters leave whitespace inside the shell instead of collapsing the page.
+   * Index uses natural document height from currently visible rows.
+   * Clears any legacy full-library min-height lock (Visual ≠ Index).
    */
   function syncIndexFieldMin() {
     const field = document.querySelector('#galleryField');
     if (!field) return;
-    if (!document.body.classList.contains('x')) {
-      field.style.minHeight = '';
-      return;
-    }
-    ejectAllSlots();
-    const tiles = allTiles();
-    const hidden = tiles.map((t) => t.classList.contains('fhide'));
-    tiles.forEach((t) => t.classList.remove('fhide'));
-    void field.offsetHeight;
-    const h = Math.ceil(field.getBoundingClientRect().height);
-    tiles.forEach((t, i) => t.classList.toggle('fhide', hidden[i]));
-    if (h > 0) field.style.minHeight = h + 'px';
+    field.style.minHeight = '';
+  }
+
+  /** Keep scroll inside the current document after Index height changes. */
+  function clampWindowScroll(preferredY) {
+    const max = Math.max(0, document.documentElement.scrollHeight - innerHeight);
+    const y = Math.min(Math.max(0, preferredY), max);
+    if (Math.abs(scrollY - y) > 0) scrollTo(0, y);
+    return y;
   }
 
   function cancelFilterMotion() {
@@ -247,7 +244,8 @@ export function createCollection({
       t.style.transform = '';
       t.style.opacity = '';
     });
-    if (Math.abs(scrollY - sy0) > 0) scrollTo(0, sy0);
+    /* Keep prior scroll when still valid; clamp when the document shortened (Index filters). */
+    clampWindowScroll(sy0);
     filterCtrl.phase = 'idle';
     filterCtrl.target = null;
     filterCtrl.animCount = 0;
@@ -812,12 +810,15 @@ export function createCollection({
 
   function setFilter(sec, quiet) {
     if (quiet) {
+      const sy0 = scrollY;
       filterCtrl.gen++;
       cancelFilterMotion();
       world.sector = sec;
       world.last = 'filter:' + sec;
       document.querySelectorAll('#filters .fbtn').forEach((b) => b.classList.toggle('on', b.dataset.f === sec));
       applyFilterLayout(sec);
+      syncIndexFieldMin();
+      clampWindowScroll(sy0);
       filterCtrl.phase = 'idle';
       filterCtrl.target = null;
       filterCtrl.animCount = 0;
@@ -878,8 +879,10 @@ export function createCollection({
   function bindFilters() {
     document.querySelectorAll('#filters .fbtn').forEach((b) => b.addEventListener('click', () => setFilter(b.dataset.f)));
     addEventListener('resize', () => {
-      if (document.body.classList.contains('x')) syncIndexFieldMin();
-      else if (!document.body.classList.contains('filtered') && document.body.classList.contains('g')) {
+      if (document.body.classList.contains('x')) {
+        syncIndexFieldMin();
+        clampWindowScroll(scrollY);
+      } else if (!document.body.classList.contains('filtered') && document.body.classList.contains('g')) {
         applyAllLayout(grid, world.allVariant || 1);
       }
     });
@@ -893,6 +896,7 @@ export function createCollection({
     applyFilterLayout,
     filterWillShow,
     syncIndexFieldMin,
+    clampWindowScroll,
     syncSectorCanvas,
     applyAllLayout: () => applyAllLayout(grid, world.allVariant || 1),
     SECTOR_SLOT_COUNT,

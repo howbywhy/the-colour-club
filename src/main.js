@@ -120,6 +120,16 @@ buildCaps(CAPS, () => byId, nextHue, (id) => {
 /* ============================================================
    STATE TRANSITIONS
    ============================================================ */
+function restoreViewScroll(v){
+  const key = v === 'index' ? 'indexY' : 'fieldY';
+  const preferred = world.ledger[key] || 0;
+  requestAnimationFrame(()=>{
+    requestAnimationFrame(()=>{
+      collection.clampWindowScroll(preferred);
+    });
+  });
+}
+
 function setView(v,quiet){
   if(world.view===v||world.selected)return;
   if(quiet){
@@ -129,6 +139,7 @@ function setView(v,quiet){
     /* Index uses direct tile children; Visual Sector uses slot canvas */
     collection.syncSectorCanvas();
     collection.syncIndexFieldMin();
+    restoreViewScroll(v);
     dbg();return;
   }
   endIntro();
@@ -142,6 +153,7 @@ function setView(v,quiet){
     world.view=v;
     $('#viewBtn').textContent = v==='index'?'Visual':'Index';
     collection.syncIndexFieldMin();
+    restoreViewScroll(v);
     setTimeout(release,D(TIMING.view));
     syncHash(); dbg();
   })) return;
