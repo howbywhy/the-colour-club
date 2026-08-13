@@ -7,3 +7,6 @@
 .qa-tools/*-results.json
 .qa-tools/filter-diag.json
 /tmp/
+/.qa-tools/intro-entry/
+/.qa-tools/intro-flash/
+/.qa-tools/harvest/pages/

@@ -1,0 +1,1521 @@
+[
+  {
+    "id": "mochi",
+    "name": "Mochi Mochi",
+    "strap": "",
+    "lede": "",
+    "cat": "fmcg",
+    "sector": "Food / FMCG",
+    "emp": "r",
+    "deliv": [],
+    "cred": "",
+    "beats": [],
+    "sourceUrl": "https://www.thecolourclub.com.au/small-projects/mochi-mochi",
+    "copySource": "live-minimal",
+    "liveNote": "Small-project live template: title + media only; no Idea/body copy. Images-only in V2.",
+    "liveKind": "small-project",
+    "media": [
+      {
+        "type": "image",
+        "file": "mochi-01.jpg",
+        "original": "TCCWEB-Portfolio-MochiMochi3.jpg",
+        "local": "public/images/projects/mochi/mochi-01.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da203f0c3e545bc1ed1bda_TCCWEB-Portfolio-MochiMochi3.jpg",
+        "cdnFile": "68da203f0c3e545bc1ed1bda_TCCWEB-Portfolio-MochiMochi3.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "mochi-02.jpg",
+        "original": "TCCWEB-Portfolio-MochiMochi2.jpg",
+        "local": "public/images/projects/mochi/mochi-02.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da2040f15a31572807cf59_TCCWEB-Portfolio-MochiMochi2.jpg",
+        "cdnFile": "68da2040f15a31572807cf59_TCCWEB-Portfolio-MochiMochi2.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "mochi-03.jpg",
+        "original": "TCCWEB-Portfolio-MochiMochi12.jpg",
+        "local": "public/images/projects/mochi/mochi-03.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da20416a0083b482baeec5_TCCWEB-Portfolio-MochiMochi12.jpg",
+        "cdnFile": "68da20416a0083b482baeec5_TCCWEB-Portfolio-MochiMochi12.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "mochi-04.jpg",
+        "original": "TCCWEB-Portfolio-MochiMochi4.jpg",
+        "local": "public/images/projects/mochi/mochi-04.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da2040b9cebe7ec7a4ea58_TCCWEB-Portfolio-MochiMochi4.jpg",
+        "cdnFile": "68da2040b9cebe7ec7a4ea58_TCCWEB-Portfolio-MochiMochi4.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "mochi-05.jpg",
+        "original": "TCCWEB-Portfolio-MochiMochi5.jpg",
+        "local": "public/images/projects/mochi/mochi-05.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da2040db7ff5100ecb943b_TCCWEB-Portfolio-MochiMochi5.jpg",
+        "cdnFile": "68da2040db7ff5100ecb943b_TCCWEB-Portfolio-MochiMochi5.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "mochi-06.jpg",
+        "original": "TCCWEB-Portfolio-MochiMochi6.jpg",
+        "local": "public/images/projects/mochi/mochi-06.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da2040b5110cdf0230be46_TCCWEB-Portfolio-MochiMochi6.jpg",
+        "cdnFile": "68da2040b5110cdf0230be46_TCCWEB-Portfolio-MochiMochi6.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "mochi-07.jpg",
+        "original": "TCCWEB-Portfolio-MochiMochi7.jpg",
+        "local": "public/images/projects/mochi/mochi-07.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da2040538eadde6297b99f_TCCWEB-Portfolio-MochiMochi7.jpg",
+        "cdnFile": "68da2040538eadde6297b99f_TCCWEB-Portfolio-MochiMochi7.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "mochi-08.jpg",
+        "original": "TCCWEB-Portfolio-MochiMochi9.jpg",
+        "local": "public/images/projects/mochi/mochi-08.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da2041224ae03a0c2fb487_TCCWEB-Portfolio-MochiMochi9.jpg",
+        "cdnFile": "68da2041224ae03a0c2fb487_TCCWEB-Portfolio-MochiMochi9.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "mochi-09.jpg",
+        "original": "TCCWEB-Portfolio-MochiMochi10.jpg",
+        "local": "public/images/projects/mochi/mochi-09.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da20411ef5efa57fc07cc1_TCCWEB-Portfolio-MochiMochi10.jpg",
+        "cdnFile": "68da20411ef5efa57fc07cc1_TCCWEB-Portfolio-MochiMochi10.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "mochi-10.jpg",
+        "original": "TCCWEB-Portfolio-MochiMochi.jpg",
+        "local": "public/images/projects/mochi/mochi-10.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68da204018b69de54670eb96_TCCWEB-Portfolio-MochiMochi.jpg",
+        "cdnFile": "68da204018b69de54670eb96_TCCWEB-Portfolio-MochiMochi.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      }
+    ],
+    "files": [
+      "68da203f0c3e545bc1ed1bda_TCCWEB-Portfolio-MochiMochi3.jpg",
+      "68da2040f15a31572807cf59_TCCWEB-Portfolio-MochiMochi2.jpg",
+      "68da20416a0083b482baeec5_TCCWEB-Portfolio-MochiMochi12.jpg",
+      "68da2040b9cebe7ec7a4ea58_TCCWEB-Portfolio-MochiMochi4.jpg",
+      "68da2040db7ff5100ecb943b_TCCWEB-Portfolio-MochiMochi5.jpg",
+      "68da2040b5110cdf0230be46_TCCWEB-Portfolio-MochiMochi6.jpg",
+      "68da2040538eadde6297b99f_TCCWEB-Portfolio-MochiMochi7.jpg",
+      "68da2041224ae03a0c2fb487_TCCWEB-Portfolio-MochiMochi9.jpg",
+      "68da20411ef5efa57fc07cc1_TCCWEB-Portfolio-MochiMochi10.jpg",
+      "68da204018b69de54670eb96_TCCWEB-Portfolio-MochiMochi.jpg"
+    ],
+    "dims": [
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      }
+    ],
+    "vids": []
+  },
+  {
+    "id": "rads",
+    "name": "Rads",
+    "strap": "",
+    "lede": "",
+    "cat": "fmcg",
+    "sector": "Product / FMCG",
+    "emp": "r",
+    "deliv": [],
+    "cred": "",
+    "beats": [],
+    "sourceUrl": "https://www.thecolourclub.com.au/small-projects/rads",
+    "copySource": "live-minimal",
+    "liveNote": "Small-project live template: title + media only; no Idea/body copy. Images-only in V2.",
+    "liveKind": "small-project",
+    "media": [
+      {
+        "type": "image",
+        "file": "rads-01.png",
+        "original": "TCCWEB-Portfolio-RADS25.png",
+        "local": "public/images/projects/rads/rads-01.png",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d34845631376bbcc0ef466_TCCWEB-Portfolio-RADS25.png",
+        "cdnFile": "68d34845631376bbcc0ef466_TCCWEB-Portfolio-RADS25.png",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "rads-02.png",
+        "original": "TCCWEB-Portfolio-RADS252.png",
+        "local": "public/images/projects/rads/rads-02.png",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d34845e67dfdb12a18c604_TCCWEB-Portfolio-RADS252.png",
+        "cdnFile": "68d34845e67dfdb12a18c604_TCCWEB-Portfolio-RADS252.png",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "rads-03.gif",
+        "original": "TCCWEB-Portfolio-RADS253.gif",
+        "local": "public/images/projects/rads/rads-03.gif",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d3484ab5b898b67cb091c3_TCCWEB-Portfolio-RADS253.gif",
+        "cdnFile": "68d3484ab5b898b67cb091c3_TCCWEB-Portfolio-RADS253.gif",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "rads-04.png",
+        "original": "TCCWEB-Portfolio-RADS2530.png",
+        "local": "public/images/projects/rads/rads-04.png",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d3484592066d8f1721ac11_TCCWEB-Portfolio-RADS2530.png",
+        "cdnFile": "68d3484592066d8f1721ac11_TCCWEB-Portfolio-RADS2530.png",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "rads-05.png",
+        "original": "TCCWEB-Portfolio-RADS2527.png",
+        "local": "public/images/projects/rads/rads-05.png",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d34845e6a00052f410c6b2_TCCWEB-Portfolio-RADS2527.png",
+        "cdnFile": "68d34845e6a00052f410c6b2_TCCWEB-Portfolio-RADS2527.png",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "rads-06.png",
+        "original": "TCCWEB-Portfolio-RADS2537.png",
+        "local": "public/images/projects/rads/rads-06.png",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d348455df8663801299fa8_TCCWEB-Portfolio-RADS2537.png",
+        "cdnFile": "68d348455df8663801299fa8_TCCWEB-Portfolio-RADS2537.png",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "rads-07.gif",
+        "original": "TCCWEB-Portfolio-RADS2531.gif",
+        "local": "public/images/projects/rads/rads-07.gif",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d3484dbd7501d4a5677d96_TCCWEB-Portfolio-RADS2531.gif",
+        "cdnFile": "68d3484dbd7501d4a5677d96_TCCWEB-Portfolio-RADS2531.gif",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "rads-08.png",
+        "original": "TCCWEB-Portfolio-RADS2528.png",
+        "local": "public/images/projects/rads/rads-08.png",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d34844d16c13b935077df9_TCCWEB-Portfolio-RADS2528.png",
+        "cdnFile": "68d34844d16c13b935077df9_TCCWEB-Portfolio-RADS2528.png",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "rads-09.png",
+        "original": "TCCWEB-Portfolio-RADS2526.png",
+        "local": "public/images/projects/rads/rads-09.png",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d3484470ba4188c6c986b2_TCCWEB-Portfolio-RADS2526.png",
+        "cdnFile": "68d3484470ba4188c6c986b2_TCCWEB-Portfolio-RADS2526.png",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "video",
+        "provider": "vidzflow",
+        "id": "cZ5Sei4ioI",
+        "at": 1,
+        "embed": "https://app.vidzflow.com/v/cZ5Sei4ioI",
+        "local": null,
+        "status": "remote-embed"
+      },
+      {
+        "type": "video",
+        "provider": "vidzflow",
+        "id": "XJXyazucTx",
+        "at": 3,
+        "embed": "https://app.vidzflow.com/v/XJXyazucTx",
+        "local": null,
+        "status": "remote-embed"
+      }
+    ],
+    "files": [
+      "68d34845631376bbcc0ef466_TCCWEB-Portfolio-RADS25.png",
+      "68d34845e67dfdb12a18c604_TCCWEB-Portfolio-RADS252.png",
+      "68d3484ab5b898b67cb091c3_TCCWEB-Portfolio-RADS253.gif",
+      "68d3484592066d8f1721ac11_TCCWEB-Portfolio-RADS2530.png",
+      "68d34845e6a00052f410c6b2_TCCWEB-Portfolio-RADS2527.png",
+      "68d348455df8663801299fa8_TCCWEB-Portfolio-RADS2537.png",
+      "68d3484dbd7501d4a5677d96_TCCWEB-Portfolio-RADS2531.gif",
+      "68d34844d16c13b935077df9_TCCWEB-Portfolio-RADS2528.png",
+      "68d3484470ba4188c6c986b2_TCCWEB-Portfolio-RADS2526.png"
+    ],
+    "dims": [
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      }
+    ],
+    "vids": [
+      {
+        "vf": "cZ5Sei4ioI",
+        "at": 1
+      },
+      {
+        "vf": "XJXyazucTx",
+        "at": 3
+      }
+    ]
+  },
+  {
+    "id": "icedtea",
+    "name": "Iced Tea Love",
+    "strap": "",
+    "lede": "",
+    "cat": "fmcg",
+    "sector": "Beverage / FMCG",
+    "emp": "r",
+    "deliv": [],
+    "cred": "",
+    "beats": [],
+    "sourceUrl": "https://www.thecolourclub.com.au/small-projects/iced-tea-love",
+    "copySource": "live-minimal",
+    "liveNote": "Small-project live template: title + media only; no Idea/body copy. Images-only in V2.",
+    "liveKind": "small-project",
+    "media": [
+      {
+        "type": "image",
+        "file": "icedtea-01.gif",
+        "original": "TCCWEB-Portfolio-IcedTeaLove.gif",
+        "local": "public/images/projects/icedtea/icedtea-01.gif",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d5f92aa499accbb4aa64cd_TCCWEB-Portfolio-IcedTeaLove.gif",
+        "cdnFile": "68d5f92aa499accbb4aa64cd_TCCWEB-Portfolio-IcedTeaLove.gif",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "icedtea-02.jpg",
+        "original": "TCCWEB-Portfolio-IcedTeaLove4.jpg",
+        "local": "public/images/projects/icedtea/icedtea-02.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d5eea59df9c0dd8879f22a_TCCWEB-Portfolio-IcedTeaLove4.jpg",
+        "cdnFile": "68d5eea59df9c0dd8879f22a_TCCWEB-Portfolio-IcedTeaLove4.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "icedtea-03.jpg",
+        "original": "TCCWEB-Portfolio-IcedTeaLove9.jpg",
+        "local": "public/images/projects/icedtea/icedtea-03.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d5eea6207015e54e8c5e49_TCCWEB-Portfolio-IcedTeaLove9.jpg",
+        "cdnFile": "68d5eea6207015e54e8c5e49_TCCWEB-Portfolio-IcedTeaLove9.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "icedtea-04.jpg",
+        "original": "TCCWEB-Portfolio-IcedTeaLove10.jpg",
+        "local": "public/images/projects/icedtea/icedtea-04.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d5eea50e4d8ff8bb931883_TCCWEB-Portfolio-IcedTeaLove10.jpg",
+        "cdnFile": "68d5eea50e4d8ff8bb931883_TCCWEB-Portfolio-IcedTeaLove10.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "icedtea-05.jpg",
+        "original": "TCCWEB-Portfolio-IcedTeaLove5.jpg",
+        "local": "public/images/projects/icedtea/icedtea-05.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d5eea51f79cc5071fa85a0_TCCWEB-Portfolio-IcedTeaLove5.jpg",
+        "cdnFile": "68d5eea51f79cc5071fa85a0_TCCWEB-Portfolio-IcedTeaLove5.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "icedtea-06.jpg",
+        "original": "TCCWEB-Portfolio-IcedTeaLove6.jpg",
+        "local": "public/images/projects/icedtea/icedtea-06.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d5eea5b1526a038e0c3ba2_TCCWEB-Portfolio-IcedTeaLove6.jpg",
+        "cdnFile": "68d5eea5b1526a038e0c3ba2_TCCWEB-Portfolio-IcedTeaLove6.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "icedtea-07.jpg",
+        "original": "TCCWEB-Portfolio-IcedTeaLove7.jpg",
+        "local": "public/images/projects/icedtea/icedtea-07.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d5eea5fc4b7696c460805f_TCCWEB-Portfolio-IcedTeaLove7.jpg",
+        "cdnFile": "68d5eea5fc4b7696c460805f_TCCWEB-Portfolio-IcedTeaLove7.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "icedtea-08.jpg",
+        "original": "TCCWEB-Portfolio-IcedTeaLove8.jpg",
+        "local": "public/images/projects/icedtea/icedtea-08.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d5eea5a5d8b1344b27cf92_TCCWEB-Portfolio-IcedTeaLove8.jpg",
+        "cdnFile": "68d5eea5a5d8b1344b27cf92_TCCWEB-Portfolio-IcedTeaLove8.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "video",
+        "provider": "vidzflow",
+        "id": "TgbyqZhDM2",
+        "at": 1,
+        "embed": "https://app.vidzflow.com/v/TgbyqZhDM2",
+        "local": null,
+        "status": "remote-embed"
+      }
+    ],
+    "files": [
+      "68d5f92aa499accbb4aa64cd_TCCWEB-Portfolio-IcedTeaLove.gif",
+      "68d5eea59df9c0dd8879f22a_TCCWEB-Portfolio-IcedTeaLove4.jpg",
+      "68d5eea6207015e54e8c5e49_TCCWEB-Portfolio-IcedTeaLove9.jpg",
+      "68d5eea50e4d8ff8bb931883_TCCWEB-Portfolio-IcedTeaLove10.jpg",
+      "68d5eea51f79cc5071fa85a0_TCCWEB-Portfolio-IcedTeaLove5.jpg",
+      "68d5eea5b1526a038e0c3ba2_TCCWEB-Portfolio-IcedTeaLove6.jpg",
+      "68d5eea5fc4b7696c460805f_TCCWEB-Portfolio-IcedTeaLove7.jpg",
+      "68d5eea5a5d8b1344b27cf92_TCCWEB-Portfolio-IcedTeaLove8.jpg"
+    ],
+    "dims": [
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      }
+    ],
+    "vids": [
+      {
+        "vf": "TgbyqZhDM2",
+        "at": 1
+      }
+    ]
+  },
+  {
+    "id": "yammy",
+    "name": "YAMMY",
+    "strap": "",
+    "lede": "",
+    "cat": "fmcg",
+    "sector": "Food / FMCG",
+    "emp": "r",
+    "deliv": [],
+    "cred": "",
+    "beats": [],
+    "sourceUrl": "https://www.thecolourclub.com.au/small-projects/yammy",
+    "copySource": "live-minimal",
+    "liveNote": "Small-project live template: title + media only; no Idea/body copy. Images-only in V2.",
+    "liveKind": "small-project",
+    "media": [
+      {
+        "type": "image",
+        "file": "yammy-01.jpg",
+        "original": "TCCWEB-Portfolio-Yammy_253.jpg",
+        "local": "public/images/projects/yammy/yammy-01.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20f4f3e8676254c5e6144_TCCWEB-Portfolio-Yammy_253.jpg",
+        "cdnFile": "68c20f4f3e8676254c5e6144_TCCWEB-Portfolio-Yammy_253.jpg",
+        "width": 5150,
+        "height": 3125,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "yammy-02.jpg",
+        "original": "TCCWEB-Portfolio-Yammy_25.jpg",
+        "local": "public/images/projects/yammy/yammy-02.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20f4fc14a48611049318f_TCCWEB-Portfolio-Yammy_25.jpg",
+        "cdnFile": "68c20f4fc14a48611049318f_TCCWEB-Portfolio-Yammy_25.jpg",
+        "width": 5150,
+        "height": 3125,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "yammy-03.jpg",
+        "original": "TCCWEB-Portfolio-Yammy_2510.jpg",
+        "local": "public/images/projects/yammy/yammy-03.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20f52527a501721cd0310_TCCWEB-Portfolio-Yammy_2510.jpg",
+        "cdnFile": "68c20f52527a501721cd0310_TCCWEB-Portfolio-Yammy_2510.jpg",
+        "width": 5150,
+        "height": 3125,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "yammy-04.jpg",
+        "original": "TCCWEB-Portfolio-Yammy_257.jpg",
+        "local": "public/images/projects/yammy/yammy-04.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20f51008bed193a99a012_TCCWEB-Portfolio-Yammy_257.jpg",
+        "cdnFile": "68c20f51008bed193a99a012_TCCWEB-Portfolio-Yammy_257.jpg",
+        "width": 2500,
+        "height": 3125,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "yammy-05.jpg",
+        "original": "TCCWEB-Portfolio-Yammy_258.jpg",
+        "local": "public/images/projects/yammy/yammy-05.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20f508840e66dd78f834f_TCCWEB-Portfolio-Yammy_258.jpg",
+        "cdnFile": "68c20f508840e66dd78f834f_TCCWEB-Portfolio-Yammy_258.jpg",
+        "width": 2500,
+        "height": 3125,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "yammy-06.jpg",
+        "original": "TCCWEB-Portfolio-Yammy_2511.jpg",
+        "local": "public/images/projects/yammy/yammy-06.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20f5284f196c529df7a4b_TCCWEB-Portfolio-Yammy_2511.jpg",
+        "cdnFile": "68c20f5284f196c529df7a4b_TCCWEB-Portfolio-Yammy_2511.jpg",
+        "width": 5150,
+        "height": 3125,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "yammy-07.jpg",
+        "original": "TCCWEB-Portfolio-Yammy_256.jpg",
+        "local": "public/images/projects/yammy/yammy-07.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20f50e07ba8c0106bd1f2_TCCWEB-Portfolio-Yammy_256.jpg",
+        "cdnFile": "68c20f50e07ba8c0106bd1f2_TCCWEB-Portfolio-Yammy_256.jpg",
+        "width": 5150,
+        "height": 3125,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "yammy-08.jpg",
+        "original": "TCCWEB-Portfolio-Yammy_255.jpg",
+        "local": "public/images/projects/yammy/yammy-08.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20f50a5ba67cb166036f3_TCCWEB-Portfolio-Yammy_255.jpg",
+        "cdnFile": "68c20f50a5ba67cb166036f3_TCCWEB-Portfolio-Yammy_255.jpg",
+        "width": 5150,
+        "height": 3125,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "yammy-09.jpg",
+        "original": "TCCWEB-Portfolio-Yammy_254.jpg",
+        "local": "public/images/projects/yammy/yammy-09.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20f50c0c14c3e89590726_TCCWEB-Portfolio-Yammy_254.jpg",
+        "cdnFile": "68c20f50c0c14c3e89590726_TCCWEB-Portfolio-Yammy_254.jpg",
+        "width": 5150,
+        "height": 3125,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "yammy-10.jpg",
+        "original": "TCCWEB-Portfolio-Yammy_252.jpg",
+        "local": "public/images/projects/yammy/yammy-10.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20f4f606694c1fecdaa4c_TCCWEB-Portfolio-Yammy_252.jpg",
+        "cdnFile": "68c20f4f606694c1fecdaa4c_TCCWEB-Portfolio-Yammy_252.jpg",
+        "width": 5150,
+        "height": 3125,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "yammy-11.jpg",
+        "original": "TCCWEB-Portfolio-Yammy_259.jpg",
+        "local": "public/images/projects/yammy/yammy-11.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20f53313bc4211ca7976b_TCCWEB-Portfolio-Yammy_259.jpg",
+        "cdnFile": "68c20f53313bc4211ca7976b_TCCWEB-Portfolio-Yammy_259.jpg",
+        "width": 5150,
+        "height": 3125,
+        "ratio": 1.648,
+        "status": "local"
+      }
+    ],
+    "files": [
+      "68c20f4f3e8676254c5e6144_TCCWEB-Portfolio-Yammy_253.jpg",
+      "68c20f4fc14a48611049318f_TCCWEB-Portfolio-Yammy_25.jpg",
+      "68c20f52527a501721cd0310_TCCWEB-Portfolio-Yammy_2510.jpg",
+      "68c20f51008bed193a99a012_TCCWEB-Portfolio-Yammy_257.jpg",
+      "68c20f508840e66dd78f834f_TCCWEB-Portfolio-Yammy_258.jpg",
+      "68c20f5284f196c529df7a4b_TCCWEB-Portfolio-Yammy_2511.jpg",
+      "68c20f50e07ba8c0106bd1f2_TCCWEB-Portfolio-Yammy_256.jpg",
+      "68c20f50a5ba67cb166036f3_TCCWEB-Portfolio-Yammy_255.jpg",
+      "68c20f50c0c14c3e89590726_TCCWEB-Portfolio-Yammy_254.jpg",
+      "68c20f4f606694c1fecdaa4c_TCCWEB-Portfolio-Yammy_252.jpg",
+      "68c20f53313bc4211ca7976b_TCCWEB-Portfolio-Yammy_259.jpg"
+    ],
+    "dims": [
+      {
+        "width": 5150,
+        "height": 3125
+      },
+      {
+        "width": 5150,
+        "height": 3125
+      },
+      {
+        "width": 5150,
+        "height": 3125
+      },
+      {
+        "width": 2500,
+        "height": 3125
+      },
+      {
+        "width": 2500,
+        "height": 3125
+      },
+      {
+        "width": 5150,
+        "height": 3125
+      },
+      {
+        "width": 5150,
+        "height": 3125
+      },
+      {
+        "width": 5150,
+        "height": 3125
+      },
+      {
+        "width": 5150,
+        "height": 3125
+      },
+      {
+        "width": 5150,
+        "height": 3125
+      },
+      {
+        "width": 5150,
+        "height": 3125
+      }
+    ],
+    "vids": []
+  },
+  {
+    "id": "kingbrown",
+    "name": "King Brown",
+    "strap": "",
+    "lede": "",
+    "cat": "fmcg",
+    "sector": "Beer / FMCG",
+    "emp": "r",
+    "deliv": [],
+    "cred": "",
+    "beats": [],
+    "sourceUrl": "https://www.thecolourclub.com.au/small-projects/king-brown",
+    "copySource": "live-minimal",
+    "liveNote": "Small-project live template: title + media only; no Idea/body copy. Images-only in V2.",
+    "liveKind": "small-project",
+    "media": [
+      {
+        "type": "image",
+        "file": "kingbrown-01.jpg",
+        "original": "TCCWEB-Portfolio-KingBrown13.jpg",
+        "local": "public/images/projects/kingbrown/kingbrown-01.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68bfda63d32ec934476c3db5_TCCWEB-Portfolio-KingBrown13.jpg",
+        "cdnFile": "68bfda63d32ec934476c3db5_TCCWEB-Portfolio-KingBrown13.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "kingbrown-02.jpg",
+        "original": "TCCWEB-Portfolio-KingBrown.jpg",
+        "local": "public/images/projects/kingbrown/kingbrown-02.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68bfda62fbf85fc8470a369b_TCCWEB-Portfolio-KingBrown.jpg",
+        "cdnFile": "68bfda62fbf85fc8470a369b_TCCWEB-Portfolio-KingBrown.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "kingbrown-03.jpg",
+        "original": "TCCWEB-Portfolio-KingBrown14.jpg",
+        "local": "public/images/projects/kingbrown/kingbrown-03.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c20d5d313bc4211ca7428d_TCCWEB-Portfolio-KingBrown14.jpg",
+        "cdnFile": "68c20d5d313bc4211ca7428d_TCCWEB-Portfolio-KingBrown14.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "kingbrown-04.jpg",
+        "original": "TCCWEB-Portfolio-KingBrown3.jpg",
+        "local": "public/images/projects/kingbrown/kingbrown-04.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68bfda621895b58f0d2ffe57_TCCWEB-Portfolio-KingBrown3.jpg",
+        "cdnFile": "68bfda621895b58f0d2ffe57_TCCWEB-Portfolio-KingBrown3.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "kingbrown-05.jpg",
+        "original": "TCCWEB-Portfolio-KingBrown4.jpg",
+        "local": "public/images/projects/kingbrown/kingbrown-05.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68bfda625a09c67391f8b1f5_TCCWEB-Portfolio-KingBrown4.jpg",
+        "cdnFile": "68bfda625a09c67391f8b1f5_TCCWEB-Portfolio-KingBrown4.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "kingbrown-06.jpg",
+        "original": "TCCWEB-Portfolio-KingBrown5.jpg",
+        "local": "public/images/projects/kingbrown/kingbrown-06.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68bfda6204a3bacdd91eb604_TCCWEB-Portfolio-KingBrown5.jpg",
+        "cdnFile": "68bfda6204a3bacdd91eb604_TCCWEB-Portfolio-KingBrown5.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "kingbrown-07.jpg",
+        "original": "TCCWEB-Portfolio-KingBrown2.jpg",
+        "local": "public/images/projects/kingbrown/kingbrown-07.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68bfda6252854cc8ebdd8ee3_TCCWEB-Portfolio-KingBrown2.jpg",
+        "cdnFile": "68bfda6252854cc8ebdd8ee3_TCCWEB-Portfolio-KingBrown2.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "kingbrown-08.jpg",
+        "original": "TCCWEB-Portfolio-KingBrown8.jpg",
+        "local": "public/images/projects/kingbrown/kingbrown-08.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68bfda63d32ec934476c3d7b_TCCWEB-Portfolio-KingBrown8.jpg",
+        "cdnFile": "68bfda63d32ec934476c3d7b_TCCWEB-Portfolio-KingBrown8.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "kingbrown-09.jpg",
+        "original": "TCCWEB-Portfolio-KingBrown7.jpg",
+        "local": "public/images/projects/kingbrown/kingbrown-09.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68bfda636b176ba2ec0cf089_TCCWEB-Portfolio-KingBrown7.jpg",
+        "cdnFile": "68bfda636b176ba2ec0cf089_TCCWEB-Portfolio-KingBrown7.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "kingbrown-10.jpg",
+        "original": "TCCWEB-Portfolio-KingBrown6.jpg",
+        "local": "public/images/projects/kingbrown/kingbrown-10.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68bfda633bbc21f96f6bb79d_TCCWEB-Portfolio-KingBrown6.jpg",
+        "cdnFile": "68bfda633bbc21f96f6bb79d_TCCWEB-Portfolio-KingBrown6.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "kingbrown-11.jpg",
+        "original": "TCCWEB-Portfolio-KingBrown12.jpg",
+        "local": "public/images/projects/kingbrown/kingbrown-11.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68bfda6308b3c8008839bb90_TCCWEB-Portfolio-KingBrown12.jpg",
+        "cdnFile": "68bfda6308b3c8008839bb90_TCCWEB-Portfolio-KingBrown12.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "kingbrown-12.jpg",
+        "original": "TCCWEB-Portfolio-KingBrown11.jpg",
+        "local": "public/images/projects/kingbrown/kingbrown-12.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68bfda63f0d467bcd1ca5c7a_TCCWEB-Portfolio-KingBrown11.jpg",
+        "cdnFile": "68bfda63f0d467bcd1ca5c7a_TCCWEB-Portfolio-KingBrown11.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "video",
+        "provider": "vidzflow",
+        "id": "JxnQWiBQAF",
+        "at": 1,
+        "embed": "https://app.vidzflow.com/v/JxnQWiBQAF",
+        "local": null,
+        "status": "remote-embed"
+      },
+      {
+        "type": "video",
+        "provider": "vidzflow",
+        "id": "bxBrZlShoS",
+        "at": 3,
+        "embed": "https://app.vidzflow.com/v/bxBrZlShoS",
+        "local": null,
+        "status": "remote-embed"
+      },
+      {
+        "type": "video",
+        "provider": "vidzflow",
+        "id": "pJn5kziK0q",
+        "at": 5,
+        "embed": "https://app.vidzflow.com/v/pJn5kziK0q",
+        "local": null,
+        "status": "remote-embed"
+      },
+      {
+        "type": "video",
+        "provider": "vidzflow",
+        "id": "4PPCwM3lBL",
+        "at": 7,
+        "embed": "https://app.vidzflow.com/v/4PPCwM3lBL",
+        "local": null,
+        "status": "remote-embed"
+      }
+    ],
+    "files": [
+      "68bfda63d32ec934476c3db5_TCCWEB-Portfolio-KingBrown13.jpg",
+      "68bfda62fbf85fc8470a369b_TCCWEB-Portfolio-KingBrown.jpg",
+      "68c20d5d313bc4211ca7428d_TCCWEB-Portfolio-KingBrown14.jpg",
+      "68bfda621895b58f0d2ffe57_TCCWEB-Portfolio-KingBrown3.jpg",
+      "68bfda625a09c67391f8b1f5_TCCWEB-Portfolio-KingBrown4.jpg",
+      "68bfda6204a3bacdd91eb604_TCCWEB-Portfolio-KingBrown5.jpg",
+      "68bfda6252854cc8ebdd8ee3_TCCWEB-Portfolio-KingBrown2.jpg",
+      "68bfda63d32ec934476c3d7b_TCCWEB-Portfolio-KingBrown8.jpg",
+      "68bfda636b176ba2ec0cf089_TCCWEB-Portfolio-KingBrown7.jpg",
+      "68bfda633bbc21f96f6bb79d_TCCWEB-Portfolio-KingBrown6.jpg",
+      "68bfda6308b3c8008839bb90_TCCWEB-Portfolio-KingBrown12.jpg",
+      "68bfda63f0d467bcd1ca5c7a_TCCWEB-Portfolio-KingBrown11.jpg"
+    ],
+    "dims": [
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      }
+    ],
+    "vids": [
+      {
+        "vf": "JxnQWiBQAF",
+        "at": 1
+      },
+      {
+        "vf": "bxBrZlShoS",
+        "at": 3
+      },
+      {
+        "vf": "pJn5kziK0q",
+        "at": 5
+      },
+      {
+        "vf": "4PPCwM3lBL",
+        "at": 7
+      }
+    ]
+  },
+  {
+    "id": "rare",
+    "name": "Rare By Nature",
+    "strap": "",
+    "lede": "",
+    "cat": "fmcg",
+    "sector": "Product / FMCG",
+    "emp": "r",
+    "deliv": [],
+    "cred": "",
+    "beats": [],
+    "sourceUrl": "https://www.thecolourclub.com.au/small-projects/rare-by-nature",
+    "copySource": "live-minimal",
+    "liveNote": "Small-project live template: title + media only; no Idea/body copy. Images-only in V2.",
+    "liveKind": "small-project",
+    "media": [
+      {
+        "type": "image",
+        "file": "rare-01.jpg",
+        "original": "TCCWEB-Portfolio-Rare_By_Nature_25.jpg",
+        "local": "public/images/projects/rare/rare-01.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d4cf398b11b04683578199_TCCWEB-Portfolio-Rare_By_Nature_25.jpg",
+        "cdnFile": "68d4cf398b11b04683578199_TCCWEB-Portfolio-Rare_By_Nature_25.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "rare-02.jpg",
+        "original": "TCCWEB-Portfolio-Rare_By_Nature_254.jpg",
+        "local": "public/images/projects/rare/rare-02.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d4cf39cbe0b8d8ceed90a5_TCCWEB-Portfolio-Rare_By_Nature_254.jpg",
+        "cdnFile": "68d4cf39cbe0b8d8ceed90a5_TCCWEB-Portfolio-Rare_By_Nature_254.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "rare-03.jpg",
+        "original": "TCCWEB-Portfolio-Rare_By_Nature_252.jpg",
+        "local": "public/images/projects/rare/rare-03.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d4cf39707de3976792e8c7_TCCWEB-Portfolio-Rare_By_Nature_252.jpg",
+        "cdnFile": "68d4cf39707de3976792e8c7_TCCWEB-Portfolio-Rare_By_Nature_252.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "rare-04.jpg",
+        "original": "TCCWEB-Portfolio-Rare_By_Nature_253.jpg",
+        "local": "public/images/projects/rare/rare-04.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d4cf398b0e7d4be42c4240_TCCWEB-Portfolio-Rare_By_Nature_253.jpg",
+        "cdnFile": "68d4cf398b0e7d4be42c4240_TCCWEB-Portfolio-Rare_By_Nature_253.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "rare-05.jpg",
+        "original": "TCCWEB-Portfolio-Rare_By_Nature_255.jpg",
+        "local": "public/images/projects/rare/rare-05.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d4cf393c3f6364b31e6165_TCCWEB-Portfolio-Rare_By_Nature_255.jpg",
+        "cdnFile": "68d4cf393c3f6364b31e6165_TCCWEB-Portfolio-Rare_By_Nature_255.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "rare-06.jpg",
+        "original": "TCCWEB-Portfolio-Rare_By_Nature_256.jpg",
+        "local": "public/images/projects/rare/rare-06.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d4cf39cb89b39861ca7ffe_TCCWEB-Portfolio-Rare_By_Nature_256.jpg",
+        "cdnFile": "68d4cf39cb89b39861ca7ffe_TCCWEB-Portfolio-Rare_By_Nature_256.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "rare-07.jpg",
+        "original": "TCCWEB-Portfolio-Rare_By_Nature_257.jpg",
+        "local": "public/images/projects/rare/rare-07.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d4cf39e3e3461cd69e45eb_TCCWEB-Portfolio-Rare_By_Nature_257.jpg",
+        "cdnFile": "68d4cf39e3e3461cd69e45eb_TCCWEB-Portfolio-Rare_By_Nature_257.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "rare-08.jpg",
+        "original": "TCCWEB-Portfolio-Rare_By_Nature_258.jpg",
+        "local": "public/images/projects/rare/rare-08.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d4cf3a7200212b7e43a3fc_TCCWEB-Portfolio-Rare_By_Nature_258.jpg",
+        "cdnFile": "68d4cf3a7200212b7e43a3fc_TCCWEB-Portfolio-Rare_By_Nature_258.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      }
+    ],
+    "files": [
+      "68d4cf398b11b04683578199_TCCWEB-Portfolio-Rare_By_Nature_25.jpg",
+      "68d4cf39cbe0b8d8ceed90a5_TCCWEB-Portfolio-Rare_By_Nature_254.jpg",
+      "68d4cf39707de3976792e8c7_TCCWEB-Portfolio-Rare_By_Nature_252.jpg",
+      "68d4cf398b0e7d4be42c4240_TCCWEB-Portfolio-Rare_By_Nature_253.jpg",
+      "68d4cf393c3f6364b31e6165_TCCWEB-Portfolio-Rare_By_Nature_255.jpg",
+      "68d4cf39cb89b39861ca7ffe_TCCWEB-Portfolio-Rare_By_Nature_256.jpg",
+      "68d4cf39e3e3461cd69e45eb_TCCWEB-Portfolio-Rare_By_Nature_257.jpg",
+      "68d4cf3a7200212b7e43a3fc_TCCWEB-Portfolio-Rare_By_Nature_258.jpg"
+    ],
+    "dims": [
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      }
+    ],
+    "vids": []
+  },
+  {
+    "id": "test",
+    "name": "TEst",
+    "strap": "",
+    "lede": "",
+    "cat": "fmcg",
+    "sector": "Studio / Test",
+    "emp": "r",
+    "deliv": [],
+    "cred": "",
+    "beats": [],
+    "sourceUrl": "https://www.thecolourclub.com.au/small-projects/test",
+    "copySource": "live-minimal",
+    "liveNote": "CMS test slug on live index; included for inventory completeness. Images-only.",
+    "liveKind": "small-project",
+    "media": [
+      {
+        "type": "image",
+        "file": "test-01.jpg",
+        "original": "TCCWEB-Portfolio-TEST.jpg",
+        "local": "public/images/projects/test/test-01.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c21dcdbee1e729fea311e4_TCCWEB-Portfolio-TEST.jpg",
+        "cdnFile": "68c21dcdbee1e729fea311e4_TCCWEB-Portfolio-TEST.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "test-02.jpg",
+        "original": "TCCWEB-Portfolio-TEST2.jpg",
+        "local": "public/images/projects/test/test-02.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d35cf16803d89da1f402c3_TCCWEB-Portfolio-TEST2.jpg",
+        "cdnFile": "68d35cf16803d89da1f402c3_TCCWEB-Portfolio-TEST2.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "test-03.jpg",
+        "original": "TCCWEB-Portfolio-TEST4.jpg",
+        "local": "public/images/projects/test/test-03.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d35cf19d32b93b4cc7e086_TCCWEB-Portfolio-TEST4.jpg",
+        "cdnFile": "68d35cf19d32b93b4cc7e086_TCCWEB-Portfolio-TEST4.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "test-04.jpg",
+        "original": "TCCWEB-Portfolio-TEST3.jpg",
+        "local": "public/images/projects/test/test-04.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d35cf140c81ee45185f18b_TCCWEB-Portfolio-TEST3.jpg",
+        "cdnFile": "68d35cf140c81ee45185f18b_TCCWEB-Portfolio-TEST3.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      }
+    ],
+    "files": [
+      "68c21dcdbee1e729fea311e4_TCCWEB-Portfolio-TEST.jpg",
+      "68d35cf16803d89da1f402c3_TCCWEB-Portfolio-TEST2.jpg",
+      "68d35cf19d32b93b4cc7e086_TCCWEB-Portfolio-TEST4.jpg",
+      "68d35cf140c81ee45185f18b_TCCWEB-Portfolio-TEST3.jpg"
+    ],
+    "dims": [
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      }
+    ],
+    "vids": []
+  },
+  {
+    "id": "nido",
+    "name": "Bistro Nido",
+    "strap": "",
+    "lede": "",
+    "cat": "hospitality",
+    "sector": "Hospitality",
+    "emp": "r",
+    "deliv": [],
+    "cred": "",
+    "beats": [],
+    "sourceUrl": "https://www.thecolourclub.com.au/small-projects/bistro-nido",
+    "copySource": "live-minimal",
+    "liveNote": "Small-project live template: title + media only; no Idea/body copy. Images-only in V2.",
+    "liveKind": "small-project",
+    "media": [
+      {
+        "type": "image",
+        "file": "nido-01.jpg",
+        "original": "TCCWEB-Portfolio-Bistro-Nido.jpg",
+        "local": "public/images/projects/nido/nido-01.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c2393cdc349585e87f34b2_TCCWEB-Portfolio-Bistro-Nido.jpg",
+        "cdnFile": "68c2393cdc349585e87f34b2_TCCWEB-Portfolio-Bistro-Nido.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "nido-02.jpg",
+        "original": "TCCWEB-Portfolio-Bistro-Nido6.jpg",
+        "local": "public/images/projects/nido/nido-02.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c2393c3423c008aa4c6af5_TCCWEB-Portfolio-Bistro-Nido6.jpg",
+        "cdnFile": "68c2393c3423c008aa4c6af5_TCCWEB-Portfolio-Bistro-Nido6.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "nido-03.jpg",
+        "original": "TCCWEB-Portfolio-Bistro-Nido14.jpg",
+        "local": "public/images/projects/nido/nido-03.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c2393f09086bfb97a78a46_TCCWEB-Portfolio-Bistro-Nido14.jpg",
+        "cdnFile": "68c2393f09086bfb97a78a46_TCCWEB-Portfolio-Bistro-Nido14.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "nido-04.jpg",
+        "original": "TCCWEB-Portfolio-Bistro-Nido3.jpg",
+        "local": "public/images/projects/nido/nido-04.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c2393c751691b934ef21b8_TCCWEB-Portfolio-Bistro-Nido3.jpg",
+        "cdnFile": "68c2393c751691b934ef21b8_TCCWEB-Portfolio-Bistro-Nido3.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "nido-05.jpg",
+        "original": "TCCWEB-Portfolio-Bistro-Nido4.jpg",
+        "local": "public/images/projects/nido/nido-05.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c2393c3d0018a19b9cd61a_TCCWEB-Portfolio-Bistro-Nido4.jpg",
+        "cdnFile": "68c2393c3d0018a19b9cd61a_TCCWEB-Portfolio-Bistro-Nido4.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "nido-06.jpg",
+        "original": "TCCWEB-Portfolio-Bistro-Nido12.jpg",
+        "local": "public/images/projects/nido/nido-06.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c2393f47e241cf15d663fe_TCCWEB-Portfolio-Bistro-Nido12.jpg",
+        "cdnFile": "68c2393f47e241cf15d663fe_TCCWEB-Portfolio-Bistro-Nido12.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "nido-07.jpg",
+        "original": "TCCWEB-Portfolio-Bistro-Nido5.jpg",
+        "local": "public/images/projects/nido/nido-07.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c2393c1f4e501f4d42be6f_TCCWEB-Portfolio-Bistro-Nido5.jpg",
+        "cdnFile": "68c2393c1f4e501f4d42be6f_TCCWEB-Portfolio-Bistro-Nido5.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "nido-08.jpg",
+        "original": "ebc716766ec57af292a5ea2e0753b1bc_TCCWEB-Portfolio-Bistro-Nido2.jpg",
+        "local": "public/images/projects/nido/nido-08.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c2393cca27f3e13a94f2f3_ebc716766ec57af292a5ea2e0753b1bc_TCCWEB-Portfolio-Bistro-Nido2.jpg",
+        "cdnFile": "68c2393cca27f3e13a94f2f3_ebc716766ec57af292a5ea2e0753b1bc_TCCWEB-Portfolio-Bistro-Nido2.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "nido-09.jpg",
+        "original": "TCCWEB-Portfolio-Bistro-Nido7.jpg",
+        "local": "public/images/projects/nido/nido-09.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68d230b15a2512c7820b805b_TCCWEB-Portfolio-Bistro-Nido7.jpg",
+        "cdnFile": "68d230b15a2512c7820b805b_TCCWEB-Portfolio-Bistro-Nido7.jpg",
+        "width": 2472,
+        "height": 1500,
+        "ratio": 1.648,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "nido-10.jpg",
+        "original": "TCCWEB-Portfolio-Bistro-Nido15.jpg",
+        "local": "public/images/projects/nido/nido-10.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c2393fa23cda3fb1ed67c1_TCCWEB-Portfolio-Bistro-Nido15.jpg",
+        "cdnFile": "68c2393fa23cda3fb1ed67c1_TCCWEB-Portfolio-Bistro-Nido15.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      },
+      {
+        "type": "image",
+        "file": "nido-11.jpg",
+        "original": "TCCWEB-Portfolio-Bistro-Nido16.jpg",
+        "local": "public/images/projects/nido/nido-11.jpg",
+        "remote": "https://cdn.prod.website-files.com/6893e9b6dd6a794e09259348/68c2394085156fefab84380b_TCCWEB-Portfolio-Bistro-Nido16.jpg",
+        "cdnFile": "68c2394085156fefab84380b_TCCWEB-Portfolio-Bistro-Nido16.jpg",
+        "width": 1200,
+        "height": 1500,
+        "ratio": 0.8,
+        "status": "local"
+      }
+    ],
+    "files": [
+      "68c2393cdc349585e87f34b2_TCCWEB-Portfolio-Bistro-Nido.jpg",
+      "68c2393c3423c008aa4c6af5_TCCWEB-Portfolio-Bistro-Nido6.jpg",
+      "68c2393f09086bfb97a78a46_TCCWEB-Portfolio-Bistro-Nido14.jpg",
+      "68c2393c751691b934ef21b8_TCCWEB-Portfolio-Bistro-Nido3.jpg",
+      "68c2393c3d0018a19b9cd61a_TCCWEB-Portfolio-Bistro-Nido4.jpg",
+      "68c2393f47e241cf15d663fe_TCCWEB-Portfolio-Bistro-Nido12.jpg",
+      "68c2393c1f4e501f4d42be6f_TCCWEB-Portfolio-Bistro-Nido5.jpg",
+      "68c2393cca27f3e13a94f2f3_ebc716766ec57af292a5ea2e0753b1bc_TCCWEB-Portfolio-Bistro-Nido2.jpg",
+      "68d230b15a2512c7820b805b_TCCWEB-Portfolio-Bistro-Nido7.jpg",
+      "68c2393fa23cda3fb1ed67c1_TCCWEB-Portfolio-Bistro-Nido15.jpg",
+      "68c2394085156fefab84380b_TCCWEB-Portfolio-Bistro-Nido16.jpg"
+    ],
+    "dims": [
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 2472,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "width": 1200,
+        "height": 1500
+      }
+    ],
+    "vids": []
+  }
+]

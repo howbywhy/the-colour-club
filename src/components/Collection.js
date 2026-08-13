@@ -5,7 +5,7 @@
  * Shared: filter STATE (sector, fhide, latest intent, lock).
  * Visual:
  *   All = authored absolute columns
- *   Sector = persistent six-slot canvas (slot geometry stable across queries)
+ *   Sector = persistent slot-group canvas (6-slot grammar, repeatable groups)
  * Index: shell + row opacity only (unchanged).
  *
  * Visual motion:
@@ -17,7 +17,8 @@ import { world, RM, $, acquire, release } from '../state/worldState.js';
 import { TIMING, cancelElementAnims, endIntro } from '../motion/transitions.js';
 import { applyAllLayout, clearAllLayout } from '../state/allLayouts.js';
 
-const SECTOR_SLOT_COUNT = 6;
+/** Persistent sector canvas — first six slots keep approved geometry; groups of 6 repeat. */
+const SECTOR_SLOT_COUNT = 12;
 
 export function createCollection({
   grid,
@@ -63,8 +64,8 @@ export function createCollection({
    * Hospitality 0–5, FMCG/Place 0–3, Culture 0. Empty trailing slots stay sparse.
    */
   const SECTOR_ORDER = {
-    hospitality: ['dopa', 'fishfish', 'roy', 'gella', 'lucky', 'tsukiyo'],
-    fmcg: ['sub3', 'macabalm', 'willing', 'rgh'],
+    hospitality: ['dopa', 'fishfish', 'roy', 'gella', 'lucky', 'tsukiyo', 'nido'],
+    fmcg: ['sub3', 'macabalm', 'willing', 'rgh', 'mochi', 'rads', 'icedtea', 'yammy', 'kingbrown', 'rare', 'test'],
     place: ['microsoft', 'mesa', 'adela', 'aogc'],
     culture: ['worthy'],
   };

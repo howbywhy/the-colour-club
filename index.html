@@ -5,16 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Colour Club</title>
 <script>
-/* Prevent collection-utility flash on project deep links — before first paint. */
+/* Before first paint: project deep-link boot + genuine first-entry intro arm. */
 (function () {
-  if (/^#\/p\//.test(location.hash || '')) document.documentElement.classList.add('proj-boot');
+  var h = location.hash || '';
+  if (/^#\/p\//.test(h)) document.documentElement.classList.add('proj-boot');
+  var deep = h !== '' && h !== '#' && h !== '#/';
+  var seen = false;
+  try { seen = !!sessionStorage.getItem('tccIntro'); } catch (e) {}
+  if (!deep && !seen) document.documentElement.classList.add('intro-boot');
 })();
 </script>
+<link rel="preload" href="public/fonts/Dia-Regular.otf" as="font" type="font/otf" crossorigin>
+<!-- Critical first-entry paint: white field + black TCC (no JS / video required). -->
+<style id="intro-boot-critical">
+@font-face{font-family:'Dia';src:url('public/fonts/Dia-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:block}
+html.intro-boot,html.intro-boot body{background:#fff;overflow:hidden}
+html.intro-boot #introStage{
+  position:fixed;inset:0;z-index:500;display:flex!important;align-items:center;justify-content:center;
+  background:#fff;visibility:visible!important;pointer-events:auto!important;
+}
+html.intro-boot #introStage[hidden]{display:flex!important;visibility:visible!important}
+html.intro-boot #introSurface{position:absolute;inset:0;background:#fff}
+html.intro-boot #introReel{opacity:0}
+html.intro-boot #introEnter{
+  position:relative;z-index:2;width:100%;height:100%;margin:0;padding:0;border:0;
+  background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;
+}
+html.intro-boot #introMark{
+  font-family:'Dia',sans-serif;font-weight:400;font-size:50vw;letter-spacing:-.03em;line-height:1;
+  color:#101014;width:max-content;max-width:92vw;transform:translateY(-2%);pointer-events:none;
+}
+@media (max-width:767px){
+  html.intro-boot #introMark{font-size:70vw;max-width:88vw}
+}
+html.intro-boot #brandBtn{visibility:hidden}
+</style>
 <link rel="stylesheet" href="src/styles/tcc.css">
 </head>
 <body class="g">
 <script>
-/* Session All variant + early deep-link class — before first paint of collection. */
+/* Session All variant + arm intro stage before collection paints. */
 (function () {
   try {
     var q = new URLSearchParams(location.search).get('allv');
@@ -25,11 +55,21 @@
   } catch (e) {
     document.body.dataset.allV = '1';
   }
+  if (document.documentElement.classList.contains('intro-boot')) {
+    document.body.classList.add('intro-tcc', 'intro-showreel');
+    var stage = document.getElementById('introStage');
+    if (stage) {
+      stage.hidden = false;
+      stage.setAttribute('aria-hidden', 'false');
+    }
+  }
 })();
 </script>
-<!-- First-entry showreel stage — click/tap/keyboard enters; TCC flies into #brandBtn -->
+<!-- First-entry: white + TCC (static) → showreel behind → swipe down + TCC → nav -->
 <div id="introStage" hidden aria-hidden="true">
-  <div id="introReel" aria-hidden="true"></div>
+  <div id="introSurface" class="intro-surface">
+    <div id="introReel" aria-hidden="true"></div>
+  </div>
   <button type="button" id="introEnter" class="intro-enter" aria-label="Enter The Colour Club">
     <span id="introMark">TCC</span>
   </button>

@@ -1,9 +1,9 @@
 /**
- * First-entry showreel → TCC → nav → world.
- * Desktop: Vidzflow landscape pr2tCO4nrU. Mobile: portrait XnXvALPAMB.
- * Skipped for deep links / RM / return visits (session).
+ * First-entry: WHITE + BLACK TCC → showreel fades under → enter
+ * → showreel swipes down while TCC flies to #brandBtn.
  *
- * Interaction wiring / clock / routing must NOT depend on intro completion.
+ * First paint is static (html.intro-boot + critical CSS). JS only enhances.
+ * Desktop Vidzflow: pr2tCO4nrU. Mobile: XnXvALPAMB.
  */
 import { RM, $ } from '../state/worldState.js';
 import { TIMING } from './timing.js';
@@ -12,6 +12,8 @@ const SHOWREEL = {
   landscape: 'pr2tCO4nrU',
   portrait: 'XnXvALPAMB',
 };
+
+const EASE = () => TIMING.filterEase || 'cubic-bezier(.33,0,.15,1)';
 
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
@@ -40,32 +42,23 @@ function vfSrc(id) {
   return `https://app.vidzflow.com/v/${id}?dq=720&ap=true&muted=true&loop=true&ctp=false&bc=%234E5FFD&controls=`;
 }
 
-function mountShowreel(reel) {
-  if (!reel) return null;
-  reel.innerHTML = '';
-  const portrait = matchMedia('(max-width:767px)').matches;
-  const id = portrait ? SHOWREEL.portrait : SHOWREEL.landscape;
-  const iframe = document.createElement('iframe');
-  iframe.src = vfSrc(id);
-  iframe.title = 'The Colour Club showreel';
-  iframe.setAttribute('allow', 'autoplay');
-  iframe.setAttribute('aria-hidden', 'true');
-  iframe.tabIndex = -1;
-  reel.appendChild(iframe);
-  return iframe;
+function clearBootClass() {
+  document.documentElement.classList.remove('intro-boot');
 }
 
 /**
- * Force intro inactive and restore chrome/collection interactivity.
+ * Force intro inactive and restore interactivity.
  * Idempotent — safe on skip, cancel, error, and success.
  */
 export function ensureIntroInactive() {
   const body = document.body;
   body.classList.remove('intro', 'intro-tcc', 'intro-showreel');
+  clearBootClass();
   const stage = $('#introStage');
   const mark = $('#introMark');
   const enter = $('#introEnter');
   const reel = $('#introReel');
+  const surface = $('#introSurface');
   const brand = $('#brandBtn');
   const chrome = $('#chrome');
   const collection = $('#collection');
@@ -73,12 +66,15 @@ export function ensureIntroInactive() {
   if (stage) {
     stage.hidden = true;
     stage.style.cssText = '';
+    stage.classList.remove('is-leaving');
     stage.setAttribute('aria-hidden', 'true');
     stage.style.pointerEvents = 'none';
   }
+  if (surface) surface.style.cssText = '';
   if (reel) {
     reel.innerHTML = '';
     reel.style.cssText = '';
+    reel.classList.remove('is-live');
   }
   if (mark) mark.style.cssText = '';
   if (enter) {
@@ -93,6 +89,7 @@ export function ensureIntroInactive() {
   if (collection) {
     collection.style.opacity = '';
     collection.style.transition = '';
+    collection.style.pointerEvents = '';
   }
 }
 
@@ -100,6 +97,7 @@ export function ensureIntroInactive() {
 export function endIntroFlight() {
   const els = [
     $('#introStage'),
+    $('#introSurface'),
     $('#introMark'),
     $('#introEnter'),
     $('#introReel'),
@@ -113,14 +111,157 @@ export function endIntroFlight() {
       el.getAnimations?.().forEach((a) => a.cancel());
     } catch (_) {}
   });
+  markIntroSeen();
   ensureIntroInactive();
+}
+
+function mountShowreel(reel) {
+  if (!reel) return null;
+  reel.innerHTML = '';
+  reel.classList.remove('is-live');
+  reel.style.opacity = '0';
+  const portrait = matchMedia('(max-width:767px)').matches;
+  const id = portrait ? SHOWREEL.portrait : SHOWREEL.landscape;
+  const iframe = document.createElement('iframe');
+  iframe.src = vfSrc(id);
+  iframe.title = 'The Colour Club showreel';
+  iframe.setAttribute('allow', 'autoplay; fullscreen');
+  iframe.setAttribute('aria-hidden', 'true');
+  iframe.tabIndex = -1;
+  iframe.setAttribute('allowfullscreen', '');
+  reel.appendChild(iframe);
+  return iframe;
+}
+
+/**
+ * Prefer iframe `load` + double rAF so the player has painted once.
+ * Fallback timeout is a safety valve only — never the first-paint strategy.
+ */
+function awaitReelReady(iframe, abortState) {
+  return new Promise((resolve) => {
+    let done = false;
+    const finish = (ready) => {
+      if (done) return;
+      done = true;
+      resolve(ready && !abortState.aborted);
+    };
+    if (!iframe) {
+      finish(false);
+      return;
+    }
+    iframe.addEventListener(
+      'load',
+      () => {
+        requestAnimationFrame(() => requestAnimationFrame(() => finish(true)));
+      },
+      { once: true }
+    );
+    setTimeout(() => finish(true), 4000);
+  });
+}
+
+function waitForEnter(stage, enter, reel) {
+  return new Promise((resolve) => {
+    let entered = false;
+    const go = () => {
+      if (entered) return;
+      entered = true;
+      cleanup();
+      resolve();
+    };
+    const onKey = (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        go();
+      }
+    };
+    const onStage = (e) => {
+      if (
+        e.target === enter ||
+        enter.contains(e.target) ||
+        e.target === stage ||
+        e.target === reel ||
+        reel?.contains(e.target)
+      ) {
+        go();
+      }
+    };
+    const cleanup = () => {
+      enter.removeEventListener('click', go);
+      stage.removeEventListener('click', onStage);
+      enter.removeEventListener('keydown', onKey);
+    };
+    enter.addEventListener('click', go);
+    stage.addEventListener('click', onStage);
+    enter.addEventListener('keydown', onKey);
+    try {
+      enter.focus({ preventScroll: true });
+    } catch (_) {
+      enter.focus();
+    }
+  });
+}
+
+/** Shared-object TCC → #brandBtn, concurrent with surface swipe-down (unless RM). */
+async function runExit({ stage, surface, mark, brand, reduced }) {
+  markIntroSeen();
+  stage.classList.add('is-leaving');
+
+  /* Neutralise optical offset so FLIP maths use layout boxes */
+  mark.style.transform = 'none';
+  void mark.offsetWidth;
+
+  const from = mark.getBoundingClientRect();
+  brand.style.visibility = 'hidden';
+  const to = brand.getBoundingClientRect();
+  const dx = to.left + to.width / 2 - (from.left + from.width / 2);
+  const dy = to.top + to.height / 2 - (from.top + from.height / 2);
+  const sx = to.width / Math.max(from.width, 1);
+  const sy = to.height / Math.max(from.height, 1);
+  const s = Math.min(sx, sy);
+  const ease = EASE();
+
+  if (reduced) {
+    mark.style.opacity = '0';
+    brand.style.visibility = '';
+    stage.hidden = true;
+    clearBootClass();
+    return;
+  }
+
+  const swipeMs = TIMING.introSwipe || 620;
+  const flightMs = TIMING.introFlight || 560;
+
+  const swipe = surface
+    ? surface.animate(
+        [{ transform: 'translateY(0)' }, { transform: 'translateY(100vh)' }],
+        { duration: swipeMs, easing: ease, fill: 'forwards' }
+      )
+    : null;
+
+  await sleep(TIMING.introBreath || 80);
+
+  const flight = mark.animate(
+    [
+      { transform: 'translate(0,0) scale(1)', opacity: 1 },
+      { transform: `translate(${dx}px,${dy}px) scale(${s})`, opacity: 1 },
+    ],
+    { duration: flightMs, easing: ease, fill: 'forwards' }
+  );
+
+  await Promise.all([flight.finished.catch(() => {}), swipe?.finished.catch(() => {})]);
+
+  mark.style.opacity = '0';
+  brand.style.visibility = '';
+  stage.hidden = true;
+  clearBootClass();
 }
 
 /**
  * @returns {Promise<boolean>} true if intro ran
  */
 export async function playTccIntro() {
-  if (RM || isDeepLink() || hasSeenIntro()) {
+  if (isDeepLink() || hasSeenIntro()) {
     markIntroSeen();
     ensureIntroInactive();
     return false;
@@ -130,107 +271,68 @@ export async function playTccIntro() {
   const mark = $('#introMark');
   const enter = $('#introEnter');
   const reel = $('#introReel');
+  const surface = $('#introSurface');
   const brand = $('#brandBtn');
-  const chrome = $('#chrome');
-  const collection = $('#collection');
   if (!stage || !mark || !brand || !enter) {
     ensureIntroInactive();
     return false;
   }
 
   const body = document.body;
-  let entered = false;
-  let finished = false;
-
-  const waitForEnter = () =>
-    new Promise((resolve) => {
-      const go = () => {
-        if (entered) return;
-        entered = true;
-        cleanup();
-        resolve();
-      };
-      const onKey = (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          go();
-        }
-      };
-      const cleanup = () => {
-        enter.removeEventListener('click', go);
-        stage.removeEventListener('click', onStage);
-        enter.removeEventListener('keydown', onKey);
-      };
-      const onStage = (e) => {
-        if (e.target === enter || enter.contains(e.target) || e.target === stage || e.target === reel || reel?.contains(e.target)) {
-          go();
-        }
-      };
-      enter.addEventListener('click', go);
-      stage.addEventListener('click', onStage);
-      enter.addEventListener('keydown', onKey);
-      /* Focus for keyboard */
-      try {
-        enter.focus({ preventScroll: true });
-      } catch (_) {
-        enter.focus();
-      }
-    });
+  const abortState = { aborted: false };
+  const abortReveal = () => {
+    abortState.aborted = true;
+  };
 
   try {
     body.classList.add('intro-tcc', 'intro-showreel');
+    document.documentElement.classList.add('intro-boot');
     stage.hidden = false;
     stage.setAttribute('aria-hidden', 'false');
     brand.style.visibility = 'hidden';
-    chrome.style.opacity = '0';
-    collection.style.opacity = '0';
-    mountShowreel(reel);
 
-    await waitForEnter();
-    if (finished) return false;
-    markIntroSeen();
-
-    /* Outro: dim reel, fly TCC into nav */
-    stage.classList.add('is-leaving');
-    const from = mark.getBoundingClientRect();
-    brand.style.visibility = 'hidden';
-    const to = brand.getBoundingClientRect();
-    const dx = to.left + to.width / 2 - (from.left + from.width / 2);
-    const dy = to.top + to.height / 2 - (from.top + from.height / 2);
-    const sx = to.width / Math.max(from.width, 1);
-    const sy = to.height / Math.max(from.height, 1);
-    const s = Math.min(sx, sy);
-
-    const flightMs = TIMING.introFlight || 480;
-    const flight = mark.animate(
-      [
-        { transform: 'translate(0,0) scale(1)', opacity: 1 },
-        { transform: `translate(${dx}px,${dy}px) scale(${s})`, opacity: 1 },
-      ],
-      { duration: flightMs, easing: TIMING.filterEase || 'cubic-bezier(.33,0,.15,1)', fill: 'forwards' }
-    );
-
-    if (reel) {
-      reel.animate([{ opacity: 1 }, { opacity: 0 }], {
-        duration: Math.round(flightMs * 0.7),
-        easing: TIMING.filterEase,
-        fill: 'forwards',
-      });
+    /* Reduced motion: white + TCC; enter → immediate handoff (no swipe / video) */
+    if (RM) {
+      await waitForEnter(stage, enter, reel);
+      await runExit({ stage, surface, mark, brand, reduced: true });
+      return true;
     }
 
-    await sleep(Math.round(flightMs * 0.42));
-    chrome.style.transition = `opacity ${TIMING.introChrome || 300}ms ${TIMING.filterEase}`;
-    chrome.style.opacity = '1';
+    const enterPromise = waitForEnter(stage, enter, reel);
+    const hold = sleep(TIMING.introHold || 200);
+    const iframe = mountShowreel(reel);
+    const readyPromise = awaitReelReady(iframe, abortState);
 
-    await flight.finished.catch(() => {});
-    mark.style.opacity = '0';
-    brand.style.visibility = '';
-    stage.hidden = true;
+    const first = await Promise.race([enterPromise.then(() => 'enter'), hold.then(() => 'hold')]);
 
-    collection.style.transition = `opacity ${TIMING.introWorld || 320}ms ${TIMING.filterEase}`;
-    collection.style.opacity = '1';
-    await sleep(TIMING.introWorld || 320);
-    finished = true;
+    if (first === 'enter') {
+      abortReveal();
+      await runExit({ stage, surface, mark, brand, reduced: false });
+      return true;
+    }
+
+    const revealTask = (async () => {
+      const ok = await readyPromise;
+      if (abortState.aborted || !ok) return;
+      reel.classList.add('is-live');
+      await reel
+        .animate([{ opacity: 0 }, { opacity: 1 }], {
+          duration: TIMING.introVideoFade || 420,
+          easing: EASE(),
+          fill: 'forwards',
+        })
+        .finished.catch(() => {});
+      if (!abortState.aborted) reel.style.opacity = '1';
+    })();
+
+    await enterPromise;
+    abortReveal();
+    try {
+      reel.getAnimations?.().forEach((a) => a.cancel());
+    } catch (_) {}
+
+    await runExit({ stage, surface, mark, brand, reduced: false });
+    await revealTask.catch(() => {});
     return true;
   } catch (err) {
     console.error('[tcc] intro failed', err);

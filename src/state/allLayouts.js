@@ -1,6 +1,6 @@
 /**
- * Authored All layouts for the full 15-project library.
- * Scale identity (S3 M4 L5 XL6–7 WALL12) + controlled row rhythms.
+ * Authored All layouts for the full 23-project live library.
+ * Scale identity retained (S3 M4 L5 XL6–7 WALL12); arrangement varies by session variant.
  * Applied as inline grid placement when Visual + All (not filtered).
  *
  * Coordinates: [colStart, colEnd, row] — 12-col desktop.
@@ -9,80 +9,115 @@
 
 /** @typedef {[number, number, number]} Cell */
 
-/** V1 — baseline authored composition */
+/**
+ * V1 — baseline: live-index rhythm, opener right, wall closer.
+ * Landscape/wall reserved for microsoft; portraits stay contained.
+ */
 const V1 = {
   sub3: [9, 13, 1],
-  dopa: [1, 5, 2],
-  fishfish: [5, 10, 2],
-  roy: [10, 13, 2],
+  mochi: [1, 4, 2],
+  dopa: [4, 8, 2],
+  rads: [8, 13, 2],
   gella: [1, 4, 3],
-  lucky: [4, 8, 3],
+  icedtea: [4, 8, 3],
   macabalm: [8, 13, 3],
-  rgh: [1, 5, 4],
-  willing: [5, 10, 4],
-  worthy: [10, 13, 4],
-  mesa: [1, 6, 5],
-  adela: [6, 10, 5],
-  aogc: [10, 13, 5],
-  tsukiyo: [1, 7, 6],
-  microsoft: [1, 13, 7],
+  fishfish: [1, 6, 4],
+  yammy: [6, 10, 4],
+  kingbrown: [10, 13, 4],
+  roy: [1, 4, 5],
+  tsukiyo: [4, 9, 5],
+  willing: [9, 13, 5],
+  lucky: [1, 5, 6],
+  rare: [5, 9, 6],
+  rgh: [9, 13, 6],
+  test: [1, 4, 7],
+  mesa: [4, 9, 7],
+  adela: [9, 13, 7],
+  worthy: [1, 4, 8],
+  nido: [4, 8, 8],
+  aogc: [8, 13, 8],
+  microsoft: [1, 13, 9],
 };
 
 /** V2 — opener left; lower band mirrored */
 const V2 = {
   sub3: [1, 5, 1],
+  mochi: [5, 9, 2],
   dopa: [1, 5, 2],
-  fishfish: [5, 10, 2],
-  roy: [10, 13, 2],
+  rads: [9, 13, 2],
   gella: [1, 4, 3],
-  lucky: [4, 8, 3],
+  icedtea: [4, 8, 3],
   macabalm: [8, 13, 3],
-  rgh: [8, 13, 4],
-  willing: [1, 6, 4],
-  worthy: [6, 9, 4],
-  mesa: [1, 5, 5],
-  adela: [5, 9, 5],
-  aogc: [9, 13, 5],
-  tsukiyo: [6, 13, 6],
-  microsoft: [1, 13, 7],
+  fishfish: [6, 11, 4],
+  yammy: [1, 5, 4],
+  kingbrown: [11, 13, 4],
+  roy: [1, 4, 5],
+  tsukiyo: [4, 10, 5],
+  willing: [10, 13, 5],
+  lucky: [8, 13, 6],
+  rare: [1, 5, 6],
+  rgh: [5, 9, 6],
+  test: [9, 13, 7],
+  mesa: [1, 6, 7],
+  adela: [6, 10, 7],
+  worthy: [10, 13, 8],
+  nido: [1, 5, 8],
+  aogc: [5, 10, 8],
+  microsoft: [1, 13, 9],
 };
 
-/** V3 — airier mid band */
+/** V3 — airier mid band; quieter right seats */
 const V3 = {
   sub3: [9, 13, 1],
-  dopa: [1, 5, 2],
-  fishfish: [6, 11, 2],
-  roy: [10, 13, 3],
-  gella: [1, 4, 3],
-  lucky: [1, 5, 4],
-  macabalm: [5, 10, 4],
-  rgh: [1, 5, 5],
-  willing: [5, 10, 5],
-  worthy: [10, 13, 5],
-  mesa: [1, 6, 6],
-  adela: [6, 11, 6],
-  aogc: [1, 4, 7],
-  tsukiyo: [4, 11, 7],
-  microsoft: [1, 13, 8],
+  mochi: [1, 4, 2],
+  dopa: [4, 8, 2],
+  rads: [1, 6, 3],
+  gella: [6, 10, 3],
+  icedtea: [10, 13, 3],
+  macabalm: [1, 5, 4],
+  fishfish: [5, 10, 4],
+  yammy: [10, 13, 4],
+  kingbrown: [1, 4, 5],
+  roy: [4, 8, 5],
+  tsukiyo: [8, 13, 5],
+  willing: [1, 5, 6],
+  lucky: [5, 9, 6],
+  rare: [9, 13, 6],
+  rgh: [1, 5, 7],
+  test: [5, 9, 7],
+  mesa: [9, 13, 7],
+  adela: [1, 6, 8],
+  worthy: [6, 10, 8],
+  nido: [10, 13, 8],
+  aogc: [1, 5, 9],
+  microsoft: [1, 13, 10],
 };
 
-/** V4 — centred opener */
+/** V4 — centred opener; denser upper, calmer lower */
 const V4 = {
   sub3: [5, 9, 1],
-  dopa: [1, 5, 2],
-  fishfish: [5, 10, 2],
-  roy: [10, 13, 2],
-  macabalm: [1, 6, 3],
-  lucky: [6, 10, 3],
-  gella: [10, 13, 3],
-  rgh: [1, 5, 4],
-  willing: [5, 10, 4],
-  worthy: [10, 13, 4],
-  mesa: [1, 6, 5],
-  adela: [6, 10, 5],
-  aogc: [10, 13, 5],
-  tsukiyo: [6, 13, 6],
-  microsoft: [1, 13, 7],
+  mochi: [1, 4, 2],
+  dopa: [4, 8, 2],
+  rads: [8, 13, 2],
+  gella: [1, 4, 3],
+  icedtea: [4, 8, 3],
+  macabalm: [8, 13, 3],
+  fishfish: [1, 6, 4],
+  yammy: [6, 10, 4],
+  kingbrown: [10, 13, 4],
+  roy: [1, 4, 5],
+  tsukiyo: [4, 9, 5],
+  willing: [9, 13, 5],
+  lucky: [1, 5, 6],
+  rare: [5, 9, 6],
+  rgh: [9, 13, 6],
+  test: [1, 4, 7],
+  mesa: [4, 8, 7],
+  adela: [8, 13, 7],
+  worthy: [1, 4, 8],
+  nido: [4, 8, 8],
+  aogc: [8, 13, 8],
+  microsoft: [1, 13, 9],
 };
 
 export const ALL_LAYOUTS = { 1: V1, 2: V2, 3: V3, 4: V4 };
@@ -93,7 +128,6 @@ export function compactCell([a, b, r]) {
   let s = map(a);
   let e = map(b);
   if (e <= s) e = Math.min(7, s + 1);
-  /* wall / full-bleed stays full */
   if (b - a >= 11) {
     s = 1;
     e = 7;
