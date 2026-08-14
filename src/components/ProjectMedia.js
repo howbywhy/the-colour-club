@@ -54,18 +54,15 @@ export function createProjectMedia({ cdn }) {
     return d ? aclass(d.width, d.height) : '';
   };
 
-  /** Resolve source aspect for any media item (image dims, vid.w/h, vid.ar, or image proxy). */
+  /** Resolve source aspect for motion media — canonical data only (no image-proxy guess). */
   function aspectOfVid(p, v) {
     if (v && typeof v.ar === 'number' && v.ar > 0) return v.ar;
     if (v && v.w > 0 && v.h > 0) return v.w / v.h;
-    const idx = typeof v?.at === 'number' ? Math.max(0, v.at - 1) : 0;
-    const d = dimOf(p, idx) || dimOf(p, 0);
-    if (d) return d.width / d.height;
     return null;
   }
 
   function ratioClass(ar) {
-    if (!ar || !(ar > 0)) return 'a-land';
+    if (!ar || !(ar > 0)) return 'a-unknown';
     return aclass(ar, 1);
   }
 
@@ -110,10 +107,16 @@ export function createProjectMedia({ cdn }) {
   }
 
   function classMaxWidth(cls) {
-    if (cls === 'a-deep') return 520;
-    if (cls === 'a-port') return 640;
-    if (cls === 'a-sq') return 720;
-    return Infinity; /* landscape / wall — width limited by available viewer only */
+    /* Presence ceilings — keep in sync with --media-ceil-* in tcc.css */
+    const root = getComputedStyle(document.documentElement);
+    const read = (token, fallback) => {
+      const n = parseFloat(root.getPropertyValue(token));
+      return Number.isFinite(n) && n > 0 ? n : fallback;
+    };
+    if (cls === 'a-deep') return read('--media-ceil-deep', 420);
+    if (cls === 'a-port') return read('--media-ceil-port', 520);
+    if (cls === 'a-sq') return read('--media-ceil-sq', 640);
+    return Infinity; /* landscape — width limited by available viewer only */
   }
 
   /**
@@ -129,11 +132,13 @@ export function createProjectMedia({ cdn }) {
     const ar = d && d.width > 0 && d.height > 0 ? d.width / d.height : 1.68;
     const cls = d ? aclass(d.width, d.height) : 'a-land';
     IH.classList.add(cls);
-    const { w, h } = fitMediaSize(ar, classMaxWidth(cls));
+    const { w } = fitMediaSize(ar, classMaxWidth(cls));
     IH.style.aspectRatio = ar.toFixed(4);
     IH.style.width = w + 'px';
-    IH.style.height = h + 'px';
-    IH.style.maxWidth = '100%';
+    /* Height from aspect-ratio so CSS max-width (mobile 78%) cannot distort the frame. */
+    IH.style.height = '';
+    /* Let CSS --media-ceil-* own the ceiling; do not inline max-width:100% (defeats presence). */
+    IH.style.maxWidth = '';
   }
 
   function clearHeroGeometry() {
@@ -170,13 +175,18 @@ export function createProjectMedia({ cdn }) {
   function mediaFrameHtml(p, v) {
     const ar = aspectOfVid(p, v);
     const cls = ratioClass(ar);
+    if (!ar) {
+      console.warn('[tcc] motion media missing canonical aspect ratio', p?.id, v?.vf || v?.l || v);
+    }
+    /* Ratio must be reserved from canonical metadata before iframe/video resolves (no 16:9 placeholder). */
     const arStyle = ar ? ` style="aspect-ratio:${Number(ar).toFixed(4)}"` : '';
+    const miss = ar ? '' : ' data-missing-ar="1"';
     const inner = v.vf
       ? `<iframe loading="lazy" src="https://app.vidzflow.com/v/${v.vf}?dq=576&ap=true&muted=true&loop=true&ctp=false&bc=%234E5FFD&controls=" allow="autoplay" title="Project film"></iframe>`
       : `<video autoplay muted loop playsinline${v.w && v.h ? ` width="${v.w}" height="${v.h}"` : ''}>${
           v.l ? `<source src="${v.l}">` : ''
         }${v.r ? `<source src="${v.r}">` : ''}</video>`;
-    return `<div class="gv media-frame ${cls}"${arStyle}>${inner}</div>`;
+    return `<div class="gv media-frame ${cls}"${miss}${arStyle}>${inner}</div>`;
   }
 
   /** Gallery sequence markup for a project (images + optional video/embeds). */

@@ -153,12 +153,26 @@ body.x #colgrid .tile{min-width:0} /* Index thumbs stay compact */
 .g .tile.a-deep{max-width:min(100%,520px)}
 .g .tile.is-wall{max-width:min(100%,920px)}
 .g .tile.is-wall.a-port,.g .tile.is-wall.a-deep{max-width:min(100%,780px)}
-.ins-gal .gi.a-sq{max-width:720px}
-.ins-gal .gi.a-port{max-width:640px}
-.ins-gal .gi.a-deep{max-width:520px}
-#insHero.a-sq{max-width:720px}
-#insHero.a-port{max-width:640px}
-#insHero.a-deep{max-width:520px}
+
+/*
+  Project viewer FORMAT CEILINGS (presence) — shared by hero + gallery image/video/embed.
+  Fit (contain / ratio) is separate. Landscape has no ceiling (full track privilege).
+  Collection .g .tile ceilings above are intentionally independent.
+*/
+:root{
+  --media-ceil-sq:640px;
+  --media-ceil-port:520px;
+  --media-ceil-deep:420px;
+}
+#insHero.a-sq,
+.ins-gal .gi.a-sq,
+.ins-gal .gv.a-sq{max-width:var(--media-ceil-sq)}
+#insHero.a-port,
+.ins-gal .gi.a-port,
+.ins-gal .gv.a-port{max-width:var(--media-ceil-port)}
+#insHero.a-deep,
+.ins-gal .gi.a-deep,
+.ins-gal .gv.a-deep{max-width:var(--media-ceil-deep)}
 
 /* Filter hide — leave the flow (Index + parked Visual tiles). */
 .fhide{display:none!important}
@@ -314,20 +328,19 @@ body.filtered.g #colgrid > .tile{display:none!important}
 .ins-gal .gi.a-sq{grid-column:span 5}
 .ins-gal .gi.a-port{grid-column:span 4}
 .ins-gal .gi.a-deep{grid-column:span 3}
-/* Media frame — ratio from source metadata; capped by track width + viewer height.
-   Frame must stay visually transparent — grey plates were loading leftovers showing
-   through contain letterboxing after max-height fit. */
+/* Media frame — presence via ratio class + --media-ceil-*; FIT via inline aspect-ratio from canonical data.
+   Do not guess 16/9 / 4/5 in CSS — that silently mis-shapes Vidzflow assets. */
 .ins-gal .gv{
   grid-column:span 6;overflow:hidden;background:transparent;
-  aspect-ratio:16/9; /* last-resort only when metadata absent */
   min-width:0;max-width:100%;width:100%;
   max-height:var(--inspect-media-max-h);
   height:auto;box-sizing:border-box;
 }
-.ins-gal .gv.a-sq{grid-column:span 5;aspect-ratio:1}
-.ins-gal .gv.a-port{grid-column:span 4;aspect-ratio:4/5}
-.ins-gal .gv.a-deep{grid-column:span 3;aspect-ratio:3/5}
-.ins-gal .gv.a-land{grid-column:span 6;aspect-ratio:16/9}
+.ins-gal .gv.a-sq{grid-column:span 5;width:100%}
+.ins-gal .gv.a-port{grid-column:span 4;width:100%}
+.ins-gal .gv.a-deep{grid-column:span 3;width:100%}
+.ins-gal .gv.a-land{grid-column:span 6}
+.ins-gal .gv.a-unknown{outline:1px dashed rgba(226,58,46,.35)} /* QA surface — missing canonical ar */
 .ins-gal .gv iframe,.ins-gal .gv video{
   width:100%;height:100%;border:0;display:block;object-fit:contain;
   background:transparent;
@@ -695,9 +708,12 @@ html.intro-boot body.intro-chrome-on #chrome .chrome-utilities{
   .ins-gal .gi,
   .ins-gal .gi:nth-child(n),
   .ins-gal .gi.a-sq,.ins-gal .gi.a-port,.ins-gal .gi.a-deep,
-  .ins-gal .gv{grid-column:1;max-width:100%}
-  .ins-gal .gi.a-port{max-width:78%}
-  .ins-gal .gi.a-deep{max-width:62%}
+  .ins-gal .gv,
+  .ins-gal .gv.a-sq,.ins-gal .gv.a-port,.ins-gal .gv.a-deep{grid-column:1;max-width:100%}
+  .ins-gal .gi.a-port,
+  .ins-gal .gv.a-port{max-width:78%}
+  .ins-gal .gi.a-deep,
+  .ins-gal .gv.a-deep{max-width:62%}
 
   /* Idea — linear readable composition */
   #inspect.idea #ideaLede{grid-column:1;max-width:22ch;font-size:clamp(28px,8vw,36px);margin-bottom:24px}
