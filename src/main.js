@@ -44,9 +44,14 @@ byId={};P.forEach(p=>byId[p.id]=p);
 const media = createProjectMedia({ cdn: CDN });
 const {
   dimOf, alocal, aremote, setImg, imgTag, src0, aclass, classFromDim,
-  applyHeroGeometry, clearHeroGeometry, bindClassify, sweep, galleryHtml,
+  applyHeroGeometry, applyGalleryGeometry, clearHeroGeometry, bindClassify, sweep, galleryHtml,
 } = media;
 bindClassify();
+/** Hero + gallery motion frames share one fit pass (source AR ∩ track ∩ ceiling ∩ avail H). */
+function fitProjectMedia(p) {
+  applyHeroGeometry(p);
+  applyGalleryGeometry();
+}
 /* Shared club palette cursor — outline / caps / stack */
 const nextHue = createHueCursor();
 bindFaviconColour();
@@ -177,7 +182,7 @@ function populateInspect(p){
   $('#mImages').classList.add('on');$('#mIdea').classList.remove('on');
   $('#mIdea').style.display=p.beats.length?'block':'none';
   projectStack.buildStack(p.id);
-  applyHeroGeometry(p);
+  fitProjectMedia(p);
   const hero=$('#heroImg'); const hd=dimOf(p,0);
   if(hd){ hero.width=hd.width; hero.height=hd.height; }
   sweep($('#inspect'));
@@ -194,11 +199,11 @@ function openProject(id,quiet){
     populateInspect(p);
     const ins=$('#inspect');ins.classList.remove('idea');ins.scrollTop=0;
     const tile=grid.querySelector(`.tile[data-id="${id}"]`);
-    applyHeroGeometry(p);
+    fitProjectMedia(p);
     if(tile)tile.style.visibility='hidden';
     $('#heroImg').style.opacity=1;ins.classList.add('open','ready');
     projectStack.showStack();$('#insClose').classList.add('show');
-    applyHeroGeometry(p); /* re-fit after stack rail occupies width */
+    fitProjectMedia(p); /* re-fit after stack rail occupies width */
     world.selected=id;world.depth='images';dbg();return;
   }
   endIntro();
@@ -214,7 +219,7 @@ function openProject(id,quiet){
     populateInspect(p);
     ins.classList.remove('idea');
     ins.scrollTop=0; ins.classList.add('open');
-    applyHeroGeometry(p);
+    fitProjectMedia(p);
     const to=$('#insHero').getBoundingClientRect();
     $('#heroImg').style.opacity=0;
     if(tile)tile.style.visibility='hidden';
@@ -222,7 +227,7 @@ function openProject(id,quiet){
       $('#heroImg').style.opacity=1;
       ins.classList.add('ready');
       projectStack.showStack(); $('#insClose').classList.add('show');
-      applyHeroGeometry(p); /* re-fit after stack rail occupies width */
+      fitProjectMedia(p); /* re-fit after stack rail occupies width */
       world.selected=id;world.depth='images';release();
       syncHash(); dbg();
     });
@@ -282,7 +287,7 @@ function lateral(id,quiet){
     $('#mIdea').classList.toggle('on',keep==='idea');$('#mImages').classList.toggle('on',keep!=='idea');
     ins.scrollTop=0;$('#heroImg').style.opacity=1;ins.classList.add('ready');
     const nt=grid.querySelector(`.tile[data-id="${id}"]`);if(nt)nt.style.visibility='hidden';
-    applyHeroGeometry(p);
+    fitProjectMedia(p);
     world.selected=id;world.depth=keep;dbg();return;
   }
   if(world.lock)return;
@@ -301,14 +306,14 @@ function lateral(id,quiet){
       if(keep==='idea'){ins.classList.add('idea');$('#mIdea').classList.add('on');$('#mImages').classList.remove('on')}
       else ins.classList.remove('idea');
       ins.scrollTop=0;
-      applyHeroGeometry(p);
+      fitProjectMedia(p);
       const to=$('#insHero').getBoundingClientRect();
       $('#heroImg').style.opacity=0;
       const nt=grid.querySelector(`.tile[data-id="${id}"]`); if(nt)nt.style.visibility='hidden';
       world.ledger.slot=id;
       flyCrop(flysrc,keep==='idea'?null:from,keep==='idea'?null:to,D(TIMING.lateral),()=>{
         $('#heroImg').style.opacity=1; ins.classList.add('ready');
-        applyHeroGeometry(p);
+        fitProjectMedia(p);
         world.selected=id;world.depth=keep;release();
         syncHash(); dbg();
       });
@@ -378,11 +383,11 @@ bindInfoChrome();
 bindSortHeaders();
 bindAllSignups();
 
-/* Project hero must re-fit when viewport height/width changes (short desktop, rotate). */
+/* Project hero + gallery motion frames re-fit when viewport height/width changes. */
 addEventListener('resize', () => {
   if (!world.selected) return;
   const p = byId[world.selected];
-  if (p) applyHeroGeometry(p);
+  if (p) fitProjectMedia(p);
 });
 
 /* debug */

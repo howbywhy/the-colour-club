@@ -328,17 +328,18 @@ body.filtered.g #colgrid > .tile{display:none!important}
 .ins-gal .gi.a-sq{grid-column:span 5}
 .ins-gal .gi.a-port{grid-column:span 4}
 .ins-gal .gi.a-deep{grid-column:span 3}
-/* Media frame — presence via ratio class + --media-ceil-*; FIT via inline aspect-ratio from canonical data.
-   Do not guess 16/9 / 4/5 in CSS — that silently mis-shapes Vidzflow assets. */
+/* Media frame — presence via ratio class + --media-ceil-*; FIT via canonical aspect-ratio
+   + applyGalleryGeometry (track ∩ ceiling ∩ available height). Never width:100% of a
+   landscape track with a clamped max-height — that distorted AR and cropped embeds. */
 .ins-gal .gv{
   grid-column:span 6;overflow:hidden;background:transparent;
-  min-width:0;max-width:100%;width:100%;
+  min-width:0;max-width:100%;width:auto;justify-self:start;
   max-height:var(--inspect-media-max-h);
   height:auto;box-sizing:border-box;
 }
-.ins-gal .gv.a-sq{grid-column:span 5;width:100%}
-.ins-gal .gv.a-port{grid-column:span 4;width:100%}
-.ins-gal .gv.a-deep{grid-column:span 3;width:100%}
+.ins-gal .gv.a-sq{grid-column:span 5}
+.ins-gal .gv.a-port{grid-column:span 4}
+.ins-gal .gv.a-deep{grid-column:span 3}
 .ins-gal .gv.a-land{grid-column:span 6}
 .ins-gal .gv.a-unknown{outline:1px dashed rgba(226,58,46,.35)} /* QA surface — missing canonical ar */
 .ins-gal .gv iframe,.ins-gal .gv video{

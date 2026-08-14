@@ -120,6 +120,39 @@ export function createProjectMedia({ cdn }) {
   }
 
   /**
+   * Size a gallery frame into its grid track ∩ format ceiling ∩ available height,
+   * preserving source aspect ratio (same fit model as the hero).
+   */
+  function fitGalleryFrame(el, ar, cls) {
+    if (!el || !(ar > 0)) return;
+    const { availH, availW } = viewerMediaBounds();
+    const ceil = classMaxWidth(cls);
+    el.style.aspectRatio = Number(ar).toFixed(4);
+    el.style.height = '';
+    el.style.width = '100%';
+    void el.offsetWidth;
+    const trackW = el.getBoundingClientRect().width || availW;
+    const maxWByHeight = availH * ar;
+    const w = Math.max(
+      1,
+      Math.round(Math.min(trackW, Number.isFinite(ceil) ? ceil : Infinity, maxWByHeight))
+    );
+    el.style.width = w + 'px';
+  }
+
+  /** Fit all project-gallery motion frames after markup/stack/hero resolve. */
+  function applyGalleryGeometry() {
+    document.querySelectorAll('#gal .gv').forEach((el) => {
+      const raw = String(el.style.aspectRatio || '');
+      const ar = parseFloat(raw);
+      if (!(ar > 0)) return;
+      const cls =
+        [...el.classList].find((c) => /^a-(land|sq|port|deep)$/.test(c)) || ratioClass(ar);
+      fitGalleryFrame(el, ar, cls);
+    });
+  }
+
+  /**
    * Size #insHero from source dims against BOTH available width and height.
    * Prevents full-bleed width from deriving a height taller than the viewport
    * (the Iced Tea clip: complete ratio, but bottom past the fold).
@@ -127,7 +160,7 @@ export function createProjectMedia({ cdn }) {
   function applyHeroGeometry(p, mediaIndex = 0) {
     const IH = $('#insHero');
     if (!IH) return;
-    IH.classList.remove('a-land', 'a-sq', 'a-port', 'a-deep');
+    IH.classList.remove('a-land', 'a-sq', 'a-port', 'a-deep', 'a-unknown');
     const d = dimOf(p, mediaIndex);
     const ar = d && d.width > 0 && d.height > 0 ? d.width / d.height : 1.68;
     const cls = d ? aclass(d.width, d.height) : 'a-land';
@@ -178,8 +211,12 @@ export function createProjectMedia({ cdn }) {
     if (!ar) {
       console.warn('[tcc] motion media missing canonical aspect ratio', p?.id, v?.vf || v?.l || v);
     }
-    /* Ratio must be reserved from canonical metadata before iframe/video resolves (no 16:9 placeholder). */
-    const arStyle = ar ? ` style="aspect-ratio:${Number(ar).toFixed(4)}"` : '';
+    /* Ratio reserved from canonical metadata before iframe/video resolves.
+       Width is finalized by applyGalleryGeometry (track ∩ ceiling ∩ available height). */
+    const arN = ar ? Number(ar).toFixed(4) : '';
+    const arStyle = ar
+      ? ` style="aspect-ratio:${arN};width:min(100%,calc(var(--inspect-media-max-h) * ${arN}))"`
+      : '';
     const miss = ar ? '' : ' data-missing-ar="1"';
     const inner = v.vf
       ? `<iframe loading="lazy" src="https://app.vidzflow.com/v/${v.vf}?dq=576&ap=true&muted=true&loop=true&ctp=false&bc=%234E5FFD&controls=" allow="autoplay" title="Project film"></iframe>`
@@ -220,6 +257,7 @@ export function createProjectMedia({ cdn }) {
     viewerMediaBounds,
     fitMediaSize,
     applyHeroGeometry,
+    applyGalleryGeometry,
     clearHeroGeometry,
     classify,
     bindClassify,
