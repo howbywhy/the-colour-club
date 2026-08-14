@@ -54,7 +54,7 @@ html{background:var(--paper)}
 body{font-family:var(--sans);font-weight:var(--w-func);color:var(--ink);font-size:var(--t-primary);line-height:1.55;
   -webkit-font-smoothing:antialiased;font-synthesis:none}
 body.locked,body.info{overflow:hidden}
-img{display:block;width:100%;height:auto;background:#EFEFF1}
+img{display:block;width:100%;height:auto;background:transparent}
 /* navigation thumbnails are the only sanctioned crops */
 .sth img,.x .tile .ph img{height:100%;object-fit:cover}
 /* Hero fills its fitted frame; frame owns width+height fit (never viewport crop via cover) */
@@ -314,9 +314,11 @@ body.filtered.g #colgrid > .tile{display:none!important}
 .ins-gal .gi.a-sq{grid-column:span 5}
 .ins-gal .gi.a-port{grid-column:span 4}
 .ins-gal .gi.a-deep{grid-column:span 3}
-/* Media frame — ratio from source metadata; capped by track width + viewer height */
+/* Media frame — ratio from source metadata; capped by track width + viewer height.
+   Frame must stay visually transparent — grey plates were loading leftovers showing
+   through contain letterboxing after max-height fit. */
 .ins-gal .gv{
-  grid-column:span 6;overflow:hidden;background:#EFEFF1;
+  grid-column:span 6;overflow:hidden;background:transparent;
   aspect-ratio:16/9; /* last-resort only when metadata absent */
   min-width:0;max-width:100%;width:100%;
   max-height:var(--inspect-media-max-h);
@@ -328,7 +330,7 @@ body.filtered.g #colgrid > .tile{display:none!important}
 .ins-gal .gv.a-land{grid-column:span 6;aspect-ratio:16/9}
 .ins-gal .gv iframe,.ins-gal .gv video{
   width:100%;height:100%;border:0;display:block;object-fit:contain;
-  background:#EFEFF1;
+  background:transparent;
   pointer-events:none; /* passive presentation media must never capture page scroll */
 }
 
